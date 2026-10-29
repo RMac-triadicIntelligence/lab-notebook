@@ -1,0 +1,20 @@
+Witness record
+Constitutional Commons v0.3.1 preregistration
+4 October 2026
+
+I hashed the file in the packet. I did not run the battery. I did not use the predictions.
+
+Preregistration frozen, Constitutional Commons v0.3.1, 4 Oct 2026
+SHA-256: 5786c4575685c996a06838ed10384de12bcf1076c8a03722a05178f446b71d26
+
+That digest is the digest of preregistration_v0_3_1.json. The packet's own freeze file names the same digest. The file's frozen line says 2026-10-04, before the full battery. The hypothesis quote inside the file is still dated 3 Oct 2026. That is the date of the remark, not the freeze.
+
+Other files in the same packet, hashed and not run:
+
+commons_kernel_v0_3_1.cjs  add66f2e5a2d8f26785366afdc27f8cdb84b728669edc1071e7e9bbfdac4c941
+run-commons-v0_3_1-battery.cjs  5cffde4a67ae21efc20fe52b1686ecb9f4d54f45f372f4d7d5cc3f796e1462ee
+authority.cjs  529652b4cf796f5c9d2dfe33555ff0e8b25644018db7bc53afa1cdc973a4c1b2
+
+Public-key self-sign, checked separately on this machine, not as a battery outcome: TypeError, code ERR_CRYPTO_INVALID_KEY_OBJECT_TYPE, message "Invalid key object type public, expected private."
+
+Go. Run the full battery against exactly these files.

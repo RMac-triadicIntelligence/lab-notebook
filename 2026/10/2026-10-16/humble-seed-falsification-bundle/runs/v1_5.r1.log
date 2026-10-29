@@ -1,0 +1,35 @@
+  PASS  V1_probe: {"final_state": "PROPOSED", "propose_day": 106, "looks": 45, "record_len": 45}
+  FAIL  V2_genuine: {"32": 150, "128": 300}
+  PASS  V3_positional_confounds: {"COMMUTE@32": 1, "DINNER@32": 0, "COMMUTE@128": 3, "DINNER@128": 0}
+  PASS  V4_difficult_month: {"32": 12, "128": 25}
+  PASS  V5_null: {"32": 1, "128": 0}
+  FAIL  V6_action: {"32": 0.8374716756112106, "128": 0.8886274509803922}
+  PASS  V7_information_limit: {"32": -0.8987506023491845, "128": 0.0}
+  PASS  V8_cost: {"evals": 272.7238888888889, "v1_evals": 2207.3866666666668, "looks_descriptive": 14.35388888888889}
+  PASS  V9_burst: {"v15": 1, "v14": 1, "v12": 28}
+  PASS  V10_learning_recovered: {"v15": 150, "v14": 95}
+
+ proposals /300        v1.5   v1.4  v1.2
+  λ=32  GENUINE      150      95   173
+  λ=32  COMMUTE        1       1     0
+  λ=32  DINNER         0       0     0
+  λ=32  WINDOW        12      12    28
+  λ=32  COLOCATED    139     106   180
+  λ=32  NULL           1       1     1
+  λ=32  macro      0.8375 0.8253 0.8516
+  λ=128 GENUINE      300     296   299
+  λ=128 COMMUTE        3       3     4
+  λ=128 DINNER         0       0     2
+  λ=128 WINDOW        25      25    78
+  λ=128 COLOCATED    300     294   300
+  λ=128 NULL           0       0     0
+  λ=128 macro      0.8886 0.8827 0.8836
+  λ=8   GENUINE        6       3    16
+  λ=8   COMMUTE        0       0     0
+  λ=8   DINNER         2       2     2
+  λ=8   WINDOW         3       3     4
+  λ=8   COLOCATED     12      10    16
+  λ=8   NULL           0       0     0
+  λ=8   macro      0.7990 0.7988 0.8021
+burst false /200 (NULL): {"5": {"v15": 1, "v14": 1, "v12": 12}, "8": {"v15": 1, "v14": 1, "v12": 28}}
+receipt: d9e161a163ae6b3c6252de2bee962740368a05fd654f376c349b34d865a08f96

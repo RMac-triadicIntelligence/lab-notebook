@@ -1,0 +1,11 @@
+{
+  "frozen_utc": "2026-10-27T16:17:00.756026+00:00",
+  "registration": "Local pre-execution lock, not external preregistration.",
+  "sha256": {
+    "agents.py": "a1dbb780236d9244b435ddbff81f801cef461d9d95e03f29db0b79e22cb64b67",
+    "battery.py": "b7998e4bc25e01faa2629b4de0b157fa1712cbd1ef3aba46951acb761aab9ee2",
+    "core.py": "b8722edea92bb1f912c2f8e9eec8825e6ddfac66630c88cfd051d292ad618858",
+    "mutate.py": "815b4aa1ade402c979ef8126218d2861275f6aec7bb87f63623d5a55cb17be80",
+    "protocol.json": "7ffa6c25393877dfba0a286060e44a90d70f008b06e43a9ca945030131c436ff"
+  }
+}

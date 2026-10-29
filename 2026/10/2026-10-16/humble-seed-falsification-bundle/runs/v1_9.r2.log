@@ -1,0 +1,31 @@
+  PASS  AA1_character_untouched: {"identical_days": true, "identical_to_frozen_v16_counts": true}
+  PASS  AA2_no_alarm_on_noise: {"32": 0.0033333333333333335, "128": 0.0}
+  PASS  AA3_local_patterns_seen: {"COMMUTE": 0.9933333333333333, "DINNER": 1.0}
+  PASS  AA4_asks_name_the_place: {"commute": 0.8575539568345324, "dinner": 0.8486562942008486}
+  PASS  AA5_burden: {"GENUINE@32": 2.09, "COMMUTE@32": 1.36, "DINNER@32": 1.31, "WINDOW@32": 0.83, "COLOCATED@32": 1.99, "NULL@32": 0.0, "GENUINE@128": 2.4, "COMMUTE@128": 1.11, "DINNER@128": 1.12, "WINDOW@128": 1.39, "COLOCATED@128": 2.45, "NULL@128
+  PASS  AA6_real_change_seen: {"GENUINE": 0.9766666666666667, "WINDOW": 0.9566666666666667}
+
+ λ=32  asked-share  asks/owner  first-ask-day  commute-reg  dinner-reg  character
+  GENUINE       0.967       2.09           82        0.15       0.17    158
+  COMMUTE       0.997       1.36           81        0.75       0.02      1
+  DINNER        0.997       1.31           82        0.01       0.74      0
+  WINDOW        0.667       0.83           80        0.18       0.16     12
+  COLOCATED     0.957       1.99           82        0.14       0.17    149
+  NULL          0.003       0.00           78        0.00       0.00      1
+
+ λ=128  asked-share  asks/owner  first-ask-day  commute-reg  dinner-reg  character
+  GENUINE       0.977       2.40           79        0.21       0.18    300
+  COMMUTE       0.993       1.11           79        0.86       0.01      3
+  DINNER        1.000       1.12           78        0.01       0.85      0
+  WINDOW        0.957       1.39           79        0.22       0.19     25
+  COLOCATED     0.990       2.45           78        0.20       0.18    300
+  NULL          0.000       0.00         None          -          -       0
+
+ λ=8  asked-share  asks/owner  first-ask-day  commute-reg  dinner-reg  character
+  GENUINE       0.697       1.10           90        0.18       0.22      6
+  COMMUTE       0.793       1.11           93        0.69       0.07      0
+  DINNER        0.780       1.14           91        0.07       0.71      2
+  WINDOW        0.213       0.24           83        0.20       0.22      3
+  COLOCATED     0.660       1.04           91        0.19       0.17     12
+  NULL          0.017       0.02          118        0.10       0.30      0
+receipt: 73664a4dddda8613232d0335bb1f3875d9803b03fbe81a513167a37e9b881c4d

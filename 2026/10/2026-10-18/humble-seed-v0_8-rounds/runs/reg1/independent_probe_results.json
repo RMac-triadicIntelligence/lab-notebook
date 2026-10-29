@@ -1,0 +1,46 @@
+{
+  "forged_record_metadata": {
+    "status": "ERROR",
+    "traceback": "Traceback (most recent call last):\n  File \"/workspace/incoming-2026-10-18/runs/../set1/54332739/Humble_Seed_v083_Review/code/independent_probes.py\", line 147, in <module>\n    detail=fn(pathlib.Path(td));results[fn.__name__]={'status':'OBSERVATION_CONFIRMED','detail':detail}\n  File \"/workspace/incoming-2026-10-18/runs/../set1/54332739/Humble_Seed_v083_Review/code/independent_probes.py\", line 92, in forged_record_metadata\n    rec=s.trace[-1]['record'];before={'authorized_at':rec['authorized_at'],'note':rec['note'],'event_timestamp':s.trace[-1]['timestamp']}\n                                                                                  ~~~^^^^^^^^\nKeyError: 'note'\n"
+  },
+  "fresh_owner_control": {
+    "detail": {
+      "refused": "AttestationRefused: trace index 4: owner's position: the owner's latest answer to this reading is 'no'",
+      "witness_sequence": 0
+    },
+    "status": "OBSERVATION_CONFIRMED"
+  },
+  "ordinary_corrected_answer": {
+    "detail": {
+      "corrected_answer_applies_attests_reloads": true
+    },
+    "status": "OBSERVATION_CONFIRMED"
+  },
+  "signing_does_not_refresh_lifetime": {
+    "detail": {
+      "attestation": "AttestationRefused: trace index 2: reading is past its lifetime by the owner's clock",
+      "same_instance_resigning_does_not_extend": true
+    },
+    "status": "OBSERVATION_CONFIRMED"
+  },
+  "stale_owner_erases_signature": {
+    "status": "ERROR",
+    "traceback": "Traceback (most recent call last):\n  File \"/workspace/incoming-2026-10-18/runs/../set1/54332739/Humble_Seed_v083_Review/code/independent_probes.py\", line 147, in <module>\n    detail=fn(pathlib.Path(td));results[fn.__name__]={'status':'OBSERVATION_CONFIRMED','detail':detail}\n  File \"/workspace/incoming-2026-10-18/runs/../set1/54332739/Humble_Seed_v083_Review/code/independent_probes.py\", line 68, in stale_owner_erases_signature\n    fresh=reopen(o);missing=fresh.ledger.signed(s.organism_id,payload_hash) is None;assert missing\n                                                                                           ^^^^^^^\nAssertionError\n"
+  },
+  "stale_owner_veto_bypass": {
+    "status": "ERROR",
+    "traceback": "Traceback (most recent call last):\n  File \"/workspace/incoming-2026-10-18/runs/../set1/54332739/Humble_Seed_v083_Review/code/independent_probes.py\", line 147, in <module>\n    detail=fn(pathlib.Path(td));results[fn.__name__]={'status':'OBSERVATION_CONFIRMED','detail':detail}\n  File \"/workspace/incoming-2026-10-18/runs/../set1/54332739/Humble_Seed_v083_Review/code/independent_probes.py\", line 55, in stale_owner_veto_bypass\n    apply(s,r,sig);assert o.attest(s)\n                          ~~~~~~~~^^^\n  File \"/workspace/incoming-2026-10-18/runs/v084.r1/humble_seed_v0_8_4_candidate.py\", line 243, in wrapper\n    return method(self, *args, **kwargs)\n  File \"/workspace/incoming-2026-10-18/runs/v084.r1/humble_seed_v0_8_4_candidate.py\", line 1794, in attest\n    self.verify_consequence(seed, cp)       # [D4] replay before signing\n    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^\n  File \"/workspace/incoming-2026-10-18/runs/v084.r1/humble_seed_v0_8_4_candidate.py\", line 1748, in verify_consequence\n    self._check_owner_acts(seed, i, rec, now, ttl)\n    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/incoming-2026-10-18/runs/v084.r1/humble_seed_v0_8_4_candidate.py\", line 1717, in _check_owner_acts\n    raise AttestationRefused(f\"trace index {i}: owner's position: {held}\")\nindependent_kernel.AttestationRefused: trace index 4: owner's position: the owner's latest answer to this reading is 'no'\n"
+  },
+  "stale_signer_refreshes_lifetime": {
+    "status": "ERROR",
+    "traceback": "Traceback (most recent call last):\n  File \"/workspace/incoming-2026-10-18/runs/../set1/54332739/Humble_Seed_v083_Review/code/independent_probes.py\", line 147, in <module>\n    detail=fn(pathlib.Path(td));results[fn.__name__]={'status':'OBSERVATION_CONFIRMED','detail':detail}\n  File \"/workspace/incoming-2026-10-18/runs/../set1/54332739/Humble_Seed_v083_Review/code/independent_probes.py\", line 118, in stale_signer_refreshes_lifetime\n    apply(s,r,sig);assert o2.attest(s)\n                          ~~~~~~~~~^^^\n  File \"/workspace/incoming-2026-10-18/runs/v084.r1/humble_seed_v0_8_4_candidate.py\", line 243, in wrapper\n    return method(self, *args, **kwargs)\n  File \"/workspace/incoming-2026-10-18/runs/v084.r1/humble_seed_v0_8_4_candidate.py\", line 1794, in attest\n    self.verify_consequence(seed, cp)       # [D4] replay before signing\n    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^\n  File \"/workspace/incoming-2026-10-18/runs/v084.r1/humble_seed_v0_8_4_candidate.py\", line 1748, in verify_consequence\n    self._check_owner_acts(seed, i, rec, now, ttl)\n    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/incoming-2026-10-18/runs/v084.r1/humble_seed_v0_8_4_candidate.py\", line 1707, in _check_owner_acts\n    raise AttestationRefused(f\"trace index {i}: reading is past its lifetime by the owner's clock\")\nindependent_kernel.AttestationRefused: trace index 2: reading is past its lifetime by the owner's clock\n"
+  },
+  "stale_witness_fork": {
+    "status": "ERROR",
+    "traceback": "Traceback (most recent call last):\n  File \"/workspace/incoming-2026-10-18/runs/../set1/54332739/Humble_Seed_v083_Review/code/independent_probes.py\", line 147, in <module>\n    detail=fn(pathlib.Path(td));results[fn.__name__]={'status':'OBSERVATION_CONFIRMED','detail':detail}\n  File \"/workspace/incoming-2026-10-18/runs/../set1/54332739/Humble_Seed_v083_Review/code/independent_probes.py\", line 78, in stale_witness_fork\n    apply(branch2,r2,sig2);assert o2.attest(branch2);cp2=branch2.checkpoint\n                                  ~~~~~~~~~^^^^^^^^^\n  File \"/workspace/incoming-2026-10-18/runs/v084.r1/humble_seed_v0_8_4_candidate.py\", line 243, in wrapper\n    return method(self, *args, **kwargs)\n  File \"/workspace/incoming-2026-10-18/runs/v084.r1/humble_seed_v0_8_4_candidate.py\", line 1793, in attest\n    self.witness.check_successor(cp)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^\n  File \"/workspace/incoming-2026-10-18/runs/v084.r1/humble_seed_v0_8_4_candidate.py\", line 243, in wrapper\n    return method(self, *args, **kwargs)\n  File \"/workspace/incoming-2026-10-18/runs/v084.r1/humble_seed_v0_8_4_candidate.py\", line 1513, in check_successor\n    raise RollbackDetected(\n    ...<2 lines>...\n    )\nindependent_kernel.RollbackDetected: Non-successor checkpoint: organism presents sequence 1, expected 2\n"
+  },
+  "witness_write_failure": {
+    "status": "ERROR",
+    "traceback": "Traceback (most recent call last):\n  File \"/workspace/incoming-2026-10-18/runs/../set1/54332739/Humble_Seed_v083_Review/code/independent_probes.py\", line 147, in <module>\n    detail=fn(pathlib.Path(td));results[fn.__name__]={'status':'OBSERVATION_CONFIRMED','detail':detail}\n  File \"/workspace/incoming-2026-10-18/runs/../set1/54332739/Humble_Seed_v083_Review/code/independent_probes.py\", line 133, in witness_write_failure\n    fresh=reopen(o);f=loaded(s)\n                      ~~~~~~^^^\n  File \"/workspace/incoming-2026-10-18/runs/../set1/54332739/Humble_Seed_v083_Review/code/independent_probes.py\", line 29, in loaded\n    x=K.HumbleSeed(s.data_dir);x.load();return x\n                               ~~~~~~^^\n  File \"/workspace/incoming-2026-10-18/runs/v084.r1/humble_seed_v0_8_4_candidate.py\", line 907, in load\n    self.verify(expected_seal=data.get(\"state_seal\"))\n    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/incoming-2026-10-18/runs/v084.r1/humble_seed_v0_8_4_candidate.py\", line 987, in verify\n    self._verify_attestation()\n    ~~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/workspace/incoming-2026-10-18/runs/v084.r1/humble_seed_v0_8_4_candidate.py\", line 799, in _verify_attestation\n    raise IntegrityError(\"Category sequences do not match the attested checkpoint\")\nindependent_kernel.IntegrityError: Category sequences do not match the attested checkpoint\n"
+  }
+}

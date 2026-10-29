@@ -1,0 +1,38 @@
+{
+  "T0_layer_is_counter": {
+    "verdict": "PASS",
+    "observed": "{'CONF|2coord': 1.0, 'CONF|4coord': 1.0, 'NULL|2coord': 1.0, 'NULL|4coord': 1.0, 'PREF|2coord': 1.0, 'PREF|4coord': 1.0}"
+  },
+  "T1_learning": {
+    "verdict": "PASS",
+    "observed": "all readers 1.0"
+  },
+  "T2_fragmentation_cost": {
+    "verdict": "PASS",
+    "observed": "R_full 25.0 vs R_place 4.0 days (6.25x)"
+  },
+  "T3_joint_information": {
+    "verdict": "PASS",
+    "observed": "R_full 0.19 vs R_place 0.995"
+  },
+  "T4_erosion": {
+    "verdict": "PASS",
+    "observed": "R_full day-365 1.0"
+  },
+  "T5_scalar_no_better": {
+    "verdict": "PASS",
+    "observed": "R_scalar 0.935 vs R_place 0.995"
+  },
+  "T6_rollup": {
+    "verdict": "PASS",
+    "observed": "PREF median 4.0 vs 4.0; CONF d60 0.19 vs 0.995"
+  },
+  "T7_null_world": {
+    "verdict": "FAIL",
+    "observed": "{'2coord/R_place': 1.0, '2coord/R_scalar': 1.0, '2coord/R_full': 1.0, '2coord/R_roll': 1.0, '4coord/R_place': 1.0, '4coord/R_scalar': 1.0, '4coord/R_full': 0.0, '4coord/R_roll': 0.1}"
+  },
+  "T8_shuffle": {
+    "verdict": "FAIL",
+    "observed": "shuffled R_full 0.585 vs R_place 0.995"
+  }
+}

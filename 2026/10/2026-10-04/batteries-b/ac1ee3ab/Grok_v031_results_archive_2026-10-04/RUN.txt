@@ -1,0 +1,4 @@
+Run against the witnessed files. Preregistration SHA-256 5786c4575685c996a06838ed10384de12bcf1076c8a03722a05178f446b71d26.
+Receipt 1025cb60e445f45fc3bee51d2456ac1da1af26d3ba2127b3cd6084ac45b75ffb.
+Verdict: B1 false, B2 false, B3 true, B4 true, A1 true, A2 true, A3 true.
+Deepen minus fade restorations -8.24, CI entirely below 0. Resonate minus fade -15.24, CI entirely below 0.

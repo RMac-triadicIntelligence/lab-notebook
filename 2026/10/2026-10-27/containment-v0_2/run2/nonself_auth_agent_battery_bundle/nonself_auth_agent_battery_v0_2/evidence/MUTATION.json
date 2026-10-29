@@ -1,0 +1,69 @@
+{
+  "baseline_hardened_unauthorized": 0,
+  "mutants": [
+    {
+      "caught": true,
+      "flips": "A2_GATE_HOLDS",
+      "mutant": "require_receipt OFF",
+      "off_fails": true,
+      "on_holds": true
+    },
+    {
+      "caught": true,
+      "flips": "A5_NO_BYPASS",
+      "mutant": "boundary removed (EXPOSED)",
+      "off_fails": true,
+      "on_holds": true
+    },
+    {
+      "caught": true,
+      "flips": "A6_RECON_LOAD_BEARING",
+      "mutant": "reconciliation OFF",
+      "off_fails": true,
+      "on_holds": true
+    },
+    {
+      "caught": true,
+      "flips": "A7_STRICT_SIG",
+      "mutant": "strict_sig OFF",
+      "off_fails": true,
+      "on_holds": true
+    },
+    {
+      "caught": true,
+      "flips": "A8_EXPIRY",
+      "mutant": "check_expiry OFF",
+      "off_fails": true,
+      "on_holds": true
+    },
+    {
+      "caught": true,
+      "flips": "A10_BINDING",
+      "mutant": "check_binding OFF",
+      "off_fails": true,
+      "on_holds": true
+    },
+    {
+      "caught": true,
+      "flips": "A11_BUDGET",
+      "mutant": "check_budget OFF",
+      "off_fails": true,
+      "on_holds": true
+    },
+    {
+      "caught": true,
+      "flips": "A12_REVOCATION",
+      "mutant": "check_revocation OFF",
+      "off_fails": true,
+      "on_holds": true
+    },
+    {
+      "caught": true,
+      "flips": "A13_PERSIST_REPLAY",
+      "mutant": "check_nonce OFF",
+      "off_fails": true,
+      "on_holds": true
+    }
+  ],
+  "verdict": "PASS"
+}

@@ -1,0 +1,36 @@
+  PASS  P0_lockout_probe: {"v11": {"final_state": "HELD", "propose_day": null, "looks": 1, "checks": 87, "reopens": 0}, "v12": {"final_state": "PROPOSED", "propose_day": 90, "l
+  PASS  P1_genuine_main: 173
+  PASS  P2_genuine_high: 299
+  PASS  P3_positional_confounds: {"COMMUTE@32": 0, "DINNER@32": 0, "COMMUTE@128": 4, "DINNER@128": 2}
+  FAIL  P4_difficult_month: {"32": 28, "128": 78}
+  FAIL  P5_held_confounds_stay_held: {"COMMUTE@32": 0.05, "DINNER@32": 0.05351170568561873, "COMMUTE@128": 0.05704697986577181, "DINNER@128": 0.04}
+  PASS  P6_action: {"32": 0.8516159809183066, "128": 0.8835524798154555}
+  PASS  P7_null: {"32": 1, "128": 0}
+  PASS  P8_information_limit: {"32": 0.5806812939142282, "128": 1.0008343764488505}
+  PASS  P9_cost: {"looks": 1.3866666666666667, "v1_looks": 45.98722222222222, "evals": 156.20166666666668, "v1_evals": 2207.3866666666668}
+
+ proposals /300      v1.2   v1.1   v1
+  λ=32  GENUINE      173    160   120
+  λ=32  COMMUTE        0      4     0
+  λ=32  DINNER         0      2     0
+  λ=32  WINDOW        28     20    20
+  λ=32  COLOCATED    180    157   118
+  λ=32  NULL           1      1     0
+  λ=32  macro acc  0.8516 0.8478 0.8375
+  λ=128 GENUINE      299    153   295
+  λ=128 COMMUTE        4     10     0
+  λ=128 DINNER         2      5     0
+  λ=128 WINDOW        78     54   112
+  λ=128 COLOCATED    300    154   299
+  λ=128 NULL           0      0     0
+  λ=128 macro acc  0.8836 0.8302 0.8738
+  λ=8   GENUINE       16     13     0
+  λ=8   COMMUTE        0      1     0
+  λ=8   DINNER         2      2     0
+  λ=8   WINDOW         4      4     0
+  λ=8   COLOCATED     16     17     0
+  λ=8   NULL           0      0     0
+  λ=8   macro acc  0.8021 0.8008 0.8000
+
+mutation: {"M1_pressure_only": {"COMMUTE": {"held_first": 300, "reopened_share": 1.0, "proposals": 4}, "GENUINE": {"held_first": 299, "reopened_share": 1.0, "proposals": 228}, "WINDOW": {"held_first": 295, "reopened_share": 0.7593220338983051, "proposals": 51}}, "M2_old_evidence": {"COMMUTE": {"held_first": 300, "reopened_share": 0.05, "proposals": 1}, "GENUINE": {"held_first": 299, "reopened_share": 0.9297658862876255, "proposals": 202}, "WINDOW": {"held_first": 295, "reopened_share": 0.4440677966101695, "proposals": 43}}, "M1_caught_by_P5": true, "M3_polling_reads": 59.68333333333333, "M3_need_reads": 18.7, "M3_at_least_3x": true}
+receipt: e0a292d1d58aa9307c8816934453448713c9743c416d0e48634b5b0fe7467872

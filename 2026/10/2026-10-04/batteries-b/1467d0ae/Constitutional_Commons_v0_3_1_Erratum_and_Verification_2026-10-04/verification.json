@@ -1,0 +1,201 @@
+{
+ "inputs": {
+  "Constitutional_Commons_v0_3_1_2026-10-04.zip": "222ecd202b61157444fa8799e28c834f72dbdf43f81c07c23f549aa279a54713",
+  "GrokConstitutional_Commons_v0_3_1_RUN_2026-10-04.zip": "f92875d38faa4c4ea13b6a571fe1ae9606d638536d1d129ffdfb9c8e789d126a",
+  "ChatgptConstitutional_Commons_v031_Independent_Execution_2026-10-04.zip": "1766481b765c45b9f8c2c3199eb66e6565d4b389c58c80ea566a6350f34ff68e"
+ },
+ "checks": {
+  "1_sources_match_frozen": {
+   "perFile": {
+    "authority.cjs": {
+     "frozen": "529652b4cf796f5c9d2dfe33555ff0e8b25644018db7bc53afa1cdc973a4c1b2",
+     "claude": "529652b4cf796f5c9d2dfe33555ff0e8b25644018db7bc53afa1cdc973a4c1b2",
+     "grok": "529652b4cf796f5c9d2dfe33555ff0e8b25644018db7bc53afa1cdc973a4c1b2",
+     "chatgpt": "529652b4cf796f5c9d2dfe33555ff0e8b25644018db7bc53afa1cdc973a4c1b2",
+     "allMatchFrozen": true
+    },
+    "commons_kernel_v0_3_1.cjs": {
+     "frozen": "add66f2e5a2d8f26785366afdc27f8cdb84b728669edc1071e7e9bbfdac4c941",
+     "claude": "add66f2e5a2d8f26785366afdc27f8cdb84b728669edc1071e7e9bbfdac4c941",
+     "grok": "add66f2e5a2d8f26785366afdc27f8cdb84b728669edc1071e7e9bbfdac4c941",
+     "chatgpt": "add66f2e5a2d8f26785366afdc27f8cdb84b728669edc1071e7e9bbfdac4c941",
+     "allMatchFrozen": true
+    },
+    "run-commons-v0_3_1-battery.cjs": {
+     "frozen": "5cffde4a67ae21efc20fe52b1686ecb9f4d54f45f372f4d7d5cc3f796e1462ee",
+     "claude": "5cffde4a67ae21efc20fe52b1686ecb9f4d54f45f372f4d7d5cc3f796e1462ee",
+     "grok": "5cffde4a67ae21efc20fe52b1686ecb9f4d54f45f372f4d7d5cc3f796e1462ee",
+     "chatgpt": "5cffde4a67ae21efc20fe52b1686ecb9f4d54f45f372f4d7d5cc3f796e1462ee",
+     "allMatchFrozen": true
+    },
+    "preregistration_v0_3_1.json": {
+     "frozen": "5786c4575685c996a06838ed10384de12bcf1076c8a03722a05178f446b71d26",
+     "claude": "5786c4575685c996a06838ed10384de12bcf1076c8a03722a05178f446b71d26",
+     "grok": "5786c4575685c996a06838ed10384de12bcf1076c8a03722a05178f446b71d26",
+     "chatgpt": "5786c4575685c996a06838ed10384de12bcf1076c8a03722a05178f446b71d26",
+     "allMatchFrozen": true
+    }
+   },
+   "preregistrationIsWitnessHash": true,
+   "pass": true
+  },
+  "2_three_executions_agree": {
+   "receipts": {
+    "claude": "1025cb60e445f45fc3bee51d2456ac1da1af26d3ba2127b3cd6084ac45b75ffb",
+    "grok": "1025cb60e445f45fc3bee51d2456ac1da1af26d3ba2127b3cd6084ac45b75ffb",
+    "chatgpt": "1025cb60e445f45fc3bee51d2456ac1da1af26d3ba2127b3cd6084ac45b75ffb"
+   },
+   "csvSha256": {
+    "paired-runs.csv": {
+     "claude": "dcf346436fa1397676e68bf2f7eec487f9f5c105ca69f01cce3dc0b8f9685459",
+     "grok": "dcf346436fa1397676e68bf2f7eec487f9f5c105ca69f01cce3dc0b8f9685459",
+     "chatgpt": "dcf346436fa1397676e68bf2f7eec487f9f5c105ca69f01cce3dc0b8f9685459",
+     "identical": true
+    },
+    "long-horizon.csv": {
+     "claude": "2df50d0fe839fcb94f1bb51ec8036d85e71e0833e506397dd501abe3cfbf164e",
+     "grok": "2df50d0fe839fcb94f1bb51ec8036d85e71e0833e506397dd501abe3cfbf164e",
+     "chatgpt": "2df50d0fe839fcb94f1bb51ec8036d85e71e0833e506397dd501abe3cfbf164e",
+     "identical": true
+    }
+   },
+   "chatgptV03RegressionReceipt": "3450e400b353e38a7427fc1a53f1401ab49fb7a18914f1167e14189829cfbbfa",
+   "pass": true
+  },
+  "E1_B4_harness_gap": {
+   "preregistrationPromises": "FROZEN is bit-identical to FULL in 199/199 seeds. In every parable condition, planted and unplanted, and in the long horizon: story-decided conclusions = 0, wrong lock-in and false-correction rates <= e^-3 = 0.0498. 0 evidence-draw mismatches against FULL for shared keys.",
+   "runnerB4Expression": "B4:frozenIdentical===n&&zMismatch===0&&zChecked>0&&PARABLE_CONDS.every(k=>rateTable[k].storyDecided===0&&rateTable[k].wrongSettledRate<=BOUND&&rateTable[k].falseCorrectionRate<=BOUND)&&Object.values(lhSummary).every(x=>x.storyDecided===0),",
+   "runnerChecksLongHorizonRates": false,
+   "longHorizonParableRates": {
+    "FADE": {
+     "wrongSettledRate": 0.01601,
+     "falseCorrectionRate": 0.01539
+    },
+    "DEEPEN": {
+     "wrongSettledRate": 0.01374,
+     "falseCorrectionRate": 0.01278
+    },
+    "RESONATE": {
+     "wrongSettledRate": 0.0132,
+     "falseCorrectionRate": 0.0121
+    }
+   },
+   "bound": 0.049787068367863944,
+   "omittedCheckWouldPass": true,
+   "verdictChanges": false
+  },
+  "E3_more_careful_framing": {
+   "conditionMeansPerSeed": {
+    "FROZEN": {
+     "restoredTrue": 141.714,
+     "residualErrors": 148.658,
+     "falseCorrections": 2.372,
+     "wrongSettled": 4.08
+    },
+    "FADE": {
+     "restoredTrue": 131.246,
+     "residualErrors": 158.96,
+     "falseCorrections": 2.206,
+     "wrongSettled": 3.714
+    },
+    "DEEPEN": {
+     "restoredTrue": 123.01,
+     "residualErrors": 166.92,
+     "falseCorrections": 1.93,
+     "wrongSettled": 3.678
+    },
+    "RESONATE": {
+     "restoredTrue": 116.005,
+     "residualErrors": 173.834,
+     "falseCorrections": 1.839,
+     "wrongSettled": 3.482
+    }
+   },
+   "DEEPEN_minus_FADE": {
+    "restoredTrue": {
+     "mean": -8.2362,
+     "ci95": [
+      -9.5396,
+      -6.9327
+     ],
+     "seeds": 199
+    },
+    "falseCorrections": {
+     "mean": -0.2764,
+     "ci95": [
+      -0.4473,
+      -0.1054
+     ],
+     "seeds": 199
+    },
+    "wrongSettled": {
+     "mean": -0.0352,
+     "ci95": [
+      -0.2333,
+      0.163
+     ],
+     "seeds": 199
+    }
+   },
+   "RESONATE_minus_FADE": {
+    "restoredTrue": {
+     "mean": -15.2412,
+     "ci95": [
+      -16.453,
+      -14.0294
+     ],
+     "seeds": 199
+    },
+    "falseCorrections": {
+     "mean": -0.3668,
+     "ci95": [
+      -0.5309,
+      -0.2027
+     ],
+     "seeds": 199
+    },
+    "wrongSettled": {
+     "mean": -0.2312,
+     "ci95": [
+      -0.4338,
+      -0.0285
+     ],
+     "seeds": 199
+    }
+   },
+   "residualErrors_DEEPEN_minus_FADE_perSeedMean": 7.96,
+   "residualErrors_RESONATE_minus_FADE_perSeedMean": 14.874
+  },
+  "B1_B2_recomputed_match_battery": true,
+  "E2_mechanism_overclaim": {
+   "claimInFindings": "1. **In this model, a story is most useful at the threshold.** Approach cost is the binding constraint. A story that means little until you have walked far does nothing at the door, where the hard step is. Fade puts full meaning at the threshold and withdraws later; deepening and resonance hold it back at the threshold. That is the whole failure: 184\u2013223 fewer encounters.",
+   "whatTheDesignVaries": "each condition replaces the entire stage curve (value at k=0, slope, and behavior after k=D) at once; no condition varies the threshold value alone",
+   "encounters_DEEPEN_minus_FADE": {
+    "mean": -183.7085,
+    "ci95": [
+     -192.179,
+     -175.2381
+    ],
+    "condMean": 2635.93,
+    "baseMean": 2819.638
+   },
+   "encounters_RESONATE_minus_FADE": {
+    "mean": -222.9698,
+    "ci95": [
+     -231.4742,
+     -214.4655
+    ],
+    "condMean": 2596.668,
+    "baseMean": 2819.638
+   },
+   "status": "encounter loss is observed; that it is THE cause is not isolated by this design"
+  },
+  "E4_witness_claim": {
+   "claimInFindings": "- **Preregistration:** SHA-256 `5786c4575685c996a06838ed10384de12bcf1076c8a03722a05178f446b71d26`, posted publicly by Rusty before the run as the external witness of when it was frozen. Sources were verified unchanged against `FROZEN_BEFORE_RUN.sha256` immediately before the run.",
+   "evidenceOfPostInAnyPackage": false,
+   "chatgptReviewSays": "The uploaded PRE-RUN packet was inspected before execution. Its preregistration SHA-256 was independently verified and displayed in the conversation before the user instructed \u201cGo.\u201d All four source/preregistration hashes match FROZEN_BEFORE_RUN.sha256 before and after execution. This establishes the files used in this independent run. No external public post was performed or independently verified here; author statements about earlier smoke checks or original freezing chronology are not established by source hashes alone.",
+   "status": "unverified: no link to a public post exists in any package; the line asserts something the author did not check"
+  }
+ },
+ "allReproductionChecksPass": true
+}

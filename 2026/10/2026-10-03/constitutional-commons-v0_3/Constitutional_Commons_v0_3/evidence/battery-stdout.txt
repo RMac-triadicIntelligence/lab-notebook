@@ -1,0 +1,14 @@
+seed 25 13s
+seed 50 25s
+seed 75 37s
+seed 100 50s
+seed 125 62s
+seed 150 73s
+seed 175 85s
+seed 200 98s
+seed 200 98s
+long horizon FULL 115s
+long horizon CLAIM 142s
+long horizon PARABLE 164s
+{"Q1":true,"Q2":false,"Q3":true,"Q4":true,"Q5":true,"Q6":true,"Q7":true,"Q8":true} receipt 3450e400b353e38a7427fc1a53f1401ab49fb7a18914f1167e14189829cfbbfa
+exit 0

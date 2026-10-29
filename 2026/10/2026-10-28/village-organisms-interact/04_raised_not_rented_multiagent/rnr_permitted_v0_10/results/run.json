@@ -1,0 +1,28 @@
+{
+ "battery": "rnr-permitted-culture/0.10",
+ "started_utc": "2026-09-20T16:58:24Z",
+ "seeds": [
+  10000,
+  10023
+ ],
+ "rules": [
+  "walk",
+  "cross_only"
+ ],
+ "auth": [
+  "granted",
+  "refused"
+ ],
+ "grounds": [
+  "lived",
+  "fresh",
+  "shifted"
+ ],
+ "python": "3.12.3",
+ "numpy": "2.4.4",
+ "source_sha256": {
+  "permitted.py": "363c99bd0b0f0655ac593a6d83cb7fedd040e2d13869ef44c9913fb7c717172d",
+  "commons_v0_9.py": "eed0d5bffe2fb4608e1a17689f5849366d3f6d14ef18ec1cf7a459dc51df63e8",
+  "PROTOCOL.md": "86359d4f7bf00f5df01167edb6eb1209ddedbdf5a18d1ca6488d5b81f65c9b26"
+ }
+}

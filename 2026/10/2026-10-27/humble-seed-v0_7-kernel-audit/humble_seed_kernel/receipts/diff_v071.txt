@@ -1,0 +1,3 @@
+module humble_seed_v0_7_1.py  variant v071  scenarios 2000  seed 20261027
+operations 25142  verdict coverage {'enrollmentParent': 971, 'enrollmentSequence': 6178, 'fork': 403, 'forkedParent': 702, 'identityFork': 2294, 'nonSuccessor': 4945, 'ok': 4136, 'rollback': 441, 'unenrolledOrganism': 4000, 'unwitnessedAdvance': 1072}
+Lean not installed: Python side written; run the Lean side later.

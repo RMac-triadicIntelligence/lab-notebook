@@ -1,0 +1,164 @@
+Core SHA256: 23299fdc63361e632b0f30cc686b09eb3e2a3bb70daf66f51b7378fb5a26baa6
+judge    BREACH   rollback_to_empty_after_three_commits: expected VERIFIED=False, got (True, [])
+judge    BREACH   truncate_to_valid_prefix_after_three_commits: expected VERIFIED=False, got (True, [])
+judge    BREACH   expired_signed_backdated_head: expected VERIFIED=False, got (True, [])
+judge    BREACH   tamper_records_sequence: expected VERIFIED=False, got (True, [])
+judge    BREACH   tamper_records_event: expected VERIFIED=False, got (True, [])
+judge    BREACH   tamper_records_previous_record_hash: expected VERIFIED=False, got (True, [])
+judge    BREACH   missing_records_sequence: expected VERIFIED=False, got (True, [])
+judge    BREACH   missing_records_event: expected VERIFIED=False, got (True, [])
+judge    ERROR    missing_records_trace_digest: Traceback (most recent call last):
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 132, in check
+    detail = fn()
+             ^^^^
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 383, in run
+    verdict=judge.verify_ledger(head,context["public_key_hex"],context["authority_id"],context["organism_id"],INIT)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py", line 50, in verify_ledger
+    (all(pf[k] == rec[k] for k in ("trace_digest", "proposal_digest", "predecessor_digest", "resulting_digest")),
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'trace_digest'
+
+judge    ERROR    missing_records_proposal_digest: Traceback (most recent call last):
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 132, in check
+    detail = fn()
+             ^^^^
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 383, in run
+    verdict=judge.verify_ledger(head,context["public_key_hex"],context["authority_id"],context["organism_id"],INIT)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py", line 50, in verify_ledger
+    (all(pf[k] == rec[k] for k in ("trace_digest", "proposal_digest", "predecessor_digest", "resulting_digest")),
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'proposal_digest'
+
+judge    ERROR    missing_records_predecessor_digest: Traceback (most recent call last):
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 132, in check
+    detail = fn()
+             ^^^^
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 383, in run
+    verdict=judge.verify_ledger(head,context["public_key_hex"],context["authority_id"],context["organism_id"],INIT)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py", line 50, in verify_ledger
+    (all(pf[k] == rec[k] for k in ("trace_digest", "proposal_digest", "predecessor_digest", "resulting_digest")),
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'predecessor_digest'
+
+judge    ERROR    missing_records_resulting_digest: Traceback (most recent call last):
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 132, in check
+    detail = fn()
+             ^^^^
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 383, in run
+    verdict=judge.verify_ledger(head,context["public_key_hex"],context["authority_id"],context["organism_id"],INIT)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py", line 50, in verify_ledger
+    (all(pf[k] == rec[k] for k in ("trace_digest", "proposal_digest", "predecessor_digest", "resulting_digest")),
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: 'resulting_digest'
+
+judge    ERROR    missing_records_authorization_id: Traceback (most recent call last):
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 132, in check
+    detail = fn()
+             ^^^^
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 383, in run
+    verdict=judge.verify_ledger(head,context["public_key_hex"],context["authority_id"],context["organism_id"],INIT)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py", line 49, in verify_ledger
+    (pf["determination_id"] == rec["authorization_id"], "record cites a different authorization"),
+                               ~~~^^^^^^^^^^^^^^^^^^^^
+KeyError: 'authorization_id'
+
+judge    ERROR    missing_records_authority_id: Traceback (most recent call last):
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 132, in check
+    detail = fn()
+             ^^^^
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 383, in run
+    verdict=judge.verify_ledger(head,context["public_key_hex"],context["authority_id"],context["organism_id"],INIT)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py", line 47, in verify_ledger
+    (pf["authority_id"] == authority_id == rec["authority_id"], "wrong authority"),
+                                           ~~~^^^^^^^^^^^^^^^^
+KeyError: 'authority_id'
+
+judge    BREACH   missing_records_reason: expected VERIFIED=False, got (True, [])
+judge    ERROR    missing_records_timestamp: Traceback (most recent call last):
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 132, in check
+    detail = fn()
+             ^^^^
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 383, in run
+    verdict=judge.verify_ledger(head,context["public_key_hex"],context["authority_id"],context["organism_id"],INIT)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py", line 53, in verify_ledger
+    (pf["issued_at"] - 30 <= rec["timestamp"] <= pf["expires_at"], "committed outside the authorization window"),
+                             ~~~^^^^^^^^^^^^^
+KeyError: 'timestamp'
+
+judge    BREACH   missing_records_previous_record_hash: expected VERIFIED=False, got (True, [])
+judge    BREACH   missing_records_record_hash: expected VERIFIED=False, got (True, [])
+judge    BREACH   missing_head_state: expected VERIFIED=False, got (True, [])
+judge    BREACH   missing_head_state_digest: expected VERIFIED=False, got (True, [])
+judge    ERROR    wrong_type_records_string: Traceback (most recent call last):
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 132, in check
+    detail = fn()
+             ^^^^
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 383, in run
+    verdict=judge.verify_ledger(head,context["public_key_hex"],context["authority_id"],context["organism_id"],INIT)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py", line 35, in verify_ledger
+    tag = "record %d" % rec.get("sequence", i + 1)
+                        ^^^^^^^
+AttributeError: 'str' object has no attribute 'get'
+
+judge    ERROR    wrong_type_records_integer: Traceback (most recent call last):
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 132, in check
+    detail = fn()
+             ^^^^
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 383, in run
+    verdict=judge.verify_ledger(head,context["public_key_hex"],context["authority_id"],context["organism_id"],INIT)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py", line 31, in verify_ledger
+    if len(proofs) != len(records):
+                      ^^^^^^^^^^^^
+TypeError: object of type 'int' has no len()
+
+judge    ERROR    wrong_type_proofs_integer: Traceback (most recent call last):
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 132, in check
+    detail = fn()
+             ^^^^
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 383, in run
+    verdict=judge.verify_ledger(head,context["public_key_hex"],context["authority_id"],context["organism_id"],INIT)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py", line 31, in verify_ledger
+    if len(proofs) != len(records):
+       ^^^^^^^^^^^
+TypeError: object of type 'int' has no len()
+
+judge    BREACH   boolean_sequence: expected VERIFIED=False, got (True, [])
+judge    BREACH   valid_predecessor_signed_reused_nonce: expected VERIFIED=False, got (True, [])
+judge    BREACH   valid_predecessor_signed_reused_determination: expected VERIFIED=False, got (True, [])
+judge    BREACH   sever_previous_hash: expected VERIFIED=False, got (True, [])
+judge    BREACH   record_timestamp_float: expected VERIFIED=False, got (True, [])
+judge    ERROR    record_timestamp_str: Traceback (most recent call last):
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 132, in check
+    detail = fn()
+             ^^^^
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 383, in run
+    verdict=judge.verify_ledger(head,context["public_key_hex"],context["authority_id"],context["organism_id"],INIT)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py", line 53, in verify_ledger
+    (pf["issued_at"] - 30 <= rec["timestamp"] <= pf["expires_at"], "committed outside the authorization window"),
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<=' not supported between instances of 'int' and 'str'
+
+judge    ERROR    record_timestamp_NoneType: Traceback (most recent call last):
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 132, in check
+    detail = fn()
+             ^^^^
+  File "/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py", line 383, in run
+    verdict=judge.verify_ledger(head,context["public_key_hex"],context["authority_id"],context["organism_id"],INIT)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py", line 53, in verify_ledger
+    (pf["issued_at"] - 30 <= rec["timestamp"] <= pf["expires_at"], "committed outside the authorization window"),
+     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: '<=' not supported between instances of 'int' and 'NoneType'
+
+RESULTS {"lanes": {"engine": {"PASS": 73}, "judge": {"BREACH": 18, "ERROR": 12, "PASS": 74}, "notary": {"PASS": 68}, "wire": {"PASS": 76}}, "totals": {"BREACH": 18, "ERROR": 12, "PASS": 291}}

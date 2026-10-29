@@ -1,0 +1,30 @@
+{
+  "S1_replication": {
+    "verdict": "PASS",
+    "observed": "ON 0.99, OFF 0.06"
+  },
+  "S2_plumbing": {
+    "verdict": "PASS",
+    "observed": "GATED == OFF before window at all noise levels"
+  },
+  "S3_grace_without_push": {
+    "verdict": "FAIL",
+    "observed": "0.106"
+  },
+  "S4_dwelling_needed": {
+    "verdict": "PASS",
+    "observed": "0.000"
+  },
+  "S5_dose": {
+    "verdict": "PASS",
+    "observed": "W5/10/20/40: 0.032, 0.106, 0.340, 0.606"
+  },
+  "S6_retention": {
+    "verdict": "PASS",
+    "observed": "1.0"
+  },
+  "S7_noise_needed": {
+    "verdict": "PASS",
+    "observed": "0.0"
+  }
+}

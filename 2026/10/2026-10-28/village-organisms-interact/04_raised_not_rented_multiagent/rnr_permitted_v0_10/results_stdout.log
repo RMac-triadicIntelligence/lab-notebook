@@ -1,0 +1,94 @@
+{
+ "n_seeds": 24,
+ "hypotheses": {
+  "C0_no_crossing_without_grace": {
+   "verdict": "HOLDS",
+   "gate_closed_runs": 2
+  },
+  "C1_unpermitted_traffic_builds_culture": {
+   "verdict": "SUPPORTED",
+   "walk_refused": {
+    "lived": 5.083,
+    "fresh": 2.417,
+    "shifted": 3.625,
+    "founder_wear": 519.2
+   },
+   "cross_only_refused": {
+    "lived": 5.208,
+    "fresh": 5.208,
+    "shifted": 5.208,
+    "founder_wear": 0.0
+   }
+  },
+  "C2_permitted_only_culture_transmits": {
+   "verdict": "SUPPORTED",
+   "walk_granted": {
+    "lived": 5.083,
+    "fresh": 2.417,
+    "shifted": 2.792,
+    "founder_wear": 667.3
+   },
+   "cross_only_granted": {
+    "lived": 6.042,
+    "fresh": 5.208,
+    "shifted": 5.208,
+    "founder_wear": 40.4
+   }
+  },
+  "C3_trap_is_real": {
+   "verdict": "MIXED",
+   "detail": {
+    "walk": {
+     "lived": 4.125,
+     "fresh": 3.083,
+     "shifted": 0.625,
+     "lived_in_band_crossings": 0.0,
+     "lived_crossed": 4.125,
+     "fresh_crossed": 4.375
+    },
+    "cross_only": {
+     "lived": 4.958,
+     "fresh": 5.125,
+     "shifted": 5.125,
+     "lived_in_band_crossings": 5.208,
+     "lived_crossed": 5.625,
+     "fresh_crossed": 5.125
+    }
+   }
+  },
+  "C4_perception_rescues": {
+   "verdict": "SUPPORTED",
+   "detail": {
+    "walk": {
+     "blight_blind": 4.125,
+     "blight_see": 0.125,
+     "crossed_see": 0.125,
+     "fresh_crossed_see": 0.0,
+     "declines": 4.458,
+     "declines_in_band": 0.167
+    },
+    "cross_only": {
+     "blight_blind": 4.958,
+     "blight_see": 0.0,
+     "crossed_see": 0.0,
+     "fresh_crossed_see": 0.0,
+     "declines": 5.333,
+     "declines_in_band": 5.333
+    }
+   }
+  },
+  "C5_correction_inherited": {
+   "verdict": "FALSIFIED",
+   "detail": {
+    "walk": {
+     "safe_corrected": 2.292,
+     "safe_stale": 4.125
+    },
+    "cross_only": {
+     "safe_corrected": 0.333,
+     "safe_stale": 0.542
+    }
+   }
+  }
+ }
+}

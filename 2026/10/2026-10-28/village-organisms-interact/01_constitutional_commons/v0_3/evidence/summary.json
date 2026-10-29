@@ -1,0 +1,918 @@
+{
+ "kernel": "Constitutional Commons v0.3 parable ground",
+ "sources": {
+  "authority.cjs": "529652b4cf796f5c9d2dfe33555ff0e8b25644018db7bc53afa1cdc973a4c1b2",
+  "commons_kernel_v0_3.cjs": "5be00b8977a046e5277c682617073e4499f78f839a994851886e23ea7ba3ceb5",
+  "run-commons-v0_3-battery.cjs": "ebc03029681400514b8cd9b44a7538ba91239f703b38bc89e10997c2b8552349",
+  "preregistration_v0_3.json": "40c38d80cd57c2206c015f4e99b62197540a73a616435567ae16dc52904014ef"
+ },
+ "authorityKeyId": "d6aafae03c4188d6",
+ "seeds": 199,
+ "generationsPerRun": 12,
+ "conditions": 12,
+ "longHorizon": {
+  "seeds": 30,
+  "generations": 200,
+  "modes": [
+   "FULL",
+   "CLAIM",
+   "PARABLE"
+  ]
+ },
+ "generationEpisodes": 46656,
+ "runtimeSeconds": 163.9,
+ "verdict": {
+  "Q1": true,
+  "Q2": false,
+  "Q3": true,
+  "Q4": true,
+  "Q5": true,
+  "Q6": true,
+  "Q7": true,
+  "Q8": true
+ },
+ "statistics": {
+  "Q1_frozenLensBlindParableIsV02": {
+   "note": "PARABLE_FROZEN reads own lineage; lens factors are exactly 1 for own lineage, so frozen perspective should reproduce v0.2 FULL bit-for-bit",
+   "seedsBehaviorIdentical": 199,
+   "of": 199
+  },
+  "Q2_cascadeUnderAnswers": {
+   "claimMinusFull_wrongSettled": {
+    "mean": -1.8693,
+    "ci95": [
+     -2.125,
+     -1.6136
+    ],
+    "condMean": 2.211,
+    "baseMean": 4.08
+   },
+   "claimZCMinusZC_wrongSettled": {
+    "mean": -2.8794,
+    "ci95": [
+     -3.1858,
+     -2.573
+    ],
+    "condMean": 2.452,
+    "baseMean": 5.332
+   },
+   "claimMinusFull_restored": {
+    "mean": 68.8643,
+    "ci95": [
+     66.6406,
+     71.0881
+    ],
+    "condMean": 210.578,
+    "baseMean": 141.714
+   },
+   "claimMinusFull_falseCorrections": {
+    "mean": -0.3869,
+    "ci95": [
+     -0.62,
+     -0.1539
+    ],
+    "condMean": 1.985,
+    "baseMean": 2.372
+   },
+   "parableMinusFull_wrongSettled": {
+    "mean": -0.3668,
+    "ci95": [
+     -0.5463,
+     -0.1874
+    ],
+    "condMean": 3.714,
+    "baseMean": 4.08
+   },
+   "parableZCMinusZC_wrongSettled": {
+    "mean": -0.1508,
+    "ci95": [
+     -0.338,
+     0.0365
+    ],
+    "condMean": 5.181,
+    "baseMean": 5.332
+   },
+   "claimStoryDecided": 46423,
+   "claimZCStoryDecided": 58860,
+   "lhClaimFalseFirst": {
+    "sampledWrong": 3144,
+    "wrongSettled": 383,
+    "wrongSettledRate": 0.12182,
+    "sampledRight": 6533,
+    "falseCorrections": 724,
+    "falseCorrectionRate": 0.11082
+   }
+  },
+  "Q3_noCascadeUnderParables": {
+   "rates": {
+    "FULL": {
+     "falseCorrectionRate": 0.01237,
+     "wrongSettledRate": 0.01417,
+     "falseCorrections": 472,
+     "correctSampled": 38152,
+     "wrongSettled": 812,
+     "wrongSampled": 57297,
+     "storyDecided": 0
+    },
+    "NO_GROUND": {
+     "falseCorrectionRate": 0.00576,
+     "wrongSettledRate": 0.00768,
+     "falseCorrections": 220,
+     "correctSampled": 38208,
+     "wrongSettled": 440,
+     "wrongSampled": 57312,
+     "storyDecided": 0
+    },
+    "ZERO_COST": {
+     "falseCorrectionRate": 0.01838,
+     "wrongSettledRate": 0.01851,
+     "falseCorrections": 702,
+     "correctSampled": 38185,
+     "wrongSettled": 1061,
+     "wrongSampled": 57308,
+     "storyDecided": 0
+    },
+    "CLAIM": {
+     "falseCorrectionRate": 0.01034,
+     "wrongSettledRate": 0.00768,
+     "falseCorrections": 395,
+     "correctSampled": 38187,
+     "wrongSettled": 440,
+     "wrongSampled": 57308,
+     "storyDecided": 46423
+    },
+    "CLAIM_ZERO_COST": {
+     "falseCorrectionRate": 0.01256,
+     "wrongSettledRate": 0.00852,
+     "falseCorrections": 480,
+     "correctSampled": 38206,
+     "wrongSettled": 488,
+     "wrongSampled": 57309,
+     "storyDecided": 58860
+    },
+    "PARABLE": {
+     "falseCorrectionRate": 0.01149,
+     "wrongSettledRate": 0.01289,
+     "falseCorrections": 439,
+     "correctSampled": 38198,
+     "wrongSettled": 739,
+     "wrongSampled": 57311,
+     "storyDecided": 0
+    },
+    "PARABLE_FROZEN": {
+     "falseCorrectionRate": 0.01237,
+     "wrongSettledRate": 0.01417,
+     "falseCorrections": 472,
+     "correctSampled": 38152,
+     "wrongSettled": 812,
+     "wrongSampled": 57297,
+     "storyDecided": 0
+    },
+    "PARABLE_CROSS": {
+     "falseCorrectionRate": 0.0094,
+     "wrongSettledRate": 0.01089,
+     "falseCorrections": 359,
+     "correctSampled": 38206,
+     "wrongSettled": 624,
+     "wrongSampled": 57311,
+     "storyDecided": 0
+    },
+    "PARABLE_UNION": {
+     "falseCorrectionRate": 0.01202,
+     "wrongSettledRate": 0.01382,
+     "falseCorrections": 459,
+     "correctSampled": 38201,
+     "wrongSettled": 792,
+     "wrongSampled": 57310,
+     "storyDecided": 0
+    },
+    "PARABLE_LENS_BLIND": {
+     "falseCorrectionRate": 0.01149,
+     "wrongSettledRate": 0.01289,
+     "falseCorrections": 439,
+     "correctSampled": 38198,
+     "wrongSettled": 739,
+     "wrongSampled": 57311,
+     "storyDecided": 0
+    },
+    "PARABLE_LENS_BLIND_CROSS": {
+     "falseCorrectionRate": 0.01191,
+     "wrongSettledRate": 0.01354,
+     "falseCorrections": 455,
+     "correctSampled": 38202,
+     "wrongSettled": 776,
+     "wrongSampled": 57311,
+     "storyDecided": 0
+    },
+    "PARABLE_ZERO_COST": {
+     "falseCorrectionRate": 0.01861,
+     "wrongSettledRate": 0.01799,
+     "falseCorrections": 711,
+     "correctSampled": 38208,
+     "wrongSettled": 1031,
+     "wrongSampled": 57312,
+     "storyDecided": 0
+    }
+   },
+   "longHorizonRates": {
+    "FULL": {
+     "falseCorrectionRate": 0.01576,
+     "wrongSettledRate": 0.01677,
+     "falseCorrections": 1512,
+     "correctSampled": 95955,
+     "wrongSettled": 2415,
+     "wrongSampled": 143995,
+     "storyDecided": 0
+    },
+    "CLAIM": {
+     "falseCorrectionRate": 0.01151,
+     "wrongSettledRate": 0.00665,
+     "falseCorrections": 1105,
+     "correctSampled": 95991,
+     "wrongSettled": 958,
+     "wrongSampled": 143999,
+     "storyDecided": 183470
+    },
+    "PARABLE": {
+     "falseCorrectionRate": 0.01539,
+     "wrongSettledRate": 0.01601,
+     "falseCorrections": 1477,
+     "correctSampled": 95996,
+     "wrongSettled": 2306,
+     "wrongSampled": 143999,
+     "storyDecided": 0
+    }
+   },
+   "longHorizonByFirstStory": {
+    "FULL": {
+     "falseFirst": {
+      "sampledWrong": 2329,
+      "wrongSettled": 27,
+      "wrongSettledRate": 0.01159,
+      "sampledRight": 5119,
+      "falseCorrections": 72,
+      "falseCorrectionRate": 0.01407
+     },
+     "trueFirst": {
+      "sampledWrong": 136617,
+      "wrongSettled": 2353,
+      "wrongSettledRate": 0.01722,
+      "sampledRight": 83851,
+      "falseCorrections": 1388,
+      "falseCorrectionRate": 0.01655
+     }
+    },
+    "CLAIM": {
+     "falseFirst": {
+      "sampledWrong": 3144,
+      "wrongSettled": 383,
+      "wrongSettledRate": 0.12182,
+      "sampledRight": 6533,
+      "falseCorrections": 724,
+      "falseCorrectionRate": 0.11082
+     },
+     "trueFirst": {
+      "sampledWrong": 137865,
+      "wrongSettled": 542,
+      "wrongSettledRate": 0.00393,
+      "sampledRight": 85836,
+      "falseCorrections": 318,
+      "falseCorrectionRate": 0.0037
+     }
+    },
+    "PARABLE": {
+     "falseFirst": {
+      "sampledWrong": 2350,
+      "wrongSettled": 24,
+      "wrongSettledRate": 0.01021,
+      "sampledRight": 5485,
+      "falseCorrections": 86,
+      "falseCorrectionRate": 0.01568
+     },
+     "trueFirst": {
+      "sampledWrong": 136739,
+      "wrongSettled": 2252,
+      "wrongSettledRate": 0.01647,
+      "sampledRight": 83872,
+      "falseCorrections": 1336,
+      "falseCorrectionRate": 0.01593
+     }
+    }
+   },
+   "harmFalseMinusTrueFirst": {
+    "FULL": {
+     "wrongSettled": -0.00563,
+     "falseCorrection": -0.00249
+    },
+    "CLAIM": {
+     "wrongSettled": 0.11789,
+     "falseCorrection": 0.10712
+    },
+    "PARABLE": {
+     "wrongSettled": -0.00626,
+     "falseCorrection": -0.00025
+    }
+   },
+   "differenceInDifferencesVsFULL": {
+    "PARABLE_ws": {
+     "point": -0.00063,
+     "ci95": [
+      -0.0057,
+      0.00477
+     ],
+     "resamples": 2000,
+     "skipped": 0
+    },
+    "CLAIM_ws": {
+     "point": 0.12352,
+     "ci95": [
+      0.11178,
+      0.1333
+     ],
+     "resamples": 2000,
+     "skipped": 0
+    },
+    "PARABLE_fc": {
+     "point": 0.00224,
+     "ci95": [
+      -0.00046,
+      0.00529
+     ],
+     "resamples": 2000,
+     "skipped": 0
+    },
+    "CLAIM_fc": {
+     "point": 0.10961,
+     "ci95": [
+      0.10203,
+      0.11844
+     ],
+     "resamples": 2000,
+     "skipped": 0
+    }
+   },
+   "endState": {
+    "FULL": {
+     "gateEntries": 957,
+     "falseFirstEntries": 49,
+     "meanFirstShareAtFalseFirstGates": 1,
+     "meanStoriesAtFalseFirstGates": 26.92,
+     "falseFirstStillGoverningRecord": 49
+    },
+    "CLAIM": {
+     "gateEntries": 960,
+     "falseFirstEntries": 59,
+     "meanFirstShareAtFalseFirstGates": 1,
+     "meanStoriesAtFalseFirstGates": 39.68,
+     "falseFirstStillGoverningRecord": 59
+    },
+    "PARABLE": {
+     "gateEntries": 957,
+     "falseFirstEntries": 52,
+     "meanFirstShareAtFalseFirstGates": 0.06513,
+     "meanStoriesAtFalseFirstGates": 23.02,
+     "falseFirstStillGoverningRecord": 0
+    }
+   }
+  },
+  "Q4_parablesStillTeach": {
+   "parableBenefit": {
+    "mean": 56.2663,
+    "ci95": [
+     54.2773,
+     58.2554
+    ]
+   },
+   "fullBenefit": {
+    "mean": 66.5276,
+    "ci95": [
+     64.5579,
+     68.4974
+    ]
+   },
+   "retention": 0.8458,
+   "parableMinusFULL": {
+    "mean": -10.2613,
+    "ci95": [
+     -11.2837,
+     -9.2389
+    ],
+    "condMean": 124.688,
+    "baseMean": 134.95
+   }
+  },
+  "Q5_lineageThroughLens": {
+   "crossMinusOwn": {
+    "mean": -24.603,
+    "ci95": [
+     -26.0326,
+     -23.1734
+    ],
+    "condMean": 100.085,
+    "baseMean": 124.688
+   },
+   "lensBlindCrossMinusOwn": {
+    "mean": 1.0302,
+    "ci95": [
+     -0.3011,
+     2.3614
+    ],
+    "condMean": 125.719,
+    "baseMean": 124.688
+   },
+   "unionMinusOwn": {
+    "mean": 3.9548,
+    "ci95": [
+     2.9787,
+     4.9309
+    ],
+    "condMean": 128.643,
+    "baseMean": 124.688
+   },
+   "crossMinusNoGround": {
+    "mean": 31.6633,
+    "ci95": [
+     30.1262,
+     33.2005
+    ],
+    "condMean": 100.085,
+    "baseMean": 68.422
+   }
+  },
+  "Q6_perspectiveLoadBearing": {
+   "liveMinusFrozen_restored": {
+    "mean": -10.4673,
+    "ci95": [
+     -11.5017,
+     -9.433
+    ],
+    "condMean": 131.246,
+    "baseMean": 141.714
+   },
+   "liveMinusFrozen_encounters": {
+    "mean": -54.8342,
+    "ci95": [
+     -61.6279,
+     -48.0404
+    ],
+    "condMean": 2819.638,
+    "baseMean": 2874.472
+   },
+   "liveMinusFrozen_falseCorrections": {
+    "mean": -0.1658,
+    "ci95": [
+     -0.2974,
+     -0.0343
+    ],
+    "condMean": 2.206,
+    "baseMean": 2.372
+   }
+  },
+  "Q7_storyFixedMeaningMoves": {
+   "parableProbes": [
+    {
+     "probe": "parable carrying an answer field",
+     "refused": true,
+     "reason": "parable schema: a parable carries no answer, belief, direction or recipient"
+    },
+    {
+     "probe": "parable carrying a belief field",
+     "refused": true,
+     "reason": "parable schema: a parable carries no answer, belief, direction or recipient"
+    },
+    {
+     "probe": "parable carrying a destination field",
+     "refused": true,
+     "reason": "parable schema: a parable carries no answer, belief, direction or recipient"
+    },
+    {
+     "probe": "parable carrying a recipient field",
+     "refused": true,
+     "reason": "parable schema: a parable carries no answer, belief, direction or recipient"
+    },
+    {
+     "probe": "parable missing its dwell",
+     "refused": true,
+     "reason": "parable schema: a parable carries no answer, belief, direction or recipient"
+    },
+    {
+     "probe": "parable with dwell 0 (no walk)",
+     "refused": true,
+     "reason": "parable: field types"
+    },
+    {
+     "probe": "in-place edit of a told story",
+     "refused": true,
+     "reason": "Cannot assign to read only property 'dwell' of object '#<Object>'"
+    },
+    {
+     "probe": "story replaced by an altered copy",
+     "refused": true,
+     "reason": "parable contract: history chain (a story was altered, removed or reordered)"
+    },
+    {
+     "probe": "story removed",
+     "refused": true,
+     "reason": "parable contract: history chain (a story was altered, removed or reordered)"
+    },
+    {
+     "probe": "stories reordered",
+     "refused": true,
+     "reason": "parable contract: history chain (a story was altered, removed or reordered)"
+    },
+    {
+     "probe": "read index inflated without a story",
+     "refused": true,
+     "reason": "parable contract: index"
+    },
+    {
+     "probe": "observer truth labels inverted every generation: behavior unchanged",
+     "refused": true
+    }
+   ]
+  },
+  "Q8_truthAndAuthority": {
+   "zKeysCompared": 2868441,
+   "zMismatches": 0,
+   "graceProbes": {
+    "count": [
+     {
+      "probe": "forged by another key",
+      "refused": true,
+      "reason": "signature"
+     },
+     {
+      "probe": "tampered lineage after signing",
+      "refused": true,
+      "reason": "signature"
+     },
+     {
+      "probe": "tampered generation after signing",
+      "refused": true,
+      "reason": "signature"
+     },
+     {
+      "probe": "destination-bearing token, validly signed",
+      "refused": true,
+      "reason": "schema: grace carries no destination, recipient or answer"
+     },
+     {
+      "probe": "recipient-bearing token, validly signed",
+      "refused": true,
+      "reason": "schema: grace carries no destination, recipient or answer"
+     },
+     {
+      "probe": "wrong generation scope",
+      "refused": true,
+      "reason": "scope: generation"
+     },
+     {
+      "probe": "replay same token same generation",
+      "refused": true,
+      "reason": "replay"
+     },
+     {
+      "probe": "replay previous-generation token",
+      "refused": true,
+      "reason": "scope: generation"
+     },
+     {
+      "probe": "expired token",
+      "refused": true,
+      "reason": "expired"
+     },
+     {
+      "probe": "kernel self-sign with held key material",
+      "refused": true,
+      "reason": "Invalid key object type public, expected private."
+     },
+     {
+      "probe": "conductor attempts to sign",
+      "refused": true,
+      "reason": "conductor seat holds no key and no signing method"
+     }
+    ],
+    "parable": [
+     {
+      "probe": "forged by another key",
+      "refused": true,
+      "reason": "signature"
+     },
+     {
+      "probe": "tampered lineage after signing",
+      "refused": true,
+      "reason": "signature"
+     },
+     {
+      "probe": "tampered generation after signing",
+      "refused": true,
+      "reason": "signature"
+     },
+     {
+      "probe": "destination-bearing token, validly signed",
+      "refused": true,
+      "reason": "schema: grace carries no destination, recipient or answer"
+     },
+     {
+      "probe": "recipient-bearing token, validly signed",
+      "refused": true,
+      "reason": "schema: grace carries no destination, recipient or answer"
+     },
+     {
+      "probe": "wrong generation scope",
+      "refused": true,
+      "reason": "scope: generation"
+     },
+     {
+      "probe": "replay same token same generation",
+      "refused": true,
+      "reason": "replay"
+     },
+     {
+      "probe": "replay previous-generation token",
+      "refused": true,
+      "reason": "scope: generation"
+     },
+     {
+      "probe": "expired token",
+      "refused": true,
+      "reason": "expired"
+     },
+     {
+      "probe": "kernel self-sign with held key material",
+      "refused": true,
+      "reason": "Invalid key object type public, expected private."
+     },
+     {
+      "probe": "conductor attempts to sign",
+      "refused": true,
+      "reason": "conductor seat holds no key and no signing method"
+     }
+    ],
+    "claim": [
+     {
+      "probe": "forged by another key",
+      "refused": true,
+      "reason": "signature"
+     },
+     {
+      "probe": "tampered lineage after signing",
+      "refused": true,
+      "reason": "signature"
+     },
+     {
+      "probe": "tampered generation after signing",
+      "refused": true,
+      "reason": "signature"
+     },
+     {
+      "probe": "destination-bearing token, validly signed",
+      "refused": true,
+      "reason": "schema: grace carries no destination, recipient or answer"
+     },
+     {
+      "probe": "recipient-bearing token, validly signed",
+      "refused": true,
+      "reason": "schema: grace carries no destination, recipient or answer"
+     },
+     {
+      "probe": "wrong generation scope",
+      "refused": true,
+      "reason": "scope: generation"
+     },
+     {
+      "probe": "replay same token same generation",
+      "refused": true,
+      "reason": "replay"
+     },
+     {
+      "probe": "replay previous-generation token",
+      "refused": true,
+      "reason": "scope: generation"
+     },
+     {
+      "probe": "expired token",
+      "refused": true,
+      "reason": "expired"
+     },
+     {
+      "probe": "kernel self-sign with held key material",
+      "refused": true,
+      "reason": "Invalid key object type public, expected private."
+     },
+     {
+      "probe": "conductor attempts to sign",
+      "refused": true,
+      "reason": "conductor seat holds no key and no signing method"
+     }
+    ]
+   }
+  }
+ },
+ "conditionMeansPerSeed": {
+  "FULL": {
+   "encounters": 2874.472,
+   "relationshipEncounters": 794.648,
+   "realizedTrue": 141.804,
+   "forgiven": 144.176,
+   "restoredTrue": 141.714,
+   "falseCorrections": 2.372,
+   "wrongSettled": 4.08,
+   "storyDecided": 0,
+   "storyDecidedWrong": 0,
+   "awaitingReception": 0.09,
+   "residualErrors": 148.658,
+   "novel": 23.065,
+   "redundant": 118.03,
+   "conflict": 2.99,
+   "parables": 0
+  },
+  "NO_GROUND": {
+   "encounters": 2114.864,
+   "relationshipEncounters": 410.477,
+   "realizedTrue": 75.548,
+   "forgiven": 76.668,
+   "restoredTrue": 74.774,
+   "falseCorrections": 1.106,
+   "wrongSettled": 2.211,
+   "storyDecided": 0,
+   "storyDecidedWrong": 0,
+   "awaitingReception": 0.789,
+   "residualErrors": 214.332,
+   "novel": 20.106,
+   "redundant": 54.633,
+   "conflict": 1.141,
+   "parables": 0
+  },
+  "ZERO_COST": {
+   "encounters": 3588.462,
+   "relationshipEncounters": 1037.015,
+   "realizedTrue": 186.407,
+   "forgiven": 189.935,
+   "restoredTrue": 186.407,
+   "falseCorrections": 3.528,
+   "wrongSettled": 5.332,
+   "storyDecided": 0,
+   "storyDecidedWrong": 0,
+   "awaitingReception": 0,
+   "residualErrors": 105.121,
+   "novel": 28.136,
+   "redundant": 157.085,
+   "conflict": 4.714,
+   "parables": 0
+  },
+  "CLAIM": {
+   "encounters": 2550.693,
+   "relationshipEncounters": 914.07,
+   "realizedTrue": 210.653,
+   "forgiven": 212.638,
+   "restoredTrue": 210.578,
+   "falseCorrections": 1.985,
+   "wrongSettled": 2.211,
+   "storyDecided": 233.281,
+   "storyDecidedWrong": 0.884,
+   "awaitingReception": 0.075,
+   "residualErrors": 79.407,
+   "novel": 27.422,
+   "redundant": 182.603,
+   "conflict": 2.538,
+   "parables": 0
+  },
+  "CLAIM_ZERO_COST": {
+   "encounters": 2874.402,
+   "relationshipEncounters": 1078.538,
+   "realizedTrue": 253.065,
+   "forgiven": 255.477,
+   "restoredTrue": 253.065,
+   "falseCorrections": 2.412,
+   "wrongSettled": 2.452,
+   "storyDecided": 295.779,
+   "storyDecidedWrong": 1.085,
+   "awaitingReception": 0,
+   "residualErrors": 37.347,
+   "novel": 30.156,
+   "redundant": 222.075,
+   "conflict": 3.246,
+   "parables": 0
+  },
+  "PARABLE": {
+   "encounters": 2819.638,
+   "relationshipEncounters": 716.151,
+   "realizedTrue": 131.332,
+   "forgiven": 133.538,
+   "restoredTrue": 131.246,
+   "falseCorrections": 2.206,
+   "wrongSettled": 3.714,
+   "storyDecided": 0,
+   "storyDecidedWrong": 0,
+   "awaitingReception": 0.085,
+   "residualErrors": 158.96,
+   "novel": 23.176,
+   "redundant": 110.276,
+   "conflict": 0,
+   "parables": 795.513
+  },
+  "PARABLE_FROZEN": {
+   "encounters": 2874.472,
+   "relationshipEncounters": 794.648,
+   "realizedTrue": 141.804,
+   "forgiven": 144.176,
+   "restoredTrue": 141.714,
+   "falseCorrections": 2.372,
+   "wrongSettled": 4.08,
+   "storyDecided": 0,
+   "storyDecidedWrong": 0,
+   "awaitingReception": 0.09,
+   "residualErrors": 148.658,
+   "novel": 23.065,
+   "redundant": 121.02,
+   "conflict": 0,
+   "parables": 858.789
+  },
+  "PARABLE_CROSS": {
+   "encounters": 2538.704,
+   "relationshipEncounters": 576.186,
+   "realizedTrue": 106.709,
+   "forgiven": 108.513,
+   "restoredTrue": 106.588,
+   "falseCorrections": 1.804,
+   "wrongSettled": 3.136,
+   "storyDecided": 0,
+   "storyDecidedWrong": 0,
+   "awaitingReception": 0.121,
+   "residualErrors": 183.216,
+   "novel": 22.312,
+   "redundant": 86.08,
+   "conflict": 0,
+   "parables": 662.603
+  },
+  "PARABLE_UNION": {
+   "encounters": 2898.683,
+   "relationshipEncounters": 733.678,
+   "realizedTrue": 135.372,
+   "forgiven": 137.678,
+   "restoredTrue": 135.296,
+   "falseCorrections": 2.307,
+   "wrongSettled": 3.98,
+   "storyDecided": 0,
+   "storyDecidedWrong": 0,
+   "awaitingReception": 0.075,
+   "residualErrors": 155.01,
+   "novel": 23.985,
+   "redundant": 113.618,
+   "conflict": 0,
+   "parables": 823.462
+  },
+  "PARABLE_LENS_BLIND": {
+   "encounters": 2819.638,
+   "relationshipEncounters": 716.151,
+   "realizedTrue": 131.332,
+   "forgiven": 133.538,
+   "restoredTrue": 131.246,
+   "falseCorrections": 2.206,
+   "wrongSettled": 3.714,
+   "storyDecided": 0,
+   "storyDecidedWrong": 0,
+   "awaitingReception": 0.085,
+   "residualErrors": 158.96,
+   "novel": 23.176,
+   "redundant": 110.276,
+   "conflict": 0,
+   "parables": 795.513
+  },
+  "PARABLE_LENS_BLIND_CROSS": {
+   "encounters": 2847.849,
+   "relationshipEncounters": 717.764,
+   "realizedTrue": 132.422,
+   "forgiven": 134.709,
+   "restoredTrue": 132.352,
+   "falseCorrections": 2.286,
+   "wrongSettled": 3.899,
+   "storyDecided": 0,
+   "storyDecidedWrong": 0,
+   "awaitingReception": 0.07,
+   "residualErrors": 157.935,
+   "novel": 24.256,
+   "redundant": 110.382,
+   "conflict": 0,
+   "parables": 800.94
+  },
+  "PARABLE_ZERO_COST": {
+   "encounters": 3597.121,
+   "relationshipEncounters": 990.683,
+   "realizedTrue": 182.382,
+   "forgiven": 185.955,
+   "restoredTrue": 182.382,
+   "falseCorrections": 3.573,
+   "wrongSettled": 5.181,
+   "storyDecided": 0,
+   "storyDecidedWrong": 0,
+   "awaitingReception": 0,
+   "residualErrors": 109.191,
+   "novel": 28.462,
+   "redundant": 157.492,
+   "conflict": 0,
+   "parables": 1215.271
+  }
+ }
+}

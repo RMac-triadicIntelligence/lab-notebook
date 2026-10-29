@@ -1,0 +1,90 @@
+--- ../source/humble_seed_v0_7.py	2026-10-27 19:31:28.138806342 -0500
++++ humble_seed_v0_7_1.py	2026-10-27 19:48:21.376060993 -0500
+@@ -1,5 +1,20 @@
+ #!/usr/bin/env python3
+ """
++Humble Seed v0.7.1 (candidate) — two changes to canonical v0.7, nothing else:
++
++  K1  OwnerWitness.check_current fails closed on an organism id the witness
++      never enrolled. v0.7 returned success, so a state file replaced
++      wholesale by a fresh, self-consistent organism (new id, attacker key,
++      any constitution) passed OwnerTool.audit.
++  K2  OwnerTool.audit checks the organism it is auditing is the one the owner
++      expects (passed in, or the one this tool attested). K1 alone is not
++      enough once a witness holds more than one organism: an enrolled
++      sibling's genuine state passes.
++
++  Found by stating the witness invariants in Lean and attempting the proofs.
++  State-file format and SCHEMA_VERSION are unchanged.
++
++-----------------------------------------------------------------------------
+ Humble Seed v0.6 — Attestation Covers the Constitution
+ =======================================================
+ 
+@@ -176,6 +191,7 @@
+ 
+ 
+ SCHEMA_VERSION = "0.7"
++CODE_VERSION = "0.7.1-candidate"
+ 
+ ALLOWED_CHARACTER_FIELDS = {"verbosity", "formality", "curiosity"}
+ VALUE_MIN, VALUE_MAX = 0.0, 1.0
+@@ -1108,7 +1124,14 @@
+         """The state an organism presents must BE the branch we recorded."""
+         known = self.ledger.get(cp.organism_id)
+         if known is None:
+-            return
++            # K1 (v0.7.1): v0.7 returned here, accepting any checkpoint for an
++            # id this witness never enrolled. A current-state check on an
++            # organism with no recorded chain has nothing to compare against,
++            # so it cannot pass.
++            raise RollbackDetected(
++                f"Unenrolled organism: {cp.organism_id} has no recorded chain at "
++                f"this witness — nothing attests this state"
++            )
+         self._check_identity(cp, known)
+         if cp.sequence < known["sequence"]:
+             raise RollbackDetected(
+@@ -1165,6 +1188,7 @@
+     def __init__(self, private_key_pem: str, witness: OwnerWitness):
+         self._pem = private_key_pem
+         self.witness = witness
++        self.organism_id: Optional[str] = None   # K2: set on first attestation
+ 
+     def sign_proposal(self, payload_to_sign: str) -> str:
+         return owner_sign_external(self._pem, payload_to_sign)
+@@ -1176,13 +1200,32 @@
+         if not seed.install_checkpoint(cp, sig):
+             return False
+         self.witness.record(cp)
++        if self.organism_id is None:
++            self.organism_id = cp.organism_id
+         return True
+ 
+-    def audit(self, seed: HumbleSeed) -> bool:
+-        """Full external audit of a loaded organism, including rollback."""
++    def audit(self, seed: HumbleSeed,
++              expected_organism_id: Optional[str] = None) -> bool:
++        """Full external audit of a loaded organism, including rollback.
++
++        K2 (v0.7.1): the audit is about a specific organism, given here or
++        remembered from this tool's first attestation.
++        """
+         seed.verify()
+         if seed.checkpoint is None:
+             raise IntegrityError("No checkpoint to audit")
++        expected = (expected_organism_id if expected_organism_id is not None
++                    else self.organism_id)
++        if expected is None:
++            raise IntegrityError(
++                "Audit needs the expected organism id: none given, and this tool "
++                "has attested none"
++            )
++        if seed.checkpoint.organism_id != expected:
++            raise RollbackDetected(
++                f"Wrong organism: state presents {seed.checkpoint.organism_id}, "
++                f"owner expects {expected}"
++            )
+         self.witness.check_current(seed.checkpoint)
+         return True
+ 

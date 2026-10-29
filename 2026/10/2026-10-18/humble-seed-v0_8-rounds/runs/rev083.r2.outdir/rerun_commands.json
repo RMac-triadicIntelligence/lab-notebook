@@ -1,0 +1,58 @@
+[
+  {
+    "name": "harness",
+    "command": [
+      "/workspace/venv-bundle/bin/python",
+      "-I",
+      "falsify_v0_8_3.py"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1
+  },
+  {
+    "name": "independent_probes",
+    "command": [
+      "/workspace/venv-bundle/bin/python",
+      "-I",
+      "/workspace/incoming-2026-10-18/runs/rev083.r2/code/independent_probes.py",
+      "/tmp/hs083_review_rerun_kgc4i9kv/humble_seed_v0_8_3_candidate/humble_seed_v0_8_3_candidate.py",
+      "/workspace/incoming-2026-10-18/runs/rev083.r2.outdir"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0
+  },
+  {
+    "name": "extra_mutants",
+    "command": [
+      "/workspace/venv-bundle/bin/python",
+      "-I",
+      "/workspace/incoming-2026-10-18/runs/rev083.r2/code/extra_mutants.py",
+      "/tmp/hs083_review_rerun_kgc4i9kv/humble_seed_v0_8_3_candidate",
+      "/workspace/incoming-2026-10-18/runs/rev083.r2.outdir"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0
+  },
+  {
+    "name": "T26_diagnostic",
+    "command": [
+      "/workspace/venv-bundle/bin/python",
+      "-I",
+      "/tmp/hs083_review_rerun_kgc4i9kv/humble_seed_v0_8_3_candidate/diagnostic_T26_v0_8_3.py",
+      "/tmp/hs083_review_rerun_kgc4i9kv/humble_seed_v0_8_3_candidate"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0
+  },
+  {
+    "name": "corrected_answer",
+    "command": [
+      "/workspace/venv-bundle/bin/python",
+      "-I",
+      "/tmp/hs083_review_rerun_kgc4i9kv/humble_seed_v0_8_3_candidate/regression_corrected_answer_attest.py",
+      "/tmp/hs083_review_rerun_kgc4i9kv/humble_seed_v0_8_3_candidate/humble_seed_v0_8_3_candidate.py"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0
+  }
+]

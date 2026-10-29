@@ -1,0 +1,111 @@
+{
+  "sampler": {
+    "the_commons_v1_0.html": {
+      "planar_force_max_abs_error": 0.3,
+      "zero_x_fraction": 0.211,
+      "zero_y_fraction": 0.219,
+      "points": 1000
+    },
+    "the_commons_v1_1.html": {
+      "planar_force_max_abs_error": 3.627509568837617e-7,
+      "zero_x_fraction": 0,
+      "zero_y_fraction": 0,
+      "points": 1000
+    },
+    "the_commons_ii_v2_0.html": {
+      "planar_force_max_abs_error": 0.3,
+      "zero_x_fraction": 0.321,
+      "zero_y_fraction": 0.336,
+      "points": 1000
+    },
+    "the_commons_ii_v2_1.html": {
+      "planar_force_max_abs_error": 3.670759644025523e-7,
+      "zero_x_fraction": 0,
+      "zero_y_fraction": 0,
+      "points": 1000
+    }
+  },
+  "actual_v2_1_core": [
+    {
+      "seed": 0,
+      "saturation": 0.16228070175438597,
+      "founder_crossings": 12,
+      "worlds": {
+        "lived": {
+          "reached": 6,
+          "closed_gate_crossings": 0
+        },
+        "fresh": {
+          "reached": 5,
+          "closed_gate_crossings": 0
+        },
+        "shifted": {
+          "reached": 4,
+          "closed_gate_crossings": 0
+        }
+      }
+    },
+    {
+      "seed": 1,
+      "saturation": 0.15268640350877194,
+      "founder_crossings": 10,
+      "worlds": {
+        "lived": {
+          "reached": 4,
+          "closed_gate_crossings": 0
+        },
+        "fresh": {
+          "reached": 4,
+          "closed_gate_crossings": 0
+        },
+        "shifted": {
+          "reached": 3,
+          "closed_gate_crossings": 0
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "saturation": 0.1524122807017544,
+      "founder_crossings": 10,
+      "worlds": {
+        "lived": {
+          "reached": 5,
+          "closed_gate_crossings": 0
+        },
+        "fresh": {
+          "reached": 4,
+          "closed_gate_crossings": 0
+        },
+        "shifted": {
+          "reached": 3,
+          "closed_gate_crossings": 0
+        }
+      }
+    },
+    {
+      "seed": 3,
+      "saturation": 0.15487938596491227,
+      "founder_crossings": 12,
+      "worlds": {
+        "lived": {
+          "reached": 3,
+          "closed_gate_crossings": 0
+        },
+        "fresh": {
+          "reached": 3,
+          "closed_gate_crossings": 0
+        },
+        "shifted": {
+          "reached": 3,
+          "closed_gate_crossings": 0
+        }
+      }
+    }
+  ],
+  "actual_v2_1_means": {
+    "lived": 4.5,
+    "fresh": 4,
+    "shifted": 3.25
+  }
+}

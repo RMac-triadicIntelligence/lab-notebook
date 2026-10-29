@@ -1,0 +1,23 @@
+Use Python 3.10+ with cryptography installed. This review used Python 3.12.14
+and cryptography 50.0.2. No network is used by the review scripts.
+
+From the extracted archive root:
+
+  sha256sum -c SHA256SUMS
+  python3 -I independent/run_shipped.py
+
+The supplied harness is expected to exit 1 for its two exact-set mismatches.
+The run wrapper writes fresh evidence logs; run in a copy to preserve originals.
+
+Independent reproductions (each prints measured JSON; exit 0 means the assertions
+confirm the reported behavior, including the reproduced defects):
+
+  python3 -I independent/probes.py
+  python3 -I independent/controls.py
+  python3 -I independent/mutant_controls.py
+
+Reference outputs are in evidence/independent_probes.json,
+evidence/independent_controls.json and evidence/mutant_controls.json.
+Full shipped tables: evidence/harness_stdout.txt
+Structured shipped results:
+review_input/humble_seed_v0_8_4_candidate_BLIND/RESULTS_v0_8_4.json

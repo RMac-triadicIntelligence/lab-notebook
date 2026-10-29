@@ -1,0 +1,51 @@
+{
+  "primary_raw_readiness": {
+    "ALWAYS_ON": {
+      "correct_ready": 65,
+      "false_ready": 132,
+      "pre_evidence_open": 87,
+      "retained_at_end": 211
+    },
+    "COUPLING_ONLY": {
+      "correct_ready": 22,
+      "false_ready": 12,
+      "pre_evidence_open": 0,
+      "retained_at_end": 34
+    },
+    "DECAY_ONLY": {
+      "correct_ready": 36,
+      "false_ready": 39,
+      "pre_evidence_open": 0,
+      "retained_at_end": 81
+    },
+    "FIELD_OFF": {
+      "correct_ready": 3,
+      "pre_evidence_open": 0,
+      "retained_at_end": 4
+    },
+    "FULL": {
+      "correct_ready": 53,
+      "false_ready": 78,
+      "pre_evidence_open": 0,
+      "retained_at_end": 136
+    },
+    "NO_DWELL": {
+      "correct_ready": 3,
+      "pre_evidence_open": 0,
+      "retained_at_end": 4
+    }
+  },
+  "sensitivity_raw_agreement": {
+    "FINER_STEP": {
+      "agree": 96,
+      "cases": 96,
+      "rate": 1.0
+    },
+    "REFLECTED_BOUNDARY": {
+      "agree": 96,
+      "cases": 96,
+      "rate": 1.0
+    }
+  },
+  "status": "Post-analysis descriptive breakdown from the retained raw results; frozen verdicts unchanged."
+}

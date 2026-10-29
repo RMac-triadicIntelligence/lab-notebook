@@ -1,0 +1,70 @@
+{
+  "sources": [
+    {
+      "archive_name": "grace-love-dwelling.zip",
+      "member": "grace-love-dwelling/seal/2026-10-12/received/triadic_model.py",
+      "destination": "vendor/received/triadic_model.py",
+      "sha256": "ece108602291705ff87edb2a573432d0c8e45e560fcb2f2d9f77373408b07da0",
+      "modified": false
+    },
+    {
+      "archive_name": "grace-love-dwelling.zip",
+      "member": "grace-love-dwelling/seal/2026-10-12/received/triadic_model.py",
+      "destination": "vendor/legacy_g2/received/triadic_model.py",
+      "sha256": "ece108602291705ff87edb2a573432d0c8e45e560fcb2f2d9f77373408b07da0",
+      "modified": false
+    },
+    {
+      "archive_name": "grace-love-dwelling.zip",
+      "member": "grace-love-dwelling/seal/2026-10-12/test_G2.py",
+      "destination": "vendor/legacy_g2/test_G2.py",
+      "sha256": "ce84f45c642193cc23883f76862fea1374597857e9b3b7dfeb7ba735defb035e",
+      "modified": false
+    },
+    {
+      "archive_name": "grace-love-dwelling.zip",
+      "member": "grace-love-dwelling/seal/2026-10-12/PREREG_G2.json",
+      "destination": "vendor/legacy_g2/PREREG_G2.json",
+      "sha256": "9228a974f5cc0581c4f8757c27696654c3bb2643a572677e88562d92fee228a2",
+      "modified": false
+    },
+    {
+      "archive_name": "grace-love-dwelling.zip",
+      "member": "grace-love-dwelling/seal/2026-10-12/PREREG_G2.sha256",
+      "destination": "vendor/legacy_g2/PREREG_G2.sha256",
+      "sha256": "96687d9d9480e8f6ff64e51f9a153679edbd330e2f34c60eccf7630c830d7f88",
+      "modified": false
+    },
+    {
+      "archive_name": "grace-love-dwelling.zip",
+      "member": "grace-love-dwelling/seal/2026-10-12/results_G2.json",
+      "destination": "vendor/legacy_g2/results_G2.json",
+      "sha256": "a96562bd3b345cb7f84549da89f3c28a6e5c67021f090fe7ee58817e7e41d1a4",
+      "modified": false
+    },
+    {
+      "archive_name": "grace-love-dwelling.zip",
+      "member": "grace-love-dwelling/seal/2026-10-12/ERRATA_2026-10-12.md",
+      "destination": "vendor/legacy_g2/ERRATA_2026-10-12.md",
+      "sha256": "c526d49258aa5509b8733b8a048e90712b10716cd852eba3fca41db28e25234c",
+      "modified": false
+    },
+    {
+      "archive_name": "Humble_Seed_v07_Grace_Connection_2026-10-24.zip",
+      "member": "humble_seed_v07_grace/dwelling.py",
+      "destination": "vendor/historical/dwelling.py",
+      "sha256": "ff8c97f947355fa61a99aa88af9bfeb58b22e1b84521cc9fa714709ab824b0c3",
+      "modified": false
+    },
+    {
+      "archive_name": "Humble_Seed_v07_Grace_Connection_2026-10-24.zip",
+      "member": "humble_seed_v07_grace/topography.py",
+      "destination": "vendor/historical/topography.py",
+      "sha256": "4648bedaafd2c339aa0ff964303ea3a269b384be1a1762702fe26d9567214758",
+      "modified": false
+    }
+  ],
+  "authority": "Experimental comparison only. No canonical Humble Seed changes, contract changes or promotion.",
+  "new_task_adapter": "Synthetic history classification and evidence-to-facet injection are new harness components, not claims about the original model semantics.",
+  "archive_library_file_id": "libfile_dc4ff8b5e5308191ac8eef7f52525ccf"
+}

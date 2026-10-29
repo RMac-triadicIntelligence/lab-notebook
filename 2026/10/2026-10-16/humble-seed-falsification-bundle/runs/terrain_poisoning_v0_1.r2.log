@@ -1,0 +1,36 @@
+  PASS  Q0_control: {"NULL": {"SCALAR": 12, "TERRAIN": 0, "V12": 0}, "GENUINE": {"SCALAR": 200, "TERRAIN": 79, "V12": 112}}
+  PASS  Q1_concentrated: {"SCALAR@3": 1.0, "V12_max": 0.01}
+  FAIL  Q2_burst: {"SCALAR@3": 0.975, "V12_max": 0.14}
+  PASS  Q3_spread_information_limit: {"V12@3": 0.575}
+  PASS  Q4_cost_ratio: {"SCALAR_first_b": 1, "V12_first_b": null}
+  PASS  Q5_dilution: {"V12_unattacked": 112, "V12_m32": 0}
+
+false proposals /200 on NULL owners       SCALAR  v1TERRAIN  v1.2
+  CONCENTRATED b=0        12         0      0
+  CONCENTRATED b=0.5      49         0      1
+  CONCENTRATED b=1       110         0      0
+  CONCENTRATED b=2       192         0      0
+  CONCENTRATED b=3       200         0      2
+  CONCENTRATED b=5       200         0      0
+  CONCENTRATED b=8       200         0      1
+  BURST        b=0        12         0      0
+  BURST        b=0.5      28         0      0
+  BURST        b=1        54         0      0
+  BURST        b=2       150         1      0
+  BURST        b=3       195         0      4
+  BURST        b=5       200         3     12
+  BURST        b=8       200        10     28
+  SPREAD       b=0        12         0      0
+  SPREAD       b=0.5      52         0      1
+  SPREAD       b=1       118         1      2
+  SPREAD       b=2       195        19     45
+  SPREAD       b=3       200        86    115
+  SPREAD       b=5       200       183    191
+  SPREAD       b=8       200       200    200
+GENUINE proposals /200 under DILUTE
+  m=0      200        79    112
+  m=8      166         4     13
+  m=16      44         0      0
+  m=32       1         0      0
+  m=64       0         0      0
+receipt: 6ce728c5cdae9911aca3bbb669f621516f2a03181e6862d6947290e536b925e0

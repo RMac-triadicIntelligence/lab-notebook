@@ -1,0 +1,32 @@
+Constitutional Commons v0.3.1 — Claude, Grok, and ChatGPT packet comparison
+4 October 2026
+
+Result
+Both supplied completed-run packets match the independently executed frozen v0.3.1 run. All five frozen files (including the hash manifest), both raw CSVs, and receipt.txt are byte-identical. summary.json is identical after excluding runtimeSeconds. Claude's full-file manifest also verifies. No additional full run is necessary to establish these byte comparisons.
+
+Common receipt
+1025cb60e445f45fc3bee51d2456ac1da1af26d3ba2127b3cd6084ac45b75ffb
+
+Common verdict
+B1 false; B2 false; B3 true; B4 true; A1 true; A2 true; A3 true.
+Deepening minus fading: -8.2362 true restorations per seed across 12 generations; 95% CI [-9.5396, -6.9327].
+Resonance minus fading: -15.2412; CI [-16.4530, -14.0294].
+The identical planted-history design supports a controlled policy comparison of answer-bearing stories versus answer-free parables, within this simulator. It does not establish error elimination.
+
+Interpretation review
+Grok's RUN.txt reports the hash, receipt, verdicts, and two failed performance comparisons correctly and briefly.
+Claude preserves the failed predictions and describes the mechanism and limits clearly. Three statements need narrower wording:
+1. “Approach cost is the binding constraint” and “That is the whole failure” are plausible explanations, not isolated findings. The changed curves alter both initial strength and later persistence. A baseline-strength control would be needed to separate those effects.
+2. “Deepening is more careful” labels a policy with fewer encounters, fewer false corrections, and more residual errors. Report the tradeoff in those terms; fewer erroneous corrections is not itself better overall discernment or greater successful restoration.
+3. “Parables carry no pocket” means the specified error difference-in-differences confidence intervals fit the predefined two-point margin. It does not mean every pocket disappeared. Parable false/true labels carry no answer-content difference, which the preregistration and Claude's limitations section explicitly disclose.
+Claude also asserts that Rusty publicly posted the preregistration before its run. This review has verified the pre-run packet and the in-thread hash before the independent run; it has not verified an outside public post or other agents' execution chronology. Matching deterministic outputs establishes artifact agreement, not proof of independent execution histories.
+
+Proposed reception follow-up
+Claude proposes preserving full approach help and allowing experience-dependent meaning to affect reception after evidence turns. This is a plausible distinct hypothesis, not a rescue of failed B1/B2.
+The present default FADE run has realizedTrue=26,135 and restoredTrue=26,118: only 17 true realizations failed to reach restoration across 199 seeds and 12 generations. Thus the default setup offers little immediate reception headroom. Do not interpret a default null in the next experiment as a broad test of reception.
+A useful design would first specify a controlled cohort that has evidence, confession, and external approval but insufficient reception, preserving the user's distinction between complete forgiveness and subsequent restoration. Hold approach/evidence inputs and approval eligibility fixed in the primary mechanism comparison. Verify both healthy and stalled controls. A separate closed-loop arm may examine downstream community effects; its outcomes should not be conflated with the isolated reception effect.
+The meaning function must leave truth, evidence threshold, authority signatures, and the restoration gate intact. Do not force restoration or substitute the story for required approval. Freeze new predictions before running; report improvements, harms, and failures separately.
+No source changes or new outcome experiments were performed in this comparison.
+
+Archive
+Original Claude and Grok supplied ZIPs, comparison.json with exact byte checks, this review, and the prior independent execution archive containing frozen source, raw outputs, regression, and recalculation evidence.

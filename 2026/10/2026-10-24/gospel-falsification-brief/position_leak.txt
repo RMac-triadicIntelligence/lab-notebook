@@ -1,0 +1,2 @@
+snapshots=96  R2(a ~ cubic(x))=0.9986  R2(capacity ~ cubic(x))=0.9995
+|dx/dt| at snapshot: median=5.85e-03 max=2.22e-02

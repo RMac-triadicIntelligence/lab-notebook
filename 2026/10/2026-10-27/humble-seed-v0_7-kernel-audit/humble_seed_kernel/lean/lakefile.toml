@@ -1,0 +1,10 @@
+name = "humble_seed_kernel"
+version = "0.1.0"
+defaultTargets = ["HumbleSeedKernel", "diffmodel"]
+
+[[lean_lib]]
+name = "HumbleSeedKernel"
+
+[[lean_exe]]
+name = "diffmodel"
+root = "Diff"

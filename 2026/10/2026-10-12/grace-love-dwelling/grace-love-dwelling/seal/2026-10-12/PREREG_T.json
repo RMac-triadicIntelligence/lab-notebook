@@ -1,0 +1,51 @@
+{
+  "artifact": "compare_v1_test_T_terrain_vs_counter",
+  "date": "2026-10-12",
+  "frozen_before_any_test_T_code": true,
+  "question": "In a world that varies on more than one coordinate, what does keeping the full SDKP tuple buy over a place-only reader and a one-number (product) reader, and what does it cost?",
+  "authorship": "ConsciousnessLayer and SDKPTuple come from origami_kenta_sdkp.py (sha256 3ef44fe5...), imported unchanged. The world, the key projections, the need trigger and the reading rule are Claude's, declared here. The world contains joint-only information by construction, so a lower false-commit rate for the full reader in the confound world is EXPECTED and is not evidence that terrain helps in real worlds. The falsifiable content is the size of the costs (fragmentation delay, erosion) and whether roll-up recovers them.",
+  "structural_note_declared_before_code": "ConsciousnessLayer is an exact-key counter over (tuple, context) with a fixed threshold of 5 and permanent crystallization. It has no neighborhood and no rate. T0 tests that equivalence directly.",
+  "world": {
+    "streams": 200,
+    "events_per_day": 6,
+    "horizon_days": 365,
+    "coordinates": "P (place) in 0..3 with weights [0.4,0.3,0.2,0.1]; K (kinetics) in 0..2 with weights [0.5,0.35,0.15]; S and D: in the 4-coord world each uniform on 0..2 (coordinates that vary but carry no signal); in the 2-coord world fixed at 0",
+    "worlds": {
+      "PREF": "signal with p=0.6 on every event (the owner prefers it everywhere)",
+      "CONF": "signal with p=0.9 when P==0 and K==2 (hurried at the main place), p=0.1 otherwise",
+      "NULL": "signal with p=0.1 on every event (no preference, background only)"
+    },
+    "rng": "numpy default_rng(1000*world_index + 10*coord_variant + stream) for coordinates and signal; readers see identical event streams"
+  },
+  "readers": {
+    "R_place": "key = SDKPTuple(0,0,0,P)",
+    "R_scalar": "key = SDKPTuple((S+1)*(D+1)*(K+1)*(P+1),0,0,0): the four coordinates multiplied into one number (+1 avoids zero bins)",
+    "R_full": "key = SDKPTuple(S,D,K,P)",
+    "R_roll": "deposits into a full layer and a place layer. Reading uses, for each place p, the full keys under p that have any crystallized symbol; if none under p, the place key p",
+    "deposit": "every event: layer.receive(key, 'sig' if signal else 'ord', index). Depositing is not looking."
+  },
+  "need_and_read": {
+    "need": "a need for direction arises each time the stream's cumulative signal count reaches a new multiple of 8. No other reads.",
+    "occupied_keys": "keys with a crystallized 'sig' or 'ord' symbol; weight = that key's total deposit count",
+    "read": "if no occupied keys: WAIT. frac = weight of occupied keys with crystallized 'sig' / weight of all occupied keys. frac >= 0.5 -> COMMIT (terminal). Else if any 'sig' crystallized -> HOLD as UNKNOWN with footprint = the set of 'sig' keys; otherwise WAIT.",
+    "held_reopen": "a held stream is re-read only at a later need AND only if a 'sig' key exists outside the footprint; the footprint then grows to include it. Pressure alone never reopens.",
+    "scoring": "COMMIT in PREF is correct; COMMIT in CONF or NULL is a false commit. Report fraction committed and median commit day (among committers), at day 60, 120 and 365."
+  },
+  "controls": {
+    "T0_counter": "R_full re-implemented with a plain Python Counter and threshold 5, no ConsciousnessLayer",
+    "T8_shuffle": "CONF 2-coord, R_full, with signal labels permuted across events within each stream (counts kept, key-signal relation broken)"
+  },
+  "predictions": {
+    "T0_layer_is_counter": "R_full via ConsciousnessLayer and via plain Counter make identical decisions on identical days in 100% of streams, every world",
+    "T1_learning": "PREF: every reader commits in >= 0.90 of streams by day 365, in both coordinate variants",
+    "T2_fragmentation_cost": "PREF 4-coord: median commit day R_full >= 2.0 x R_place",
+    "T3_joint_information": "CONF 2-coord, by day 60: false-commit rate R_full <= 0.5 x R_place",
+    "T4_erosion": "CONF 2-coord, by day 365: R_full false-commit rate >= 0.80 (background crystallizes by absolute count)",
+    "T5_scalar_no_better": "CONF 2-coord, by day 60: R_scalar false-commit rate >= 0.8 x R_place",
+    "T6_rollup": "PREF 4-coord median commit day R_roll <= 1.25 x R_place AND CONF 2-coord day-60 false-commit rate R_roll <= 0.6 x R_place",
+    "T7_null_world": "NULL: every reader's false-commit rate by day 365 >= 0.50",
+    "T8_shuffle": "CONF 2-coord day-60 false-commit rate of shuffled R_full >= 0.8 x R_place"
+  },
+  "ratio_rule": "where a ratio's denominator is 0, the prediction is scored on the numerator alone against 0.05",
+  "reporting_rule": "PASS/FAIL exactly as frozen. Received files never edited. Any change is a new version with this file preserved."
+}

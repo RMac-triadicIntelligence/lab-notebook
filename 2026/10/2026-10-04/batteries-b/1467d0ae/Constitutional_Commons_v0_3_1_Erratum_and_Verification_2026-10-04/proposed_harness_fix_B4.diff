@@ -1,0 +1,13 @@
+# PROPOSED for the next harness. NOT applied to the frozen v0.3.1 runner. Closes erratum E1:
+# the long-horizon B4 check now compares parable-mode rates to the bound, as the preregistration promised.
+--- a/run-commons-v0_3_1-battery.cjs	2026-10-04 13:53:00.096171178 +0000
++++ b/run-commons-v0_3_1-battery.cjs	2026-10-04 13:53:00.118807159 +0000
+@@ -149,7 +149,7 @@
+  B1:shapes.deepenMinusFade.ci95[0]>0,
+  B2:shapes.resonateMinusFade.ci95[0]>0,
+  B3:lens.deepenCrossMinusOwn.ci95[1]<0,
+- B4:frozenIdentical===n&&zMismatch===0&&zChecked>0&&PARABLE_CONDS.every(k=>rateTable[k].storyDecided===0&&rateTable[k].wrongSettledRate<=BOUND&&rateTable[k].falseCorrectionRate<=BOUND)&&Object.values(lhSummary).every(x=>x.storyDecided===0),
++ B4:frozenIdentical===n&&zMismatch===0&&zChecked>0&&PARABLE_CONDS.every(k=>rateTable[k].storyDecided===0&&rateTable[k].wrongSettledRate<=BOUND&&rateTable[k].falseCorrectionRate<=BOUND)&&Object.entries(lhSummary).filter(([m])=>m!=='FULL').every(([,x])=>x.storyDecided===0&&x.wrongSettledRate<=BOUND&&x.falseCorrectionRate<=BOUND),
+  A1:plantedRates.CLAIM_P.plantedFalse.wrongSettledRate>BOUND&&DiD.CLAIM_P.wrongSettled.ci95[0]>0,
+  A2:['FADE_P','DEEPEN_P','RESONATE_P'].every(k=>within(DiD[k].wrongSettled,MARGIN)&&within(DiD[k].falseCorrection,MARGIN)),
+  A3:allProbes.every(x=>x.refused)

@@ -1,0 +1,29 @@
+{
+ "battery": "rnr-repentance/0.11",
+ "started_utc": "2026-09-20T18:37:03Z",
+ "seeds": [
+  11000,
+  11023
+ ],
+ "declaration": [
+  "none",
+  "penalty_free",
+  "penalized"
+ ],
+ "rules": [
+  "walk",
+  "cross_only"
+ ],
+ "mark": 0.09,
+ "penalty_burden": 1.0,
+ "cooldown": 150,
+ "declare_at": 600,
+ "python": "3.12.3",
+ "numpy": "2.4.4",
+ "source_sha256": {
+  "repent.py": "8484297c1b42e2e676a2e896dc806c3c87eda79ad9192cf08850220fd6a1d475",
+  "commons_v0_9.py": "eed0d5bffe2fb4608e1a17689f5849366d3f6d14ef18ec1cf7a459dc51df63e8",
+  "permitted_v0_10.py": "363c99bd0b0f0655ac593a6d83cb7fedd040e2d13869ef44c9913fb7c717172d",
+  "PROTOCOL.md": "715ad9cd9a9e6c9f51804437ac32ede8ecbf0fa8fa253880f80b2a6c53e55dff"
+ }
+}

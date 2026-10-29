@@ -1,0 +1,38 @@
+{
+  "artifact": "compare_v1_test_G2_grace_nudge_and_love",
+  "date": "2026-10-12",
+  "frozen_before_any_test_G2_code": true,
+  "supersedes": "nothing; PREREG_S and its results are preserved. This is a new version requested by Rusty after S.",
+  "direction_from_rusty": "Grace is the nudge over the separatrix. Love is the kind of grace used in S: a window during which the dwelling field's effect is switched on, with no push.",
+  "question": "Do grace (a nudge) and love (a field window) do different jobs? Does love lower the nudge grace needs, and does that depend on dwelling? Does either one cross alone?",
+  "authorship": "triadic_model.py unchanged (sha256 ece10860...). Integrator, gating, nudge timing and thresholds are Claude's, declared here. The nudge is added to facet 1 only, as Rusty's simulate() does with jump_amount.",
+  "fixed_setup": {
+    "integrator": "same as PREREG_S: Euler-Maruyama dt=0.02, T=300, noise on facets only, clip [0,1], shared noise paths across arms, seeds 0..99",
+    "start": "y0=(0.2,0.1,0.15,0.6); NODWELL arms use dwelling 0 and story_depth 0",
+    "love_window": "[150,160): default params inside, field-off params outside",
+    "grace_nudge": "at t=155 (the middle of the love window), x1 += g, then clip",
+    "crossed": "mean facet > 0.6 at T=300 and first exceeded 0.6 at or after t=150 (a crossing that holds)"
+  },
+  "conditions": {
+    "NONE": "field-off throughout, no nudge",
+    "GRACE": "field-off throughout, nudge g at t=155",
+    "LOVE": "love window, no nudge",
+    "GRACE_LOVE": "love window and nudge g at t=155",
+    "GRACE_LOVE_NODWELL": "as GRACE_LOVE with no dwelling"
+  },
+  "measures": {
+    "g_star": "smallest nudge that crosses with noise 0 (bisection on [0,1], 14 steps), for GRACE, GRACE_LOVE, GRACE_LOVE_NODWELL",
+    "p_cross": "fraction of 100 seeds that cross, for each condition at noise {0.02, 0.04} and g in {0.10, 0.20, 0.25, 0.30, 0.40}",
+    "unauthorized": "fraction crossing before t=150"
+  },
+  "predictions": {
+    "G1_love_lowers_grace": "g_star(GRACE_LOVE) <= 0.85 x g_star(GRACE)",
+    "G2_love_needs_dwelling": "|g_star(GRACE_LOVE_NODWELL) - g_star(GRACE)| <= 0.01",
+    "G3_together": "noise 0.02, g=0.25: p_cross(GRACE_LOVE) >= p_cross(GRACE) + 0.30",
+    "G4_love_alone": "noise 0.02: p_cross(LOVE) <= 0.05",
+    "G5_grace_alone_subthreshold": "noise 0.02, at the largest grid g below g_star(GRACE): p_cross(GRACE) <= 0.20",
+    "G6_retained": "every condition: among runs whose mean facet first exceeds 0.6 after t=150, >= 0.95 are still above 0.6 at T=300",
+    "G7_plumbing": "unauthorized crossing is identical across all dwelling-on conditions at each noise level (identical params and noise before t=150). A plumbing check, not evidence."
+  },
+  "reporting_rule": "PASS/FAIL exactly as frozen. Received files never edited."
+}

@@ -1,0 +1,5 @@
+Old settings: saturation 0.302; minimum -0.95; lived 6/12; fresh 6/12; scattered 6/12.
+Calibration: trail 0.002, founder evidence 0.75, four seed offsets 0-3.
+Arrival 0.50: saturation 0.154; lived 3.50; fresh 2.25; shifted 2.25.
+Arrival 0.55: saturation 0.154; lived 4.75; fresh 3.75; shifted 3.25.
+Arrival 0.60: saturation 0.154; lived 5.75; fresh 5.00; shifted 4.75.

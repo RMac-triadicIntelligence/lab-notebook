@@ -1,0 +1,28 @@
+NONLINEAR DWELLING / MATCHED-EVIDENCE BATTERY
+
+Held-out: 384 histories; 32 independent seed clusters.
+Condition                CORRECT  FALSE  ABSTAIN  RAW_READY  THRESHOLD
+FULL                           0      0      384        131 1
+FIELD_OFF                      1      0      383          3 0.98399999999999999
+COUPLING_ONLY                  1      2      381         34 0.99099999999999999
+DECAY_ONLY                     8     12      364         75 0.99099999999999999
+NO_DWELL                       1      0      383          3 0.98399999999999999
+ALWAYS_ON                      0      0      384        197 1
+ARCHIVED_READER                0      0      384          - 1
+MIN_CUE                       57      0      327          - 0.69699999999999995
+MEAN_CUE                      35      0      349          - 0.89900000000000002
+GEOMEAN_CUE                   56      0      328          - 0.80500000000000005
+
+Ordinary selected on calibration only: MIN_CUE
+
+TASK_VS_OFF FAIL
+TASK_VS_ORDINARY FAIL
+READINESS PASS
+NUMERICAL PASS
+D_NO_DWELL PASS
+D_PERMISSION PASS
+LEGACY_ANCHOR PASS
+ETH NOT_TESTED
+
+Scientific receipt: 431e4be8c67f5f74640cbe8f413b2686ec97db299c3426c11cb5e16bfb0a8545
+

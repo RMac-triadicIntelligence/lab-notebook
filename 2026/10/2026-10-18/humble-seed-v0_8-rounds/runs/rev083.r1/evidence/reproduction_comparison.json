@@ -1,0 +1,15 @@
+{
+  "shipped_results_sha256": "16bc306e2481404f8a0730b533e66e052dcd56535a935d77d5ff45694ce41984",
+  "reproduced_results_sha256": "16bc306e2481404f8a0730b533e66e052dcd56535a935d77d5ff45694ce41984",
+  "byte_identical": true,
+  "receipt_equal": true,
+  "test_statuses_equal": true,
+  "mutant_statuses_and_killers_equal": true,
+  "candidate_after_testing_sha256": "2fd53071a4c76f4bc74e482f1297788ad475aea035c0293f1c4a3881597739d2",
+  "test_count": 48,
+  "mutant_count": 41,
+  "test_passes": 47,
+  "mutant_killed": 39,
+  "mutant_crashed": 1,
+  "mutant_survived": 1
+}

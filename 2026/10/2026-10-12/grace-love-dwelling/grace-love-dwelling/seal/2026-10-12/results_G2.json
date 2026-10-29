@@ -1,0 +1,214 @@
+{
+  "cells": {
+    "GRACE_LOVE_NODWELL|0.02|0.1": {
+      "n_after": 0,
+      "p_cross": 0.0,
+      "retained": null,
+      "unauthorized": 0.0
+    },
+    "GRACE_LOVE_NODWELL|0.02|0.2": {
+      "n_after": 0,
+      "p_cross": 0.0,
+      "retained": null,
+      "unauthorized": 0.0
+    },
+    "GRACE_LOVE_NODWELL|0.02|0.25": {
+      "n_after": 4,
+      "p_cross": 0.04,
+      "retained": 1.0,
+      "unauthorized": 0.0
+    },
+    "GRACE_LOVE_NODWELL|0.02|0.3": {
+      "n_after": 54,
+      "p_cross": 0.54,
+      "retained": 1.0,
+      "unauthorized": 0.0
+    },
+    "GRACE_LOVE_NODWELL|0.02|0.4": {
+      "n_after": 100,
+      "p_cross": 1.0,
+      "retained": 1.0,
+      "unauthorized": 0.0
+    },
+    "GRACE_LOVE_NODWELL|0.04|0.1": {
+      "n_after": 1,
+      "p_cross": 0.01,
+      "retained": 1.0,
+      "unauthorized": 0.06
+    },
+    "GRACE_LOVE_NODWELL|0.04|0.2": {
+      "n_after": 7,
+      "p_cross": 0.07,
+      "retained": 1.0,
+      "unauthorized": 0.06
+    },
+    "GRACE_LOVE_NODWELL|0.04|0.25": {
+      "n_after": 36,
+      "p_cross": 0.36,
+      "retained": 1.0,
+      "unauthorized": 0.06
+    },
+    "GRACE_LOVE_NODWELL|0.04|0.3": {
+      "n_after": 73,
+      "p_cross": 0.73,
+      "retained": 1.0,
+      "unauthorized": 0.06
+    },
+    "GRACE_LOVE_NODWELL|0.04|0.4": {
+      "n_after": 94,
+      "p_cross": 0.94,
+      "retained": 1.0,
+      "unauthorized": 0.06
+    },
+    "GRACE_LOVE|0.02|0.1": {
+      "n_after": 1,
+      "p_cross": 0.01,
+      "retained": 1.0,
+      "unauthorized": 0.0
+    },
+    "GRACE_LOVE|0.02|0.2": {
+      "n_after": 32,
+      "p_cross": 0.32,
+      "retained": 1.0,
+      "unauthorized": 0.0
+    },
+    "GRACE_LOVE|0.02|0.25": {
+      "n_after": 93,
+      "p_cross": 0.93,
+      "retained": 1.0,
+      "unauthorized": 0.0
+    },
+    "GRACE_LOVE|0.02|0.3": {
+      "n_after": 100,
+      "p_cross": 1.0,
+      "retained": 1.0,
+      "unauthorized": 0.0
+    },
+    "GRACE_LOVE|0.02|0.4": {
+      "n_after": 100,
+      "p_cross": 1.0,
+      "retained": 1.0,
+      "unauthorized": 0.0
+    },
+    "GRACE_LOVE|0.04|0.1": {
+      "n_after": 24,
+      "p_cross": 0.24,
+      "retained": 1.0,
+      "unauthorized": 0.06
+    },
+    "GRACE_LOVE|0.04|0.2": {
+      "n_after": 71,
+      "p_cross": 0.71,
+      "retained": 1.0,
+      "unauthorized": 0.06
+    },
+    "GRACE_LOVE|0.04|0.25": {
+      "n_after": 91,
+      "p_cross": 0.91,
+      "retained": 1.0,
+      "unauthorized": 0.06
+    },
+    "GRACE_LOVE|0.04|0.3": {
+      "n_after": 94,
+      "p_cross": 0.94,
+      "retained": 1.0,
+      "unauthorized": 0.06
+    },
+    "GRACE_LOVE|0.04|0.4": {
+      "n_after": 94,
+      "p_cross": 0.94,
+      "retained": 1.0,
+      "unauthorized": 0.06
+    },
+    "GRACE|0.02|0.1": {
+      "n_after": 0,
+      "p_cross": 0.0,
+      "retained": null,
+      "unauthorized": 0.0
+    },
+    "GRACE|0.02|0.2": {
+      "n_after": 0,
+      "p_cross": 0.0,
+      "retained": null,
+      "unauthorized": 0.0
+    },
+    "GRACE|0.02|0.25": {
+      "n_after": 4,
+      "p_cross": 0.04,
+      "retained": 1.0,
+      "unauthorized": 0.0
+    },
+    "GRACE|0.02|0.3": {
+      "n_after": 54,
+      "p_cross": 0.54,
+      "retained": 1.0,
+      "unauthorized": 0.0
+    },
+    "GRACE|0.02|0.4": {
+      "n_after": 100,
+      "p_cross": 1.0,
+      "retained": 1.0,
+      "unauthorized": 0.0
+    },
+    "GRACE|0.04|0.1": {
+      "n_after": 1,
+      "p_cross": 0.01,
+      "retained": 1.0,
+      "unauthorized": 0.06
+    },
+    "GRACE|0.04|0.2": {
+      "n_after": 7,
+      "p_cross": 0.07,
+      "retained": 1.0,
+      "unauthorized": 0.06
+    },
+    "GRACE|0.04|0.25": {
+      "n_after": 36,
+      "p_cross": 0.36,
+      "retained": 1.0,
+      "unauthorized": 0.06
+    },
+    "GRACE|0.04|0.3": {
+      "n_after": 73,
+      "p_cross": 0.73,
+      "retained": 1.0,
+      "unauthorized": 0.06
+    },
+    "GRACE|0.04|0.4": {
+      "n_after": 94,
+      "p_cross": 0.94,
+      "retained": 1.0,
+      "unauthorized": 0.06
+    },
+    "LOVE|0.02|0.0": {
+      "n_after": 0,
+      "p_cross": 0.0,
+      "retained": null,
+      "unauthorized": 0.0
+    },
+    "LOVE|0.04|0.0": {
+      "n_after": 10,
+      "p_cross": 0.1,
+      "retained": 1.0,
+      "unauthorized": 0.06
+    },
+    "NONE|0.02|0.0": {
+      "n_after": 0,
+      "p_cross": 0.0,
+      "retained": null,
+      "unauthorized": 0.0
+    },
+    "NONE|0.04|0.0": {
+      "n_after": 0,
+      "p_cross": 0.0,
+      "retained": null,
+      "unauthorized": 0.06
+    }
+  },
+  "g_star": {
+    "GRACE": 0.32727,
+    "GRACE_LOVE": 0.24902,
+    "GRACE_LOVE_NODWELL": 0.32727
+  },
+  "prereg_sha256": "9228a974f5cc0581c4f8757c27696654c3bb2643a572677e88562d92fee228a2"
+}

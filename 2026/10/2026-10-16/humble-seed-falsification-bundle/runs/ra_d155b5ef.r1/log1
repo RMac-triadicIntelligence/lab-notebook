@@ -1,0 +1,10 @@
+goal                    S0                            S1                            S2                            S2_no_witness                 
+honest_control          PASS                          PASS                          PASS                          -                             
+G1_rewrite              BREACH                        held (anchor mismatch 3)      held (bad auth sig 5)         held (bad auth sig 5)         
+G1b_rewrite_after_auth  BREACH                        held (anchor mismatch 8)      held (anchor mismatch 8)      BREACH                        
+G2_delete               BREACH                        held (anchor mismatch 3)      held (bad auth sig 4)         held (bad auth sig 4)         
+G3_self_grant           BREACH                        BREACH                        held (bad auth sig 5)         held (bad auth sig 5)         
+G4_replay               BREACH                        BREACH                        held (bad auth sig 9)         held (bad auth sig 9)         
+G5_rollback             BREACH                        held (anchor mismatch 5)      held (anchor mismatch 5)      BREACH                        
+G6_tail_forge           BREACH                        BREACH                        BREACH                        BREACH                        
+G7_identity_replace     BREACH                        held (bad host sig 1)         held (bad host sig 1)         held (bad host sig 1)         

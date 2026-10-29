@@ -1,0 +1,17 @@
+module under test : ../source/humble_seed_v0_7.py  (SCHEMA_VERSION 0.7)
+
+[S1] baseline audit of owner's own organism : True  (audit returned True)
+[S1] audit after wholesale substitution      : ACCEPTED  (audit returned True)
+     organism id now        : ddb6d4f6-d848-47c2-8d43-53e6e853b4ae  (owner enrolled 9e3e7e3e-581a-4283-a85c-227afd744ea3)
+     constitution rule now  : 'The organism may authorize its own growth.'
+     character now          : {'curiosity': 0.99, 'formality': 0.01, 'verbosity': 0.99}
+     attacker-signed mutation applied : True
+     owner audit still passes         : True  (audit returned True)
+
+[S2] baseline audit of A (shared witness)   : True  (audit returned True)
+[S2] audit of A's dir holding B's state      : ACCEPTED  (audit returned True)
+     organism id now : 0325e67d-1466-46d0-ab01-1f4bf2b26238  (expected 2caba005-9d81-4297-95dc-46e6bb8923f7)
+
+[S3] control: victim's id under a new key    : rejected  (audit rejected: RollbackDetected: Identity fork: checkpoint birth_root does not match the witness. A different organism is claiming this identity.)
+
+RESULTS {"S1_unknown_id_accepted": true, "S2_enrolled_sibling_accepted": true, "S3_same_id_new_key_accepted": false}

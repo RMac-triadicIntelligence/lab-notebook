@@ -1,0 +1,54 @@
+{
+ "P1_running_total": [
+  [
+   "ACCEPT",
+   "ok"
+  ],
+  [
+   "ACCEPT",
+   "ok"
+  ],
+  [
+   "ACCEPT",
+   "ok"
+  ]
+ ],
+ "P2_rollback_replay": [
+  [
+   "ACCEPT",
+   "ok"
+  ],
+  [
+   "ACCEPT",
+   "ok"
+  ],
+  [
+   "ACCEPT",
+   "ok"
+  ]
+ ],
+ "P3_two_logs_same_receipt": [
+  [
+   "ACCEPT",
+   "ok"
+  ],
+  [
+   "ACCEPT",
+   "ok"
+  ]
+ ],
+ "P4_no_cancellation_record": [
+  "ACCEPT",
+  "ok"
+ ],
+ "P5_small_order_key_sig_ok": true,
+ "P6_malleable_S_sig_ok": false,
+ "P7_overlong_lifetime": [
+  "REFUSE",
+  "lifetime_invalid"
+ ],
+ "P8_unknown_field": [
+  "ACCEPT",
+  "ok"
+ ]
+}

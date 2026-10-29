@@ -1,0 +1,11 @@
+module under test : humble_seed_v0_7_1.py  (SCHEMA_VERSION 0.7)
+
+[S1] baseline audit of owner's own organism : True  (audit returned True)
+[S1] audit after wholesale substitution      : rejected  (audit rejected: RollbackDetected: Wrong organism: state presents c49bab19-20ae-4ede-a646-038219fc9202, owner expects 6189154d-b78d-472d-ade1-6b143b5ebef5)
+
+[S2] baseline audit of A (shared witness)   : True  (audit returned True)
+[S2] audit of A's dir holding B's state      : rejected  (audit rejected: RollbackDetected: Wrong organism: state presents 87c83407-4a2c-448a-bb5f-86a80ead662d, owner expects 2826e933-24fc-4307-b424-9d0229428630)
+
+[S3] control: victim's id under a new key    : rejected  (audit rejected: RollbackDetected: Identity fork: checkpoint birth_root does not match the witness. A different organism is claiming this identity.)
+
+RESULTS {"S1_unknown_id_accepted": false, "S2_enrolled_sibling_accepted": false, "S3_same_id_new_key_accepted": false}

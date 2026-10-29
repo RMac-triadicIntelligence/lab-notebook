@@ -1,0 +1,21 @@
+test_anchor_inside_release_tree_refused (test_h1h2.H1Lineage.test_anchor_inside_release_tree_refused) ... ok
+test_edit_files_map_without_resigning_refused (test_h1h2.H1Lineage.test_edit_files_map_without_resigning_refused) ... ok
+test_no_caller_supplied_reference_exists (test_h1h2.H1Lineage.test_no_caller_supplied_reference_exists) ... ok
+test_one_byte_change_refused (test_h1h2.H1Lineage.test_one_byte_change_refused) ... ok
+test_rollback_refused_when_generation_floor_set (test_h1h2.H1Lineage.test_rollback_refused_when_generation_floor_set) ... ok
+test_self_signed_child_refused (test_h1h2.H1Lineage.test_self_signed_child_refused) ... ok
+test_unmarked_executed_file_refused (test_h1h2.H1Lineage.test_unmarked_executed_file_refused) ... ok
+test_valid_lineage_passes (test_h1h2.H1Lineage.test_valid_lineage_passes) ... ok
+test_whole_fake_lineage_refused_against_real_anchor (test_h1h2.H1Lineage.test_whole_fake_lineage_refused_against_real_anchor) ... ok
+test_canaries_carry_fresh_nonces (test_h1h2.H2Immune.test_canaries_carry_fresh_nonces) ... ok
+test_compromised_notary_quarantined_with_last_good_head (test_h1h2.H2Immune.test_compromised_notary_quarantined_with_last_good_head) ... ok
+test_healthy_notary_refuses_every_canary (test_h1h2.H2Immune.test_healthy_notary_refuses_every_canary) ... ok
+test_interleaving_rate (test_h1h2.H2Immune.test_interleaving_rate) ... ok
+test_control_attack_is_live_on_v115_style_launch (test_h1h2.H2Isolation.test_control_attack_is_live_on_v115_style_launch) ... ok
+test_isolated_launch_blocks_user_site_and_env (test_h1h2.H2Isolation.test_isolated_launch_blocks_user_site_and_env) ... ok
+test_startup_surface_reports (test_h1h2.H2Isolation.test_startup_surface_reports) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.188s
+
+OK

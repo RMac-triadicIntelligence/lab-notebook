@@ -1,0 +1,11 @@
+run started 2026-10-28T00:52:19Z
+seal: OK (Types, Spec, v0.7 source, attack script, PREREG unchanged)
+installing elan (Lean toolchain manager) from GitHub
+Lean: not available — skipped build, axioms, attempt and differential test
+attacks on v0.7       : RESULTS {"S1_unknown_id_accepted": true, "S2_enrolled_sibling_accepted": true, "S3_same_id_new_key_accepted": false}
+attacks on v0.7 + K1  : RESULTS {"S1_unknown_id_accepted": false, "S2_enrolled_sibling_accepted": true, "S3_same_id_new_key_accepted": false}
+attacks on v0.7.1     : RESULTS {"S1_unknown_id_accepted": false, "S2_enrolled_sibling_accepted": false, "S3_same_id_new_key_accepted": false}
+v0.7.1 tests T1–T4   : pass
+differential v07       : Lean not installed: Python side written; run the Lean side later. (exit 3)
+differential v071       : Lean not installed: Python side written; run the Lean side later. (exit 3)
+run finished 2026-10-28T00:52:22Z, overall exit 1

@@ -1,0 +1,2 @@
+# Python 3.13.x
+cryptography==50.0.1

@@ -1,0 +1,417 @@
+{
+ "acceptance_sha256": "35e937839f4ad2c753b978a39e30e4d8e3944bd2700c79bc0572682bcfef4099",
+ "candidate_files": {
+  "notary.py": "42cc1f0ade5b6403bc6d5af970bbefdc90745a70554fbdb41da1cf3d8e171ba8",
+  "core.py": "23299fdc63361e632b0f30cc686b09eb3e2a3bb70daf66f51b7378fb5a26baa6",
+  "judge_verify.py": "2593b2b2b131d136aaa4e54aaaca0d0c101ec0fca9c164f615040e6699a3d2c0",
+  "supervisor.py": "5f1b5ec1d67cb4b1226530f8fba160393684213749e4fa236b9670141feb2aff",
+  "session.py": "9be7903a69f2e7c5f78b6c0291f8af73b72d00dee0e0d00afc57886e72eed978"
+ },
+ "witness_judge_sha256": "0bd7e6437a99ce0c263edbbe42f4e796808c3d5d80c936cca20c492d97029f4d",
+ "validation": {
+  "legacy_fails_case1": true,
+  "legacy_fails_case2": true,
+  "naive_fails_case3_or_case4": true,
+  "gate_discriminates": true
+ },
+ "verdict": {
+  "gate_discriminates": true,
+  "witness_judge_passes_gate": true,
+  "witness_judge_passes_alongside": true,
+  "PASS": true
+ },
+ "results": {
+  "LEGACY": {
+   "case1_backdated_expiry": {
+    "engine_with_backdated_clock": "ACCEPT",
+    "1a_witnessed_at_commit": {
+     "verdict": "ACCEPT",
+     "reasons": [],
+     "pass": false
+    },
+    "1b_shown_afterwards": {
+     "verdict": "ACCEPT",
+     "reasons": [],
+     "pass": false
+    },
+    "pass": false
+   },
+   "case2_empty_head": {
+    "real_commit": "ACCEPT",
+    "empty_head": {
+     "verdict": "ACCEPT",
+     "reasons": [],
+     "pass": false
+    },
+    "pass": false
+   },
+   "case3_history_verified_later": {
+    "real_commit": "ACCEPT",
+    "verified_after_expiry": {
+     "verdict": "ACCEPT",
+     "reasons": [],
+     "pass": true
+    },
+    "pass": true
+   },
+   "case4_restart": {
+    "real_commit": "ACCEPT",
+    "after_restart_empty_head": {
+     "verdict": "ACCEPT",
+     "reasons": [],
+     "pass": false
+    },
+    "after_restart_real_head": {
+     "verdict": "ACCEPT",
+     "reasons": [],
+     "pass": true
+    },
+    "pass": false
+   },
+   "replay": {
+    "engine": [
+     "ACCEPT",
+     "REFUSE: Refusal: authorization replay",
+     "REFUSE: Refusal: authorization replay"
+    ],
+    "engine_refuses_both": true,
+    "REPLAY_NONCE": {
+     "compromised_engine": "ACCEPT",
+     "judge": {
+      "verdict": "ACCEPT",
+      "reasons": [],
+      "pass": false
+     }
+    },
+    "REPLAY_DET": {
+     "compromised_engine": "ACCEPT",
+     "judge": {
+      "verdict": "ACCEPT",
+      "reasons": [],
+      "pass": false
+     }
+    },
+    "pass": false
+   },
+   "crash_is_not_refusal": {
+    "rows": {
+     "head is a list": "CRASH (returned None)",
+     "head is None": "CRASH (returned None)",
+     "records is an int": "CRASH (returned None)",
+     "proofs missing": "REFUSE",
+     "record missing digests": "CRASH (returned None)",
+     "timestamp is a string": "CRASH (returned None)",
+     "timestamp is None": "CRASH (returned None)",
+     "signature not hex": "REFUSE",
+     "expires_at is a string": "REFUSE",
+     "state missing": "ACCEPT",
+     "record is a string": "CRASH (returned None)",
+     "proof is a list": "REFUSE"
+    },
+    "pass": false
+   },
+   "no_fallback": {
+    "self_vouched_head": {
+     "verdict": "REFUSE",
+     "reasons": [
+      "1 records but 0 proofs",
+      "record 1: no authority proof",
+      "reported state is not the state the signed chain leads to"
+     ],
+     "pass": true
+    },
+    "judge_source_never_reads_notary_self_check": null,
+    "pass": true
+   },
+   "extra_truncated_prefix_NOT_IN_ACCEPTANCE": {
+    "commits": [
+     "ACCEPT",
+     "ACCEPT"
+    ],
+    "prefix_only": {
+     "verdict": "ACCEPT",
+     "reasons": [],
+     "pass": false
+    },
+    "full_head": {
+     "verdict": "ACCEPT",
+     "reasons": [],
+     "pass": true
+    },
+    "pass": false
+   },
+   "gate_pass": false,
+   "alongside_pass": false
+  },
+  "NAIVE": {
+   "case1_backdated_expiry": {
+    "engine_with_backdated_clock": "ACCEPT",
+    "1a_witnessed_at_commit": {
+     "verdict": "REFUSE",
+     "reasons": [
+      "record 1: refused when witnessed: expired: judge clock 2000000000 is past expires_at 1999999990"
+     ],
+     "pass": true
+    },
+    "1b_shown_afterwards": {
+     "verdict": "REFUSE",
+     "reasons": [
+      "record 1: expired: never witnessed, and judge clock 2000000050 is past expires_at 1999999990"
+     ],
+     "pass": true
+    },
+    "pass": true
+   },
+   "case2_empty_head": {
+    "real_commit": "ACCEPT",
+    "empty_head": {
+     "verdict": "REFUSE",
+     "reasons": [
+      "empty head: record-keeper shows 0 commits; judge witnessed 1 (latest 9038b97f25a8...)"
+     ],
+     "pass": true
+    },
+    "pass": true
+   },
+   "case3_history_verified_later": {
+    "real_commit": "ACCEPT",
+    "verified_after_expiry": {
+     "verdict": "REFUSE",
+     "reasons": [
+      "record 1: expired: judge clock 2000010000 is past expires_at 2000000300"
+     ],
+     "pass": false
+    },
+    "pass": false
+   },
+   "case4_restart": {
+    "real_commit": "ACCEPT",
+    "after_restart_empty_head": {
+     "verdict": "ACCEPT",
+     "reasons": [],
+     "pass": false
+    },
+    "after_restart_real_head": {
+     "verdict": "REFUSE",
+     "reasons": [
+      "record 1: unwitnessed: the judge has no receipt for this commit"
+     ],
+     "pass": false
+    },
+    "pass": false
+   },
+   "replay": {
+    "engine": [
+     "ACCEPT",
+     "REFUSE: Refusal: authorization replay",
+     "REFUSE: Refusal: authorization replay"
+    ],
+    "engine_refuses_both": true,
+    "REPLAY_NONCE": {
+     "compromised_engine": "ACCEPT",
+     "judge": {
+      "verdict": "REFUSE",
+      "reasons": [
+       "record 2: replay: nonce or determination reused within the chain"
+      ],
+      "pass": true
+     }
+    },
+    "REPLAY_DET": {
+     "compromised_engine": "ACCEPT",
+     "judge": {
+      "verdict": "REFUSE",
+      "reasons": [
+       "record 2: replay: nonce or determination reused within the chain"
+      ],
+      "pass": true
+     }
+    },
+    "pass": true
+   },
+   "crash_is_not_refusal": {
+    "rows": {
+     "head is a list": "REFUSE",
+     "head is None": "REFUSE",
+     "records is an int": "REFUSE",
+     "proofs missing": "REFUSE",
+     "record missing digests": "REFUSE",
+     "timestamp is a string": "REFUSE",
+     "timestamp is None": "REFUSE",
+     "signature not hex": "REFUSE",
+     "expires_at is a string": "REFUSE",
+     "state missing": "REFUSE",
+     "record is a string": "REFUSE",
+     "proof is a list": "REFUSE"
+    },
+    "pass": true
+   },
+   "no_fallback": {
+    "self_vouched_head": {
+     "verdict": "REFUSE",
+     "reasons": [
+      "malformed: 1 records but 0 proofs"
+     ],
+     "pass": true
+    },
+    "judge_source_never_reads_notary_self_check": true,
+    "pass": true
+   },
+   "extra_truncated_prefix_NOT_IN_ACCEPTANCE": {
+    "commits": [
+     "ACCEPT",
+     "ACCEPT"
+    ],
+    "prefix_only": {
+     "verdict": "REFUSE",
+     "reasons": [
+      "truncated head: record-keeper shows 1 commits; judge witnessed 2 (latest 293ee2b44b7c...)"
+     ],
+     "pass": true
+    },
+    "full_head": {
+     "verdict": "ACCEPT",
+     "reasons": [],
+     "pass": true
+    },
+    "pass": true
+   },
+   "gate_pass": false,
+   "alongside_pass": true
+  },
+  "WITNESS": {
+   "case1_backdated_expiry": {
+    "engine_with_backdated_clock": "ACCEPT",
+    "1a_witnessed_at_commit": {
+     "verdict": "REFUSE",
+     "reasons": [
+      "record 1: refused when witnessed: expired: judge clock 2000000000 is past expires_at 1999999990"
+     ],
+     "pass": true
+    },
+    "1b_shown_afterwards": {
+     "verdict": "REFUSE",
+     "reasons": [
+      "record 1: expired: never witnessed, and judge clock 2000000050 is past expires_at 1999999990"
+     ],
+     "pass": true
+    },
+    "pass": true
+   },
+   "case2_empty_head": {
+    "real_commit": "ACCEPT",
+    "empty_head": {
+     "verdict": "REFUSE",
+     "reasons": [
+      "empty head: record-keeper shows 0 commits; judge witnessed 1 (latest 9038b97f25a8...)"
+     ],
+     "pass": true
+    },
+    "pass": true
+   },
+   "case3_history_verified_later": {
+    "real_commit": "ACCEPT",
+    "verified_after_expiry": {
+     "verdict": "ACCEPT",
+     "reasons": [],
+     "pass": true
+    },
+    "pass": true
+   },
+   "case4_restart": {
+    "real_commit": "ACCEPT",
+    "after_restart_empty_head": {
+     "verdict": "REFUSE",
+     "reasons": [
+      "empty head: record-keeper shows 0 commits; judge witnessed 1 (latest 9038b97f25a8...)"
+     ],
+     "pass": true
+    },
+    "after_restart_real_head": {
+     "verdict": "ACCEPT",
+     "reasons": [],
+     "pass": true
+    },
+    "pass": true
+   },
+   "replay": {
+    "engine": [
+     "ACCEPT",
+     "REFUSE: Refusal: authorization replay",
+     "REFUSE: Refusal: authorization replay"
+    ],
+    "engine_refuses_both": true,
+    "REPLAY_NONCE": {
+     "compromised_engine": "ACCEPT",
+     "judge": {
+      "verdict": "REFUSE",
+      "reasons": [
+       "record 2: replay: nonce or determination reused within the chain"
+      ],
+      "pass": true
+     }
+    },
+    "REPLAY_DET": {
+     "compromised_engine": "ACCEPT",
+     "judge": {
+      "verdict": "REFUSE",
+      "reasons": [
+       "record 2: replay: nonce or determination reused within the chain"
+      ],
+      "pass": true
+     }
+    },
+    "pass": true
+   },
+   "crash_is_not_refusal": {
+    "rows": {
+     "head is a list": "REFUSE",
+     "head is None": "REFUSE",
+     "records is an int": "REFUSE",
+     "proofs missing": "REFUSE",
+     "record missing digests": "REFUSE",
+     "timestamp is a string": "REFUSE",
+     "timestamp is None": "REFUSE",
+     "signature not hex": "REFUSE",
+     "expires_at is a string": "REFUSE",
+     "state missing": "REFUSE",
+     "record is a string": "REFUSE",
+     "proof is a list": "REFUSE"
+    },
+    "pass": true
+   },
+   "no_fallback": {
+    "self_vouched_head": {
+     "verdict": "REFUSE",
+     "reasons": [
+      "malformed: 1 records but 0 proofs"
+     ],
+     "pass": true
+    },
+    "judge_source_never_reads_notary_self_check": true,
+    "pass": true
+   },
+   "extra_truncated_prefix_NOT_IN_ACCEPTANCE": {
+    "commits": [
+     "ACCEPT",
+     "ACCEPT"
+    ],
+    "prefix_only": {
+     "verdict": "REFUSE",
+     "reasons": [
+      "truncated head: record-keeper shows 1 commits; judge witnessed 2 (latest 293ee2b44b7c...)"
+     ],
+     "pass": true
+    },
+    "full_head": {
+     "verdict": "ACCEPT",
+     "reasons": [],
+     "pass": true
+    },
+    "pass": true
+   },
+   "gate_pass": true,
+   "alongside_pass": true
+  }
+ }
+}

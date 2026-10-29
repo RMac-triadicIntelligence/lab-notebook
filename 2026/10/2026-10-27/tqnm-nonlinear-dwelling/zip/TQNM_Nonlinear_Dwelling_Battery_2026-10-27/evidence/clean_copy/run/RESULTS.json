@@ -1,0 +1,2564 @@
+{
+  "calibration_cases": 192,
+  "claims": [
+    {
+      "id": "TASK_VS_OFF",
+      "verdict": "FAIL"
+    },
+    {
+      "id": "TASK_VS_ORDINARY",
+      "verdict": "FAIL"
+    },
+    {
+      "id": "READINESS",
+      "verdict": "PASS"
+    },
+    {
+      "id": "NUMERICAL",
+      "verdict": "PASS"
+    },
+    {
+      "id": "D_NO_DWELL",
+      "verdict": "PASS"
+    },
+    {
+      "id": "D_PERMISSION",
+      "verdict": "PASS"
+    },
+    {
+      "id": "LEGACY_ANCHOR",
+      "verdict": "PASS"
+    },
+    {
+      "id": "ETH",
+      "verdict": "NOT_TESTED"
+    }
+  ],
+  "comparisons": {
+    "FIELD_OFF": {
+      "extra_correct": -1,
+      "extra_false": 0,
+      "interval": {
+        "ci95": [
+          -0.03125,
+          0.0
+        ],
+        "mean_difference": -0.010416666666666666,
+        "per_seed_differences": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.3333333333333333,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "test_seeds": 32
+      },
+      "passed": false,
+      "test_false_budget_met": true
+    },
+    "MIN_CUE": {
+      "extra_correct": -57,
+      "extra_false": 0,
+      "interval": {
+        "ci95": [
+          -0.6354166666666666,
+          -0.5416666666666666
+        ],
+        "mean_difference": -0.59375,
+        "per_seed_differences": [
+          -0.6666666666666666,
+          -0.6666666666666666,
+          -0.3333333333333333,
+          -0.6666666666666666,
+          -0.6666666666666666,
+          -0.6666666666666666,
+          -0.6666666666666666,
+          -0.6666666666666666,
+          -0.6666666666666666,
+          -0.6666666666666666,
+          -0.6666666666666666,
+          -0.3333333333333333,
+          -0.6666666666666666,
+          -0.6666666666666666,
+          -0.6666666666666666,
+          -0.3333333333333333,
+          -0.3333333333333333,
+          -0.6666666666666666,
+          -0.6666666666666666,
+          -0.3333333333333333,
+          -0.6666666666666666,
+          -0.6666666666666666,
+          -0.6666666666666666,
+          -0.6666666666666666,
+          -0.6666666666666666,
+          -0.6666666666666666,
+          -0.6666666666666666,
+          -0.6666666666666666,
+          -0.6666666666666666,
+          -0.6666666666666666,
+          -0.3333333333333333,
+          -0.3333333333333333
+        ],
+        "test_seeds": 32
+      },
+      "passed": false,
+      "test_false_budget_met": true
+    }
+  },
+  "ordinary_timing": {
+    "ARCHIVED_READER": {
+      "score_cpu_ns": 551325
+    },
+    "GEOMEAN_CUE": {
+      "score_cpu_ns": 191119
+    },
+    "MEAN_CUE": {
+      "score_cpu_ns": 189314
+    },
+    "MIN_CUE": {
+      "score_cpu_ns": 303506
+    }
+  },
+  "primary": {
+    "ALWAYS_ON": {
+      "abstentions": 384,
+      "cases": 384,
+      "correct_commits": 0,
+      "false_commit_rate": 0.0,
+      "false_commits": 0,
+      "negative_cases": 288,
+      "negative_worlds": {
+        "BURST": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        },
+        "CONCENTRATED": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        },
+        "NULL": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        }
+      },
+      "positive_cases": 96,
+      "precision": null,
+      "raw_ready_test": 197,
+      "threshold": 1.0,
+      "true_positive_coverage": 0.0
+    },
+    "ARCHIVED_READER": {
+      "abstentions": 384,
+      "cases": 384,
+      "correct_commits": 0,
+      "false_commit_rate": 0.0,
+      "false_commits": 0,
+      "negative_cases": 288,
+      "negative_worlds": {
+        "BURST": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        },
+        "CONCENTRATED": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        },
+        "NULL": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        }
+      },
+      "positive_cases": 96,
+      "precision": null,
+      "raw_ready_test": null,
+      "threshold": 1.0,
+      "true_positive_coverage": 0.0
+    },
+    "COUPLING_ONLY": {
+      "abstentions": 381,
+      "cases": 384,
+      "correct_commits": 1,
+      "false_commit_rate": 0.006944444444444444,
+      "false_commits": 2,
+      "negative_cases": 288,
+      "negative_worlds": {
+        "BURST": {
+          "cases": 96,
+          "false_commits": 2,
+          "rate": 0.020833333333333332
+        },
+        "CONCENTRATED": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        },
+        "NULL": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        }
+      },
+      "positive_cases": 96,
+      "precision": 0.3333333333333333,
+      "raw_ready_test": 34,
+      "threshold": 0.991,
+      "true_positive_coverage": 0.010416666666666666
+    },
+    "DECAY_ONLY": {
+      "abstentions": 364,
+      "cases": 384,
+      "correct_commits": 8,
+      "false_commit_rate": 0.041666666666666664,
+      "false_commits": 12,
+      "negative_cases": 288,
+      "negative_worlds": {
+        "BURST": {
+          "cases": 96,
+          "false_commits": 10,
+          "rate": 0.10416666666666667
+        },
+        "CONCENTRATED": {
+          "cases": 96,
+          "false_commits": 2,
+          "rate": 0.020833333333333332
+        },
+        "NULL": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        }
+      },
+      "positive_cases": 96,
+      "precision": 0.4,
+      "raw_ready_test": 75,
+      "threshold": 0.991,
+      "true_positive_coverage": 0.08333333333333333
+    },
+    "FIELD_OFF": {
+      "abstentions": 383,
+      "cases": 384,
+      "correct_commits": 1,
+      "false_commit_rate": 0.0,
+      "false_commits": 0,
+      "negative_cases": 288,
+      "negative_worlds": {
+        "BURST": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        },
+        "CONCENTRATED": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        },
+        "NULL": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        }
+      },
+      "positive_cases": 96,
+      "precision": 1.0,
+      "raw_ready_test": 3,
+      "threshold": 0.984,
+      "true_positive_coverage": 0.010416666666666666
+    },
+    "FULL": {
+      "abstentions": 384,
+      "cases": 384,
+      "correct_commits": 0,
+      "false_commit_rate": 0.0,
+      "false_commits": 0,
+      "negative_cases": 288,
+      "negative_worlds": {
+        "BURST": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        },
+        "CONCENTRATED": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        },
+        "NULL": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        }
+      },
+      "positive_cases": 96,
+      "precision": null,
+      "raw_ready_test": 131,
+      "threshold": 1.0,
+      "true_positive_coverage": 0.0
+    },
+    "GEOMEAN_CUE": {
+      "abstentions": 328,
+      "cases": 384,
+      "correct_commits": 56,
+      "false_commit_rate": 0.0,
+      "false_commits": 0,
+      "negative_cases": 288,
+      "negative_worlds": {
+        "BURST": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        },
+        "CONCENTRATED": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        },
+        "NULL": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        }
+      },
+      "positive_cases": 96,
+      "precision": 1.0,
+      "raw_ready_test": null,
+      "threshold": 0.805,
+      "true_positive_coverage": 0.5833333333333334
+    },
+    "MEAN_CUE": {
+      "abstentions": 349,
+      "cases": 384,
+      "correct_commits": 35,
+      "false_commit_rate": 0.0,
+      "false_commits": 0,
+      "negative_cases": 288,
+      "negative_worlds": {
+        "BURST": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        },
+        "CONCENTRATED": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        },
+        "NULL": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        }
+      },
+      "positive_cases": 96,
+      "precision": 1.0,
+      "raw_ready_test": null,
+      "threshold": 0.899,
+      "true_positive_coverage": 0.3645833333333333
+    },
+    "MIN_CUE": {
+      "abstentions": 327,
+      "cases": 384,
+      "correct_commits": 57,
+      "false_commit_rate": 0.0,
+      "false_commits": 0,
+      "negative_cases": 288,
+      "negative_worlds": {
+        "BURST": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        },
+        "CONCENTRATED": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        },
+        "NULL": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        }
+      },
+      "positive_cases": 96,
+      "precision": 1.0,
+      "raw_ready_test": null,
+      "threshold": 0.697,
+      "true_positive_coverage": 0.59375
+    },
+    "NO_DWELL": {
+      "abstentions": 383,
+      "cases": 384,
+      "correct_commits": 1,
+      "false_commit_rate": 0.0,
+      "false_commits": 0,
+      "negative_cases": 288,
+      "negative_worlds": {
+        "BURST": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        },
+        "CONCENTRATED": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        },
+        "NULL": {
+          "cases": 96,
+          "false_commits": 0,
+          "rate": 0.0
+        }
+      },
+      "positive_cases": 96,
+      "precision": 1.0,
+      "raw_ready_test": 3,
+      "threshold": 0.984,
+      "true_positive_coverage": 0.010416666666666666
+    }
+  },
+  "raw_readiness_difference": 0.3333333333333333,
+  "scientific_sha256": "431e4be8c67f5f74640cbe8f413b2686ec97db299c3426c11cb5e16bfb0a8545",
+  "scored_decisions": 12480,
+  "selected_ordinary": "MIN_CUE",
+  "sensitivity": {
+    "FINER_STEP": {
+      "ALWAYS_ON": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 1.0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "raw_ready": 47,
+        "raw_ready_rate_difference": 0.0,
+        "true_positive_coverage": 0.0
+      },
+      "ARCHIVED_READER": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "true_positive_coverage": 0.0
+      },
+      "COUPLING_ONLY": {
+        "abstentions": 93,
+        "cases": 96,
+        "correct_commits": 2,
+        "disposition_agreement": 0.9791666666666666,
+        "false_commit_rate": 0.013888888888888888,
+        "false_commits": 1,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 1,
+            "rate": 0.041666666666666664
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 0.6666666666666666,
+        "raw_ready": 10,
+        "raw_ready_rate_difference": 0.0,
+        "true_positive_coverage": 0.08333333333333333
+      },
+      "DECAY_ONLY": {
+        "abstentions": 92,
+        "cases": 96,
+        "correct_commits": 2,
+        "disposition_agreement": 1.0,
+        "false_commit_rate": 0.027777777777777776,
+        "false_commits": 2,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 2,
+            "rate": 0.08333333333333333
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 0.5,
+        "raw_ready": 20,
+        "raw_ready_rate_difference": 0.0,
+        "true_positive_coverage": 0.08333333333333333
+      },
+      "FIELD_OFF": {
+        "abstentions": 95,
+        "cases": 96,
+        "correct_commits": 1,
+        "disposition_agreement": 1.0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 1.0,
+        "raw_ready": 2,
+        "raw_ready_rate_difference": 0.0,
+        "true_positive_coverage": 0.041666666666666664
+      },
+      "FULL": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 1.0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "raw_ready": 35,
+        "raw_ready_rate_difference": 0.0,
+        "true_positive_coverage": 0.0
+      },
+      "GEOMEAN_CUE": {
+        "abstentions": 82,
+        "cases": 96,
+        "correct_commits": 14,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 1.0,
+        "true_positive_coverage": 0.5833333333333334
+      },
+      "MEAN_CUE": {
+        "abstentions": 87,
+        "cases": 96,
+        "correct_commits": 9,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 1.0,
+        "true_positive_coverage": 0.375
+      },
+      "MIN_CUE": {
+        "abstentions": 81,
+        "cases": 96,
+        "correct_commits": 15,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 1.0,
+        "true_positive_coverage": 0.625
+      },
+      "NO_DWELL": {
+        "abstentions": 95,
+        "cases": 96,
+        "correct_commits": 1,
+        "disposition_agreement": 1.0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 1.0,
+        "raw_ready": 2,
+        "raw_ready_rate_difference": 0.0,
+        "true_positive_coverage": 0.041666666666666664
+      }
+    },
+    "HIGH_NOISE": {
+      "ALWAYS_ON": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 1.0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "raw_ready": 96,
+        "raw_ready_rate_difference": 0.5104166666666667,
+        "true_positive_coverage": 0.0
+      },
+      "ARCHIVED_READER": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "true_positive_coverage": 0.0
+      },
+      "COUPLING_ONLY": {
+        "abstentions": 59,
+        "cases": 96,
+        "correct_commits": 15,
+        "disposition_agreement": 0.625,
+        "false_commit_rate": 0.3055555555555556,
+        "false_commits": 22,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 10,
+            "rate": 0.4166666666666667
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 11,
+            "rate": 0.4583333333333333
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 1,
+            "rate": 0.041666666666666664
+          }
+        },
+        "positive_cases": 24,
+        "precision": 0.40540540540540543,
+        "raw_ready": 38,
+        "raw_ready_rate_difference": 0.29166666666666663,
+        "true_positive_coverage": 0.625
+      },
+      "DECAY_ONLY": {
+        "abstentions": 51,
+        "cases": 96,
+        "correct_commits": 17,
+        "disposition_agreement": 0.5729166666666666,
+        "false_commit_rate": 0.3888888888888889,
+        "false_commits": 28,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 12,
+            "rate": 0.5
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 13,
+            "rate": 0.5416666666666666
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 3,
+            "rate": 0.125
+          }
+        },
+        "positive_cases": 24,
+        "precision": 0.37777777777777777,
+        "raw_ready": 48,
+        "raw_ready_rate_difference": 0.29166666666666663,
+        "true_positive_coverage": 0.7083333333333334
+      },
+      "FIELD_OFF": {
+        "abstentions": 76,
+        "cases": 96,
+        "correct_commits": 9,
+        "disposition_agreement": 0.8020833333333334,
+        "false_commit_rate": 0.1527777777777778,
+        "false_commits": 11,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 7,
+            "rate": 0.2916666666666667
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 4,
+            "rate": 0.16666666666666666
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 0.45,
+        "raw_ready": 20,
+        "raw_ready_rate_difference": 0.1875,
+        "true_positive_coverage": 0.375
+      },
+      "FULL": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 1.0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "raw_ready": 66,
+        "raw_ready_rate_difference": 0.3229166666666667,
+        "true_positive_coverage": 0.0
+      },
+      "GEOMEAN_CUE": {
+        "abstentions": 82,
+        "cases": 96,
+        "correct_commits": 14,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 1.0,
+        "true_positive_coverage": 0.5833333333333334
+      },
+      "MEAN_CUE": {
+        "abstentions": 87,
+        "cases": 96,
+        "correct_commits": 9,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 1.0,
+        "true_positive_coverage": 0.375
+      },
+      "MIN_CUE": {
+        "abstentions": 81,
+        "cases": 96,
+        "correct_commits": 15,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 1.0,
+        "true_positive_coverage": 0.625
+      },
+      "NO_DWELL": {
+        "abstentions": 76,
+        "cases": 96,
+        "correct_commits": 9,
+        "disposition_agreement": 0.8020833333333334,
+        "false_commit_rate": 0.1527777777777778,
+        "false_commits": 11,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 7,
+            "rate": 0.2916666666666667
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 4,
+            "rate": 0.16666666666666666
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 0.45,
+        "raw_ready": 20,
+        "raw_ready_rate_difference": 0.1875,
+        "true_positive_coverage": 0.375
+      }
+    },
+    "NO_NOISE": {
+      "ALWAYS_ON": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 1.0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "raw_ready": 8,
+        "raw_ready_rate_difference": -0.40625,
+        "true_positive_coverage": 0.0
+      },
+      "ARCHIVED_READER": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "true_positive_coverage": 0.0
+      },
+      "COUPLING_ONLY": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 0.9895833333333334,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "raw_ready": 0,
+        "raw_ready_rate_difference": -0.10416666666666667,
+        "true_positive_coverage": 0.0
+      },
+      "DECAY_ONLY": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 0.9583333333333334,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "raw_ready": 0,
+        "raw_ready_rate_difference": -0.20833333333333334,
+        "true_positive_coverage": 0.0
+      },
+      "FIELD_OFF": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 0.9895833333333334,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "raw_ready": 0,
+        "raw_ready_rate_difference": -0.020833333333333332,
+        "true_positive_coverage": 0.0
+      },
+      "FULL": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 1.0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "raw_ready": 8,
+        "raw_ready_rate_difference": -0.28125,
+        "true_positive_coverage": 0.0
+      },
+      "GEOMEAN_CUE": {
+        "abstentions": 82,
+        "cases": 96,
+        "correct_commits": 14,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 1.0,
+        "true_positive_coverage": 0.5833333333333334
+      },
+      "MEAN_CUE": {
+        "abstentions": 87,
+        "cases": 96,
+        "correct_commits": 9,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 1.0,
+        "true_positive_coverage": 0.375
+      },
+      "MIN_CUE": {
+        "abstentions": 81,
+        "cases": 96,
+        "correct_commits": 15,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 1.0,
+        "true_positive_coverage": 0.625
+      },
+      "NO_DWELL": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 0.9895833333333334,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "raw_ready": 0,
+        "raw_ready_rate_difference": -0.020833333333333332,
+        "true_positive_coverage": 0.0
+      }
+    },
+    "NO_NUDGE": {
+      "ALWAYS_ON": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 1.0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "raw_ready": 24,
+        "raw_ready_rate_difference": -0.23958333333333331,
+        "true_positive_coverage": 0.0
+      },
+      "ARCHIVED_READER": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "true_positive_coverage": 0.0
+      },
+      "COUPLING_ONLY": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 0.9895833333333334,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "raw_ready": 0,
+        "raw_ready_rate_difference": -0.10416666666666667,
+        "true_positive_coverage": 0.0
+      },
+      "DECAY_ONLY": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 0.9583333333333334,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "raw_ready": 1,
+        "raw_ready_rate_difference": -0.19791666666666669,
+        "true_positive_coverage": 0.0
+      },
+      "FIELD_OFF": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 0.9895833333333334,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "raw_ready": 0,
+        "raw_ready_rate_difference": -0.020833333333333332,
+        "true_positive_coverage": 0.0
+      },
+      "FULL": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 1.0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "raw_ready": 7,
+        "raw_ready_rate_difference": -0.29166666666666663,
+        "true_positive_coverage": 0.0
+      },
+      "GEOMEAN_CUE": {
+        "abstentions": 82,
+        "cases": 96,
+        "correct_commits": 14,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 1.0,
+        "true_positive_coverage": 0.5833333333333334
+      },
+      "MEAN_CUE": {
+        "abstentions": 87,
+        "cases": 96,
+        "correct_commits": 9,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 1.0,
+        "true_positive_coverage": 0.375
+      },
+      "MIN_CUE": {
+        "abstentions": 81,
+        "cases": 96,
+        "correct_commits": 15,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 1.0,
+        "true_positive_coverage": 0.625
+      },
+      "NO_DWELL": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 0.9895833333333334,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "raw_ready": 0,
+        "raw_ready_rate_difference": -0.020833333333333332,
+        "true_positive_coverage": 0.0
+      }
+    },
+    "REFLECTED_BOUNDARY": {
+      "ALWAYS_ON": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 1.0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "raw_ready": 47,
+        "raw_ready_rate_difference": 0.0,
+        "true_positive_coverage": 0.0
+      },
+      "ARCHIVED_READER": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "true_positive_coverage": 0.0
+      },
+      "COUPLING_ONLY": {
+        "abstentions": 95,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 1.0,
+        "false_commit_rate": 0.013888888888888888,
+        "false_commits": 1,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 1,
+            "rate": 0.041666666666666664
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 0.0,
+        "raw_ready": 11,
+        "raw_ready_rate_difference": 0.010416666666666657,
+        "true_positive_coverage": 0.0
+      },
+      "DECAY_ONLY": {
+        "abstentions": 91,
+        "cases": 96,
+        "correct_commits": 3,
+        "disposition_agreement": 0.9895833333333334,
+        "false_commit_rate": 0.027777777777777776,
+        "false_commits": 2,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 2,
+            "rate": 0.08333333333333333
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 0.6,
+        "raw_ready": 20,
+        "raw_ready_rate_difference": 0.0,
+        "true_positive_coverage": 0.125
+      },
+      "FIELD_OFF": {
+        "abstentions": 95,
+        "cases": 96,
+        "correct_commits": 1,
+        "disposition_agreement": 1.0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 1.0,
+        "raw_ready": 2,
+        "raw_ready_rate_difference": 0.0,
+        "true_positive_coverage": 0.041666666666666664
+      },
+      "FULL": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 1.0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "raw_ready": 35,
+        "raw_ready_rate_difference": 0.0,
+        "true_positive_coverage": 0.0
+      },
+      "GEOMEAN_CUE": {
+        "abstentions": 82,
+        "cases": 96,
+        "correct_commits": 14,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 1.0,
+        "true_positive_coverage": 0.5833333333333334
+      },
+      "MEAN_CUE": {
+        "abstentions": 87,
+        "cases": 96,
+        "correct_commits": 9,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 1.0,
+        "true_positive_coverage": 0.375
+      },
+      "MIN_CUE": {
+        "abstentions": 81,
+        "cases": 96,
+        "correct_commits": 15,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 1.0,
+        "true_positive_coverage": 0.625
+      },
+      "NO_DWELL": {
+        "abstentions": 95,
+        "cases": 96,
+        "correct_commits": 1,
+        "disposition_agreement": 1.0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 1.0,
+        "raw_ready": 2,
+        "raw_ready_rate_difference": 0.0,
+        "true_positive_coverage": 0.041666666666666664
+      }
+    },
+    "SHUFFLED_EVIDENCE": {
+      "ALWAYS_ON": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 1.0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "raw_ready": 45,
+        "raw_ready_rate_difference": -0.020833333333333315,
+        "true_positive_coverage": 0.0
+      },
+      "ARCHIVED_READER": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "true_positive_coverage": 0.0
+      },
+      "COUPLING_ONLY": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 0.9895833333333334,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "raw_ready": 12,
+        "raw_ready_rate_difference": 0.02083333333333333,
+        "true_positive_coverage": 0.0
+      },
+      "DECAY_ONLY": {
+        "abstentions": 90,
+        "cases": 96,
+        "correct_commits": 1,
+        "disposition_agreement": 0.8958333333333334,
+        "false_commit_rate": 0.06944444444444445,
+        "false_commits": 5,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 3,
+            "rate": 0.125
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 2,
+            "rate": 0.08333333333333333
+          }
+        },
+        "positive_cases": 24,
+        "precision": 0.16666666666666666,
+        "raw_ready": 16,
+        "raw_ready_rate_difference": -0.041666666666666685,
+        "true_positive_coverage": 0.041666666666666664
+      },
+      "FIELD_OFF": {
+        "abstentions": 95,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 0.9791666666666666,
+        "false_commit_rate": 0.013888888888888888,
+        "false_commits": 1,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 1,
+            "rate": 0.041666666666666664
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 0.0,
+        "raw_ready": 1,
+        "raw_ready_rate_difference": -0.010416666666666666,
+        "true_positive_coverage": 0.0
+      },
+      "FULL": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 1.0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "raw_ready": 33,
+        "raw_ready_rate_difference": -0.020833333333333315,
+        "true_positive_coverage": 0.0
+      },
+      "GEOMEAN_CUE": {
+        "abstentions": 82,
+        "cases": 96,
+        "correct_commits": 0,
+        "false_commit_rate": 0.19444444444444445,
+        "false_commits": 14,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 3,
+            "rate": 0.125
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 6,
+            "rate": 0.25
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 5,
+            "rate": 0.20833333333333334
+          }
+        },
+        "positive_cases": 24,
+        "precision": 0.0,
+        "true_positive_coverage": 0.0
+      },
+      "MEAN_CUE": {
+        "abstentions": 87,
+        "cases": 96,
+        "correct_commits": 0,
+        "false_commit_rate": 0.125,
+        "false_commits": 9,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 3,
+            "rate": 0.125
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 3,
+            "rate": 0.125
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 3,
+            "rate": 0.125
+          }
+        },
+        "positive_cases": 24,
+        "precision": 0.0,
+        "true_positive_coverage": 0.0
+      },
+      "MIN_CUE": {
+        "abstentions": 81,
+        "cases": 96,
+        "correct_commits": 0,
+        "false_commit_rate": 0.20833333333333334,
+        "false_commits": 15,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 3,
+            "rate": 0.125
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 6,
+            "rate": 0.25
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 6,
+            "rate": 0.25
+          }
+        },
+        "positive_cases": 24,
+        "precision": 0.0,
+        "true_positive_coverage": 0.0
+      },
+      "NO_DWELL": {
+        "abstentions": 95,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 0.9791666666666666,
+        "false_commit_rate": 0.013888888888888888,
+        "false_commits": 1,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 1,
+            "rate": 0.041666666666666664
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 0.0,
+        "raw_ready": 1,
+        "raw_ready_rate_difference": -0.010416666666666666,
+        "true_positive_coverage": 0.0
+      }
+    },
+    "STRONG_NUDGE": {
+      "ALWAYS_ON": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 1.0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "raw_ready": 93,
+        "raw_ready_rate_difference": 0.4791666666666667,
+        "true_positive_coverage": 0.0
+      },
+      "ARCHIVED_READER": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "true_positive_coverage": 0.0
+      },
+      "COUPLING_ONLY": {
+        "abstentions": 74,
+        "cases": 96,
+        "correct_commits": 6,
+        "disposition_agreement": 0.7604166666666666,
+        "false_commit_rate": 0.2222222222222222,
+        "false_commits": 16,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 6,
+            "rate": 0.25
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 6,
+            "rate": 0.25
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 4,
+            "rate": 0.16666666666666666
+          }
+        },
+        "positive_cases": 24,
+        "precision": 0.2727272727272727,
+        "raw_ready": 80,
+        "raw_ready_rate_difference": 0.7291666666666667,
+        "true_positive_coverage": 0.25
+      },
+      "DECAY_ONLY": {
+        "abstentions": 52,
+        "cases": 96,
+        "correct_commits": 9,
+        "disposition_agreement": 0.5625,
+        "false_commit_rate": 0.4861111111111111,
+        "false_commits": 35,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 14,
+            "rate": 0.5833333333333334
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 12,
+            "rate": 0.5
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 9,
+            "rate": 0.375
+          }
+        },
+        "positive_cases": 24,
+        "precision": 0.20454545454545456,
+        "raw_ready": 86,
+        "raw_ready_rate_difference": 0.6875,
+        "true_positive_coverage": 0.375
+      },
+      "FIELD_OFF": {
+        "abstentions": 58,
+        "cases": 96,
+        "correct_commits": 15,
+        "disposition_agreement": 0.6145833333333334,
+        "false_commit_rate": 0.3194444444444444,
+        "false_commits": 23,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 13,
+            "rate": 0.5416666666666666
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 10,
+            "rate": 0.4166666666666667
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 0.39473684210526316,
+        "raw_ready": 48,
+        "raw_ready_rate_difference": 0.4791666666666667,
+        "true_positive_coverage": 0.625
+      },
+      "FULL": {
+        "abstentions": 96,
+        "cases": 96,
+        "correct_commits": 0,
+        "disposition_agreement": 1.0,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": null,
+        "raw_ready": 93,
+        "raw_ready_rate_difference": 0.6041666666666667,
+        "true_positive_coverage": 0.0
+      },
+      "GEOMEAN_CUE": {
+        "abstentions": 82,
+        "cases": 96,
+        "correct_commits": 14,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 1.0,
+        "true_positive_coverage": 0.5833333333333334
+      },
+      "MEAN_CUE": {
+        "abstentions": 87,
+        "cases": 96,
+        "correct_commits": 9,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 1.0,
+        "true_positive_coverage": 0.375
+      },
+      "MIN_CUE": {
+        "abstentions": 81,
+        "cases": 96,
+        "correct_commits": 15,
+        "false_commit_rate": 0.0,
+        "false_commits": 0,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 1.0,
+        "true_positive_coverage": 0.625
+      },
+      "NO_DWELL": {
+        "abstentions": 58,
+        "cases": 96,
+        "correct_commits": 15,
+        "disposition_agreement": 0.6145833333333334,
+        "false_commit_rate": 0.3194444444444444,
+        "false_commits": 23,
+        "negative_cases": 72,
+        "negative_worlds": {
+          "BURST": {
+            "cases": 24,
+            "false_commits": 13,
+            "rate": 0.5416666666666666
+          },
+          "CONCENTRATED": {
+            "cases": 24,
+            "false_commits": 10,
+            "rate": 0.4166666666666667
+          },
+          "NULL": {
+            "cases": 24,
+            "false_commits": 0,
+            "rate": 0.0
+          }
+        },
+        "positive_cases": 24,
+        "precision": 0.39473684210526316,
+        "raw_ready": 48,
+        "raw_ready_rate_difference": 0.4791666666666667,
+        "true_positive_coverage": 0.625
+      }
+    }
+  },
+  "source_trajectories": 7488,
+  "structural_controls": {
+    "no_dwelling_equals_off": true,
+    "withheld_permission_outputs": 0
+  },
+  "test_cases": 384,
+  "test_seeds": 32
+}

@@ -1,0 +1,10 @@
+attempts/V07_W4_attempt.lean:26:4: error: unsolved goals
+case none
+c : Crypto
+L : Ledger
+cp : Checkpoint
+hL : L cp.organismId = none
+h : True
+⊢ ∃ k,
+    none = some k ∧
+      c.hashCp cp = k.checkpointHash ∧ cp.sequence = k.sequence ∧ ∀ (b : Nat), k.birthRoot = some b → cp.birthRoot = b

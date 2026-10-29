@@ -1,0 +1,12 @@
+                                   LEGACY     NAIVE      WITNESS   
+case1_backdated_expiry             FAIL       pass       pass      
+case2_empty_head                   FAIL       pass       pass      
+case3_history_verified_later       pass       FAIL       pass      
+case4_restart                      FAIL       FAIL       pass      
+replay                             FAIL       pass       pass      
+crash_is_not_refusal               FAIL       pass       pass      
+no_fallback                        pass       pass       pass      
+extra_truncated_prefix_NOT_IN_ACCEPTANCE FAIL       pass       pass      
+validation {"legacy_fails_case1": true, "legacy_fails_case2": true, "naive_fails_case3_or_case4": true, "gate_discriminates": true}
+verdict {"gate_discriminates": true, "witness_judge_passes_gate": true, "witness_judge_passes_alongside": true, "PASS": true}
+receipt a06cc12ba999a6f36ccb5fdcf82a27d3251c4c041648888b62da6a3f9e443be8

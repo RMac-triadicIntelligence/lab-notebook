@@ -1,0 +1,14 @@
+{
+  "reviewer": "Grok 4.7",
+  "python": "3.10.21",
+  "numpy": "2.2.6",
+  "scipy": "1.15.3",
+  "platform": "Linux",
+  "note": "scipy was installed to satisfy the import in received/triadic_model.py; tests do not call odeint. Result file hashes match Claude commitment and the Codex audit byte-for-byte.",
+  "executed_scripts": ["test_S.py", "test_T.py", "test_G2.py"],
+  "result_hashes": {
+    "results_S.json": "9e1a46b16cbf01ffa84687c124558ec337b85a55be1e6eae5c70aef7e134d8f3",
+    "results_T.json": "154e1f466ac7472b47e90201d11ccf8edf8a0809e17bfc0877aa4c13d2160d54",
+    "results_G2.json": "a96562bd3b345cb7f84549da89f3c28a6e5c67021f090fe7ee58817e7e41d1a4"
+  }
+}

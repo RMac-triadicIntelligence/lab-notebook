@@ -1,0 +1,7 @@
+{
+ "allReproductionChecksPass": true,
+ "E1_runnerChecksLongHorizonRates": false,
+ "E1_omittedCheckWouldPass": true,
+ "E3_residualErrors_DEEPEN_minus_FADE": 7.96,
+ "E4_evidenceOfPost": false
+}

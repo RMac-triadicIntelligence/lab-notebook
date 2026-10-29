@@ -1,0 +1,20 @@
+{
+ "date": "2026-10-24",
+ "status": "RECONSTRUCTION from narrative \u00a74; not original code",
+ "source_sha256_prefix": "1d3bd887",
+ "p5_posthoc_not_preregistered": true,
+ "sha256": {
+  "FINDINGS.md": "6652d34f1f4fb151f559cff0609fecd282eb416e220458a3b22590953745e7f7",
+  "PROTOCOL.md": "57a5ee6028fb5af42bbcc481ff8031e4c2ed50122cebddda4c8fc47a0c4f1fca",
+  "README.md": "7750482a6c305e18285fe850bf702489572919cb8539fd5521c9b09f76d27bf2",
+  "p5_posthoc.py": "af6deb0a67882dd4bd59e402673e5fde39e65fbad74a81656bbeb9ae0c35fe5b",
+  "probes.py": "26b649c059476d752190a06725443f26a7eb842d02acb9585ec7d7e75cf09c11",
+  "run.log": "a739137d5ab3c1c1c63d5949115cf0793bb6093631b705da1671c30612518057",
+  "test_probes.py": "b87d0d7f20fec88d2f894fbc29c3cb146c0dcc9229aea97cefebf74ee04d4946",
+  "results/p5_posthoc.json": "9d189e209beb0101fd7f226a4e1d565c8ac9808e4e431398755bcd8acdb4fa63",
+  "results/p5_posthoc.log": "aa27ea6f3849f336ce80e5ef6a80d59411e1c192f49d5e78819edde0d48cf042",
+  "results/results.json": "ab85f12cb83a95d360591971fdda66fc3407604b087a010e37eba4a656a0d334",
+  "results/run.log": "a739137d5ab3c1c1c63d5949115cf0793bb6093631b705da1671c30612518057",
+  "results/tests.log": "f6ff5a4bcc502200938d442cd1706d4c6f93db5bc1022c14c6eb1d96ae1f4b73"
+ }
+}

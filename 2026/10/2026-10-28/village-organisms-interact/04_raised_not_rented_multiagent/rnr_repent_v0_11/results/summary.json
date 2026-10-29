@@ -1,0 +1,127 @@
+{
+ "n_seeds": 24,
+ "hypotheses": {
+  "R0_contract": {
+   "verdict": "HOLDS",
+   "gate_closed_runs": 2
+  },
+  "R1_penalty_free_reverses_C5": {
+   "verdict": "FALSIFIED",
+   "detail": {
+    "walk|none": {
+     "corrected_safe": 2.375,
+     "stale_safe": 4.375,
+     "corrected_blight": 5.083,
+     "stale_blight": 4.417,
+     "declarations": 0.0
+    },
+    "walk|penalty_free": {
+     "corrected_safe": 3.708,
+     "stale_safe": 4.375,
+     "corrected_blight": 5.083,
+     "stale_blight": 4.417,
+     "declarations": 3.208
+    },
+    "walk|penalized": {
+     "corrected_safe": 3.5,
+     "stale_safe": 4.375,
+     "corrected_blight": 5.083,
+     "stale_blight": 4.417,
+     "declarations": 2.417
+    },
+    "cross_only|none": {
+     "corrected_safe": 0.0,
+     "stale_safe": 0.0,
+     "corrected_blight": 3.0,
+     "stale_blight": 5.625,
+     "declarations": 0.0
+    },
+    "cross_only|penalty_free": {
+     "corrected_safe": 0.0,
+     "stale_safe": 0.0,
+     "corrected_blight": 5.5,
+     "stale_blight": 5.625,
+     "declarations": 4.958
+    },
+    "cross_only|penalized": {
+     "corrected_safe": 0.0,
+     "stale_safe": 0.0,
+     "corrected_blight": 5.458,
+     "stale_blight": 5.625,
+     "declarations": 4.5
+    }
+   }
+  },
+  "R2_penalty_suppresses_report": {
+   "verdict": "PARTIAL",
+   "detail": {
+    "walk": {
+     "declarations_penalty_free": 3.208,
+     "declarations_penalized": 2.417,
+     "gain_penalty_free": -0.667,
+     "gain_penalized": -0.875
+    },
+    "cross_only": {
+     "declarations_penalty_free": 4.958,
+     "declarations_penalized": 4.5,
+     "gain_penalty_free": 0.0,
+     "gain_penalized": 0.0
+    }
+   }
+  },
+  "R3_no_penalty_means_no_penalty": {
+   "verdict": "FALSIFIED",
+   "detail": {
+    "walk": {
+     "declarers": 1.024,
+     "nondeclarers": 1.104
+    },
+    "cross_only": {
+     "declarers": 1.139,
+     "nondeclarers": 1.15
+    }
+   }
+  },
+  "R4_mark_is_specific": {
+   "verdict": "FALSIFIED",
+   "detail": {
+    "walk|none": {
+     "corrected_in_band": 2.708,
+     "stale_in_band": 0.042,
+     "corrected_safe": 2.375,
+     "stale_safe": 4.375
+    },
+    "walk|penalty_free": {
+     "corrected_in_band": 1.375,
+     "stale_in_band": 0.042,
+     "corrected_safe": 3.708,
+     "stale_safe": 4.375
+    },
+    "walk|penalized": {
+     "corrected_in_band": 1.583,
+     "stale_in_band": 0.042,
+     "corrected_safe": 3.5,
+     "stale_safe": 4.375
+    },
+    "cross_only|none": {
+     "corrected_in_band": 6.167,
+     "stale_in_band": 5.792,
+     "corrected_safe": 0.0,
+     "stale_safe": 0.0
+    },
+    "cross_only|penalty_free": {
+     "corrected_in_band": 5.75,
+     "stale_in_band": 5.792,
+     "corrected_safe": 0.0,
+     "stale_safe": 0.0
+    },
+    "cross_only|penalized": {
+     "corrected_in_band": 5.75,
+     "stale_in_band": 5.792,
+     "corrected_safe": 0.0,
+     "stale_safe": 0.0
+    }
+   }
+  }
+ }
+}

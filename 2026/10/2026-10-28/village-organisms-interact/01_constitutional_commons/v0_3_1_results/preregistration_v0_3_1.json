@@ -1,0 +1,29 @@
+{
+ "title": "Constitutional Commons v0.3.1 — does a parable mean more the closer your walk comes to the teller's? — preregistered predictions",
+ "frozen": "2026-10-04, before the full battery; this file's SHA-256 is to be posted publicly by Rusty McMurray before the run, as the external witness of when it was frozen",
+ "question": "Rusty McMurray, 3 Oct 2026: 'We made the story fade as you walk past the teller. Real parables do the opposite: they mean more the closer your life comes to theirs.'",
+ "disclosure": [
+  "Regression before freezing: the unchanged v0.3 battery run against the v0.3.1 kernel reproduced v0.3 receipt 3450e400...bfa, paired-runs.csv and long-horizon.csv byte-for-byte. Defaults (stage 'fade', no plant) are v0.3.",
+  "Smoke on seed 7 only (excluded) printed 'ok'. One structural harness check was run before freezing: all 45 probes refuse for their stated reason. No hypothesis outcome was viewed. No parameter was tuned.",
+  "Probe hygiene fix (raised by Grok on v0.3): a probe now counts as refused only with its stated reason. The kernel self-sign probe passes only on ERR_CRYPTO_INVALID_KEY_OBJECT_TYPE with a held key of type 'public'; v0.3 credited any error whose message matched /private|key|sign/, which a garbage key would also satisfy.",
+  "Matched prehistory (raised by ChatGPT on v0.3): 4 first records per lineage planted before generation 1 at gates drawn with the world's error prevalence; the first 2 are false, the next 2 true; planted dwell 4; identical gates, truth status, teller lineage and dwell in every reading mode. All values set a priori.",
+  "In 'parable' mode a planted false story and a planted true story are byte-identical in content, because a parable has no answer to be wrong. A2 therefore tests for a hidden channel from truth status into behavior, not robustness to a content difference. Only CLAIM_P carries the falsehood in content.",
+  "Equivalence margin 0.02 (2 percentage points) set a priori; v0.3's CLAIM pocket was about 11 points.",
+  "Stage shapes are authored, like v0.3's: fade (v0.3) = 1 while k<=D then exp(-(k-D)/(1+D)); deepen = (1+k)/(1+D) while k<D then 1; resonate = (1+min(k,D))/(1+max(k,D)). k = the reader's own evidence samples at the gate; D = the teller's dwell. Both new shapes start low at k=0 for long-dwell stories; whether that costs more than it gains is the question."
+ ],
+ "seeds": "1..200 excluding 7 (n=199) x 12 generations, paired across 12 conditions (common random numbers). Long horizon, descriptive only: seeds 201..230 x 200 generations for FULL, FADE, DEEPEN, RESONATE.",
+ "conditions": {
+  "stageB_unplanted": ["FULL","NO_GROUND","FADE","FROZEN","DEEPEN","RESONATE","DEEPEN_CROSS"],
+  "stageA_matchedPrehistory": ["FULL_P","CLAIM_P","FADE_P","DEEPEN_P","RESONATE_P"]
+ },
+ "predictions": {
+  "B1_deepen_beats_fade": "Rusty's hypothesis. DEEPEN minus FADE true restorations (generations 1-12, paired per seed): 95% CI entirely > 0.",
+  "B2_resonate_beats_fade": "RESONATE minus FADE true restorations: 95% CI entirely > 0.",
+  "B3_lens_under_deepening": "Reading the other lineage's parables under the deepening shape yields fewer true restorations than reading one's own: DEEPEN_CROSS minus DEEPEN (generations 2-12), CI entirely < 0.",
+  "B4_truth": "FROZEN is bit-identical to FULL in 199/199 seeds. In every parable condition, planted and unplanted, and in the long horizon: story-decided conclusions = 0, wrong lock-in and false-correction rates <= e^-3 = 0.0498. 0 evidence-draw mismatches against FULL for shared keys.",
+  "A1_answer_pocket_is_causal": "With identical planted first records: CLAIM_P's wrong lock-in rate at planted-false gates > 0.0498, and its difference-in-differences (planted-false minus planted-true, versus FULL_P) has a 95% seed-bootstrap CI entirely > 0.",
+  "A2_parables_carry_no_pocket": "For FADE_P, DEEPEN_P and RESONATE_P: the difference-in-differences versus FULL_P on both wrong lock-in and false correction has a 95% seed-bootstrap CI entirely within [-0.02, +0.02].",
+  "A3_probes": "All 45 grace and parable probes refuse for their stated reason; inverting the observer's truth and plant labels every generation leaves behavior unchanged."
+ },
+ "descriptive_not_predicted": "Each shape versus FROZEN (= v0.2) and NO_GROUND; encounters and false corrections by shape; long-horizon restoration per generation at 1-10 and 101-200 by shape."
+}

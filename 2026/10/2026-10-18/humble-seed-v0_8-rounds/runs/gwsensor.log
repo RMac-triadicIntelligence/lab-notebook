@@ -1,0 +1,11 @@
+strength 0.3:
+  corner0: sig=0.0069 sig@corner=0.0069 tuple=0.497 pos_match=1.000
+  corner1: sig=0.0071 sig@corner=0.0071 tuple=0.500 pos_match=1.000
+  corner2: sig=0.0071 sig@corner=0.0071 tuple=0.500 pos_match=1.000
+  corner3: sig=0.0071 sig@corner=0.0071 tuple=0.498 pos_match=1.000
+strength 0.6:
+  corner0: sig=0.2327 sig@corner=0.2327 tuple=0.896 pos_match=0.958
+  corner1: sig=0.2323 sig@corner=0.2293 tuple=0.895 pos_match=0.936
+  corner2: sig=0.2320 sig@corner=0.2294 tuple=0.896 pos_match=0.937
+  corner3: sig=0.2333 sig@corner=0.2279 tuple=0.897 pos_match=0.918
+exit=0

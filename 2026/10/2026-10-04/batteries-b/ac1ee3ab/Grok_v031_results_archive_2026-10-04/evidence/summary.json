@@ -1,0 +1,839 @@
+{
+ "kernel": "Constitutional Commons v0.3.1 perspective shapes + matched prehistory",
+ "sources": {
+  "authority.cjs": "529652b4cf796f5c9d2dfe33555ff0e8b25644018db7bc53afa1cdc973a4c1b2",
+  "commons_kernel_v0_3_1.cjs": "add66f2e5a2d8f26785366afdc27f8cdb84b728669edc1071e7e9bbfdac4c941",
+  "run-commons-v0_3_1-battery.cjs": "5cffde4a67ae21efc20fe52b1686ecb9f4d54f45f372f4d7d5cc3f796e1462ee",
+  "preregistration_v0_3_1.json": "5786c4575685c996a06838ed10384de12bcf1076c8a03722a05178f446b71d26"
+ },
+ "authorityKeyId": "d6aafae03c4188d6",
+ "seeds": 199,
+ "generationsPerRun": 12,
+ "conditions": 12,
+ "longHorizon": {
+  "seeds": 30,
+  "generations": 200,
+  "modes": [
+   "FULL",
+   "FADE",
+   "DEEPEN",
+   "RESONATE"
+  ]
+ },
+ "generationEpisodes": 52656,
+ "runtimeSeconds": 192.2,
+ "verdict": {
+  "B1": false,
+  "B2": false,
+  "B3": true,
+  "B4": true,
+  "A1": true,
+  "A2": true,
+  "A3": true
+ },
+ "statistics": {
+  "B1_deepenBeatsFade": {
+   "mean": -8.2362,
+   "ci95": [
+    -9.5396,
+    -6.9327
+   ],
+   "condMean": 123.01,
+   "baseMean": 131.246
+  },
+  "B2_resonateBeatsFade": {
+   "mean": -15.2412,
+   "ci95": [
+    -16.453,
+    -14.0294
+   ],
+   "condMean": 116.005,
+   "baseMean": 131.246
+  },
+  "shapeDetail": {
+   "deepenMinusFade": {
+    "mean": -8.2362,
+    "ci95": [
+     -9.5396,
+     -6.9327
+    ],
+    "condMean": 123.01,
+    "baseMean": 131.246
+   },
+   "resonateMinusFade": {
+    "mean": -15.2412,
+    "ci95": [
+     -16.453,
+     -14.0294
+    ],
+    "condMean": 116.005,
+    "baseMean": 131.246
+   },
+   "deepenMinusFrozen": {
+    "mean": -18.7035,
+    "ci95": [
+     -19.9551,
+     -17.4519
+    ],
+    "condMean": 123.01,
+    "baseMean": 141.714
+   },
+   "resonateMinusFrozen": {
+    "mean": -25.7085,
+    "ci95": [
+     -26.9943,
+     -24.4227
+    ],
+    "condMean": 116.005,
+    "baseMean": 141.714
+   },
+   "fadeMinusFrozen": {
+    "mean": -10.4673,
+    "ci95": [
+     -11.5017,
+     -9.433
+    ],
+    "condMean": 131.246,
+    "baseMean": 141.714
+   },
+   "deepenMinusNoGround": {
+    "mean": 48.2362,
+    "ci95": [
+     46.442,
+     50.0304
+    ],
+    "condMean": 123.01,
+    "baseMean": 74.774
+   },
+   "resonateMinusNoGround": {
+    "mean": 41.2312,
+    "ci95": [
+     39.5612,
+     42.9011
+    ],
+    "condMean": 116.005,
+    "baseMean": 74.774
+   },
+   "encounters": {
+    "deepenMinusFade": {
+     "mean": -183.7085,
+     "ci95": [
+      -192.179,
+      -175.2381
+     ],
+     "condMean": 2635.93,
+     "baseMean": 2819.638
+    },
+    "resonateMinusFade": {
+     "mean": -222.9698,
+     "ci95": [
+      -231.4742,
+      -214.4655
+     ],
+     "condMean": 2596.668,
+     "baseMean": 2819.638
+    }
+   },
+   "falseCorrections": {
+    "deepenMinusFade": {
+     "mean": -0.2764,
+     "ci95": [
+      -0.4473,
+      -0.1054
+     ],
+     "condMean": 1.93,
+     "baseMean": 2.206
+    },
+    "resonateMinusFade": {
+     "mean": -0.3668,
+     "ci95": [
+      -0.5309,
+      -0.2027
+     ],
+     "condMean": 1.839,
+     "baseMean": 2.206
+    }
+   }
+  },
+  "B3_lensUnderDeepening": {
+   "deepenCrossMinusOwn": {
+    "mean": -27.6985,
+    "ci95": [
+     -29.0406,
+     -26.3564
+    ],
+    "condMean": 88.558,
+    "baseMean": 116.256
+   }
+  },
+  "B4_truth": {
+   "frozenBitIdenticalToFULL": 199,
+   "of": 199,
+   "rates": {
+    "FULL": {
+     "falseCorrectionRate": 0.01237,
+     "wrongSettledRate": 0.01417,
+     "storyDecided": 0
+    },
+    "NO_GROUND": {
+     "falseCorrectionRate": 0.00576,
+     "wrongSettledRate": 0.00768,
+     "storyDecided": 0
+    },
+    "FADE": {
+     "falseCorrectionRate": 0.01149,
+     "wrongSettledRate": 0.01289,
+     "storyDecided": 0
+    },
+    "FROZEN": {
+     "falseCorrectionRate": 0.01237,
+     "wrongSettledRate": 0.01417,
+     "storyDecided": 0
+    },
+    "DEEPEN": {
+     "falseCorrectionRate": 0.01007,
+     "wrongSettledRate": 0.01278,
+     "storyDecided": 0
+    },
+    "RESONATE": {
+     "falseCorrectionRate": 0.00959,
+     "wrongSettledRate": 0.01209,
+     "storyDecided": 0
+    },
+    "DEEPEN_CROSS": {
+     "falseCorrectionRate": 0.0077,
+     "wrongSettledRate": 0.01019,
+     "storyDecided": 0
+    },
+    "FULL_P": {
+     "falseCorrectionRate": 0.01346,
+     "wrongSettledRate": 0.0152,
+     "storyDecided": 0
+    },
+    "CLAIM_P": {
+     "falseCorrectionRate": 0.01912,
+     "wrongSettledRate": 0.02977,
+     "storyDecided": 42334
+    },
+    "FADE_P": {
+     "falseCorrectionRate": 0.01317,
+     "wrongSettledRate": 0.01405,
+     "storyDecided": 0
+    },
+    "DEEPEN_P": {
+     "falseCorrectionRate": 0.0114,
+     "wrongSettledRate": 0.01309,
+     "storyDecided": 0
+    },
+    "RESONATE_P": {
+     "falseCorrectionRate": 0.01091,
+     "wrongSettledRate": 0.01243,
+     "storyDecided": 0
+    }
+   },
+   "zKeysCompared": 5271495,
+   "zMismatches": 0
+  },
+  "A1_A2_matchedPrehistory": {
+   "plant": {
+    "perLineage": 4,
+    "falseCount": 2,
+    "dwell": 4
+   },
+   "plantedRates": {
+    "FULL_P": {
+     "plantedFalse": {
+      "sampledWrong": 11826,
+      "wrongSettledRate": 0.017,
+      "sampledRight": 4018,
+      "falseCorrectionRate": 0.01493
+     },
+     "plantedTrue": {
+      "sampledWrong": 10814,
+      "wrongSettledRate": 0.01563,
+      "sampledRight": 4174,
+      "falseCorrectionRate": 0.01845
+     }
+    },
+    "CLAIM_P": {
+     "plantedFalse": {
+      "sampledWrong": 11826,
+      "wrongSettledRate": 0.11991,
+      "sampledRight": 4018,
+      "falseCorrectionRate": 0.10329
+     },
+     "plantedTrue": {
+      "sampledWrong": 10814,
+      "wrongSettledRate": 0.00324,
+      "sampledRight": 4174,
+      "falseCorrectionRate": 0.00264
+     }
+    },
+    "FADE_P": {
+     "plantedFalse": {
+      "sampledWrong": 11826,
+      "wrongSettledRate": 0.01607,
+      "sampledRight": 4018,
+      "falseCorrectionRate": 0.01394
+     },
+     "plantedTrue": {
+      "sampledWrong": 10814,
+      "wrongSettledRate": 0.01498,
+      "sampledRight": 4174,
+      "falseCorrectionRate": 0.01725
+     }
+    },
+    "DEEPEN_P": {
+     "plantedFalse": {
+      "sampledWrong": 11825,
+      "wrongSettledRate": 0.01598,
+      "sampledRight": 4018,
+      "falseCorrectionRate": 0.01369
+     },
+     "plantedTrue": {
+      "sampledWrong": 10814,
+      "wrongSettledRate": 0.01396,
+      "sampledRight": 4174,
+      "falseCorrectionRate": 0.01557
+     }
+    },
+    "RESONATE_P": {
+     "plantedFalse": {
+      "sampledWrong": 11826,
+      "wrongSettledRate": 0.01539,
+      "sampledRight": 4018,
+      "falseCorrectionRate": 0.01344
+     },
+     "plantedTrue": {
+      "sampledWrong": 10814,
+      "wrongSettledRate": 0.01332,
+      "sampledRight": 4174,
+      "falseCorrectionRate": 0.0139
+     }
+    }
+   },
+   "differenceInDifferencesVsFULL_P": {
+    "CLAIM_P": {
+     "wrongSettled": {
+      "point": 0.1153,
+      "ci95": [
+       0.1098,
+       0.121
+      ],
+      "resamples": 2000,
+      "skipped": 0
+     },
+     "falseCorrection": {
+      "point": 0.10416,
+      "ci95": [
+       0.09474,
+       0.11403
+      ],
+      "resamples": 2000,
+      "skipped": 0
+     }
+    },
+    "FADE_P": {
+     "wrongSettled": {
+      "point": -0.00028,
+      "ci95": [
+       -0.00221,
+       0.0017
+      ],
+      "resamples": 2000,
+      "skipped": 0
+     },
+     "falseCorrection": {
+      "point": 0.0002,
+      "ci95": [
+       -0.0032,
+       0.00386
+      ],
+      "resamples": 2000,
+      "skipped": 0
+     }
+    },
+    "DEEPEN_P": {
+     "wrongSettled": {
+      "point": 0.00065,
+      "ci95": [
+       -0.00185,
+       0.00314
+      ],
+      "resamples": 2000,
+      "skipped": 0
+     },
+     "falseCorrection": {
+      "point": 0.00163,
+      "ci95": [
+       -0.00274,
+       0.0063
+      ],
+      "resamples": 2000,
+      "skipped": 0
+     }
+    },
+    "RESONATE_P": {
+     "wrongSettled": {
+      "point": 0.00071,
+      "ci95": [
+       -0.00171,
+       0.00315
+      ],
+      "resamples": 2000,
+      "skipped": 0
+     },
+     "falseCorrection": {
+      "point": 0.00306,
+      "ci95": [
+       -0.00082,
+       0.00713
+      ],
+      "resamples": 2000,
+      "skipped": 0
+     }
+    }
+   },
+   "equivalenceMargin": 0.02
+  },
+  "A3_probes": {
+   "grace": {
+    "count": [
+     {
+      "probe": "forged by another key",
+      "refused": true,
+      "reason": "signature",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "tampered lineage after signing",
+      "refused": true,
+      "reason": "signature",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "tampered generation after signing",
+      "refused": true,
+      "reason": "signature",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "destination-bearing token, validly signed",
+      "refused": true,
+      "reason": "schema: grace carries no destination, recipient or answer",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "recipient-bearing token, validly signed",
+      "refused": true,
+      "reason": "schema: grace carries no destination, recipient or answer",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "wrong generation scope",
+      "refused": true,
+      "reason": "scope: generation",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "replay same token same generation",
+      "refused": true,
+      "reason": "replay",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "replay previous-generation token",
+      "refused": true,
+      "reason": "scope: generation",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "expired token",
+      "refused": true,
+      "reason": "expired",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "kernel self-sign with held key material",
+      "refused": true,
+      "reason": "Invalid key object type public, expected private.",
+      "errorCode": "ERR_CRYPTO_INVALID_KEY_OBJECT_TYPE",
+      "heldKeyType": "public"
+     },
+     {
+      "probe": "conductor attempts to sign",
+      "refused": true,
+      "reason": "conductor seat holds no key and no signing method",
+      "errorType": "Refusal"
+     }
+    ],
+    "parable": [
+     {
+      "probe": "forged by another key",
+      "refused": true,
+      "reason": "signature",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "tampered lineage after signing",
+      "refused": true,
+      "reason": "signature",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "tampered generation after signing",
+      "refused": true,
+      "reason": "signature",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "destination-bearing token, validly signed",
+      "refused": true,
+      "reason": "schema: grace carries no destination, recipient or answer",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "recipient-bearing token, validly signed",
+      "refused": true,
+      "reason": "schema: grace carries no destination, recipient or answer",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "wrong generation scope",
+      "refused": true,
+      "reason": "scope: generation",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "replay same token same generation",
+      "refused": true,
+      "reason": "replay",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "replay previous-generation token",
+      "refused": true,
+      "reason": "scope: generation",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "expired token",
+      "refused": true,
+      "reason": "expired",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "kernel self-sign with held key material",
+      "refused": true,
+      "reason": "Invalid key object type public, expected private.",
+      "errorCode": "ERR_CRYPTO_INVALID_KEY_OBJECT_TYPE",
+      "heldKeyType": "public"
+     },
+     {
+      "probe": "conductor attempts to sign",
+      "refused": true,
+      "reason": "conductor seat holds no key and no signing method",
+      "errorType": "Refusal"
+     }
+    ],
+    "claim": [
+     {
+      "probe": "forged by another key",
+      "refused": true,
+      "reason": "signature",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "tampered lineage after signing",
+      "refused": true,
+      "reason": "signature",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "tampered generation after signing",
+      "refused": true,
+      "reason": "signature",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "destination-bearing token, validly signed",
+      "refused": true,
+      "reason": "schema: grace carries no destination, recipient or answer",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "recipient-bearing token, validly signed",
+      "refused": true,
+      "reason": "schema: grace carries no destination, recipient or answer",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "wrong generation scope",
+      "refused": true,
+      "reason": "scope: generation",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "replay same token same generation",
+      "refused": true,
+      "reason": "replay",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "replay previous-generation token",
+      "refused": true,
+      "reason": "scope: generation",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "expired token",
+      "refused": true,
+      "reason": "expired",
+      "errorType": "Refusal"
+     },
+     {
+      "probe": "kernel self-sign with held key material",
+      "refused": true,
+      "reason": "Invalid key object type public, expected private.",
+      "errorCode": "ERR_CRYPTO_INVALID_KEY_OBJECT_TYPE",
+      "heldKeyType": "public"
+     },
+     {
+      "probe": "conductor attempts to sign",
+      "refused": true,
+      "reason": "conductor seat holds no key and no signing method",
+      "errorType": "Refusal"
+     }
+    ]
+   },
+   "parable": [
+    {
+     "probe": "parable carrying an answer field",
+     "refused": true,
+     "reason": "parable schema: a parable carries no answer, belief, direction or recipient",
+     "errorType": "Refusal"
+    },
+    {
+     "probe": "parable carrying a belief field",
+     "refused": true,
+     "reason": "parable schema: a parable carries no answer, belief, direction or recipient",
+     "errorType": "Refusal"
+    },
+    {
+     "probe": "parable carrying a destination field",
+     "refused": true,
+     "reason": "parable schema: a parable carries no answer, belief, direction or recipient",
+     "errorType": "Refusal"
+    },
+    {
+     "probe": "parable carrying a recipient field",
+     "refused": true,
+     "reason": "parable schema: a parable carries no answer, belief, direction or recipient",
+     "errorType": "Refusal"
+    },
+    {
+     "probe": "parable missing its dwell",
+     "refused": true,
+     "reason": "parable schema: a parable carries no answer, belief, direction or recipient",
+     "errorType": "Refusal"
+    },
+    {
+     "probe": "parable with dwell 0 (no walk)",
+     "refused": true,
+     "reason": "parable: field types",
+     "errorType": "Refusal"
+    },
+    {
+     "probe": "in-place edit of a told story",
+     "refused": true,
+     "reason": "Cannot assign to read only property 'dwell' of object '#<Object>'",
+     "errorType": "TypeError"
+    },
+    {
+     "probe": "story replaced by an altered copy",
+     "refused": true,
+     "reason": "parable contract: history chain (a story was altered, removed or reordered)",
+     "errorType": "Error"
+    },
+    {
+     "probe": "story removed",
+     "refused": true,
+     "reason": "parable contract: history chain (a story was altered, removed or reordered)",
+     "errorType": "Error"
+    },
+    {
+     "probe": "stories reordered",
+     "refused": true,
+     "reason": "parable contract: history chain (a story was altered, removed or reordered)",
+     "errorType": "Error"
+    },
+    {
+     "probe": "read index inflated without a story",
+     "refused": true,
+     "reason": "parable contract: index",
+     "errorType": "Error"
+    },
+    {
+     "probe": "observer truth and plant labels inverted every generation: behavior unchanged",
+     "refused": true
+    }
+   ]
+  },
+  "longHorizonDescriptive": {
+   "FULL": {
+    "restoredPerGen_1_10": 11.687,
+    "restoredPerGen_101_200": 14.09,
+    "encountersPerGen_101_200": 285.87,
+    "falseCorrectionRate": 0.01576,
+    "wrongSettledRate": 0.01677,
+    "storyDecided": 0
+   },
+   "FADE": {
+    "restoredPerGen_1_10": 10.98,
+    "restoredPerGen_101_200": 13.541,
+    "encountersPerGen_101_200": 284.64,
+    "falseCorrectionRate": 0.01539,
+    "wrongSettledRate": 0.01601,
+    "storyDecided": 0
+   },
+   "DEEPEN": {
+    "restoredPerGen_1_10": 10.547,
+    "restoredPerGen_101_200": 11.247,
+    "encountersPerGen_101_200": 246.32,
+    "falseCorrectionRate": 0.01278,
+    "wrongSettledRate": 0.01374,
+    "storyDecided": 0
+   },
+   "RESONATE": {
+    "restoredPerGen_1_10": 9.877,
+    "restoredPerGen_101_200": 10.971,
+    "encountersPerGen_101_200": 245.32,
+    "falseCorrectionRate": 0.0121,
+    "wrongSettledRate": 0.0132,
+    "storyDecided": 0
+   }
+  }
+ },
+ "conditionMeansPerSeed": {
+  "FULL": {
+   "encounters": 2874.472,
+   "realizedTrue": 141.804,
+   "restoredTrue": 141.714,
+   "falseCorrections": 2.372,
+   "wrongSettled": 4.08,
+   "storyDecided": 0,
+   "residualErrors": 148.658,
+   "parables": 0
+  },
+  "NO_GROUND": {
+   "encounters": 2114.864,
+   "realizedTrue": 75.548,
+   "restoredTrue": 74.774,
+   "falseCorrections": 1.106,
+   "wrongSettled": 2.211,
+   "storyDecided": 0,
+   "residualErrors": 214.332,
+   "parables": 0
+  },
+  "FADE": {
+   "encounters": 2819.638,
+   "realizedTrue": 131.332,
+   "restoredTrue": 131.246,
+   "falseCorrections": 2.206,
+   "wrongSettled": 3.714,
+   "storyDecided": 0,
+   "residualErrors": 158.96,
+   "parables": 795.513
+  },
+  "FROZEN": {
+   "encounters": 2874.472,
+   "realizedTrue": 141.804,
+   "restoredTrue": 141.714,
+   "falseCorrections": 2.372,
+   "wrongSettled": 4.08,
+   "storyDecided": 0,
+   "residualErrors": 148.658,
+   "parables": 858.789
+  },
+  "DEEPEN": {
+   "encounters": 2635.93,
+   "realizedTrue": 123.106,
+   "restoredTrue": 123.01,
+   "falseCorrections": 1.93,
+   "wrongSettled": 3.678,
+   "storyDecided": 0,
+   "residualErrors": 166.92,
+   "parables": 763.302
+  },
+  "RESONATE": {
+   "encounters": 2596.668,
+   "realizedTrue": 116.111,
+   "restoredTrue": 116.005,
+   "falseCorrections": 1.839,
+   "wrongSettled": 3.482,
+   "storyDecided": 0,
+   "residualErrors": 173.834,
+   "parables": 719.08
+  },
+  "DEEPEN_CROSS": {
+   "encounters": 2364.206,
+   "realizedTrue": 95.322,
+   "restoredTrue": 95.121,
+   "falseCorrections": 1.477,
+   "wrongSettled": 2.935,
+   "storyDecided": 0,
+   "residualErrors": 194.357,
+   "parables": 606.985
+  },
+  "FULL_P": {
+   "encounters": 3054.598,
+   "realizedTrue": 153.312,
+   "restoredTrue": 153.312,
+   "falseCorrections": 2.578,
+   "wrongSettled": 4.377,
+   "storyDecided": 0,
+   "residualErrors": 137.266,
+   "parables": 0
+  },
+  "CLAIM_P": {
+   "encounters": 2828.764,
+   "realizedTrue": 200.673,
+   "restoredTrue": 200.658,
+   "falseCorrections": 3.668,
+   "wrongSettled": 8.573,
+   "storyDecided": 212.734,
+   "residualErrors": 91.01,
+   "parables": 0
+  },
+  "FADE_P": {
+   "encounters": 2998.045,
+   "realizedTrue": 141.945,
+   "restoredTrue": 141.94,
+   "falseCorrections": 2.528,
+   "wrongSettled": 4.045,
+   "storyDecided": 0,
+   "residualErrors": 148.588,
+   "parables": 993.844
+  },
+  "DEEPEN_P": {
+   "encounters": 2772.945,
+   "realizedTrue": 131.749,
+   "restoredTrue": 131.734,
+   "falseCorrections": 2.181,
+   "wrongSettled": 3.769,
+   "storyDecided": 0,
+   "residualErrors": 158.447,
+   "parables": 948.317
+  },
+  "RESONATE_P": {
+   "encounters": 2732.568,
+   "realizedTrue": 124.276,
+   "restoredTrue": 124.251,
+   "falseCorrections": 2.09,
+   "wrongSettled": 3.578,
+   "storyDecided": 0,
+   "residualErrors": 165.839,
+   "parables": 896.156
+  }
+ }
+}

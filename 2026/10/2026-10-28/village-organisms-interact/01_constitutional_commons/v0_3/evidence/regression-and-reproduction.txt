@@ -1,0 +1,4 @@
+v0.2 battery run unchanged against commons_kernel_v0_3.cjs (copied in as commons_kernel_v0_2.cjs):
+receipt a5601bf318d03d995df6f1c0ba36f1cf2cf800fa3e851d5866d0f530f100eb98 (matches v0.2)
+paired-runs.csv byte-identical; diagnostics-post-registration.json byte-identical
+Second clean v0.3 run: receipt 3450e400b353e38a7427fc1a53f1401ab49fb7a18914f1167e14189829cfbbfa; paired-runs.csv and long-horizon.csv byte-identical

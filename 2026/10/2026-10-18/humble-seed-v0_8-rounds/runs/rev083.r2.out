@@ -1,0 +1,6 @@
+harness: exit 1 (expected 1)
+independent_probes: exit 0 (expected 0)
+extra_mutants: exit 0 (expected 0)
+T26_diagnostic: exit 0 (expected 0)
+corrected_answer: exit 0 (expected 0)
+exit=0

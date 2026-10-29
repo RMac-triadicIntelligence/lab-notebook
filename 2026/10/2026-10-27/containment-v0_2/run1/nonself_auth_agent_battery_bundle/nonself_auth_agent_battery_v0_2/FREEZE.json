@@ -1,0 +1,24 @@
+{
+  "env": {
+    "cryptography": "50.0.1",
+    "python": "3.13.17"
+  },
+  "freeze_receipt": "e1858104c3c56627340d8e30ed59b3e821bbb654a150ecf4a7cf0ed7965f18da",
+  "frozen_utc": "2026-10-27T17:07:32.360050+00:00",
+  "note": "freeze_receipt excludes frozen_utc by construction.",
+  "registration": "Local pre-execution lock, not external preregistration.",
+  "sha256": {
+    "agent_proc.py": "31f49ebd772a36d5222f085379598f4a4d9c670b3ab08346f41c8fcdea611c9b",
+    "agents.py": "eebf8f84084cf54dd681ee81dd19bf6bb77de5d923a8bc85845ef33d82ab46a7",
+    "battery.py": "6ab8750784dbb9163e15bbdeff292ceddf081309b693a41dfd43741424bd268b",
+    "common.py": "0d3947c4a7e1b2d4c6d325602eec73bd6e4af195cd0e42a2f83d95311c008345",
+    "ed25519_strict.py": "0f44519ef0cc14583b3da1174e772482f11f79daac59c341bd328716f105e3a4",
+    "handle.py": "d4d7da9cb62fb15baed0fdddb1746d8321c203f6fbceb7dad7dfe81a7299dcfa",
+    "mutate.py": "0d415a00469d2d18c575f909c4d4b6b3192f6cc755d55e4b7ed8763b68b931e8",
+    "probes.py": "b2f0324631e10746a1cb28e6689e016b6c62904a534cf62a58b6c8b2b765ddde",
+    "protocol.json": "d570ffa91bd4a220e44bc95f052f8ec7093d6c872ab4e38c9cfb7184b2e7b8d0",
+    "receipts.py": "86cad1008c3f88f102fedd008db160d2ee72cb2a23c95695cdf8fe5cb083b620",
+    "runner.py": "99aa3ab00299e48b5376687f1d7cee60f4bf72f7cc6abbd8a68c0d07a967dac4",
+    "world.py": "5910a52e6a8538f9cca3cc04d1140d9cf49dac5ec5653abc970d26e366c2b7c8"
+  }
+}

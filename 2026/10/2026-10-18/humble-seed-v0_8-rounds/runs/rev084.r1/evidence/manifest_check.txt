@@ -1,0 +1,10 @@
+./CANDIDATE_v0_8_4_AT_FREEZE.sha256: OK
+./DECLARED_v0_8_4.frozen_at: OK
+./DECLARED_v0_8_4.json: OK
+./DECLARED_v0_8_4.sha256: OK
+./README.md: OK
+./RECEIPT_COMMITMENT_v0_8_4.txt: OK
+./falsify_v0_8_4.py: OK
+./humble_seed_v0_8_4_candidate.py: OK
+./parent_humble_seed_v0_7_C5.py: OK
+./v0_8_3_record/humble_seed_v0_8_3_candidate.py: OK

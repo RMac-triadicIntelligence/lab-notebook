@@ -1,0 +1,220 @@
+{
+  "freshness_completeness": [
+    {
+      "lane": "judge",
+      "name": "rollback_to_empty_after_three_commits",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "completeness/freshness"
+    },
+    {
+      "lane": "judge",
+      "name": "truncate_to_valid_prefix_after_three_commits",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "completeness/freshness"
+    },
+    {
+      "lane": "judge",
+      "name": "expired_signed_backdated_head",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "freshness"
+    }
+  ],
+  "individual_identifier_replay": [
+    {
+      "lane": "judge",
+      "name": "valid_predecessor_signed_reused_nonce",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "valid_predecessor_signed_reused_determination",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "integrity"
+    }
+  ],
+  "record_schema_and_metadata_expectations": [
+    {
+      "lane": "judge",
+      "name": "tamper_records_sequence",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_records_event",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_records_previous_record_hash",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_records_sequence",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_records_event",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_records_reason",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_records_previous_record_hash",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_records_record_hash",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_head_state",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_head_state_digest",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "boolean_sequence",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "sever_previous_hash",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "record_timestamp_float",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "schema"
+    }
+  ],
+  "uncaught_exceptions": [
+    {
+      "lane": "judge",
+      "name": "missing_records_trace_digest",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 50, in verify_ledger\n    (all(pf[k] == rec[k] for k in (\"trace_digest\", \"proposal_digest\", \"predecessor_digest\", \"resulting_digest\")),\n     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'trace_digest'\n",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_records_proposal_digest",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 50, in verify_ledger\n    (all(pf[k] == rec[k] for k in (\"trace_digest\", \"proposal_digest\", \"predecessor_digest\", \"resulting_digest\")),\n     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'proposal_digest'\n",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_records_predecessor_digest",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 50, in verify_ledger\n    (all(pf[k] == rec[k] for k in (\"trace_digest\", \"proposal_digest\", \"predecessor_digest\", \"resulting_digest\")),\n     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'predecessor_digest'\n",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_records_resulting_digest",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 50, in verify_ledger\n    (all(pf[k] == rec[k] for k in (\"trace_digest\", \"proposal_digest\", \"predecessor_digest\", \"resulting_digest\")),\n     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'resulting_digest'\n",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_records_authorization_id",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 49, in verify_ledger\n    (pf[\"determination_id\"] == rec[\"authorization_id\"], \"record cites a different authorization\"),\n                               ~~~^^^^^^^^^^^^^^^^^^^^\nKeyError: 'authorization_id'\n",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_records_authority_id",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 47, in verify_ledger\n    (pf[\"authority_id\"] == authority_id == rec[\"authority_id\"], \"wrong authority\"),\n                                           ~~~^^^^^^^^^^^^^^^^\nKeyError: 'authority_id'\n",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_records_timestamp",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 53, in verify_ledger\n    (pf[\"issued_at\"] - 30 <= rec[\"timestamp\"] <= pf[\"expires_at\"], \"committed outside the authorization window\"),\n                             ~~~^^^^^^^^^^^^^\nKeyError: 'timestamp'\n",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "wrong_type_records_string",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 35, in verify_ledger\n    tag = \"record %d\" % rec.get(\"sequence\", i + 1)\n                        ^^^^^^^\nAttributeError: 'str' object has no attribute 'get'\n",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "wrong_type_records_integer",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 31, in verify_ledger\n    if len(proofs) != len(records):\n                      ^^^^^^^^^^^^\nTypeError: object of type 'int' has no len()\n",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "wrong_type_proofs_integer",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 31, in verify_ledger\n    if len(proofs) != len(records):\n       ^^^^^^^^^^^\nTypeError: object of type 'int' has no len()\n",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "record_timestamp_str",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 53, in verify_ledger\n    (pf[\"issued_at\"] - 30 <= rec[\"timestamp\"] <= pf[\"expires_at\"], \"committed outside the authorization window\"),\n     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: '<=' not supported between instances of 'int' and 'str'\n",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "record_timestamp_NoneType",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 53, in verify_ledger\n    (pf[\"issued_at\"] - 30 <= rec[\"timestamp\"] <= pf[\"expires_at\"], \"committed outside the authorization window\"),\n     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: '<=' not supported between instances of 'int' and 'NoneType'\n",
+      "contract": "schema"
+    }
+  ]
+}

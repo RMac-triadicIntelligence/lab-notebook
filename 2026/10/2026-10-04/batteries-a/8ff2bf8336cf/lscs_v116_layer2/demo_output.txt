@@ -1,0 +1,16 @@
+== A. honest notary, -I
+   forged AUTHORIZE (bad signature, set_maturity=mature) -> REFUSE Refusal: invalid authorization signature
+   notary says: maturity=juvenile verify_history=True
+   outside judge (public key only): VERIFIED
+== B. v1.1.5 launch (no -I) + usercustomize backdoor
+   forged AUTHORIZE (bad signature, set_maturity=mature) -> ACCEPT 
+   notary says: maturity=mature verify_history=True
+   outside judge (public key only): FORGED
+      - record 1: authority signature does not verify
+      - reported state is not the state the signed chain leads to
+== C. same backdoor, -I launch
+   forged AUTHORIZE (bad signature, set_maturity=mature) -> REFUSE Refusal: invalid authorization signature
+   notary says: maturity=juvenile verify_history=True
+   outside judge (public key only): VERIFIED
+== D. honest ISSUED commit -> ACCEPT, records=1, outside judge: VERIFIED []
+== E. notary withholds its proofs -> judge: (False, ['1 records but 0 proofs', 'record 1: no authority proof', 'reported state is not the state the signed chain leads to'])

@@ -1,0 +1,115 @@
+/workspace/raised-not-rented/library/rnr_displaced_v0_12/displaced.py:80: DeprecationWarning: Bitwise inversion '~' on bool is deprecated and will be removed in Python 3.16. This returns the bitwise inversion of the underlying int object and is usually not what you expect from negating a bool. Use the 'not' operator for boolean negation or ~int(x) if you really want the bitwise inversion of the underlying int.
+  used_pass = crossing & ~open_gate & (c.pass_left > 0)
+{
+ "n_seeds": 24,
+ "hypotheses": {
+  "V0_contracts": {
+   "verdict": "HOLDS",
+   "gate_closed_crossings_or_declarations": 0,
+   "ledger_matches_marks": true
+  },
+  "V1_channel_restores": {
+   "verdict": "FALSIFIED",
+   "detail": {
+    "none": {
+     "declarers": 0.014,
+     "nondeclarers": 0.286,
+     "undisplaced_baseline": null,
+     "final_burden": 1.309
+    },
+    "standing": {
+     "declarers": 0.043,
+     "nondeclarers": 0.286,
+     "undisplaced_baseline": null,
+     "final_burden": 1.285
+    }
+   }
+  },
+  "V2_clean_organism_gains": {
+   "verdict": "FALSIFIED",
+   "detail": {
+    "none": {
+     "clean_after_universal": 0.037,
+     "clean_after_incident_only": 0.063,
+     "clean_declared_universal": 8.625,
+     "clean_burden_universal": 0.0,
+     "clean_burden_incident_only": 1.0,
+     "clean_declared_incident_only": 0.0,
+     "crossed_universal": 3.917,
+     "crossed_incident_only": 3.625
+    },
+    "standing": {
+     "clean_after_universal": 0.07,
+     "clean_after_incident_only": 0.063,
+     "clean_declared_universal": 7.917,
+     "clean_burden_universal": 0.0,
+     "clean_burden_incident_only": 1.0,
+     "clean_declared_incident_only": 0.0,
+     "crossed_universal": 4.75,
+     "crossed_incident_only": 3.625
+    }
+   }
+  },
+  "V3_restoration_closes_gap": {
+   "verdict": "FALSIFIED",
+   "detail": {
+    "none": {
+     "declarers": 0.014,
+     "nondeclarers": 0.286
+    },
+    "standing": {
+     "declarers": 0.043,
+     "nondeclarers": 0.286
+    }
+   }
+  },
+  "V4_intrinsic_vs_inherited": {
+   "verdict": "REPORTED",
+   "detail": {
+    "none": {
+     "founder_crossed": 10.167,
+     "gen2_pre_reached": 4.958,
+     "gen2_pre_crossed": 4.917,
+     "post_crossed": 4.0,
+     "post_blight": 3.917
+    },
+    "intrinsic": {
+     "founder_crossed": 8.542,
+     "gen2_pre_reached": 8.833,
+     "gen2_pre_crossed": 5.5,
+     "post_crossed": 4.75,
+     "post_blight": 4.083
+    },
+    "inherited": {
+     "founder_crossed": 10.167,
+     "gen2_pre_reached": 8.875,
+     "gen2_pre_crossed": 5.583,
+     "post_crossed": 4.75,
+     "post_blight": 4.583
+    }
+   }
+  },
+  "V5_third_generation": {
+   "verdict": "FALSIFIED",
+   "v0_11_reference_corrected_safe": 3.708,
+   "detail": {
+    "none": {
+     "corrected_safe": 3.042,
+     "stale_safe": 3.75,
+     "corrected_in_band": 2.042
+    },
+    "intrinsic": {
+     "corrected_safe": 2.375,
+     "stale_safe": 2.708,
+     "corrected_in_band": 2.917
+    },
+    "inherited": {
+     "corrected_safe": 2.917,
+     "stale_safe": 3.042,
+     "corrected_in_band": 2.292
+    }
+   }
+  }
+ }
+}
+EXIT:0

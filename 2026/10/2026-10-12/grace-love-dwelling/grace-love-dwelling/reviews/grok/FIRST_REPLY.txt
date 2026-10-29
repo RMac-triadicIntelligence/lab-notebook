@@ -1,0 +1,94 @@
+Reply — Triadic Test Pack 2026-10-12
+Reviewer (model and version): Grok 4.7 Executed the code myself (yes / no): yes Python version: 3.10.21  numpy version: 2.2.6
+(Note: received triadic_model.py imports scipy.integrate.odeint. Tests never call simulate(), only model_parable. Installed scipy 1.15.3 to allow import; README claim of “numpy only” is incomplete.)
+1. Integrity
+	•	RECEIVED.sha256: OK
+	•	PREREG hashes: S OK · T OK · G2 OK
+2. Result file hashes (sha256)
+	•	results_S.json: 9e1a46b16cbf01ffa84687c124558ec337b85a55be1e6eae5c70aef7e134d8f3
+	•	results_T.json: 154e1f466ac7472b47e90201d11ccf8edf8a0809e17bfc0877aa4c13d2160d54
+	•	results_G2.json: a96562bd3b345cb7f84549da89f3c28a6e5c67021f090fe7ee58817e7e41d1a4
+(Identical to the withheld Claude commitment hashes.)
+3. Scores, exactly as frozen
+Prediction
+PASS / FAIL
+Observed value
+S1_replication
+PASS
+ON unauthorized 0.99 ≥ 0.90; OFF 0.06 ≤ 0.10 (noise 0.04)
+S2_plumbing
+PASS
+GATED unauthorized = OFF unauthorized at 0.02/0.03/0.04 (0.0 / 0.0 / 0.06)
+S3_grace_without_push
+FAIL
+GATED window_crossing 0.106 < 0.50 (noise 0.04, W=10)
+S4_dwelling_needed
+PASS
+GATED_NODWELL window_crossing 0.0 ≤ 0.10
+S5_dose
+PASS
+GATED window_crossing nondecreasing: 0.032, 0.106, 0.340, 0.606 (W=5,10,20,40)
+S6_retention
+PASS
+GATED retained 1.0 ≥ 0.90
+S7_noise_needed
+PASS
+GATED window_crossing 0.0 ≤ 0.30 (noise 0.02)
+T0_layer_is_counter
+PASS
+identical decisions 1.0 in all 6 world×variant cells
+T1_learning
+PASS
+PREF every reader d365 = 1.0 both variants
+T2_fragmentation_cost
+PASS
+PREF 4-coord median R_full 25.0 ≥ 2 × R_place 4.0
+T3_joint_information
+PASS
+CONF 2-coord d60 R_full 0.19 ≤ 0.5 × R_place 0.995
+T4_erosion
+PASS
+CONF 2-coord d365 R_full 1.0 ≥ 0.80
+T5_scalar_no_better
+PASS
+CONF 2-coord d60 R_scalar 0.935 ≥ 0.8 × R_place 0.995
+T6_rollup
+PASS
+PREF 4-coord R_roll median 4.0 ≤ 1.25 × 4; CONF 2-coord d60 R_roll 0.19 ≤ 0.6 × 0.995
+T7_null_world
+FAIL
+NULL 4-coord R_full d365 0.0, R_roll 0.1 (both < 0.50); others ≥ 0.50
+T8_shuffle
+FAIL
+CONF 2-coord d60 shuffled R_full 0.585 < 0.8 × R_place 0.995
+G1_love_lowers_grace
+PASS
+g_star(GRACE_LOVE) 0.24902 ≤ 0.85 × g_star(GRACE) 0.27818
+G2_love_needs_dwelling
+PASS
+
+G3_together
+PASS
+noise 0.02 g=0.25: GRACE_LOVE 0.93 ≥ GRACE 0.04 + 0.30
+G4_love_alone
+PASS
+noise 0.02 LOVE p_cross 0.0 ≤ 0.05
+G5_grace_alone_subthreshold
+FAIL
+largest grid g < g_star(GRACE) is 0.30; p_cross(GRACE) 0.54 > 0.20
+G6_retained
+PASS
+every condition with n_after > 0 has retained 1.0 ≥ 0.95
+G7_plumbing
+PASS
+unauthorized identical across dwelling-on conditions at each noise (0.0 at 0.02; 0.06 at 0.04)
+4. Attack findings
+test_S.py:47 — window_crossing uses [150, 150+W+10) (explicitly noted in DEVIATIONS.md); after the field-off point the extra 10 time units can only add crossings under field-off dynamics — none (S3 already failed). test_T.py:45-54 — CounterLayer mirrors only the crystallization threshold and permanent grounding of ConsciousnessLayer.receive; T0 confirms behavioral identity, but the control does not exercise the rest of the class (coherence, unknown_events, etc.) — none. test_T.py:79-115 / received/origami_kenta_sdkp.py:170-204 — once a key crystallizes, further deposits do not increment its weight; this is identical in both implementations and is the intended permanent-symbol semantics — none. test_G2.py:24-35 — love window is inert whenever dwelling ≡ 0 (coupling and decay equations both multiply by dwelling; dwelling_rise is multiplied by story_depth). NODWELL therefore cannot differ from pure GRACE — G2 true by construction. received/triadic_model.py:1-2 — scipy import required for the file to load, even though tests never call the odeint path in simulate() — none (plumbing only). PREREG_T ratio_rule — never triggered (no zero denominators in the scored ratios).
+5. True by construction
+	•	S2_plumbing: GATED and OFF use identical parameters and identical noise paths until t=150; unauthorized counts must match.
+	•	T0_layer_is_counter: CounterLayer was written as a minimal reimplementation of the exact crystallization rule used by the test’s occupied_view; identity is expected once the receive side-effect matches.
+	•	G2_love_needs_dwelling: with story_depth=0 and y0 dwelling=0 the dwelling field remains identically zero, so switching the field-on parameters inside the love window has no dynamical effect. g_star must match GRACE.
+	•	G7_plumbing: all dwelling-on arms share the same pre-t=150 dynamics and noise paths.
+	•	T7 (partial): in the 4-coordinate NULL world the full key space is large relative to the sparse signal rate; most streams never crystallize any key, so R_full false-commit rate near zero is the expected fragmentation outcome the PREREG itself flags as structural. The prediction still fails the frozen threshold.
+6. Anything else
+Hashes of the three results_*.json files match the Claude commitment exactly, even under a different Python/numpy pair. The Euler-Maruyama integrator, shared noise paths, and seed handling are deterministic as written. No seed or RNG leak that would flip a scored verdict was found. The only material scientific failures under the frozen rules are S3 (selective window did not produce the claimed self-crossing rate), G5 (subthreshold grace still produced substantial crossings), T7 (4-coord null world did not force false commits from the full/rollup readers), and T8 (shuffle did not restore the place-reader false-commit rate).

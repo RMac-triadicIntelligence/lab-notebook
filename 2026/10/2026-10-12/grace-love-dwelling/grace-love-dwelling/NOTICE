@@ -1,0 +1,16 @@
+Grace, Love and Dwelling — preregistered tests
+Copyright 2026 Soulshine
+
+This product includes software developed by Soulshine
+(a 501(c)(3) nonprofit corporation, Tulsa, Oklahoma).
+
+Architecture and scientific framing: Rusty Williams McMurray.
+Test harnesses written by Claude (Anthropic) at the author's direction.
+Independent reproduction: ChatGPT (Codex) and Grok 4.7.
+
+Licensed under the Apache License, Version 2.0.
+See LICENSE for the full license text.
+
+The files under seal/2026-10-12/ are byte-frozen. Do not add license headers
+inside that directory; doing so breaks the seal. Do not run the tests in place
+inside that directory; use tools/reproduce.py.

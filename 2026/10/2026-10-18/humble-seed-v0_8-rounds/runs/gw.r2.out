@@ -1,0 +1,51 @@
+PREDICTION                          VERDICT
+  C1_count_matching                  PASS
+  C2_counter_naive_identical         PASS
+  C3_replay_and_grant                PASS
+  C4_bounds                          PASS
+  A1_calibrated_null                 PASS
+  A2_time_breadth                    PASS
+  A3_lattice_is_thinning             PASS
+  A4_counter_dominates               PASS
+  B1_terrain_discounts_bursts        PASS
+  B2_stateless_sensors_cannot        PASS
+  B3_memory_limit_commute            PASS
+  B4_shuffle                         PASS
+
+CROSS RATES (R_FULL | R_PLACE | R_NAIVE)
+  sensor                      SPREAD          CONCENTRATED                 BURST                  NULL          SHUFFLED_BUR
+  COUNTER          0.970|0.970|1.000     0.080|0.080|1.000     0.095|0.990|1.000     0.000|0.015|0.045     0.990|0.990|1.000
+  THINNED          0.155|0.160|0.650     0.070|0.080|0.665     0.045|0.160|0.680     0.005|0.005|0.050     0.155|0.155|0.640
+  LATTICE          0.155|0.170|0.675     0.090|0.105|0.635     0.045|0.150|0.640     0.010|0.010|0.050     0.130|0.140|0.650
+  FOLD_MEMORY      0.045|0.045|0.470     0.020|0.025|0.420     0.030|0.060|0.315     0.000|0.000|0.045     0.040|0.040|0.450
+
+MEAN TERRAIN EXCESS Delta (R_NAIVE)
+  COUNTER       SPREAD= 102.11  CONCEN= 102.11  BURST= 102.11  NULL=   2.11  SHUFFL= 102.11   rel_B=+0.000 rel_C=+0.000
+  THINNED       SPREAD=  22.89  CONCEN=  23.57  BURST=  23.61  NULL=   0.95  SHUFFL=  23.06   rel_B=-0.031 rel_C=-0.030
+  LATTICE       SPREAD=  23.28  CONCEN=  22.73  BURST=  23.15  NULL=   0.77  SHUFFL=  22.95   rel_B=+0.006 rel_C=+0.024
+  FOLD_MEMORY   SPREAD=  14.56  CONCEN=  14.30  BURST=  11.78  NULL=   0.71  SHUFFL=  14.37   rel_B=+0.191 rel_C=+0.018
+
+B1: FOLD_MEMORY SPREAD-BURST paired diff 2.79 (95% CI 2.13..3.43)
+B4: SHUFFLED_BURST-BURST 2.59 (CI 1.73..3.46); |SHUF-SPREAD|/SPREAD 0.013
+sep: COUNTER 0.875, THINNED 0.085, LATTICE 0.065, FOLD_MEMORY 0.015;  D (exploratory) -0.035
+checks: {"C1_streams_ok": 200, "C2_streams_ok": 200, "grant_streams_ok": 200, "replay_ok": 2000, "replay_n": 2000, "tamper_caught": 200, "tamper_n": 200, "bounds_ok": 3712, "bounds_n": 3712, "k_short_of_E_streams": 0, "N": 200}
+Self-prediction (expected -> measured):
+  A1_min_null_hold                 +0.980 -> +0.985
+  A2_SPREAD_cross                  +0.940 -> +0.970
+  A2_CONCENTRATED_hold             +0.910 -> +0.920
+  A2_BURST_hold                    +0.910 -> +0.905
+  A3_max_abs_diff                  +0.060 -> +0.025
+  A4_sep_COUNTER                   +0.850 -> +0.875
+  A4_sep_LATTICE                   +0.150 -> +0.065
+  A4_sep_FOLD_MEMORY               +0.080 -> +0.015
+  B1_rel_B_FOLD_MEMORY             +0.200 -> +0.191
+  B2_rel_B_LATTICE                 +0.000 -> +0.006
+  B2_rel_C_LATTICE                 +0.000 -> +0.024
+  B2_rel_B_THINNED                 +0.000 -> -0.031
+  B2_rel_C_THINNED                 +0.000 -> -0.030
+  B3_rel_C_FOLD_MEMORY             +0.040 -> +0.018
+  B4_shuffle_recovery_relative     +0.200 -> +0.178
+  B4_shuffled_vs_spread_relative   +0.000 -> +0.013
+  exploratory_D                    +0.020 -> -0.035
+receipt 746856fc3ea3d9d48814f80ef3f51e10694c590dd0ce8c08201be939aebe89f4  (97.5 s)
+12/12 PASS

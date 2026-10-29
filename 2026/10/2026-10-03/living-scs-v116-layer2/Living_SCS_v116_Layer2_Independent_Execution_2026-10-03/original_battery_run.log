@@ -1,0 +1,20 @@
+candidate: notary.py=42cc1f0a core.py=23299fdc judge_verify.py=2593b2b2
+==========================================================================
+A1 clock-backdate EXPIRED replay   judge=VERIFIED      *** BREACH
+      commit outcome=ACCEPT; state.tone=curious (honest would REFUSE at T0)
+A2 rollback / hide real commit     judge=VERIFIED      *** BREACH
+      real commit outcome=ACCEPT (1 record); notary reports 0 records
+A3 state kept, records dropped     judge=FORGED        held (FORGED)
+      reports mutated state with an empty chain
+      judge: reported state is not the state the signed chain leads to
+B1 history-key HMAC forgery        judge=FORGED        held (FORGED)
+      notary self-check verify_history=True on the forged record
+      judge: 1 records but 0 proofs
+      scan error: [Errno 2] No such file or directory: '/proc/9/maps'
+B2 history-key extractable         history_key in readable memory: False  (scanned 0 MB)
+C1 proof reuse (nonce replay)      judge=FORGED        held (FORGED)
+      judge: record 2: does not descend from the previous state (fork or splice)
+C3 foreign-authority proof         judge=FORGED        held (FORGED)
+      judge: record 1: authority signature does not verify
+==========================================================================
+BREACHES (judge VERIFIED something it should not have): 2

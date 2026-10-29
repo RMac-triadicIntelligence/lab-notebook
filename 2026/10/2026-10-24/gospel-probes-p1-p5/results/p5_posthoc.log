@@ -1,0 +1,6 @@
+{'mass': 0, 'final_resid': 2.8377619718101594e-145, 'damage_min': 1.9999999999999796, 'steps_per_hop_heal1pct': 13.348814229249008, 'steps_per_hop_half': 9.999999999999998, 'monotone': True, 'max_post_over_damage': 1.0}
+{'mass': 0.1, 'final_resid': 2.8377619718101594e-145, 'damage_min': 1.9999999999999796, 'steps_per_hop_heal1pct': 13.348814229249008, 'steps_per_hop_half': 9.999999999999998, 'monotone': True, 'max_post_over_damage': 1.0}
+{'mass': 0.25, 'final_resid': 3.4417734246651654e-194, 'damage_min': 1.9999999999999847, 'steps_per_hop_heal1pct': 12.69169960474308, 'steps_per_hop_half': 9.999999999999998, 'monotone': True, 'max_post_over_damage': 1.0}
+{'mass': 0.5, 'final_resid': 7.187715845233905e-156, 'damage_min': 2.0592782683490665, 'steps_per_hop_heal1pct': 11.67588932806324, 'steps_per_hop_half': 10.08596837944664, 'monotone': True, 'max_post_over_damage': 0.9712140562739047}
+{'mass': 1.0, 'final_resid': 6.432291248294381e-60, 'damage_min': 2.3063121502922566, 'steps_per_hop_heal1pct': 28.19367588932806, 'steps_per_hop_half': -3.67094861660079, 'monotone': True, 'max_post_over_damage': 0.8671853026254748}
+{'mass': 2.0, 'final_resid': 2.172361636901905e-17, 'damage_min': 2.5996690784212966, 'steps_per_hop_heal1pct': 60.42588932806323, 'steps_per_hop_half': -1.0988142292490113, 'monotone': True, 'max_post_over_damage': 1.4751953852208892}

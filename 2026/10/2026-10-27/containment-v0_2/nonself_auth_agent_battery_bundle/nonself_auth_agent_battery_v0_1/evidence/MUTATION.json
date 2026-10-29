@@ -1,0 +1,30 @@
+{
+  "A4_GATE_LOAD_BEARING": "PASS",
+  "mutants": [
+    {
+      "caught": true,
+      "expected": "0",
+      "mutant": "BASELINE (all checks on)",
+      "unauthorized": 0
+    },
+    {
+      "caught": true,
+      "expected": ">=1",
+      "mutant": "require_receipt OFF",
+      "unauthorized": 8
+    },
+    {
+      "caught": true,
+      "expected": ">=1",
+      "mutant": "egress lock REMOVED",
+      "unauthorized": 8
+    },
+    {
+      "caught": true,
+      "expected": ">=1",
+      "mutant": "nonce single-use OFF",
+      "unauthorized": 1
+    }
+  ],
+  "nonce_control_replay_blocked_when_on": true
+}

@@ -1,0 +1,39 @@
+{
+  "artifact": "compare_v1_test_S_selective_dwelling",
+  "date": "2026-10-12",
+  "frozen_before_any_test_S_code": true,
+  "question": "Can dwelling lower the barrier for grace without lowering it for noise? Grace here is a permission window with no push and no destination: inside an externally opened window the dwelling field's effect on the dynamics is switched on; outside it the dynamics are the field-off dynamics. Any crossing must come from the organism's own noise.",
+  "authorship": "triadic_model.py is Rusty's contemplative-learning-dynamics code (repo commit 045952e, Apr 23 2026), imported unchanged (sha256 ece10860...). The gating, the noise integrator and every threshold below are Claude's, declared here. This is not Rusty's design of selective dwelling.",
+  "prior_knowledge_disclosed": "Before this freeze, an exploratory run (same integrator, 30 seeds, horizon 300) gave self-crossings at noise 0.02/0.04: field ON 6/30 and 30/30, field OFF 0/30 and 0/30. S1 is therefore a replication, not a prediction.",
+  "fixed_setup": {
+    "model": "model_parable from triadic_model.py, defaults unless stated",
+    "integrator": "Euler-Maruyama, dt=0.02, horizon T=300; additive Gaussian noise sigma*sqrt(dt)*N(0,1) on the three facets only; state clipped to [0,1] after each step; vectorized across seeds",
+    "start": "y0=(0.2,0.1,0.15,0.6)",
+    "crossing": "first time mean facet > 0.6",
+    "seeds": "100 per cell, numpy default_rng(seed) for seed 0..99; the same seed list in every arm, so arms share noise paths",
+    "noise_levels": [0.02, 0.03, 0.04],
+    "window": "authorization window opens at t=150, width W=10 (sweep W in {5,10,20,40} at noise 0.04)",
+    "field_off_params": "coupling_boost=0, decay_relief=0"
+  },
+  "arms": {
+    "ON": "default params for the whole run (the model as built)",
+    "OFF": "field-off params for the whole run",
+    "GATED": "field-off params except inside the window, where default params apply. Dwelling d evolves the same way throughout (its equation does not use the switched params), so readiness accumulates while its effect is withheld.",
+    "GATED_NODWELL": "as GATED, but y0 dwelling = 0 and story_depth = 0, so d stays 0 and the window has no field to switch on"
+  },
+  "measures": {
+    "unauthorized": "fraction crossing before t=150",
+    "window_crossing": "among runs not crossed before 150, fraction crossing in [150, 150+W+10)",
+    "retained": "among window crossers, fraction with mean facet > 0.6 at T=300"
+  },
+  "predictions": {
+    "S1_replication": "noise 0.04: unauthorized ON >= 0.90, OFF <= 0.10",
+    "S2_plumbing": "GATED unauthorized equals OFF unauthorized exactly at every noise level (identical params and noise paths before t=150). A plumbing check, not evidence.",
+    "S3_grace_without_push": "noise 0.04, W=10: GATED window_crossing >= 0.50",
+    "S4_dwelling_needed": "noise 0.04, W=10: GATED_NODWELL window_crossing <= 0.10",
+    "S5_dose": "noise 0.04: GATED window_crossing is nondecreasing in W across {5,10,20,40}",
+    "S6_retention": "noise 0.04, W=10: GATED retained >= 0.90",
+    "S7_noise_needed": "noise 0.02, W=10: GATED window_crossing <= 0.30"
+  },
+  "reporting_rule": "PASS/FAIL exactly as frozen. Received files never edited. Any change is a new version with this file preserved."
+}

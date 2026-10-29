@@ -1,0 +1,8 @@
+{
+  "independent_evidence_check": "PASS",
+  "histories_checked": 576,
+  "dynamics_records": 7488,
+  "scored_decisions_checked": 12480,
+  "calibration_test_separation": "PASS",
+  "matched_noise_and_work": "PASS"
+}

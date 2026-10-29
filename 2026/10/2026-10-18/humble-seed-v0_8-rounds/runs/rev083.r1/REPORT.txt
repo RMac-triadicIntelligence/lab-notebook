@@ -1,0 +1,397 @@
+HUMBLE SEED v0.8.3 CANDIDATE
+Independent execution and adversarial review — 18 October 2026
+
+EXECUTIVE ASSESSMENT
+
+The shipped run reproduces exactly, down to the complete results.json bytes.
+47/48 test expectations and 40/41 mutant expectations match the frozen declaration.
+The two mismatches share one cause: T26 catches the intended unsigned-change
+attack earlier than predicted. Its defensive behavior works. Correcting a real
+answer from no to yes also works through attestation, reload, and audit.
+
+The new owner ledger is useful, but it is not yet a reliable shared authority.
+A second open owner session can leave the first acting on stale records. That
+allows a real owner's no to be bypassed, a valid signature record to be erased,
+and the first-signing lifetime to be refreshed. The witness has the same cached
+state problem: two open sessions can attest competing sequence-1 checkpoints
+from the same parent. None of these probes edits the owner files or steals a key.
+
+Replay also accepts forged timestamp and note values. This does not falsify the
+character destination or rendered consequence, but it disproves the literal
+claim that every record field is checked. Three new metadata mutants survive
+all 47 tests that pass on the baseline, without newly failing or crashing a test.
+
+An injected witness-write failure exposes an additional recovery problem: the
+organism advances durably while the witness stays behind, and ordinary audit
+and attestation retry both refuse after reopening.
+
+Recommendation: keep candidate status. Prioritize one serialized, durable owner
+state authority covering signatures, answers, witness heads, and checkpoint
+commit/recovery. These failures concern the implementation of the authority,
+not evidence against the broader external-authorization idea.
+
+SCOPE AND METHOD
+
+Input: Claudehumble_seed_v0_8_3_candidate.zip, supplied in this turn.
+Only the uploaded package and newly written probes were used. No internet,
+other review archives, or source changes to the candidate were used.
+This was not blind: the full package README and DEVIATIONS disclosed author
+results before execution. REVIEWS.md and the historical review reports were
+not consulted. The independent probe hypotheses were formed after inspecting
+source; they are not preregistered tests. The frozen scores remain unchanged.
+
+The uploaded archive and every MANIFEST.sha256 member verified before execution.
+The candidate and declarations were left unchanged. The shipped harness
+regenerated RESULTS_v0_8_3.json, byte-identical to the original copy in the zip.
+The two supplied auxiliary scripts run here were diagnostic_T26_v0_8_3.py and
+regression_corrected_answer_attest.py. No claim is made to have rerun every
+historical regression script in the nested records.
+
+REPRODUCTION
+
+Command: python3 -I falsify_v0_8_3.py
+Python: 3.12.14 (Clang 22.1.3)
+cryptography: 50.0.2
+Platform: Linux x86_64, glibc 2.39
+Harness exit code: 1 (expected from the frozen mismatches)
+Runtime: approximately 10.30 seconds
+Tests: 47 PASS, 1 FAIL, 0 ERROR
+Mutants: 39 KILLED, 1 SURVIVES (null copy), 1 CRASHED (deliberate crash)
+Mutant expectations matched: 40/41. This is not “40 mutants killed.”
+Frozen expectation mismatches: 2
+Receipt: 27214795c8e28269b073979e25bfef58b166acdecca4f071c69e4f85017bda59
+
+Input zip SHA-256:
+0f82d933faf8770dd8fed427911a7eac59f0ce68cd79f66790130ecc9bcb0818
+Candidate SHA-256 before/after execution:
+2fd53071a4c76f4bc74e482f1297788ad475aea035c0293f1c4a3881597739d2
+Declaration SHA-256:
+241924f75ad5a1426ea5686882619278d30a5d76c15734063ead4ca18eba7369
+Shipped and reproduced RESULTS_v0_8_3.json SHA-256:
+16bc306e2481404f8a0730b533e66e052dcd56535a935d77d5ff45694ce41984
+
+T26 diagnostic: refuses on prior_character_snapshot; witness remains at 0;
+reload fails; tampered formality 0.99 is preserved as evidence. XD4a's exact
+kill set consequently excludes T26, since T26 does not PASS on the baseline.
+Neither mismatch is evidence that the T26 tamper was accepted.
+
+FINDINGS
+
+F1 — HIGH, CONDITIONAL ON MULTIPLE OPEN OWNER INSTANCES
+Stale OwnerLedger snapshots bypass or destroy authoritative owner records.
+
+Affected: OwnerLedger.__init__, _persist, signed, answers_to,
+answers_in_category_after; OwnerTool.sign_proposal and _check_owner_acts.
+The ledger is read at construction, thereafter queried from memory, and each
+write replaces the whole file. There is no lock, reload, version check, or
+single-writer enforcement. Sequential calls from overlapping instances suffice;
+simultaneous threads or a precise race are unnecessary.
+
+Reproducer: code/independent_probes.py, stale_owner_veto_bypass.
+1. Session A signs a reading. Session B opens the same owner ledger and witness.
+2. B records the owner's real no. It is present in the durable owner file.
+3. The untrusted organism records a forged yes, as in the shipped T47 threat.
+4. The organism applies the reading. A attests using its stale answer snapshot.
+5. A fresh owner sees the durable no, yet reload+audit accepts the checkpoint.
+Observed: durable_owner_answers=['no']; attestation_accepted=True;
+fresh_reload_and_audit=True; verbosity=0.25; witness_sequence=1.
+Fresh-session control: the up-to-date session refuses this same forged-yes
+scenario for the owner's position. The bypass is caused by stale owner state.
+No owner file is directly edited by the probe. The signature is valid.
+
+Two further reproducers isolate consequences of the same root cause:
+- stale_owner_erases_signature: B opens before A signs. B later records an
+  ordinary yes and replaces the file with its old signed-record map. A fresh
+  owner loses the valid signature record and refuses the legitimate crossing
+  as “not signed through this owner tool.” This needs no forged evidence.
+- stale_signer_refreshes_lifetime: B opens before A's first signature. A signs
+  at t0; B signs the exact same payload at t0+11 with TTL 10. The durable first
+  signing time shifts by 11 seconds and attestation succeeds. Owner clocks
+  are explicitly injected for the test; the organism remains within its own
+  issuance-time window. One-instance control correctly refuses after 11 seconds.
+
+Why fresh audit does not repair the bypass: audit validates the existing signed
+checkpoint and witness head. It does not redo the owner acts that were checked
+before that checkpoint. Reloading the ledger after an incorrect attestation is
+therefore too late to withdraw that checkpoint through the ordinary audit path.
+
+Repair direction: serialize all owner operations against one current durable
+record. A lock must cover read, checks, update, and commit, or use a transactional
+store with versioned conditional updates. Preserve first-signing events.
+Simply reloading in one getter leaves races between checks and writes. If the
+intended deployment permits only one owner process, enforce that exclusivity
+and make a second instance refuse before it can perform owner operations.
+
+F2 — HIGH, CONDITIONAL ON MULTIPLE OPEN WITNESS INSTANCES
+Two valid sibling checkpoint attestations are issued from one witness parent.
+
+Affected: OwnerWitness.__init__, check_successor, record, _persist;
+OwnerTool.attest. Like the ledger, the witness only reads its file at creation.
+
+Reproducer: stale_witness_fork.
+Start with one enrolled sequence-0 organism and two legitimately signed readings,
+one for verbosity, one for formality. Load the same organism state into two
+objects and open two owner sessions against the same files. Session A applies
+and attests the verbosity branch. Session B then applies and attests the
+formality branch using its stale sequence-0 witness snapshot.
+Observed: both checkpoints have sequence 1 and the same parent, but different
+checkpoint hashes and different character. Both attest calls return True.
+Both existing sessions audit their own branch as current. A freshly opened
+session accepts branch B and detects branch A as a fork.
+
+This does not show that a fresh witness accepts both histories. It shows that
+the provided witness implementation issued and locally accepted two competing
+histories before a fresh witness noticed. No direct file tampering, clock
+changes, source patches, or deliberately faulty cryptography are involved.
+The on-disk organism state ends on the second branch; both checkpoint objects
+and signatures have nevertheless been issued and remain independently valid.
+
+Repair direction: share the serialization mechanism from F1. Enforce successor
+selection atomically at the authoritative durable head. Avoid releasing a new
+valid checkpoint based on a stale head; define how commit and install recover
+from interruption. A write-time refresh alone, after signing/installing a
+checkpoint, is too late to prevent issuance of competing signatures.
+
+F3 — MEDIUM, RECORD INTEGRITY; NO CHARACTER-DESTINATION BYPASS
+“Every record field” is stronger than the implementation and tests establish.
+
+Affected: replay_signed_history (especially the record checks near lines
+1373–1385); T44_replay_checks_every_record_field.
+
+Reproducer: forged_record_metadata.
+After a legitimate signed apply, before attestation, edit only the untrusted
+organism's unattested tail, recompute its unsigned hash chain and state digest:
+- record.authorized_at = 'not a timestamp'
+- record.note = {'forged': 'owner said yes; real owner note was empty'}
+- authorized_mutation.timestamp = -123456789.0
+The owner attests. Fresh reload and audit accept all these values.
+No previously attested prefix or owner-side records are changed.
+
+The code verifies the record field-name set and many values used in replay,
+but never validates authorized_at or note, nor binds the outer event timestamp
+to the record time. Python dataclass annotations do not enforce types on load.
+T44 exercises only prior_value, first_commit, and prior_character_snapshot.
+
+Three separate supplemental mutants establish the test coverage gap:
+XM1_invalid_authorized_at: every new record gets authorized_at='not a timestamp'.
+XM2_forged_owner_note: every new record replaces owner_note with a forged dict.
+XM3_inconsistent_event_timestamp: mutation event time becomes -123456789.0.
+All three SURVIVE: no new FAIL or ERROR among the 47 passing baseline tests.
+These results are supplemental, not additions to the frozen 41-mutant score.
+Exact source edits, full mutant sources, and all 48 outcomes per mutant are saved.
+
+Limit: the forged metadata does not reverse the rendered consequence. Character,
+prior value, distribution, derived destination, and other checked replay fields
+still agree in this probe. Treat this as an audit-record/type/authenticity gap,
+not a demonstrated defeat of destination derivation or lifetime checks. Lifetime
+uses owner ledger signed_at and the owner clock, not this forged authorized_at.
+
+Repair direction: define field provenance explicitly. Validate finite numeric
+record/event times and structural agreement. Do not claim that an owner note is
+authenticated unless the owner stores or signs that exact note. If organism
+notes are allowed, label them as untrusted organism annotations. Tests should
+cover every supported field's type and source of authority.
+
+F4 — MEDIUM, AVAILABILITY / RECOVERY
+A witness persistence failure strands the normal attestation workflow.
+
+Affected: OwnerTool.attest installs the organism checkpoint before
+OwnerWitness.record persists the witness advance.
+
+Reproducer: witness_write_failure.
+Inject OSError into witness._persist only for the second attestation, after a
+legitimate signed crossing. The organism durably stores checkpoint 1. Witness
+persistence fails; the on-disk witness remains 0. Reopen both sides.
+Observed: organism.load succeeds; fresh audit refuses “Unwitnessed advance:
+organism presents sequence 1, witness holds 0.” Retrying OwnerTool.attest
+refuses “Non-successor checkpoint: organism presents sequence 2, expected 1.”
+This is an explicit fault injection, not an observed spontaneous disk failure.
+
+Limit: fail-closed behavior protects against an unwitnessed advance. This probe
+shows a missing normal retry/recovery path, not an unauthorized accepted change.
+It is not the already listed lost-ledger or expired-attestation limitation: the
+ledger is present, the TTL is current, and the failure is between durable writes.
+Manual or lower-level recovery may be possible; it is not provided by the two
+normal calls tested here.
+
+Repair direction: a documented, recoverable checkpoint commit protocol tying
+organism install and witness advancement to one durable intent/transaction.
+Test restart at each durable boundary and verify idempotent completion or
+explicit recovery. Do not blindly reverse write order, which creates a different
+half-committed state.
+
+WHAT HELD AND WHAT REMAINS UNPROVEN
+
+The shipped 47 passing cases reproduce, including evidence/distribution binding,
+constitution pinning, replay refusal, same-category stale-reading rejection,
+cross-category liveness, truthful first-commit checks, finite-value refusal,
+reader hold behavior, owner-clock lifetime refusal in one current session, and
+forged-yes refusal when the owner session has current records. These are bounded
+executable results on this small implementation.
+
+Nine independent scenarios confirmed their expected observations: three controls
+and six failure/fault scenarios. OBSERVATION_CONFIRMED is a result about the
+reproducer, not a passing security verdict. The fork and signature-loss cases
+need only ordinary overlapping owner instances; the veto case additionally uses
+the forged organism evidence already within the package's threat model.
+
+No new claim of emergence, general intelligence, consciousness, or production
+readiness follows from these tests. No independently demonstrated new
+information leak into the signed destination, or changed constitutional
+mapping escaping the existing checks, is claimed here. Existing declared
+keyword-interpreter and destination-derivability limits are not new findings.
+
+SUGGESTED NEXT FREEZE
+
+1. Add the multiple-session veto, signature-retention, first-signing lifetime,
+   and sibling-witness cases before declaring stronger owner guarantees.
+2. Implement one durable, serialized owner authority or enforce one instance.
+3. Add checkpoint interruption/restart tests and a supported recovery path.
+4. Define and test provenance/types for every record field, or narrow the claim.
+5. Correct T26's predicted objector and XD4a's resulting exact kill set only in
+   the next declaration. Preserve this freeze and its receipt.
+
+ARCHIVE CONTENTS AND REPRODUCTION
+
+README.txt gives a one-command reproduction path. source/ retains the exact
+uploaded archive. code/ has the independent probes and supplemental mutation
+runner. evidence/ retains actual stdout, stderr, complete JSON outcomes, all
+new mutant sources, source-manifest verification, run environment, and exact
+byte comparison. SHA256SUMS.txt covers every other archived file.
+
+APPENDIX A — FULL SHIPPED HARNESS OUTPUT, VERBATIM
+
+==============================================================================
+Humble Seed v0.8.3 CANDIDATE — falsification harness
+declared 241924f75ad5a142… frozen 2026-10-18T14:00:27Z
+candidate 2fd53071a4c76f4b…  parent v0.7 08a756043a6500fc…
+==============================================================================
+
+TEST                                             DECLARED  MEASURED  VERDICT
+T1_liveness_intervening_events                   PASS      PASS      MATCH
+T2_liveness_cross_category                       PASS      PASS      MATCH
+T3_stale_same_category                           PASS      PASS      MATCH
+T4_second_crossing_at_clamp_floor                PASS      PASS      MATCH
+T5_payload_carries_no_destination_information    PASS      PASS      MATCH
+T6_rule_comes_from_constitution                  PASS      PASS      MATCH
+T7_constitution_pinned_at_apply                  PASS      PASS      MATCH
+T8_distribution_bound                            PASS      PASS      MATCH
+T9_evidence_bound                                PASS      PASS      MATCH
+T10_replay                                       PASS      PASS      MATCH
+T11_expiry                                       PASS      PASS      MATCH
+T12_wrong_key                                    PASS      PASS      MATCH
+T13_forged_first_commit                          PASS      PASS      MATCH
+T14_forged_character_resealed                    PASS      PASS      MATCH
+T15_category_sequences_resealed                  PASS      PASS      MATCH
+T16_permissive_rule_full_birth_repair            PASS      PASS      MATCH
+T17_unattested_apply_fails_closed                PASS      PASS      MATCH
+T18_rollback_witness_only                        PASS      PASS      MATCH
+T19_identity_replacement_audit                   PASS      PASS      MATCH
+T20_realistic_session                            PASS      PASS      MATCH
+T21_prior_value_detects_independent_change       PASS      PASS      MATCH
+T22_unattested_tail_check_reachable              PASS      PASS      MATCH
+T23_tamper_evidence_preserved                    PASS      PASS      MATCH
+T24_nonfinite_reading_refused                    PASS      PASS      MATCH
+T25_clamp_comes_from_constitution                PASS      PASS      MATCH
+T26_attest_refuses_unsigned_change               PASS      FAIL      MISMATCH
+    -> refused for a different reason: "trace index 2: record fields differ from the replay: ['prior_character_snapshot']"
+T27_checkpoint_built_at_signing_time             PASS      PASS      MATCH
+T28_reading_survives_a_day                       PASS      PASS      MATCH
+T29_allowed_fields_come_from_constitution        PASS      PASS      MATCH
+T30_D1_owner_no_holds                            PASS      PASS      MATCH
+T31_D1_hold_never_crosses_or_reproposes          PASS      PASS      MATCH
+T32_D1_reader_failure_holds                      PASS      PASS      MATCH
+T33_D1_reader_cannot_alter_reading               PASS      PASS      MATCH
+T34_D1_unrelated_answers_do_not_hold             PASS      PASS      MATCH
+T35_D2_answer_is_evidence_not_authority          PASS      PASS      MATCH
+T36_D2_prompts_separate_and_deterministic        PASS      PASS      MATCH
+T37_D3_nothing_before_signing_depends_on_rule    PASS      PASS      MATCH
+T38_D3_consequence_rendered_from_record          PASS      PASS      MATCH
+T39_D4_attest_refuses_forged_reading             PASS      PASS      MATCH
+T40_nonfinite_never_parsed_or_written            PASS      PASS      MATCH
+T41_owner_ledger_refuses_held_crossing           PASS      PASS      MATCH
+T42_owner_clock_lifetime                         PASS      PASS      MATCH
+T43_organism_expiry_record_honored               PASS      PASS      MATCH
+T44_replay_checks_every_record_field             PASS      PASS      MATCH
+T45_D2_corrected_answer_releases_hold            PASS      PASS      MATCH
+T46_reading_must_be_signed_through_owner_tool    PASS      PASS      MATCH
+T47_forged_yes_does_not_reach_attestation        PASS      PASS      MATCH
+T48_organism_recorded_no_honored                 PASS      PASS      MATCH
+
+MUTANT                                       DECLARED  MEASURED  VERDICT   killed by (crashed)
+X0_NULL_identical_copy                       SURVIVES  SURVIVES  MATCH     -
+X1_K1_trace_head_staleness_restored          KILLED    KILLED    MATCH     T1, T20, T28, T2, T30, T31, T32, T34, T35, T41, T43, T45, T47, T48
+X2_K1_global_sequence_staleness_restored     KILLED    KILLED    MATCH     T20, T28, T2
+X3_K1_category_sequence_check_removed        KILLED    KILLED    MATCH     T20, T28, T3, T4
+X4_K1_prior_value_check_removed              KILLED    KILLED    MATCH     T21, T23
+X5_K2_destination_back_in_payload            KILLED    KILLED    MATCH     T5
+X5b_K2_destination_alias_in_payload          KILLED    KILLED    MATCH     T5
+X5c_K2_destination_digest_in_payload         KILLED    KILLED    MATCH     T5
+X6_K2_rule_read_from_module_constant         KILLED    KILLED    MATCH     T6
+X7_K2_constitution_pin_removed               KILLED    KILLED    MATCH     T7
+X8_K2_distribution_root_not_rehashed         KILLED    KILLED    MATCH     T8
+X9_C5_unknown_organism_audit_returns         KILLED    KILLED    MATCH     T19
+X10_unattested_tail_check_removed            KILLED    KILLED    MATCH     T22
+XF1a_validator_accepts_nonfinite             KILLED    KILLED    MATCH     T24
+XF1b_strict_parse_removed                    KILLED    KILLED    MATCH     T40
+XF1c_canonical_json_allows_nan               KILLED    KILLED    MATCH     T40
+XF2a_clamp_read_from_module_constant         KILLED    KILLED    MATCH     T25
+XF2b_fields_read_from_module_constant        KILLED    KILLED    MATCH     T29
+XF2c_ttl_read_from_module_constant           KILLED    KILLED    MATCH     T28
+XD1a_hold_ignored                            KILLED    KILLED    MATCH     T30, T31, T32, T41, T45, T48
+XD1b_reader_failure_fails_open               KILLED    KILLED    MATCH     T32
+XD1c_hold_reproposes                         KILLED    KILLED    MATCH     T30, T31
+XD1d_reader_gets_live_reading                KILLED    KILLED    MATCH     T33
+XD2a_owner_answer_counted_as_authorizing     KILLED    KILLED    MATCH     T30, T34, T35, T41, T45, T47, T48
+XD2b_answer_not_deposited_as_evidence        KILLED    KILLED    MATCH     T35
+XD3a_preview_destination_returned            KILLED    KILLED    MATCH     T37
+XD3b_destination_in_authorization_prompt     KILLED    KILLED    MATCH     T36, T37
+XD4a_attest_without_replay                   KILLED    KILLED    MISMATCH  T39, T41, T42, T43, T44, T46, T47, T48
+    declared exact ['T26_attest_refuses_unsigned_change', 'T39_D4_attest_refuses_forged_reading', 'T41_owner_ledger_refuses_held_crossing', 'T42_owner_clock_lifetime', 'T43_organism_expiry_record_honored', 'T44_replay_checks_every_record_field', 'T46_reading_must_be_signed_through_owner_tool', 'T47_forged_yes_does_not_reach_attestation', 'T48_organism_recorded_no_honored']
+    measured       ['T39_D4_attest_refuses_forged_reading', 'T41_owner_ledger_refuses_held_crossing', 'T42_owner_clock_lifetime', 'T43_organism_expiry_record_honored', 'T44_replay_checks_every_record_field', 'T46_reading_must_be_signed_through_owner_tool', 'T47_forged_yes_does_not_reach_attestation', 'T48_organism_recorded_no_honored']
+XD4b_replay_skips_signature_check            KILLED    KILLED    MATCH     T39
+XH_unrelated_crash_injected                  CRASHED   CRASHED   MATCH     -  (42 crashed)
+XD2c_answer_is_a_permanent_event             KILLED    KILLED    MATCH     T45, T47
+XD2e_per_reading_clause_removed              KILLED    KILLED    MATCH     T45
+XD2f_category_clause_removed                 KILLED    KILLED    MATCH     T45
+XL1_owner_position_check_removed             KILLED    KILLED    MATCH     T41, T47
+XL5_unknown_readings_skip_owner_checks       KILLED    KILLED    MATCH     T46
+XL6_answer_not_recorded_by_owner             KILLED    KILLED    MATCH     T41, T47
+XL7_signature_not_recorded_by_owner          KILLED    KILLED    MATCH     T10, T14, T15, T18, T1, T20, T25, T27, T28, T29, T2, T33, T34, T35, T38, T3, T41, T42, T43, T45, T47, T48, T4, T6
+XL8_organism_recorded_no_ignored             KILLED    KILLED    MATCH     T48
+XL2_owner_clock_lifetime_check_removed       KILLED    KILLED    MATCH     T42
+XL3_organism_expiry_record_ignored           KILLED    KILLED    MATCH     T43
+XL4_record_field_check_removed               KILLED    KILLED    MATCH     T44
+
+==============================================================================
+mismatches vs declared: 2
+receipt (statuses only, run-independent): 27214795c8e28269b073979e25bfef58b166acdecca4f071c69e4f85017bda59
+RESULTS_v0_8_3.json written. Exit code is non-zero if any mismatch.
+
+APPENDIX B — INDEPENDENT PROBES, ACTUAL OUTPUT
+
+fresh_owner_control: {"detail": {"refused": "AttestationRefused: trace index 4: owner's position: the owner's latest answer to this reading is 'no'", "witness_sequence": 0}, "status": "OBSERVATION_CONFIRMED"}
+stale_owner_veto_bypass: {"detail": {"attestation_accepted": true, "durable_owner_answers": ["no"], "fresh_reload_and_audit": true, "owner_files_edited_by_probe": false, "verbosity": 0.25, "witness_sequence": 1}, "status": "OBSERVATION_CONFIRMED"}
+stale_owner_erases_signature: {"detail": {"attestation": "AttestationRefused: trace index 3: reading was not signed through this owner tool", "owner_files_edited_by_probe": false, "signature_lost_after_ordinary_yes": true}, "status": "OBSERVATION_CONFIRMED"}
+stale_witness_fork: {"detail": {"both_checkpoint_sequences": 1, "both_sessions_audit_own_branch": true, "branch1_character": {"curiosity": 0.6, "formality": 0.5, "verbosity": 0.25}, "branch2_character": {"curiosity": 0.6, "formality": 0.25, "verbosity": 0.5}, "different_checkpoint_hashes": true, "fresh_session_refuses_first_branch": "RollbackDetected: Fork: two different states both claim sequence 1", "owner_files_edited_by_probe": false, "same_parent": true, "two_attestations_accepted": true}, "status": "OBSERVATION_CONFIRMED"}
+forged_record_metadata: {"detail": {"attested_event_timestamp": -123456789.0, "attested_note": {"forged": "owner said yes; real owner note was empty"}, "attested_record_authorized_at": "not a timestamp", "character_was_not_forged": true, "fresh_reload_and_audit": true, "original_authorized_at_was_numeric": true, "original_note_was_empty": true}, "status": "OBSERVATION_CONFIRMED"}
+ordinary_corrected_answer: {"detail": {"corrected_answer_applies_attests_reloads": true}, "status": "OBSERVATION_CONFIRMED"}
+signing_does_not_refresh_lifetime: {"detail": {"attestation": "AttestationRefused: trace index 2: reading is past its lifetime by the owner's clock", "same_instance_resigning_does_not_extend": true}, "status": "OBSERVATION_CONFIRMED"}
+stale_signer_refreshes_lifetime: {"detail": {"attestation_accepted": true, "clock_injection": "owner1=t0 then owner2=t0+11; ttl=10; organism remains at issuance time", "first_signing_time_shift_seconds": 11.0}, "status": "OBSERVATION_CONFIRMED"}
+witness_write_failure: {"detail": {"durable_witness_checkpoint": 0, "fault_injection": "injected witness write failure", "fresh_audit": "RollbackDetected: Unwitnessed advance: organism presents sequence 1, witness holds 0", "ordinary_attest_retry": "RollbackDetected: Non-successor checkpoint: organism presents sequence 2, expected 1", "organism_checkpoint": 1, "scope": "crash consistency / availability, not unauthorized character change"}, "status": "OBSERVATION_CONFIRMED"}
+SUMMARY {"OBSERVATION_CONFIRMED": 9}
+
+APPENDIX C — SUPPLEMENTAL MUTANTS, ACTUAL OUTPUT
+
+XM1_invalid_authorized_at: {"baseline_passes": 47, "new_errors": [], "new_failures": [], "status": "SURVIVES"}
+XM2_forged_owner_note: {"baseline_passes": 47, "new_errors": [], "new_failures": [], "status": "SURVIVES"}
+XM3_inconsistent_event_timestamp: {"baseline_passes": 47, "new_errors": [], "new_failures": [], "status": "SURVIVES"}
+
+APPENDIX D — SUPPLIED DIAGNOSTICS, ACTUAL OUTPUT
+
+objector: trace index 2: record fields differ from the replay: ['prior_character_snapshot']
+witness still at 0: True
+load fails: Category sequences do not match the attested checkpoint
+tamper preserved: True
+answers no->yes via organism only: applied True, attested True, reload+audit True, verbosity 0.25
+answers no->yes via owner tool: applied True, attested True, reload+audit True, verbosity 0.25

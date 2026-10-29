@@ -1,0 +1,11 @@
+{
+  "base": "living_scs_v115claude.zip",
+  "overlay": "lscs_v116_layer2.zip",
+  "files": {
+    "judge_verify.py": "2593b2b2b131d136aaa4e54aaaca0d0c101ec0fca9c164f615040e6699a3d2c0",
+    "notary.py": "42cc1f0ade5b6403bc6d5af970bbefdc90745a70554fbdb41da1cf3d8e171ba8",
+    "supervisor.py": "5f1b5ec1d67cb4b1226530f8fba160393684213749e4fa236b9670141feb2aff",
+    "core.py": "23299fdc63361e632b0f30cc686b09eb3e2a3bb70daf66f51b7378fb5a26baa6"
+  },
+  "integration": "Only supplied layer2 files over exact available v115 base; no H1/H2 integration or repinning."
+}

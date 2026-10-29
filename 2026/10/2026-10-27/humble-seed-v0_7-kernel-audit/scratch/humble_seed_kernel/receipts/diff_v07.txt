@@ -1,0 +1,3 @@
+module ../source/humble_seed_v0_7.py  variant v07  scenarios 2000  seed 20261027
+operations 25142  verdict coverage {'enrollmentParent': 971, 'enrollmentSequence': 6178, 'fork': 403, 'forkedParent': 702, 'identityFork': 2294, 'nonSuccessor': 4945, 'ok': 8136, 'rollback': 441, 'unwitnessedAdvance': 1072}
+mismatching scenarios: 0 of 2000

@@ -1,0 +1,2308 @@
+{
+  "metadata": {
+    "candidate_root": "/workspace/scratch/2dd41f9c54b0/v116_review/candidate",
+    "core_path": "/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/core.py",
+    "judge_path": "/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py",
+    "source_hashes": {
+      "v114/living_scs_v114/core.py": "23299fdc63361e632b0f30cc686b09eb3e2a3bb70daf66f51b7378fb5a26baa6",
+      "v114/lscs_harness.py": "746fc5ee009a62b0641611227a353706f5030f320f6b2f0c0bbced36ea0d91e6",
+      "v115/attacks/code_01_monkeypatch_verify.py": "843bf6903944c4b844aa1b5f5196584f3754900137bd3046b8456f1bdb46e1bf",
+      "v115/attacks/code_02_self_issued_authority.py": "e0c4da943eeceb4fba7a2bc6046067daa564c88da8604f3f8d551c92056953dd",
+      "v115/attacks/code_03_replay_flood.py": "9ffafe0afe34deb16e1a954abe91cf9c70baa938f88e2592dee238fa9471f6f4",
+      "v115/attacks/code_04_protocol_abuse.py": "939004cbde6307d340ec7ee823c135e121bce29ac30a214f7dfc251af6875dcc",
+      "v115/attacks/code_06_capability_probe.py": "2eb5b4853d81b92cd4577dd2d6be62e7eed052f0784257775ee88e36e5b3c3d4",
+      "v115/attacks/code_06b_ptrace_reach.py": "07c3544b50ce0968c6bf44e49797f0386b326c507d5c816bb137ccc9c8931211",
+      "v115/careful_battery.py": "e5274b11fd85e331eade326f9a9bdfdcefa2ad4d43d59774cb894f3a3d70b796",
+      "v115/core.py": "23299fdc63361e632b0f30cc686b09eb3e2a3bb70daf66f51b7378fb5a26baa6",
+      "v115/judge_verify.py": "2593b2b2b131d136aaa4e54aaaca0d0c101ec0fca9c164f615040e6699a3d2c0",
+      "v115/lane_code.py": "9e0c26e3d5a10b7d80e082745a7bf12245c4a34a5e8229948cca15234ebb5c3a",
+      "v115/lscs_harness.py": "746fc5ee009a62b0641611227a353706f5030f320f6b2f0c0bbced36ea0d91e6",
+      "v115/notary.py": "42cc1f0ade5b6403bc6d5af970bbefdc90745a70554fbdb41da1cf3d8e171ba8",
+      "v115/organism_runner.py": "2fd934d37bca27282b887bf25dc5d6d2073cc1b5e87dff191e589068adefcfd5",
+      "v115/run_code_attack.py": "007376e85ea007d5e8897f93e8128868fb874788cb3e3c7a9ee002c64fbdda6b",
+      "v115/run_corpus_oop.py": "be0811aa30b7762718130f63e54de1e16be9b6cb1ba0fb63e2a4de1a9191c168",
+      "v115/run_notary_mutants.py": "eb9b378da1e9894dd11cc584c01259390f8cf05d8b31fc5771c58202ce931fea",
+      "v115/selftest_v115.py": "a450655d400c741511bc52a287d3a21309e7ec837f42402f1b2b8937c95090f8",
+      "v115/session.py": "9be7903a69f2e7c5f78b6c0291f8af73b72d00dee0e0d00afc57886e72eed978",
+      "v115/supervisor.py": "5f1b5ec1d67cb4b1226530f8fba160393684213749e4fa236b9670141feb2aff",
+      "v115/tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "v115/tests/test_v115.py": "766a7657c04a120503cecc6983469e10ed7b9dce1197b4a6811174fb29c6b11c",
+      "v115/tools_v115/pin.py": "94846593ff70ef16c822a99966ad977dcf2f2c1f35812a1c459aef9d87cb8ef5",
+      "v115/wire.py": "3c5e1600624ad6ce56d4fe5ee93b36e18ef0da1e43cab7ba20ad714c79ae23d2"
+    },
+    "seed": 17092026,
+    "battery_version": "0.2",
+    "trusted_time": 2000000000,
+    "fixture_private_keys": "TEST ONLY; deterministic trusted fixture setup"
+  },
+  "totals": {
+    "PASS": 291,
+    "BREACH": 18,
+    "ERROR": 12
+  },
+  "lanes": {
+    "engine": {
+      "PASS": 73
+    },
+    "judge": {
+      "PASS": 74,
+      "BREACH": 18,
+      "ERROR": 12
+    },
+    "notary": {
+      "PASS": 68
+    },
+    "wire": {
+      "PASS": 76
+    }
+  },
+  "results": [
+    {
+      "lane": "engine",
+      "name": "honest_authorize",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "honest_three_commit_chain",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_proposal_proposal_id",
+      "status": "PASS",
+      "detail": "trace/proposal mismatch",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_proposal_organism_id",
+      "status": "PASS",
+      "detail": "trace/proposal mismatch",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_proposal_predecessor_digest",
+      "status": "PASS",
+      "detail": "trace/proposal mismatch",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_proposal_mutation_type",
+      "status": "PASS",
+      "detail": "trace/proposal mismatch",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_proposal_mutation",
+      "status": "PASS",
+      "detail": "trace/proposal mismatch",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_proposal_evidence",
+      "status": "PASS",
+      "detail": "malformed input: proposal.evidence must be a sequence of EvidenceItem",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_proposal_interpretation",
+      "status": "PASS",
+      "detail": "malformed input: expected Interpretation",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_proposal_policy_version",
+      "status": "PASS",
+      "detail": "unsupported policy version",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_proposal_maturity_state",
+      "status": "PASS",
+      "detail": "invalid maturity state",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_proposal_created_at",
+      "status": "PASS",
+      "detail": "trace/proposal mismatch",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_proposal_expected_result_digest",
+      "status": "PASS",
+      "detail": "trace/proposal mismatch",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_trace_schema",
+      "status": "PASS",
+      "detail": "unsupported trace schema",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_trace_trace_id",
+      "status": "PASS",
+      "detail": "authorization not bound to trace_digest",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_trace_proposal_digest",
+      "status": "PASS",
+      "detail": "trace/proposal mismatch",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_trace_organism_id",
+      "status": "PASS",
+      "detail": "organism mismatch",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_trace_predecessor_digest",
+      "status": "PASS",
+      "detail": "predecessor mismatch",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_trace_resulting_digest",
+      "status": "PASS",
+      "detail": "result digest mismatch",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_trace_evidence_digest",
+      "status": "PASS",
+      "detail": "evidence digest mismatch",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_trace_evidence_ids",
+      "status": "PASS",
+      "detail": "malformed input: trace.evidence_ids must be a list of strings",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_trace_interpretation_digest",
+      "status": "PASS",
+      "detail": "interpretation digest mismatch",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_trace_interpretation_method",
+      "status": "PASS",
+      "detail": "interpreter identity mismatch",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_trace_interpretation_version",
+      "status": "PASS",
+      "detail": "interpreter identity mismatch",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_trace_policy_version",
+      "status": "PASS",
+      "detail": "policy or maturity mismatch",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_trace_maturity_state",
+      "status": "PASS",
+      "detail": "policy or maturity mismatch",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_trace_mutation_type",
+      "status": "PASS",
+      "detail": "mutation type mismatch",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_trace_created_at",
+      "status": "PASS",
+      "detail": "authorization not bound to trace_digest",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_trace_status",
+      "status": "PASS",
+      "detail": "trace is not at the external authorization boundary",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_trace_authorization_ref",
+      "status": "PASS",
+      "detail": "authorization not bound to trace_digest",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_trace_reversal_ref",
+      "status": "PASS",
+      "detail": "authorization not bound to trace_digest",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_trace_compensation_ref",
+      "status": "PASS",
+      "detail": "authorization not bound to trace_digest",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_trace_descendant_impact_ref",
+      "status": "PASS",
+      "detail": "authorization not bound to trace_digest",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_auth_schema",
+      "status": "PASS",
+      "detail": "invalid authorization signature",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_auth_determination_id",
+      "status": "PASS",
+      "detail": "invalid authorization signature",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_auth_authority_id",
+      "status": "PASS",
+      "detail": "invalid authorization signature",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_auth_decision",
+      "status": "PASS",
+      "detail": "invalid authorization signature",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_auth_organism_id",
+      "status": "PASS",
+      "detail": "invalid authorization signature",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_auth_trace_digest",
+      "status": "PASS",
+      "detail": "invalid authorization signature",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_auth_proposal_digest",
+      "status": "PASS",
+      "detail": "invalid authorization signature",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_auth_predecessor_digest",
+      "status": "PASS",
+      "detail": "invalid authorization signature",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_auth_resulting_digest",
+      "status": "PASS",
+      "detail": "invalid authorization signature",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_auth_policy_version",
+      "status": "PASS",
+      "detail": "invalid authorization signature",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_auth_maturity_state",
+      "status": "PASS",
+      "detail": "invalid authorization signature",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_auth_mutation_type",
+      "status": "PASS",
+      "detail": "invalid authorization signature",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_auth_nonce",
+      "status": "PASS",
+      "detail": "invalid authorization signature",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_auth_issued_at",
+      "status": "PASS",
+      "detail": "invalid authorization signature",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_auth_expires_at",
+      "status": "PASS",
+      "detail": "invalid authorization signature",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_auth_scope",
+      "status": "PASS",
+      "detail": "invalid authorization signature",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "tamper_auth_signature",
+      "status": "PASS",
+      "detail": "invalid authorization signature",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "future_chain_element_2",
+      "status": "PASS",
+      "detail": "stale predecessor or fork",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "future_chain_element_3",
+      "status": "PASS",
+      "detail": "stale predecessor or fork",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "replay_after_commit",
+      "status": "PASS",
+      "detail": "authorization replay",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "valid_predecessor_reused_nonce",
+      "status": "PASS",
+      "detail": "authorization replay",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "valid_predecessor_reused_determination",
+      "status": "PASS",
+      "detail": "authorization replay",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "expires_exactly_now",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "expires_one_second_before",
+      "status": "PASS",
+      "detail": "authorization expired",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "future_at_30s_tolerance",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "future_at_31s",
+      "status": "PASS",
+      "detail": "authorization issued in the future",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "signed_refusal",
+      "status": "PASS",
+      "detail": "external authority did not authorize",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "signed_flag",
+      "status": "PASS",
+      "detail": "external authority did not authorize",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "bool_time",
+      "status": "PASS",
+      "detail": "malformed input: auth.issued_at must be an integer",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "float_time",
+      "status": "PASS",
+      "detail": "malformed input: auth.issued_at must be an integer",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "unsafe_time",
+      "status": "PASS",
+      "detail": "malformed input: auth.issued_at outside +/-2**53",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "string_time",
+      "status": "PASS",
+      "detail": "malformed input: auth.issued_at must be an integer",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "null_time",
+      "status": "PASS",
+      "detail": "malformed input: auth.issued_at must be an integer",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "reason_nan",
+      "status": "PASS",
+      "detail": "malformed input: reason must be a string",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "reason_object",
+      "status": "PASS",
+      "detail": "malformed input: reason must be a string",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "reason_null",
+      "status": "PASS",
+      "detail": "malformed input: reason must be a string",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "returned_state_and_record_detached",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "persistence_failure_atomic_retry",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "32_concurrent_replays_exactly_one_commit",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "engine",
+      "name": "clock_rollback_after_observation",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_0",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_1",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_2",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_3",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_4",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_5",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_6",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_7",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_8",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_9",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_10",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_11",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_12",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_13",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_14",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_15",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_16",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_17",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_18",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_19",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_20",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_21",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_22",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_23",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_24",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_25",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_26",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_27",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_28",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_29",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_30",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_31",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_32",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_33",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_34",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_35",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_36",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_37",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_38",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_39",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_40",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_41",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_42",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_43",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_44",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_45",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_46",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_47",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_48",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_49",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_50",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_51",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_52",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_53",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_54",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_55",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_56",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_57",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_58",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_59",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_60",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_61",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_62",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "fragmentation_seed_63",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "duplicate_top",
+      "status": "PASS",
+      "detail": "duplicate key 'op'",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "duplicate_nested",
+      "status": "PASS",
+      "detail": "duplicate key 'a'",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "invalid_utf8",
+      "status": "PASS",
+      "detail": "not UTF-8: invalid start byte",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "trailing_json",
+      "status": "PASS",
+      "detail": "bad JSON: Extra data: line 1 column 3 (char 2)",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "nan",
+      "status": "PASS",
+      "detail": "non-finite number NaN",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "infinity",
+      "status": "PASS",
+      "detail": "non-finite number Infinity",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "negative_infinity",
+      "status": "PASS",
+      "detail": "non-finite number -Infinity",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "truncated_json",
+      "status": "PASS",
+      "detail": "bad JSON: Expecting value: line 1 column 6 (char 5)",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "depth_97",
+      "status": "PASS",
+      "detail": "nesting deeper than 96 on the wire",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "oversized_declared_length",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "exact_frame_size_control",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "wire",
+      "name": "depth_96_control",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "judge",
+      "name": "honest_empty_control",
+      "status": "PASS",
+      "detail": "(True, [])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "honest_single_control",
+      "status": "PASS",
+      "detail": "(True, [])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "honest_three_commit_control",
+      "status": "PASS",
+      "detail": "(True, [])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "honest_historical_prefix_control",
+      "status": "PASS",
+      "detail": "(True, [])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "rollback_to_empty_after_three_commits",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "completeness/freshness"
+    },
+    {
+      "lane": "judge",
+      "name": "truncate_to_valid_prefix_after_three_commits",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "completeness/freshness"
+    },
+    {
+      "lane": "judge",
+      "name": "expired_signed_backdated_head",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "freshness"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_records_sequence",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_records_event",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_records_trace_digest",
+      "status": "PASS",
+      "detail": "(False, ['record 1: record digests differ from what the authority signed'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_records_proposal_digest",
+      "status": "PASS",
+      "detail": "(False, ['record 1: record digests differ from what the authority signed'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_records_predecessor_digest",
+      "status": "PASS",
+      "detail": "(False, ['record 1: record digests differ from what the authority signed', 'record 1: does not descend from the previous state (fork or splice)'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_records_resulting_digest",
+      "status": "PASS",
+      "detail": "(False, ['record 1: record digests differ from what the authority signed', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_records_authorization_id",
+      "status": "PASS",
+      "detail": "(False, ['record 1: record cites a different authorization'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_records_authority_id",
+      "status": "PASS",
+      "detail": "(False, ['record 1: wrong authority'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_records_reason",
+      "status": "PASS",
+      "detail": "(True, [])",
+      "contract": "unsigned record metadata diagnostic"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_records_timestamp",
+      "status": "PASS",
+      "detail": "(True, [])",
+      "contract": "unsigned record metadata diagnostic"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_records_previous_record_hash",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_records_record_hash",
+      "status": "PASS",
+      "detail": "(True, [])",
+      "contract": "unsigned record metadata diagnostic"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_records_sequence",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_records_event",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_records_trace_digest",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 50, in verify_ledger\n    (all(pf[k] == rec[k] for k in (\"trace_digest\", \"proposal_digest\", \"predecessor_digest\", \"resulting_digest\")),\n     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'trace_digest'\n",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_records_proposal_digest",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 50, in verify_ledger\n    (all(pf[k] == rec[k] for k in (\"trace_digest\", \"proposal_digest\", \"predecessor_digest\", \"resulting_digest\")),\n     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'proposal_digest'\n",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_records_predecessor_digest",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 50, in verify_ledger\n    (all(pf[k] == rec[k] for k in (\"trace_digest\", \"proposal_digest\", \"predecessor_digest\", \"resulting_digest\")),\n     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'predecessor_digest'\n",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_records_resulting_digest",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 50, in verify_ledger\n    (all(pf[k] == rec[k] for k in (\"trace_digest\", \"proposal_digest\", \"predecessor_digest\", \"resulting_digest\")),\n     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'resulting_digest'\n",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_records_authorization_id",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 49, in verify_ledger\n    (pf[\"determination_id\"] == rec[\"authorization_id\"], \"record cites a different authorization\"),\n                               ~~~^^^^^^^^^^^^^^^^^^^^\nKeyError: 'authorization_id'\n",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_records_authority_id",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 47, in verify_ledger\n    (pf[\"authority_id\"] == authority_id == rec[\"authority_id\"], \"wrong authority\"),\n                                           ~~~^^^^^^^^^^^^^^^^\nKeyError: 'authority_id'\n",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_records_reason",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_records_timestamp",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 53, in verify_ledger\n    (pf[\"issued_at\"] - 30 <= rec[\"timestamp\"] <= pf[\"expires_at\"], \"committed outside the authorization window\"),\n                             ~~~^^^^^^^^^^^^^\nKeyError: 'timestamp'\n",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_records_previous_record_hash",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_records_record_hash",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_proofs_schema",
+      "status": "PASS",
+      "detail": "(False, ['record 1: authority signature does not verify', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_proofs_determination_id",
+      "status": "PASS",
+      "detail": "(False, ['record 1: authority signature does not verify', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_proofs_authority_id",
+      "status": "PASS",
+      "detail": "(False, ['record 1: authority signature does not verify', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_proofs_decision",
+      "status": "PASS",
+      "detail": "(False, ['record 1: authority signature does not verify', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_proofs_organism_id",
+      "status": "PASS",
+      "detail": "(False, ['record 1: authority signature does not verify', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_proofs_trace_digest",
+      "status": "PASS",
+      "detail": "(False, ['record 1: authority signature does not verify', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_proofs_proposal_digest",
+      "status": "PASS",
+      "detail": "(False, ['record 1: authority signature does not verify', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_proofs_predecessor_digest",
+      "status": "PASS",
+      "detail": "(False, ['record 1: authority signature does not verify', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_proofs_resulting_digest",
+      "status": "PASS",
+      "detail": "(False, ['record 1: authority signature does not verify', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_proofs_policy_version",
+      "status": "PASS",
+      "detail": "(False, ['record 1: authority signature does not verify', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_proofs_maturity_state",
+      "status": "PASS",
+      "detail": "(False, ['record 1: authority signature does not verify', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_proofs_mutation_type",
+      "status": "PASS",
+      "detail": "(False, ['record 1: authority signature does not verify', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_proofs_nonce",
+      "status": "PASS",
+      "detail": "(False, ['record 1: authority signature does not verify', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_proofs_issued_at",
+      "status": "PASS",
+      "detail": "(False, ['record 1: authority signature does not verify', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_proofs_expires_at",
+      "status": "PASS",
+      "detail": "(False, ['record 1: authority signature does not verify', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_proofs_scope",
+      "status": "PASS",
+      "detail": "(False, ['record 1: authority signature does not verify', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "tamper_proofs_signature",
+      "status": "PASS",
+      "detail": "(False, ['record 1: authority signature does not verify', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_proofs_schema",
+      "status": "PASS",
+      "detail": "(False, ['record 1: proof has the wrong shape', 'reported state is not the state the signed chain leads to'])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_proofs_determination_id",
+      "status": "PASS",
+      "detail": "(False, ['record 1: proof has the wrong shape', 'reported state is not the state the signed chain leads to'])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_proofs_authority_id",
+      "status": "PASS",
+      "detail": "(False, ['record 1: proof has the wrong shape', 'reported state is not the state the signed chain leads to'])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_proofs_decision",
+      "status": "PASS",
+      "detail": "(False, ['record 1: proof has the wrong shape', 'reported state is not the state the signed chain leads to'])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_proofs_organism_id",
+      "status": "PASS",
+      "detail": "(False, ['record 1: proof has the wrong shape', 'reported state is not the state the signed chain leads to'])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_proofs_trace_digest",
+      "status": "PASS",
+      "detail": "(False, ['record 1: proof has the wrong shape', 'reported state is not the state the signed chain leads to'])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_proofs_proposal_digest",
+      "status": "PASS",
+      "detail": "(False, ['record 1: proof has the wrong shape', 'reported state is not the state the signed chain leads to'])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_proofs_predecessor_digest",
+      "status": "PASS",
+      "detail": "(False, ['record 1: proof has the wrong shape', 'reported state is not the state the signed chain leads to'])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_proofs_resulting_digest",
+      "status": "PASS",
+      "detail": "(False, ['record 1: proof has the wrong shape', 'reported state is not the state the signed chain leads to'])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_proofs_policy_version",
+      "status": "PASS",
+      "detail": "(False, ['record 1: proof has the wrong shape', 'reported state is not the state the signed chain leads to'])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_proofs_maturity_state",
+      "status": "PASS",
+      "detail": "(False, ['record 1: proof has the wrong shape', 'reported state is not the state the signed chain leads to'])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_proofs_mutation_type",
+      "status": "PASS",
+      "detail": "(False, ['record 1: proof has the wrong shape', 'reported state is not the state the signed chain leads to'])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_proofs_nonce",
+      "status": "PASS",
+      "detail": "(False, ['record 1: proof has the wrong shape', 'reported state is not the state the signed chain leads to'])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_proofs_issued_at",
+      "status": "PASS",
+      "detail": "(False, ['record 1: proof has the wrong shape', 'reported state is not the state the signed chain leads to'])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_proofs_expires_at",
+      "status": "PASS",
+      "detail": "(False, ['record 1: proof has the wrong shape', 'reported state is not the state the signed chain leads to'])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_proofs_scope",
+      "status": "PASS",
+      "detail": "(False, ['record 1: proof has the wrong shape', 'reported state is not the state the signed chain leads to'])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_proofs_signature",
+      "status": "PASS",
+      "detail": "(False, ['record 1: proof has the wrong shape', 'reported state is not the state the signed chain leads to'])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_head_state",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_head_state_digest",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_head_records",
+      "status": "PASS",
+      "detail": "(False, ['0 records but 1 proofs', 'reported state is not the state the signed chain leads to'])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "missing_head_proofs",
+      "status": "PASS",
+      "detail": "(False, [\"head carries no proofs: only the notary's verdict is available\"])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "wrong_type_records_null",
+      "status": "PASS",
+      "detail": "(False, ['0 records but 1 proofs', 'reported state is not the state the signed chain leads to'])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "wrong_type_records_object",
+      "status": "PASS",
+      "detail": "(False, ['0 records but 1 proofs', 'reported state is not the state the signed chain leads to'])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "wrong_type_records_string",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 35, in verify_ledger\n    tag = \"record %d\" % rec.get(\"sequence\", i + 1)\n                        ^^^^^^^\nAttributeError: 'str' object has no attribute 'get'\n",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "wrong_type_records_integer",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 31, in verify_ledger\n    if len(proofs) != len(records):\n                      ^^^^^^^^^^^^\nTypeError: object of type 'int' has no len()\n",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "wrong_type_proofs_null",
+      "status": "PASS",
+      "detail": "(False, [\"head carries no proofs: only the notary's verdict is available\"])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "wrong_type_proofs_object",
+      "status": "PASS",
+      "detail": "(False, ['1 records but 0 proofs', 'record 1: no authority proof', 'reported state is not the state the signed chain leads to'])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "wrong_type_proofs_string",
+      "status": "PASS",
+      "detail": "(False, ['record 1: proof has the wrong shape', 'reported state is not the state the signed chain leads to'])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "wrong_type_proofs_integer",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 31, in verify_ledger\n    if len(proofs) != len(records):\n       ^^^^^^^^^^^\nTypeError: object of type 'int' has no len()\n",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "state_kept_records_dropped",
+      "status": "PASS",
+      "detail": "(False, ['reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "maturity_without_signed_transition",
+      "status": "PASS",
+      "detail": "(False, ['reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "history_hmac_only_no_authority_proof",
+      "status": "PASS",
+      "detail": "(False, ['1 records but 0 proofs', 'record 1: no authority proof', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "untrusted_history_flag_false_diagnostic",
+      "status": "PASS",
+      "detail": "(True, [])",
+      "contract": "self-report diagnostic"
+    },
+    {
+      "lane": "judge",
+      "name": "boolean_sequence",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "reordered_records",
+      "status": "PASS",
+      "detail": "(False, ['record 3: record cites a different authorization', 'record 3: record digests differ from what the authority signed', 'record 3: does not descend from the previous state (fork or splice)', 'record 2: does not descend from the previous state (fork or splice)', 'record 1: record cites a different authorization', 'record 1: record digests differ from what the authority signed', 'record 1: does not descend from the previous state (fork or splice)', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "drop_middle_records",
+      "status": "PASS",
+      "detail": "(False, ['2 records but 3 proofs', 'record 3: record cites a different authorization', 'record 3: record digests differ from what the authority signed', 'record 3: does not descend from the previous state (fork or splice)'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "extra_records",
+      "status": "PASS",
+      "detail": "(False, ['2 records but 1 proofs', 'record 1: no authority proof'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "reordered_proofs",
+      "status": "PASS",
+      "detail": "(False, ['record 1: record cites a different authorization', 'record 1: record digests differ from what the authority signed', 'record 3: record cites a different authorization', 'record 3: record digests differ from what the authority signed'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "drop_middle_proofs",
+      "status": "PASS",
+      "detail": "(False, ['3 records but 2 proofs', 'record 2: record cites a different authorization', 'record 2: record digests differ from what the authority signed', 'record 3: no authority proof', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "extra_proofs",
+      "status": "PASS",
+      "detail": "(False, ['1 records but 2 proofs'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "proof_reuse_in_real_three_chain",
+      "status": "PASS",
+      "detail": "(False, ['record 2: record cites a different authorization', 'record 2: record digests differ from what the authority signed', 'record 2: authorization reused'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "valid_predecessor_signed_reused_nonce",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "valid_predecessor_signed_reused_determination",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "sever_previous_hash",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "hmac_recomputed_authorization_id_forgery",
+      "status": "PASS",
+      "detail": "(False, ['record 2: record cites a different authorization'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "foreign_authority_real_proof",
+      "status": "PASS",
+      "detail": "(False, ['record 1: authority signature does not verify', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "foreign_chain_splice",
+      "status": "PASS",
+      "detail": "(False, ['record 2: authority signature does not verify', 'record 3: authority signature does not verify', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "trusted_context_wrong_authority_id",
+      "status": "PASS",
+      "detail": "(False, ['record 1: wrong authority'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "trusted_context_wrong_organism_id",
+      "status": "PASS",
+      "detail": "(False, ['record 1: authorization is for a different organism'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "trusted_context_wrong_public_key_hex",
+      "status": "PASS",
+      "detail": "(False, ['record 1: authority signature does not verify', 'reported state is not the state the signed chain leads to'])",
+      "contract": "integrity"
+    },
+    {
+      "lane": "judge",
+      "name": "record_timestamp_bool",
+      "status": "PASS",
+      "detail": "(False, ['record 1: committed outside the authorization window'])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "record_timestamp_float",
+      "status": "BREACH",
+      "detail": "expected VERIFIED=False, got (True, [])",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "record_timestamp_str",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 53, in verify_ledger\n    (pf[\"issued_at\"] - 30 <= rec[\"timestamp\"] <= pf[\"expires_at\"], \"committed outside the authorization window\"),\n     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: '<=' not supported between instances of 'int' and 'str'\n",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "record_timestamp_NoneType",
+      "status": "ERROR",
+      "detail": "Traceback (most recent call last):\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 132, in check\n    detail = fn()\n             ^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/expanded/expanded_battery.py\", line 383, in run\n    verdict=judge.verify_ledger(head,context[\"public_key_hex\"],context[\"authority_id\"],context[\"organism_id\"],INIT)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/scratch/2dd41f9c54b0/v116_review/candidate/v115/judge_verify.py\", line 53, in verify_ledger\n    (pf[\"issued_at\"] - 30 <= rec[\"timestamp\"] <= pf[\"expires_at\"], \"committed outside the authorization window\"),\n     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: '<=' not supported between instances of 'int' and 'NoneType'\n",
+      "contract": "schema"
+    },
+    {
+      "lane": "judge",
+      "name": "record_time_before_issue",
+      "status": "PASS",
+      "detail": "(False, ['record 1: committed outside the authorization window'])",
+      "contract": "signed authorization validity window"
+    },
+    {
+      "lane": "judge",
+      "name": "record_time_after_expiry",
+      "status": "PASS",
+      "detail": "(False, ['record 1: committed outside the authorization window'])",
+      "contract": "signed authorization validity window"
+    },
+    {
+      "lane": "notary",
+      "name": "protocol_duplicate_op",
+      "status": "PASS",
+      "detail": "{'outcome': 'WIRE_REFUSE', 'reason': \"duplicate key 'op'\", 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "protocol_utf8",
+      "status": "PASS",
+      "detail": "{'outcome': 'WIRE_REFUSE', 'reason': 'not UTF-8: invalid start byte', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "protocol_nan",
+      "status": "PASS",
+      "detail": "{'outcome': 'WIRE_REFUSE', 'reason': 'non-finite number NaN', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "protocol_trailing_json",
+      "status": "PASS",
+      "detail": "{'outcome': 'WIRE_REFUSE', 'reason': 'bad JSON: Extra data: line 1 column 3 (char 2)', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "protocol_too_deep",
+      "status": "PASS",
+      "detail": "{'outcome': 'WIRE_REFUSE', 'reason': 'nesting deeper than 96 on the wire', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "protocol_organism_shutdown",
+      "status": "PASS",
+      "detail": "{'outcome': 'WIRE_REFUSE', 'reason': 'unknown op or fields', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "protocol_unknown_op",
+      "status": "PASS",
+      "detail": "{'outcome': 'WIRE_REFUSE', 'reason': 'unknown op or fields', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "protocol_extra_op_fields",
+      "status": "PASS",
+      "detail": "{'outcome': 'WIRE_REFUSE', 'reason': 'unknown op or fields', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "protocol_non_object",
+      "status": "PASS",
+      "detail": "{'outcome': 'WIRE_REFUSE', 'reason': 'frame must be an object with a string op', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "protocol_non_string_op",
+      "status": "PASS",
+      "detail": "{'outcome': 'WIRE_REFUSE', 'reason': 'frame must be an object with a string op', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "partial_header_does_not_stall_judge",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "expired",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: authorization expired', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "refused",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: external authority did not authorize', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_proposal_proposal_id",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'TraceError: trace/proposal mismatch', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_proposal_organism_id",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'TraceError: trace/proposal mismatch', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_proposal_predecessor_digest",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'TraceError: trace/proposal mismatch', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_proposal_mutation_type",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'TraceError: trace/proposal mismatch', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_proposal_mutation",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'TraceError: trace/proposal mismatch', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_proposal_evidence",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'TraceError: empty evidence set', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_proposal_interpretation",
+      "status": "PASS",
+      "detail": "{'outcome': 'ADAPTER_REFUSE', 'reason': \"Interpretation unknown fields ['tampered']\", 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_proposal_policy_version",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'TraceError: unsupported policy version', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_proposal_maturity_state",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'TraceError: invalid maturity state', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_proposal_created_at",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'TraceError: trace/proposal mismatch', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_proposal_expected_result_digest",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'TraceError: trace/proposal mismatch', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_trace_schema",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'TraceError: unsupported trace schema', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_trace_trace_id",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: authorization not bound to trace_digest', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_trace_proposal_digest",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'TraceError: trace/proposal mismatch', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_trace_organism_id",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'TraceError: organism mismatch', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_trace_predecessor_digest",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'TraceError: predecessor mismatch', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_trace_resulting_digest",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'TraceError: result digest mismatch', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_trace_evidence_digest",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'TraceError: evidence digest mismatch', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_trace_evidence_ids",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'TraceError: evidence list mismatch', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_trace_interpretation_digest",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'TraceError: interpretation digest mismatch', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_trace_interpretation_method",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'TraceError: interpreter identity mismatch', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_trace_interpretation_version",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'TraceError: interpreter identity mismatch', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_trace_policy_version",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'TraceError: policy or maturity mismatch', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_trace_maturity_state",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'TraceError: policy or maturity mismatch', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_trace_mutation_type",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'TraceError: mutation type mismatch', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_trace_created_at",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: authorization not bound to trace_digest', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_trace_status",
+      "status": "PASS",
+      "detail": "{'outcome': 'ADAPTER_REFUSE', 'reason': 'bad ProposalStatus value', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_trace_authorization_ref",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: authorization not bound to trace_digest', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_trace_reversal_ref",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: authorization not bound to trace_digest', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_trace_compensation_ref",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: authorization not bound to trace_digest', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_trace_descendant_impact_ref",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: authorization not bound to trace_digest', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_auth_schema",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: invalid authorization signature', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_auth_determination_id",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: invalid authorization signature', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_auth_authority_id",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: invalid authorization signature', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_auth_decision",
+      "status": "PASS",
+      "detail": "{'outcome': 'ADAPTER_REFUSE', 'reason': 'bad Decision value', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_auth_organism_id",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: invalid authorization signature', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_auth_trace_digest",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: invalid authorization signature', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_auth_proposal_digest",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: invalid authorization signature', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_auth_predecessor_digest",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: invalid authorization signature', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_auth_resulting_digest",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: invalid authorization signature', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_auth_policy_version",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: invalid authorization signature', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_auth_maturity_state",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: invalid authorization signature', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_auth_mutation_type",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: invalid authorization signature', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_auth_nonce",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: invalid authorization signature', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_auth_issued_at",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: invalid authorization signature', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_auth_expires_at",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: invalid authorization signature', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_auth_scope",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: invalid authorization signature', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "tamper_auth_signature",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: invalid authorization signature', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "missing_proposal",
+      "status": "PASS",
+      "detail": "{'outcome': 'ADAPTER_REFUSE', 'reason': 'submission needs proposal[, trace, auth, artifact, reason]', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "missing_trace",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: no trace, no drift', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "missing_auth",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: external authorization required', 'sequence': 0, 'state_digest': '47638fff12b739ab77e32620e93d975b837283d39056d9e204cc9b0cc0588bb3'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "honest_issued_control",
+      "status": "PASS",
+      "detail": "{'outcome': 'ACCEPT', 'reason': '', 'sequence': 1, 'state_digest': '9038b97f25a896a622e4a725f2c86ea4d791bcfc4cb6debe8bc96bd060077044'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "replay_issued",
+      "status": "PASS",
+      "detail": "{'outcome': 'REFUSE', 'reason': 'Refusal: authorization replay', 'sequence': 1, 'state_digest': '9038b97f25a896a622e4a725f2c86ea4d791bcfc4cb6debe8bc96bd060077044'}",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "judge_survives_oversized_frame",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    },
+    {
+      "lane": "notary",
+      "name": "judge_survives_organism_eof",
+      "status": "PASS",
+      "detail": "",
+      "contract": ""
+    }
+  ]
+}

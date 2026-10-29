@@ -1,0 +1,15 @@
+{
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "cryptography": "50.0.2",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "command": [
+    "python3",
+    "-I",
+    "falsify_v0_8_4.py"
+  ],
+  "cwd": "/workspace/scratch/5f080eafd630/review_input/humble_seed_v0_8_4_candidate_BLIND",
+  "input_zip_sha256": "93bd2969a57ca327c9cabadfe706c9ac22f24610f0922c7b1404151603bfea28",
+  "manifest_exit_code": 0,
+  "exit_code": 1,
+  "elapsed_seconds": 48.10627225799999
+}

@@ -1,0 +1,11 @@
+honest_control           shipped=PASS                                                           pinned=PASS                                       no_witness=PASS
+G1_rewrite               shipped=held (IntegrityError: Attested trace prefix does not match c   pinned=held (IntegrityError: Attested trace pre   no_witness=held
+G1b_rewrite_after_auth   shipped=held (IntegrityError: Attested trace prefix does not match c   pinned=held (IntegrityError: Attested trace pre   no_witness=held
+G2_delete                shipped=held (IntegrityError: Attested trace prefix does not match c   pinned=held (IntegrityError: Attested trace pre   no_witness=held
+G3_self_grant            shipped=held (IntegrityError: Character does not match the attested    pinned=held (IntegrityError: Character does not   no_witness=held
+G3c_constitution_swap    shipped=held (IntegrityError: Birth record does not match the attest   pinned=held (IntegrityError: Birth record does    no_witness=held
+G4_replay                shipped=held (RollbackDetected: Rollback: organism presents sequence   pinned=held (RollbackDetected: Rollback: organi   no_witness=held
+G5_rollback              shipped=held (RollbackDetected: Rollback: organism presents sequence   pinned=held (RollbackDetected: Rollback: organi   no_witness=BREACH
+G6_tail_forge            shipped=BREACH                                                         pinned=BREACH                                     no_witness=BREACH
+G7_identity_replace      shipped=held (IntegrityError: Owner key mismatch: the organism's bir   pinned=held (IntegrityError: Owner key mismatch   no_witness=held
+G7b_same_id_key_swap     shipped=held (IntegrityError: Owner key mismatch: the organism's bir   pinned=held (IntegrityError: Owner key mismatch   no_witness=held

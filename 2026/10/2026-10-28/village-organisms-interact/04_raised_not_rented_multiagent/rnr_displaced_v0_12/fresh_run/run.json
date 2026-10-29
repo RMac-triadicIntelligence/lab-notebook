@@ -1,0 +1,34 @@
+{
+ "battery": "rnr-displacement/0.12",
+ "started_utc": "2026-09-23T18:40:33Z",
+ "seeds": [
+  12000,
+  12023
+ ],
+ "displacement": [
+  "none",
+  "intrinsic",
+  "inherited"
+ ],
+ "availability": [
+  "incident_only",
+  "universal"
+ ],
+ "restoration": [
+  "none",
+  "standing"
+ ],
+ "base_burden": 1.0,
+ "degrade": 0.4,
+ "mark": 0.09,
+ "declare_at": 600,
+ "release_lag": 50,
+ "python": "3.13.5",
+ "numpy": "2.2.4",
+ "source_sha256": {
+  "displaced.py": "aa4053f35064163bb4b83da0856cb1d9395f739a3860d528dfaa5d2113304990",
+  "commons_v0_9.py": "eed0d5bffe2fb4608e1a17689f5849366d3f6d14ef18ec1cf7a459dc51df63e8",
+  "repent_v0_11.py": "8484297c1b42e2e676a2e896dc806c3c87eda79ad9192cf08850220fd6a1d475",
+  "PROTOCOL.md": "29f4a8194364b258d3acf70f158770ea4376c7991e0b2023f07f21a0e4700ac5"
+ }
+}

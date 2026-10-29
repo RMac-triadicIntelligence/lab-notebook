@@ -1,0 +1,25 @@
+{
+ "title": "Constitutional Commons v0.3 — parable ground — preregistered predictions",
+ "frozen": "2026-10-03, before the full battery was run",
+ "idea": "Rusty McMurray, 3 Oct 2026: the first story may be wrong and cascade. Keep the story the same; write it as a parable, so that as the individual changes, the meaning changes, not the story.",
+ "disclosure": [
+  "Regression before freezing: the unchanged v0.2 battery run against the v0.3 kernel reproduced v0.2 receipt a5601bf3...eb98, paired-runs.csv and diagnostics byte-for-byte. groundMode 'count' is v0.2.",
+  "Smoke run on seed 7 only (excluded from the battery) checked that the code executes; it printed only 'ok'. One structural fix followed (null guards for empty pools). No outcome was viewed and no parameter was tuned.",
+  "All new parameters were set a priori, not calibrated: claimPrior = tau/2 = 1.5; lens R = basis overlap(teller, reader); clarity F = min(1, vis_reader/vis_teller); stage T = 1 for k <= dwell else exp(-(k-dwell)/(1+dwell)); collection meaning = depth(n) * mean over parables. These forms are authored, like v0.2's magnitudes.",
+  "Correction to the test proposed in conversation ('permanently false ground entries 14 -> 0'): reading v0.2 shows no learner ever reads ground content, only its count, so v0.2's 14 false first entries were wrong on paper but behaviorally inert, and a parable carries no answer, so '0 false entries' would pass by construction. It is replaced by Q2/Q3: a CLAIM counterfactual in which descendants read the record as an answer (where a cascade can actually happen), and a gate-level harm test net of gate difficulty.",
+  "Same deterministic test authority key label as v0.2 ('commons-v0.2-test-key') so FULL is the v0.2 FULL condition."
+ ],
+ "seeds": "1..200 excluding 7 (n=199); 12 generations; paired across conditions (common random numbers). Long horizon: seeds 201..230 (30) x 200 generations for FULL, CLAIM, PARABLE.",
+ "statistic": "Paired per-seed difference of generation-summed metric; mean with 95% normal CI. Gate-level harm H = wrongSettled rate at gates whose first story was false minus rate at gates whose first story was true (class fixed when the learner first samples the gate). Net of gate difficulty: difference-in-differences vs FULL, 95% seed-bootstrap CI (2000 resamples, deterministic). Evidence-only SPRT bound e^-3 = 0.0498.",
+ "conditions": ["FULL","NO_GROUND","ZERO_COST","CLAIM","CLAIM_ZERO_COST","PARABLE","PARABLE_FROZEN","PARABLE_CROSS","PARABLE_UNION","PARABLE_LENS_BLIND","PARABLE_LENS_BLIND_CROSS","PARABLE_ZERO_COST"],
+ "predictions": {
+  "Q1_nothing_lost": "PARABLE_FROZEN (own lineage, perspective frozen at k=0) is behaviorally bit-identical to FULL in 199/199 seeds: the parable store loses nothing v0.2 used.",
+  "Q2_cascade_under_answers": "When the record is read as an answer: CLAIM storyDecided > 0; CLAIM wrongSettled > FULL and CLAIM_ZERO_COST wrongSettled > ZERO_COST (paired CIs exclude 0); in the long horizon CLAIM's wrongSettled rate at false-first gates exceeds the evidence-only bound 0.0498. Rationale: a prior of tau/2 toward a false answer weakens the Wald bound from e^-3 to e^-1.5.",
+  "Q3_no_cascade_under_parables": "In every non-CLAIM condition: storyDecided = 0 (construction check), wrongSettled and falseCorrection rates <= 0.0498. In the long horizon, FULL and PARABLE false-first-gate wrongSettled and falseCorrection rates <= 0.0498. Difference-in-differences of gate harm vs FULL: PARABLE CI includes 0; CLAIM CI excludes 0 (positive).",
+  "Q4_parables_still_teach": "PARABLE retains >= 75% of FULL's ground benefit on true restorations over generations 2-12: mean(PARABLE - NO_GROUND) / mean(FULL - NO_GROUND) >= 0.75, and PARABLE - NO_GROUND CI excludes 0.",
+  "Q5_lineage_through_lens": "Reading the other lineage's parables yields fewer true restorations than reading one's own (PARABLE_CROSS - PARABLE, gens 2-12, CI entirely < 0). With the lens removed, interchangeability returns: |mean(PARABLE_LENS_BLIND_CROSS - PARABLE_LENS_BLIND)| < 3 restorations.",
+  "Q6_perspective_load_bearing": "Live perspective changes outcomes: PARABLE - PARABLE_FROZEN true restorations, CI excludes 0. Direction not predicted.",
+  "Q7_story_fixed_meaning_moves": "All parable probes refused or detected: answer, belief, destination and recipient fields; missing dwell; dwell 0; in-place edit; altered copy; removal; reordering; inflated read index. Inverting the observer's truth labels every generation leaves behavior unchanged.",
+  "Q8_truth_and_authority": "0 evidence-draw mismatches for shared (generation, learner, gate, k) keys between FULL and every Z-harvested condition (ZERO_COST, CLAIM, CLAIM_ZERO_COST, PARABLE, PARABLE_ZERO_COST, PARABLE_CROSS). All 11 grace probes refused under count, parable and claim kernels. 0 contract exceptions (any exception aborts the battery)."
+ }
+}

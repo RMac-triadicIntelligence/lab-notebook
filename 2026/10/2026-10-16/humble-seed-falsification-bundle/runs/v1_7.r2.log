@@ -1,0 +1,37 @@
+  PASS  X1_probe: {"final_state": "PROPOSED", "propose_day": 80, "discoveries": 19, "confirmed": 10}
+  FAIL  X2_genuine: {"32": 109, "128": 298}
+  PASS  X3_positional_confounds: {"COMMUTE@32": 0, "DINNER@32": 1, "COMMUTE@128": 4, "DINNER@128": 0}
+  FAIL  X4_difficult_month: {"32": 29, "128": 109}
+  PASS  X5_null: {"32": 1, "128": 0}
+  FAIL  X6_action: {"32": 0.8220870602265951, "128": 0.8659054209919261}
+  PASS  X7_information_limit: {"32": 0.7576188822728079, "128": 1.4165764939496641}
+  PASS  X8_cost: {"family_evals": 269.4577777777778, "v16_evals": 287.63055555555553}
+  FAIL  X9_burst: {"fam": 31, "scout": 200, "v16": 1, "v12": 28}
+  PASS  X10_witness_matters: {"32": {"family": 29, "scout_alone": 233}, "128": {"family": 109, "scout_alone": 297}}
+
+ proposals /300       family  scout-alone  v1.6  v1.2
+  λ=32  GENUINE       109         292   158   173
+  λ=32  COMMUTE         0          38     1     0
+  λ=32  DINNER          1          47     0     0
+  λ=32  WINDOW         29         233    12    28
+  λ=32  COLOCATED     118         287   149   180
+  λ=32  NULL            1           3     1     1
+  λ=32  macro      0.8221      0.7906 0.8389 0.8516
+  λ=128 GENUINE       298         300   300   299
+  λ=128 COMMUTE         4          35     3     4
+  λ=128 DINNER          0          21     0     2
+  λ=128 WINDOW        109         297    25    78
+  λ=128 COLOCATED     300         300   300   300
+  λ=128 NULL            0           0     0     0
+  λ=128 macro      0.8659      0.7835 0.8890 0.8836
+  λ=8   GENUINE         8         100     6    16
+  λ=8   COMMUTE         0          11     0     0
+  λ=8   DINNER          1          17     2     2
+  λ=8   WINDOW          1          32     3     4
+  λ=8   COLOCATED       2          89    12    16
+  λ=8   NULL            0           2     0     0
+  λ=8   macro      0.8025      0.8134 0.7990 0.8021
+  λ=32 discoveries / confirmed: {'GENUINE': (1698, 523), 'COMMUTE': (63, 0), 'DINNER': (66, 2), 'WINDOW': (775, 137), 'COLOCATED': (1642, 520), 'NULL': (3, 1)}
+  λ=128 discoveries / confirmed: {'GENUINE': (2495, 1347), 'COMMUTE': (64, 6), 'DINNER': (36, 1), 'WINDOW': (1746, 675), 'COLOCATED': (2452, 1344), 'NULL': (0, 0)}
+burst false /200: {"5": {"fam": 12, "scout": 193, "v16": 1, "v12": 12}, "8": {"fam": 31, "scout": 200, "v16": 1, "v12": 28}}
+receipt: ccc40e13b544b8af92488e57ed50ba149c65fafb58c67d166f7324bff088ce90

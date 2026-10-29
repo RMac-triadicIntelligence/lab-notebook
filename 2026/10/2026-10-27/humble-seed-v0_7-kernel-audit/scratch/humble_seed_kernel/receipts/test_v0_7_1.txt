@@ -1,0 +1,6 @@
+[T1] audit with attacker id as expected: rejected (Unenrolled organism: e2e1380c-38e6-484d-9541-7a1a2c2c9e7a has no recorded chain at this witness — nothing attests this state)
+[T2] legit organism, seq 4: implicit=True explicit=True fresh-tool-with-id=True
+[T3] rollback: rejected (Rollback: organism presents sequence 4, witness holds 5)
+[T4] tool with no attestation, no id: rejected (Audit needs the expected organism id: none given, and this tool has attested none)
+
+RESULTS {"T1_K1_alone_rejects_unenrolled": true, "T2_liveness": true, "T3_rollback_detected": true, "T4_needs_expected_id": true}

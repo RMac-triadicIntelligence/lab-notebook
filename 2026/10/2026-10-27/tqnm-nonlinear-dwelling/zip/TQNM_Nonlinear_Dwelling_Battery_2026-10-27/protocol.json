@@ -1,0 +1,52 @@
+{
+  "version": "1.0",
+  "title": "Nonlinear dwelling ablation with matched historical evidence",
+  "calibration_seeds": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15],
+  "test_seeds": [1000,1001,1002,1003,1004,1005,1006,1007,1008,1009,1010,1011,1012,1013,1014,1015,1016,1017,1018,1019,1020,1021,1022,1023,1024,1025,1026,1027,1028,1029,1030,1031],
+  "sensitivity_test_seeds": [1000,1001,1002,1003,1004,1005,1006,1007],
+  "worlds": ["SPREAD","CONCENTRATED","BURST","NULL"],
+  "signal_counts": [77,115,154],
+  "history": {"days":180,"encounters_per_day":8,"places":4,"baseline_days":60,"baseline_truncated":24,"signal_days":120,"null_signal_truncated":48,"burst_days":20,"burst_starts":[91,96,101,106,111,116]},
+  "models": ["FULL","FIELD_OFF","COUPLING_ONLY","DECAY_ONLY","NO_DWELL","ALWAYS_ON"],
+  "ordinary_baselines": ["ARCHIVED_READER","MIN_CUE","MEAN_CUE","GEOMEAN_CUE"],
+  "dynamics": {"dt":0.02,"end":180.0,"permission_start":150.0,"permission_end":160.0,"evidence_time":155.0,"nudge_time":155.0,"nudge":0.10,"noise":0.02,"evidence_gain":0.12,"opening_threshold":0.6,"initial":[0.2,0.1,0.15,0.6],"coupling_boost":0.8,"decay_relief":0.6},
+  "sensitivities": [
+    {"name":"NO_NOISE","noise":0.0},
+    {"name":"HIGH_NOISE","noise":0.04},
+    {"name":"NO_NUDGE","nudge":0.0},
+    {"name":"STRONG_NUDGE","nudge":0.25},
+    {"name":"REFLECTED_BOUNDARY","boundary":"reflect"},
+    {"name":"SHUFFLED_EVIDENCE","shuffle":true},
+    {"name":"FINER_STEP","dt":0.01}
+  ],
+  "calibration": {"false_commit_limit_per_negative_world":0.05,"model_threshold_floor":0.6,"ordinary_threshold_floor":0.0,"threshold_grid_step":0.001,"selection":"Search only the fixed 0.001 grid through 1.0. Maximize calibration true positives subject to <=5% false commits in each negative family; then minimize total false commits; then maximize threshold. Select the ordinary family by these same calibration criteria, tie-breaking by the frozen baseline order. Test labels never select a threshold or family. No floating-point micro-threshold fitting."},
+  "bootstrap": {"resamples":10000,"seed":20261028,"unit":"test seed, preserving all twelve linked world/strength cases"},
+  "claims": [
+    {"id":"TASK_VS_OFF","claim":"FULL produces more correct held-out commitments than FIELD_OFF without extra false commitments.","rule":"Positive lower 95% seed-cluster interval for paired true-positive coverage change, FULL false commits <= FIELD_OFF, and FULL held-out false-commit rate <=5% in each negative family."},
+    {"id":"TASK_VS_ORDINARY","claim":"FULL outperforms the calibration-selected ordinary historical baseline under the same correctness rule.","rule":"Same criteria as TASK_VS_OFF against the ordinary family selected on calibration only."},
+    {"id":"READINESS","claim":"FULL increases authorized-window readiness relative to FIELD_OFF by at least ten percentage points.","rule":"Held-out fraction whose post-evidence authorized-window mean facet score exceeds 0.6 differs by >=0.10. This is a state-transition measure, not task correctness."},
+    {"id":"NUMERICAL","claim":"FULL decisions and readiness are stable on the fixed sensitivity subset under finer integration and reflecting boundaries.","rule":"For each of FINER_STEP and REFLECTED_BOUNDARY, calibrated disposition agreement >=95% and raw readiness-rate difference <=0.05 relative to the matched coarse subset. Thresholds are not recalibrated."},
+    {"id":"D_NO_DWELL","claim":"NO_DWELL and FIELD_OFF have identical facet trajectories.","rule":"Exact facet-stream hashes match in every run. Structural control, not discovery."},
+    {"id":"D_PERMISSION","claim":"Withheld permission suppresses every emitted task commitment.","rule":"Zero emitted outputs under a false permission mask, regardless of internal readiness. Structural control only."},
+    {"id":"LEGACY_ANCHOR","claim":"The unmodified archived G2 runner reproduces its four recorded low-noise anchor cells.","rule":"At noise .02, nudge .25: GRACE .04, LOVE .00, GRACE_LOVE .93, GRACE_LOVE_NODWELL .04 using its own original criterion and 100 original seeds. This is non-blind reproduction, not a new prediction."},
+    {"id":"ETH","claim":"This experiment establishes an ETH refutation or an asymptotic SAT advantage.","rule":"NOT_TESTED: no SAT solver or runtime theorem."}
+  ],
+  "scope": [
+    "The received four-variable model, historical reader and historical encounter type are copied byte-for-byte. Canonical Humble Seed is not edited, promoted or executed as a new contract.",
+    "This is a new, explicitly declared adapter. The three archived-reader cues are place support, time support, and clipped excess signal rate divided by 0.10. At dynamics time 155, add 0.12 times these three cues to the corresponding facets. Add the same external facet-1 pulse to every arm. The pulse and permission window contain no class label, destination or task answer.",
+    "Truth means membership in the synthetic SPREAD generating regime, not verified real-world semantics. CONCENTRATED and BURST have exactly the same overall truncation counts as their paired SPREAD history. NULL stays at the baseline rate. All histories have the same encounter budget.",
+    "The positive proposal is 'enduring distributed preference'. A commitment is correct in SPREAD and wrong in the other worlds; absence of commitment is ABSTAIN, not a correct negative solution. Report sensitivity, false commits, precision and abstention separately.",
+    "The evidence reader and cue construction are shared by all conditions. The ordinary baselines have the same full historical information and the same calibration-label access; an undifferentiated count-only baseline is not used as the main comparator.",
+    "Primary model score is maximum mean-facet activation after evidence arrives and before permission expires. Primary raw readiness uses >0.6 in that exact window; late crossings do not count as authorized task outputs. Also retain first crossing, pre-evidence crossing and final retention.",
+    "FULL activates both dwelling effects in [150,160); FIELD_OFF sets both to zero; COUPLING_ONLY and DECAY_ONLY isolate them; NO_DWELL starts dwelling at zero and sets story_depth=0; ALWAYS_ON enables both throughout. Every model is evaluated at every fixed step, with identical evidence, noise path and resource cap. No early stopping.",
+    "Noise paths are generated at dt=.01 with recorded NumPy SeedSequence keys per case. Coarse Brownian increments sum consecutive fine increments, so coarse/fine comparisons share the same Brownian path. Primary clipping mirrors the archived harness; reflection is a sensitivity, not a repair of old results.",
+    "Sensitivities use the eight declared test seeds only and the thresholds trained on the complete primary calibration set. Shuffling permutes whole cue vectors among worlds within each seed/strength group and never crosses the calibration/test boundary.",
+    "Local pre-execution freeze, not external preregistration. No outcome-based seed changes, gain changes, threshold-rule changes or score repairs. Retain all failed hypotheses. A clean-source second execution must reproduce scientific outcomes and deterministic work counts."
+  ],
+  "resource_accounting": [
+    "Record source derivative evaluations per trajectory, total integration steps, normal draws, common historical-reader setup, calibration CPU and arm simulation CPU separately. Available resource caps are matched; ordinary methods need not waste their unused budget.",
+    "Charge common history/reader preparation and noise generation once to each model arm. Ordinary methods are charged history/reader preparation, score computation and calibration; they do not require noise generation.",
+    "Model evaluation continues to t=180 for retention diagnostics. Distinguish decision-horizon work through t=160 from the extra retention horizon. Time measurements are descriptive, vectorized single-process measurements, not a complexity theorem.",
+    "Do not equate a threshold crossing or coherence with a correct task solution."
+  ]
+}

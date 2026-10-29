@@ -1,0 +1,19 @@
+V1_FULL              {'harvest_total': 440.57673, 'harvest_late': 173.8321, 'post_shift': 88.19818, 'stock_min': 0.41679, 'pop_final': 20.85, 'pop_peak': 38.5, 'families_alive': 2.8, 'map_error': 0.19975, 'stuck_frac': 0.39894, 'per_capita': 0.0259, 'cap_hit_runs': 0}
+V1_LONE              {'harvest_total': 745.47423, 'harvest_late': 338.8845, 'post_shift': 149.93958, 'stock_min': 0.28392, 'pop_final': 46.75, 'pop_peak': 83.05, 'families_alive': 3.6, 'map_error': 0.20065, 'stuck_frac': 0.41236, 'per_capita': 0.02679, 'cap_hit_runs': 0}
+V2_FULL              {'harvest_total': 792.2067, 'harvest_late': 391.02588, 'post_shift': 172.50475, 'stock_min': 0.32185, 'pop_final': 29.75, 'pop_peak': 40.95, 'families_alive': 4.0, 'map_error': 0.17963, 'stuck_frac': 0.21411, 'per_capita': 0.04236, 'cap_hit_runs': 0}
+V2_LONE              {'harvest_total': 983.29408, 'harvest_late': 422.80436, 'post_shift': 198.43891, 'stock_min': 0.18977, 'pop_final': 38.4, 'pop_peak': 70.6, 'families_alive': 4.0, 'map_error': 0.21029, 'stuck_frac': 0.18482, 'per_capita': 0.03601, 'cap_hit_runs': 0}
+NO_SPACING           {'harvest_total': 884.18549, 'harvest_late': 406.04724, 'post_shift': 183.83466, 'stock_min': 0.26692, 'pop_final': 35.55, 'pop_peak': 40.45, 'families_alive': 4.0, 'map_error': 0.17311, 'stuck_frac': 0.18325, 'per_capita': 0.042, 'cap_hit_runs': 0}
+NO_ROLES             {'harvest_total': 154.34039, 'harvest_late': 5.29361, 'post_shift': 11.57143, 'stock_min': 0.51626, 'pop_final': 0.25, 'pop_peak': 32.7, 'families_alive': 0.25, 'map_error': 0.1887, 'stuck_frac': 0.18915, 'per_capita': 0.02142, 'cap_hit_runs': 0}
+NO_BUDDING           {'harvest_total': 779.94293, 'harvest_late': 383.63065, 'post_shift': 168.15316, 'stock_min': 0.32955, 'pop_final': 28.75, 'pop_peak': 39.25, 'families_alive': 4.0, 'map_error': 0.18104, 'stuck_frac': 0.21446, 'per_capita': 0.04264, 'cap_hit_runs': 0}
+NO_WEANING           {'harvest_total': 784.30131, 'harvest_late': 388.44277, 'post_shift': 170.18183, 'stock_min': 0.31846, 'pop_final': 28.45, 'pop_peak': 39.95, 'families_alive': 4.0, 'map_error': 0.18193, 'stuck_frac': 0.20872, 'per_capita': 0.04229, 'cap_hit_runs': 0}
+V2_NO_CONSTITUTION   {'harvest_total': 825.46591, 'harvest_late': 397.90651, 'post_shift': 174.36392, 'stock_min': 0.31644, 'pop_final': 29.75, 'pop_peak': 40.7, 'families_alive': 4.0, 'map_error': 0.21787, 'stuck_frac': 0.23102, 'per_capita': 0.04399, 'cap_hit_runs': 0}
+V2_SELF_REPLICATING  {'harvest_total': 1025.97797, 'harvest_late': 436.25103, 'post_shift': 193.78307, 'stock_min': 0.13573, 'pop_final': 61.65, 'pop_peak': 137.4, 'families_alive': 3.9, 'map_error': 0.17167, 'stuck_frac': 0.14728, 'per_capita': 0.02588, 'cap_hit_runs': 0}
+PASS D1 {'D1': 20}
+FAIL D2 {'D2_harvest': 0, 'D2_per_capita': 20}
+PASS D3 {'D3': 13}
+PASS D4 {'D4': 20}
+PASS D5 {'D5': 8}
+FAIL D6 {'D6': 10}
+FAIL D7 {'D7': 0}
+PASS D8 {'D8': 11}
+receipt 4c46ea9cfbbe264ea57971c5426c9e26d949f68f1d653def1ad3bae993f3d5ce

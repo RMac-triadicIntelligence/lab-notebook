@@ -1,0 +1,34 @@
+{
+  "every_original_file_unchanged": true,
+  "input_zip_sha256": "054e8ccbd8fc7c9004138a04c2535c7b04102927998cee92217c96e40e1d079d",
+  "numpy": "2.3.5",
+  "original_file_checks": {
+    "Triadic_Test_Pack_2026-10-12/CLAUDE_RESULTS_COMMITMENT.txt": true,
+    "Triadic_Test_Pack_2026-10-12/DEVIATIONS.md": true,
+    "Triadic_Test_Pack_2026-10-12/PREREG_G2.frozen_at": true,
+    "Triadic_Test_Pack_2026-10-12/PREREG_G2.json": true,
+    "Triadic_Test_Pack_2026-10-12/PREREG_G2.sha256": true,
+    "Triadic_Test_Pack_2026-10-12/PREREG_S.frozen_at": true,
+    "Triadic_Test_Pack_2026-10-12/PREREG_S.json": true,
+    "Triadic_Test_Pack_2026-10-12/PREREG_S.sha256": true,
+    "Triadic_Test_Pack_2026-10-12/PREREG_T.frozen_at": true,
+    "Triadic_Test_Pack_2026-10-12/PREREG_T.json": true,
+    "Triadic_Test_Pack_2026-10-12/PREREG_T.sha256": true,
+    "Triadic_Test_Pack_2026-10-12/README.md": true,
+    "Triadic_Test_Pack_2026-10-12/RECEIVED.sha256": true,
+    "Triadic_Test_Pack_2026-10-12/REPLY_TEMPLATE.md": true,
+    "Triadic_Test_Pack_2026-10-12/received/origami_kenta_sdkp.py": true,
+    "Triadic_Test_Pack_2026-10-12/received/triadic_model.py": true,
+    "Triadic_Test_Pack_2026-10-12/test_G2.py": true,
+    "Triadic_Test_Pack_2026-10-12/test_S.py": true,
+    "Triadic_Test_Pack_2026-10-12/test_T.py": true
+  },
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "results_sha256": {
+    "results_G2.json": "a96562bd3b345cb7f84549da89f3c28a6e5c67021f090fe7ee58817e7e41d1a4",
+    "results_S.json": "9e1a46b16cbf01ffa84687c124558ec337b85a55be1e6eae5c70aef7e134d8f3",
+    "results_T.json": "154e1f466ac7472b47e90201d11ccf8edf8a0809e17bfc0877aa4c13d2160d54"
+  },
+  "scipy": "1.17.0"
+}

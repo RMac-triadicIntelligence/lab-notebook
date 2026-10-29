@@ -1,0 +1,207 @@
+HUMBLE SEED v0.8.4 — INDEPENDENT BLIND EXECUTION AND ADVERSARIAL REVIEW
+Reviewer: ChatGPT
+Date: 2026-10-18
+Input: Claudehumble_seed_v0_8_4_candidate_BLIND.zip
+
+RESULT
+All 56 shipped candidate tests passed. All 54 mutant classifications matched:
+52 KILLED, 1 SURVIVES (identical-copy control), 1 CRASHED (intentional crash control).
+Two exact failing-test-set predictions did not match, so the harness correctly
+returned exit code 1. No candidate baseline test failed.
+
+Additional executable probes found an owner-veto attestation bypass, two defects
+in checkpoint recovery, an apply/sign-off input-validation mismatch, and a
+mutant-test diagnostic weakness. The supplied green baseline does not cover these
+cases. This report describes measured behavior of this candidate, not a general
+claim about the architecture.
+
+ENVIRONMENT AND INTEGRITY
+Python: 3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]
+cryptography: 50.0.2
+Platform: Linux-6.18.55-x86_64-with-glibc2.39
+Command: python3 -I falsify_v0_8_4.py
+Elapsed: 48.10627225799999 seconds
+Exit code: 1
+All ten entries in MANIFEST.sha256 verified.
+Input zip SHA-256:
+93bd2969a57ca327c9cabadfe706c9ac22f24610f0922c7b1404151603bfea28
+Candidate SHA-256:
+d66c10e415054bb4e02851bac8f47ce33f189e3a6b0f4eba65081a3503089c24
+Declaration SHA-256:
+8db3ffdb7eb63c2c2293bc08ca31ae1cb5c9d1675f1ecf04cec546a58aada787
+
+Verbatim receipt line:
+receipt (statuses only, run-independent): 223278777c961f4e34efabb9dafd7dc1fde0f60271da1ad5bdf6c834598bb394
+
+The supplied commitment is salted and its salt is withheld. This receipt is our
+measured receipt; the commitment cannot yet be checked. The package's statements
+about freeze chronology are not independently timestamp-verified here.
+
+EXACT MISMATCHES AND DIAGNOSES
+
+1. Verbatim line:
+XD4a_attest_without_replay                   KILLED    KILLED    MISMATCH  T26, T39, T41, T42, T43, T44, T46, T47, T48, T49, T52, T53, T56
+
+The declared exact set omits T56. The measured set contains every declared test
+plus T56_owner_lock_excludes_other_processes.
+
+T56 observes the lock through a callback assigned to OwnerTool.clock. Removing
+verify_consequence removes the call that reaches that clock callback. Consequently
+seen=[] and T56 fails its requirement that at least one observation occurred:
+  another process could take the owner lock during attest: []
+No other process actually acquired the lock in that test. A direct external
+flock probe from witness.begin in this same mutant returned "locked". This extra
+failure is a missing-observation artifact; it does not show loss of serialization.
+The mutant remains meaningfully killed by its other failing tests.
+
+2. Verbatim line:
+XS2_ledger_not_reread                        KILLED    KILLED    MISMATCH  T49, T50
+
+The declared set also includes T53_lifetime_runs_from_first_signing, which passes
+on this mutant. The original signing session retains its old first-signing record
+in memory. T53 signs again through that session and attests with it, allowing the
+old in-memory record to hide the stale-session lifetime-refresh vulnerability.
+
+A more discriminating comparison signs once through A, re-signs through stale B
+at t+11 with a ten-second lifetime, then attests through fresh C. Actual outputs:
+  candidate: AttestationRefused, reading is past its lifetime by the owner's clock
+  XS2 mutant: returned True
+This validates the refresh protection while exposing T53's coverage gap. The
+mutant is still killed by T49 and T50.
+
+INDEPENDENT FINDINGS
+
+F1 — Owner category-level veto can be bypassed before signing.
+Priority: high; unauthorized-by-current-owner-position state is attested.
+Code: independent/probes.py, pre_sign_category_no_bypass
+Controls: independent/controls.py
+
+Sequence:
+1. Issue readings X and Y in verbosity.
+2. Through OwnerTool.answer, answer Y "no". The authoritative owner ledger
+   therefore holds a category-level veto after X was issued.
+3. Through the organism-only record_owner_answer method, forge a "yes" to Y.
+   This does not modify the authoritative owner ledger.
+4. Sign X, apply X, and request owner attestation.
+
+Actual result:
+  authoritative_owner_answers_to_Y: ["no"]
+  applied_X_verbosity: 0.25
+  attest: returned True
+  restart_audit: returned True
+
+The owner replay checks category answers after the signature's ledger sequence,
+not after reading issuance. The real "no" preceded signing and is excluded.
+The organism's event window sees the forged latest "yes" and supplies no veto.
+Per-reading answers to X are empty, so the independent owner record never blocks.
+
+Comparison cases:
+  No forged correction: the organism holds the reading.
+  Sign X before answering Y "no", then forge "yes": owner refuses attestation.
+  Answer X itself "no" before signing, then forge "yes": owner refuses attestation.
+Only the category-level veto given between issuance and signing escapes.
+
+Repair direction: define an owner-verifiable answer-window boundary for reading
+issuance, or preserve the owner's relevant category position at first signing.
+Do not trust an organism-only correction to override the owner's recorded veto.
+Keep both per-reading and category-level correction semantics.
+
+F2 — Recovery commits an in-memory checkpoint that was never saved.
+Priority: high for durability and recovery correctness.
+Code: independent/probes.py, failed_install_then_ram_recovery
+
+After a valid signed change applies, simulate an OSError in the organism's _save
+when install_checkpoint tries to persist its new checkpoint. Assignment of the
+checkpoint and trace entry has already happened in memory. Before recovery:
+  RAM checkpoint: 1; disk checkpoint: 0; witness checkpoint: 0
+Calling audit on the same object returns True. After recovery:
+  RAM checkpoint: 1; disk checkpoint: 0; witness checkpoint: 1
+
+Restart load raises IntegrityError: Category sequences do not match the attested
+checkpoint. Even using the populated object left after that failed load, attest
+raises RollbackDetected: Non-successor checkpoint: organism presents sequence 1,
+expected 2.
+
+Root cause: _recover's installed predicate compares only the supplied object's
+checkpoint and signature with the durable pending intent. It does not establish
+that installation reached durable organism storage. It advances the witness and
+deletes the recovery intent despite an unsaved checkpoint.
+
+This probe injects a prewrite exception; it does not simulate a physical power
+failure or claim to validate filesystem crash durability.
+
+F3 — A stale organism object can discard an already-installed recovery intent.
+Priority: high for recovery correctness and liveness.
+Code: independent/probes.py, stale_object_abandons_installed_intent
+
+Load a second organism object at checkpoint 0. On the current object, apply a
+valid change and interrupt sign-off after the organism durably installs checkpoint
+1 but before witness.commit. Disk now has checkpoint 1; witness head is 0 with a
+pending intent for 1. Call owner.audit on the stale checkpoint-0 object.
+
+Actual result:
+  audit_stale: returned True
+  pending intent: deleted
+  disk checkpoint: 1; witness checkpoint: 0
+A fresh object loads the actual saved state, but audit refuses with
+"Unwitnessed advance: organism presents sequence 1, witness holds 0" and attest
+refuses with "Non-successor checkpoint: organism presents sequence 2, expected 1".
+
+Root cause: _recover concludes the intent never installed because the supplied
+object is at the old witness head. It has not checked the actual persisted
+organism state. This is possible under the serialized owner lock; stale organism
+objects remain outside the refresh policy applied to owner files.
+
+Repair direction for F2/F3: recovery must resolve installation against the durable
+organism state bound to the transaction. An in-memory object alone cannot prove
+either successful installation or safe abandonment. Restore or reload object state
+on failed checkpoint saves, and test disk/RAM disagreement in both directions.
+
+F4 — A long annotation applies a change that cannot pass sign-off.
+Priority: medium; public API liveness/input-validation defect.
+Code: independent/probes.py, long_annotation_strands_valid_crossing
+Control: independent/controls.py, annotation_2000_control
+
+A valid reading signed through OwnerTool is authorized with annotation='a'*2001.
+Actual result:
+  apply: "applied"
+  proposal_still_pending: false
+  attest: AttestationRefused, unverified_annotation is not a short string
+  restart_load: IntegrityError, Category sequences do not match the attested checkpoint
+
+The 2000-character comparison passes attestation. authorize_and_apply does not
+validate annotation before changing character, consuming the reading, and saving
+an authorizing event. Replay enforces the 2000-character limit afterwards. The
+normal attestation path cannot accept this event; repairing it would require an
+explicit recovery/edit path. This is not a forged owner signature.
+
+Repair direction: share validation between apply and replay; validate the
+annotation's type and length before any character, gate, consumed-set, or trace
+mutation.
+
+F5 — One finite-metadata mutant is counted as killed for a refusal-message change.
+Priority: test interpretation/coverage.
+Code: independent/probes.py, mutant_diagnostics and xp1_still_refuses_malformed_metadata
+
+XP1_authorized_at_finite_check_removed removes the explicit finite-number check.
+T52 then uses authorized_at="not a timestamp". The mutant still refuses:
+  AttestationRefused: trace index 2: malformed authorized mutation
+  (ValueError: could not convert string to float: 'not a timestamp')
+T52 reports FAIL because it expected the phrase "record metadata invalid".
+The window check still rejects the malformed value via float conversion. Thus
+this kill does not demonstrate acceptance of the malformed metadata. Diagnostic
+specificity may itself be desired, but should be distinguished from a weakened
+acceptance boundary. XP1's surviving window check also limits the meaning of
+calling it removal of finite-metadata protection.
+
+REVIEW SCOPE AND EVIDENCE
+The unchanged shipped harness ran once in isolated Python mode. Focused tests
+and comparison cases were then run from independent scripts. Only the attachment
+and its included source/declaration/harness were used; no other reviews were
+retrieved. Candidate source was not repaired. Mutants were built in temporary
+directories using the frozen declaration's own edits.
+
+The full DECLARED/MEASURED/VERDICT tables, all mutant failure/error details,
+stdout, stderr, environment, manifest verification, runnable scripts and actual
+JSON probe outputs are included. No broad absence-of-vulnerability conclusion
+is made from these finite tests.

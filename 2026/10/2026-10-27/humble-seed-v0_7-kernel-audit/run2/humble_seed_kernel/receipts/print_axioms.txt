@@ -1,0 +1,1 @@
+Audit.lean:1:0: error: object file '/workspace/incoming-2026-10-27-containment-v03/run2/humble_seed_kernel/lean/.lake/build/lib/lean/HumbleSeedKernel.olean' of module HumbleSeedKernel does not exist

@@ -1,0 +1,22 @@
+[
+  {
+    "probe": "same_nonce_different_other_identifier",
+    "engine": "REFUSE: authorization replay",
+    "judge": [
+      true,
+      []
+    ],
+    "predecessor_matches": true,
+    "both_signatures_valid": true
+  },
+  {
+    "probe": "same_determination_different_other_identifier",
+    "engine": "REFUSE: authorization replay",
+    "judge": [
+      true,
+      []
+    ],
+    "predecessor_matches": true,
+    "both_signatures_valid": true
+  }
+]

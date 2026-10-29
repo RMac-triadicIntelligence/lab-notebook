@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-I",
+    "falsify_v0_8_3.py"
+  ],
+  "cwd": "/workspace/scratch/2864e32d355f/work/humble_seed_v0_8_3_candidate",
+  "exit_code": 1,
+  "elapsed_seconds": 10.2993881780003,
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "cryptography": "50.0.2",
+  "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+  "source_zip_sha256": "0f82d933faf8770dd8fed427911a7eac59f0ce68cd79f66790130ecc9bcb0818",
+  "manifest_all_match": true
+}

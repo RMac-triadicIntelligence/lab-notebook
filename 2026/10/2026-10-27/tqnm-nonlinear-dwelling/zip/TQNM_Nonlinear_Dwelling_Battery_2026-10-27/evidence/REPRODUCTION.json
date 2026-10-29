@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "scope": "Two separate processes from clean source copies in the same environment, not external laboratory replication. Scientific inputs, trajectories, calibrated policies, decisions and deterministic work match exactly; timing excluded.",
+  "scientific_sha256": "431e4be8c67f5f74640cbe8f413b2686ec97db299c3426c11cb5e16bfb0a8545",
+  "first_run_exit_code": 0,
+  "clean_run_exit_code": 0,
+  "independent_checker_exit_code": 0
+}

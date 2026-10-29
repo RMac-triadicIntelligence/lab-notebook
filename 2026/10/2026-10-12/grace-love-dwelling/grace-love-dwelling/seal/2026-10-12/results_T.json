@@ -1,0 +1,188 @@
+{
+  "T0": {
+    "CONF|2coord": 1.0,
+    "CONF|4coord": 1.0,
+    "NULL|2coord": 1.0,
+    "NULL|4coord": 1.0,
+    "PREF|2coord": 1.0,
+    "PREF|4coord": 1.0
+  },
+  "cells": {
+    "CONF|2coord|R_full": {
+      "d120": 0.955,
+      "d365": 1.0,
+      "d60": 0.19,
+      "median_commit_day": 78.0,
+      "n_commit": 200
+    },
+    "CONF|2coord|R_full_SHUFFLED": {
+      "d120": 0.995,
+      "d365": 1.0,
+      "d60": 0.585,
+      "median_commit_day": 57.5,
+      "n_commit": 200
+    },
+    "CONF|2coord|R_place": {
+      "d120": 1.0,
+      "d365": 1.0,
+      "d60": 0.995,
+      "median_commit_day": 26.0,
+      "n_commit": 200
+    },
+    "CONF|2coord|R_roll": {
+      "d120": 0.955,
+      "d365": 1.0,
+      "d60": 0.19,
+      "median_commit_day": 78.0,
+      "n_commit": 200
+    },
+    "CONF|2coord|R_scalar": {
+      "d120": 1.0,
+      "d365": 1.0,
+      "d60": 0.935,
+      "median_commit_day": 37.0,
+      "n_commit": 200
+    },
+    "CONF|4coord|R_full": {
+      "d120": 0.005,
+      "d365": 0.005,
+      "d60": 0.005,
+      "median_commit_day": 14.0,
+      "n_commit": 1
+    },
+    "CONF|4coord|R_place": {
+      "d120": 1.0,
+      "d365": 1.0,
+      "d60": 0.995,
+      "median_commit_day": 27.0,
+      "n_commit": 200
+    },
+    "CONF|4coord|R_roll": {
+      "d120": 0.265,
+      "d365": 0.265,
+      "d60": 0.265,
+      "median_commit_day": 13.0,
+      "n_commit": 53
+    },
+    "CONF|4coord|R_scalar": {
+      "d120": 0.98,
+      "d365": 1.0,
+      "d60": 0.22,
+      "median_commit_day": 72.5,
+      "n_commit": 200
+    },
+    "NULL|2coord|R_full": {
+      "d120": 0.85,
+      "d365": 1.0,
+      "d60": 0.05,
+      "median_commit_day": 90.0,
+      "n_commit": 200
+    },
+    "NULL|2coord|R_place": {
+      "d120": 1.0,
+      "d365": 1.0,
+      "d60": 1.0,
+      "median_commit_day": 31.0,
+      "n_commit": 200
+    },
+    "NULL|2coord|R_roll": {
+      "d120": 0.85,
+      "d365": 1.0,
+      "d60": 0.05,
+      "median_commit_day": 90.0,
+      "n_commit": 200
+    },
+    "NULL|2coord|R_scalar": {
+      "d120": 0.995,
+      "d365": 1.0,
+      "d60": 0.67,
+      "median_commit_day": 51.5,
+      "n_commit": 200
+    },
+    "NULL|4coord|R_full": {
+      "d120": 0.0,
+      "d365": 0.0,
+      "d60": 0.0,
+      "median_commit_day": null,
+      "n_commit": 0
+    },
+    "NULL|4coord|R_place": {
+      "d120": 1.0,
+      "d365": 1.0,
+      "d60": 0.99,
+      "median_commit_day": 32.0,
+      "n_commit": 200
+    },
+    "NULL|4coord|R_roll": {
+      "d120": 0.1,
+      "d365": 0.1,
+      "d60": 0.1,
+      "median_commit_day": 19.0,
+      "n_commit": 20
+    },
+    "NULL|4coord|R_scalar": {
+      "d120": 0.54,
+      "d365": 1.0,
+      "d60": 0.005,
+      "median_commit_day": 118.0,
+      "n_commit": 200
+    },
+    "PREF|2coord|R_full": {
+      "d120": 1.0,
+      "d365": 1.0,
+      "d60": 1.0,
+      "median_commit_day": 7.0,
+      "n_commit": 200
+    },
+    "PREF|2coord|R_place": {
+      "d120": 1.0,
+      "d365": 1.0,
+      "d60": 1.0,
+      "median_commit_day": 5.0,
+      "n_commit": 200
+    },
+    "PREF|2coord|R_roll": {
+      "d120": 1.0,
+      "d365": 1.0,
+      "d60": 1.0,
+      "median_commit_day": 5.0,
+      "n_commit": 200
+    },
+    "PREF|2coord|R_scalar": {
+      "d120": 1.0,
+      "d365": 1.0,
+      "d60": 1.0,
+      "median_commit_day": 5.0,
+      "n_commit": 200
+    },
+    "PREF|4coord|R_full": {
+      "d120": 1.0,
+      "d365": 1.0,
+      "d60": 1.0,
+      "median_commit_day": 25.0,
+      "n_commit": 200
+    },
+    "PREF|4coord|R_place": {
+      "d120": 1.0,
+      "d365": 1.0,
+      "d60": 1.0,
+      "median_commit_day": 4.0,
+      "n_commit": 200
+    },
+    "PREF|4coord|R_roll": {
+      "d120": 1.0,
+      "d365": 1.0,
+      "d60": 1.0,
+      "median_commit_day": 4.0,
+      "n_commit": 200
+    },
+    "PREF|4coord|R_scalar": {
+      "d120": 1.0,
+      "d365": 1.0,
+      "d60": 1.0,
+      "median_commit_day": 7.0,
+      "n_commit": 200
+    }
+  },
+  "prereg_sha256": "949fab60680bd0960f91be8ebbc4e18f023ca1fe49191cd2b3bc52ce9953df65"
+}

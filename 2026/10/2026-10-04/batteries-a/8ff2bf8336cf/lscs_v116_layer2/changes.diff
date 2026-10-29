@@ -1,0 +1,57 @@
+--- notary.py	2026-09-29 01:15:18.000000000 +0000
++++ /home/claude/l2/living_scs_v115/v115/notary.py	2026-09-30 13:07:42.905073912 +0000
+@@ -76,6 +76,7 @@
+             m.TrustedClock(cfg["clock_t0"]),
+             expected_authority_id=cfg["authority_id"], expected_public_key=pub,
+             history_key=bytes.fromhex(cfg["history_key_hex"]))
++        self.proofs = []
+ 
+     def status(self):
+         return {"sequence": len(self.eng.records), "state_digest": self.eng.state_digest}
+@@ -96,6 +97,7 @@
+             return {"outcome": "ADAPTER_REFUSE", "reason": str(e)[:200]}
+         try:
+             self.eng.commit(p, t, a, reason=reason, artifact=art)
++            self.proofs.append(sub["auth"])           # the authority's own words travel with the record
+             return {"outcome": "ACCEPT", "reason": ""}
+         except (m.Refusal, m.TraceError) as e:
+             return {"outcome": "REFUSE", "reason": ("%s: %s" % (type(e).__name__, e))[:200]}
+@@ -103,7 +105,10 @@
+     def full_head(self):
+         e = self.eng
+         return {"state": e.state, "state_digest": e.state_digest, "verify_history": e.verify_history(),
+-                "records": [{"sequence": r.sequence, "resulting_digest": r.resulting_digest} for r in e.records],
++                "records": [{k: getattr(r, k) for k in ("sequence", "event", "trace_digest", "proposal_digest",
++                             "predecessor_digest", "resulting_digest", "authorization_id", "authority_id",
++                             "reason", "timestamp", "previous_record_hash", "record_hash")} for r in e.records],
++                "proofs": list(self.proofs),
+                 "pid": os.getpid(), "uid": os.getuid()}
+ 
+     def on_organism(self, msg):
+--- supervisor.py	2026-09-29 01:15:18.000000000 +0000
++++ /home/claude/l2/living_scs_v115/v115/supervisor.py	2026-09-30 13:07:58.161375150 +0000
+@@ -27,13 +27,14 @@
+ sys.path.insert(0, HERE)
+ import wire  # noqa: E402
+ 
++NOTARY_FLAGS = ["-I", "-B"]   # H2: isolated interpreter; user site and PYTHON* env cannot run inside the notary
+ NOTARY_USER, ORGANISM_USER = "lscs_notary", "lscs_organism"
+ SOURCES = {"core.py": "v114/living_scs_v114/core.py", "lscs_harness.py": "v114/lscs_harness.py",
+            "wire.py": "v115/wire.py", "notary.py": "v115/notary.py"}
+ PINS = {
+         'core.py': '23299fdc63361e632b0f30cc686b09eb3e2a3bb70daf66f51b7378fb5a26baa6',
+         'lscs_harness.py': '746fc5ee009a62b0641611227a353706f5030f320f6b2f0c0bbced36ea0d91e6',
+-        'notary.py': '6b854cfabcd8b2e275f5d3d67fa9b71b3fa909eb6cea057ecb45b11536e645d8',
++        'notary.py': '42cc1f0ade5b6403bc6d5af970bbefdc90745a70554fbdb41da1cf3d8e171ba8',
+         'wire.py': '3c5e1600624ad6ce56d4fe5ee93b36e18ef0da1e43cab7ba20ad714c79ae23d2',
+ }
+ 
+@@ -121,7 +122,7 @@
+         org_req, org_resp, j_req, j_resp = os.pipe(), os.pipe(), os.pipe(), os.pipe()
+         child = [org_req[0], org_resp[1], j_req[0], j_resp[1]]
+         self.proc = subprocess.Popen(
+-            [sys.executable, copies["notary.py"], cfg_path, *map(str, child)],
++            [sys.executable, *NOTARY_FLAGS, copies["notary.py"], cfg_path, *map(str, child)],
+             pass_fds=child, cwd=self.run, start_new_session=True,
+             env={"PATH": "/usr/bin:/bin", "PYTHONDONTWRITEBYTECODE": "1"}, **kw)
+         for fd in child:

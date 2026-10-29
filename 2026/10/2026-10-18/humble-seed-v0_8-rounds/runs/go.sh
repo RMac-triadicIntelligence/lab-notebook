@@ -1,0 +1,3 @@
+#!/bin/bash
+# usage: go.sh name dir cmd...
+n=$1; d=$2; shift 2; cd "$d" || exit 9; s=$(date +%s.%N); "$@" > ../$n.out 2> ../$n.err; ec=$?; e=$(date +%s.%N); echo "exit=$ec secs=$(echo "$e - $s" | bc)" > ../$n.meta

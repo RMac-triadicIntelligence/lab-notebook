@@ -1,0 +1,30 @@
+{
+  "G1_love_lowers_grace": {
+    "verdict": "PASS",
+    "observed": "g* GRACE_LOVE 0.24902 vs GRACE 0.32727 (ratio 0.761)"
+  },
+  "G2_love_needs_dwelling": {
+    "verdict": "PASS",
+    "observed": "NODWELL 0.32727 vs GRACE 0.32727"
+  },
+  "G3_together": {
+    "verdict": "PASS",
+    "observed": "together 0.93 vs grace alone 0.04"
+  },
+  "G4_love_alone": {
+    "verdict": "PASS",
+    "observed": "0.0"
+  },
+  "G5_grace_alone_subthreshold": {
+    "verdict": "FAIL",
+    "observed": "g=0.3: 0.54"
+  },
+  "G6_retained": {
+    "verdict": "PASS",
+    "observed": "all 1.0"
+  },
+  "G7_plumbing": {
+    "verdict": "PASS",
+    "observed": "identical before t=150"
+  }
+}

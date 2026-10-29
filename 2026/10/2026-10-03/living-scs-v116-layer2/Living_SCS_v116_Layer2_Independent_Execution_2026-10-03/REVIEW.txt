@@ -1,0 +1,125 @@
+Living SCS v1.1.6 layer-2 independent execution
+3 October 2026
+
+Result
+The newly supplied lscs_v116_layer2.zip contains the actual judge, notary,
+and supervisor that were missing from the earlier review. Those supplied
+files were overlaid on an isolated copy of living_scs_v115claude.zip, as
+changes.diff specifies. No source was rewritten and no release pins were
+recomputed. The supplied supervisor's frozen pins passed verification.
+The separate H1/H2 integration proposal was not installed into this candidate.
+
+Candidate identity
+notary.py:
+42cc1f0ade5b6403bc6d5af970bbefdc90745a70554fbdb41da1cf3d8e171ba8
+judge_verify.py:
+2593b2b2b131d136aaa4e54aaaca0d0c101ec0fca9c164f615040e6699a3d2c0
+core.py:
+23299fdc63361e632b0f30cc686b09eb3e2a3bb70daf66f51b7378fb5a26baa6
+These match the prefixes in the original careful-battery log.
+
+Original battery: independently reproduced
+A1 expired authorization + newly backdated engine: judge VERIFIED; state changed.
+A2 real commit hidden by reporting initial state + empty chain: judge VERIFIED.
+A3 changed state with no supporting records: judge rejected.
+B1 HMAC-only forgery without authority proof: judge rejected.
+C1 duplicated proof with a predecessor mismatch: judge rejected.
+C3 genuine foreign-authority proof: judge rejected.
+Reported breaches: 2. Both are now independently reproduced on the supplied
+layer-2 code integrated with the hash-matching base.
+B2 process-memory probe could not inspect /proc/<pid>/maps in this environment.
+Its 'False' output is NOT evidence of key confidentiality; the probe was unavailable.
+The original runner exits 0 despite finding breaches; that harness issue persists.
+
+Expanded battery
+Engine: 73 PASS.
+Wire: 76 PASS.
+Live notary: 68 PASS.
+Judge: 74 PASS, 18 BREACH, 12 ERROR, 0 BLOCKED.
+Total: 291 PASS, 18 BREACH, 12 ERROR. Exit 1.
+All 104 formerly blocked judge scenarios executed.
+Four PASS judge scenarios are diagnostic observations rather than verdict assertions.
+These scenario counts are not counts of distinct exploitable vulnerabilities.
+
+Interpretation of the 18 unexpected acceptances
+3 freshness/completeness expectations: rollback to empty, truncation to a valid
+historical prefix, and a backdated expired transition. The last two original
+failure families are reproduced. A public-key proof of a presented historical
+chain cannot by itself prove that the chain is the latest one or that the
+notary's timestamps describe real commitment time. Trusted external temporal
+and latest-head evidence are needed for those stronger claims.
+
+2 individual-identifier replay expectations: genuine test-authority signatures,
+correct current predecessors, but either a reused nonce with a different
+determination ID, or a reused determination ID with a different nonce.
+The core refuses both with 'authorization replay'. The judge accepts both.
+Cause in supplied source: core rejects nonce OR determination reuse; judge
+tracks only the tuple (nonce, determination_id). This is a verified mismatch
+between engine policy and outside verification. The fixtures model an authority
+issuing reused identifiers; no attacker signing privilege is assumed.
+
+13 record-schema/metadata expectations: accepted changes or omissions include
+sequence, event, previous-record hash, missing state/state_digest, and numeric
+timestamp shape. These violate the stricter expanded head/record expectations.
+They are not 13 demonstrated unauthorized constitutional transitions.
+The judge's declared contract is narrower: every presented transition was
+authorized by the public key. Some metadata is not authenticated by those
+envelopes, and the contract needs to specify which fields are mandatory.
+
+12 ERROR scenarios: malformed records raise uncaught KeyError, TypeError, or
+AttributeError instead of returning a clean rejection. This is a demonstrated
+input-handling weakness. Whether it becomes denial of service or another risk
+depends on the caller's exception handling; exceptions are not credited as holds.
+
+Honest controls
+Empty, single-commit, three-commit, and valid historical-prefix judge controls
+all passed. The judge is not simply rejecting everything. Existing engine and
+live-notary protections continued to pass the expanded checks.
+
+Other completed checks
+The earlier 29-test suite passes on the assembled layer-2 candidate: 29/29 OK.
+The newly uploaded standalone H1/H2 suite passes: 16/16 OK.
+H1/H2 tests cover signed source lineage, generation floors, isolated launch,
+and canaries using standalone fixtures. They do not establish that those
+components have been integrated into the real supervisor. INTEGRATION.md
+explicitly describes drop-in changes not previously run against the real notary.
+The supplied layer-2 supervisor still exposes pins_for and caller-supplied pins.
+The isolation launch does use -I and -B in the tested candidate.
+
+Not independently rerun in this turn
+The uploaded 18-case code/isolation matrix and two notary-mutant matrices remain
+supplied evidence. Separate-user OS attacks, process-memory access, and the
+Commons simulation were not rerun as part of this security dependency check.
+No global usercustomize backdoor was planted. The H1/H2 standalone tests use
+temporary homes and startup-hook locations.
+
+Reproduce from this package directory
+python3 expanded_battery.py --candidate candidate --output expanded_local.json
+Expected exit 1 with 291 PASS, 18 BREACH, 12 ERROR.
+
+cd candidate/v115
+python3 careful_battery.py
+Expected 2 reported breaches; memory-probe availability depends on environment.
+python3 -m unittest -v tests.test_v115
+Expected 29/29 OK.
+
+From the package root, extract inputs/lscs_v116_h1h2.zip into a separate folder
+and run python3 -m unittest discover -s tests -p test_h1h2.py -v from its
+lscs_v116_h1h2 directory. Expected 16/16 OK.
+
+Evidence
+provenance.json records the exact supplied source hashes and assembly route.
+expanded_results.json contains every scenario result and source hashes.
+interpreted_findings.json separates freshness, replay, metadata, and exceptions.
+focused_replay_probes.json confirms valid signatures/current predecessors and
+the engine/judge disagreement independently of the scenario summary.
+original_battery_run.log, expanded_run.log, h1h2_tests.log, and
+base_tests_with_layer2.log preserve the actual execution output.
+Input archives and the complete assembled candidate are included.
+
+Next work
+Align judge replay policy with the core's independent nonce and determination
+checks. Specify mandatory head/record fields and handle malformed inputs without
+uncaught exceptions. Define external latest-head/time evidence before claiming
+rollback or backdating detection. Test H1/H2 against the actual integrated launch.
+No fixes to the supplied candidate were made in this review.

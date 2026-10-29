@@ -1,0 +1,29 @@
+'HumbleSeedKernel.v07_B1' depends on axioms: [propext, Quot.sound]
+'HumbleSeedKernel.v07_B1'' depends on axioms: [propext, Quot.sound]
+'HumbleSeedKernel.v07_B2' depends on axioms: [propext, Quot.sound]
+'HumbleSeedKernel.v07_B3' depends on axioms: [propext, Quot.sound]
+'HumbleSeedKernel.v07_B3'' depends on axioms: [propext, Quot.sound]
+'HumbleSeedKernel.v07_B4' depends on axioms: [propext, Quot.sound]
+'HumbleSeedKernel.v07_W1' does not depend on any axioms
+'HumbleSeedKernel.v07_W2' depends on axioms: [propext]
+'HumbleSeedKernel.v07_W3' depends on axioms: [propext]
+'HumbleSeedKernel.v071a_W4' depends on axioms: [propext, Quot.sound]
+'HumbleSeedKernel.v071_W4' depends on axioms: [propext, Quot.sound]
+'HumbleSeedKernel.v071a_W5s' depends on axioms: [propext, Quot.sound]
+'HumbleSeedKernel.v071_W5' depends on axioms: [propext, Quot.sound]
+'HumbleSeedKernel.v071_W5s' depends on axioms: [propext, Quot.sound]
+'HumbleSeedKernel.v07_W6' depends on axioms: [propext, Quot.sound]
+'HumbleSeedKernel.v071a_W6' depends on axioms: [propext, Quot.sound]
+'HumbleSeedKernel.v071_W6' depends on axioms: [propext, Quot.sound]
+'HumbleSeedKernel.v071_E1' depends on axioms: [propext, Quot.sound]
+'HumbleSeedKernel.v071_audited_changes_need_enrolled_key' depends on axioms: [propext, Quot.sound]
+'HumbleSeedKernel.Counterexample.v07_accepts_any_unenrolled' depends on axioms: [propext]
+'HumbleSeedKernel.Counterexample.attack_S1_passes_v07_audit' does not depend on any axioms
+'HumbleSeedKernel.Counterexample.attack_S2_passes_v07_audit' does not depend on any axioms
+'HumbleSeedKernel.Counterexample.attack_S2_passes_v071a_audit' does not depend on any axioms
+'HumbleSeedKernel.Counterexample.v07_not_W4' depends on axioms: [propext]
+'HumbleSeedKernel.Counterexample.v07_not_W5' does not depend on any axioms
+'HumbleSeedKernel.Counterexample.v07_not_W5s' depends on axioms: [propext]
+'HumbleSeedKernel.Counterexample.v07_not_E1' does not depend on any axioms
+'HumbleSeedKernel.Counterexample.v071a_not_W5' does not depend on any axioms
+'HumbleSeedKernel.Counterexample.v071a_not_E1' does not depend on any axioms
