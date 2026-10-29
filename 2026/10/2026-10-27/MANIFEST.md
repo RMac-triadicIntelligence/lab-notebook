@@ -444,3 +444,4 @@ Folder date = when the work was done (from source folder name / file mtime). Not
 | humble-seed-v0_7-kernel-audit/scratch/humble_seed_kernel/source/humble_seed_v0_7.py | /workspace/incoming-2026-10-27-containment-v03/scratch/humble_seed_kernel/source/humble_seed_v0_7.py | 2026-10-27 20:22 CDT | `01db270a111f22de45419b562c3f5135f7db44b9036b95d6653060c93584daf5` | draft |
 | containment-requests/containment_v0_2_request.md | /workspace/outgoing/containment_v0_2_request.md | 2026-10-27 11:21 CDT | `124492f9926a91a62ec0dd71c6203ffaca3a9b403d4415953f9f0a6001d19eaa` | draft |
 | containment-requests/containment_v0_3_request.md | /workspace/outgoing/containment_v0_3_request.md | 2026-10-27 12:34 CDT | `162dfa9f19f6ed50aae30f42ade77367824ec6083ad86b5f86c76766f29e9c19` | draft |
+| README.md | day summary (added 2026-10-29) | 2026-10-29 | `b9103d4436ca85d86250e096df5d3172ebbd36171f4b5445a2e8b0f5ab74e233` | draft |

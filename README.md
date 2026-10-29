@@ -9,10 +9,22 @@ Daily laboratory experiments and workbench batteries by Rusty Williams McMurray 
 - **Folder dates and the modification times in each `MANIFEST.md` are not proof of time.** Anyone can set a file's mtime. Many files on the working machine show a modification date of 2026-10-23 because of a copy on that day; those mtimes are recorded as found, not corrected. Only a commit pushed on the same day as the work is evidence of when it existed.
 - From the first push onward, each day's work is meant to be pushed the same day.
 
-## Days covered
+## Timeline
 
-- 2026-09-21 — Raised Not Rented v0.13 (original, revised, independent repack + 2026-10-29 rerun reproduced exactly) and The Commons archive (three variants). Dated by timestamps inside the original zips; added in a later commit than the October days.
-- October 2026 workdays — see `2026/10/`.
+Each day folder has its own `README.md` summarizing what was tested and what held, failed or stayed open, with pointers to the source files.
+
+- [2026-09-21](2026/09/2026-09-21/) — Raised Not Rented v0.13 and The Commons sandbox archive
+- [2026-10-03](2026/10/2026-10-03/) — Constitutional Commons v0.3 (parables) and Living SCS v1.1.6 layer 2
+- [2026-10-04](2026/10/2026-10-04/) — Commons v0.3.1 three-way check, erratum, and Living SCS four-case judge gate
+- [2026-10-10](2026/10/2026-10-10/) — Persistence-as-nonclosure battery v1.0
+- [2026-10-12](2026/10/2026-10-12/) — Grace, love and dwelling: three preregistered tests
+- [2026-10-16](2026/10/2026-10-16/) — Humble Seed / terrain falsification bundle, and Genesis Seed v0.1 intake
+- [2026-10-18](2026/10/2026-10-18/) — Humble Seed v0.8.3 / v0.8.4 blind review rounds, and grace_window_v1
+- [2026-10-19](2026/10/2026-10-19/) — Humble Seed v0.8.5–v0.8.8 candidates and the v0.8.8 release review
+- [2026-10-24](2026/10/2026-10-24/) — Gospel package: falsification brief, P1–P5 probe reconstruction, earned-landscape protocol draft
+- [2026-10-26](2026/10/2026-10-26/) — agent-welcome battery v1 results, and probes from the permission-receipts draft
+- [2026-10-27](2026/10/2026-10-27/) — Containment battery v0.1 and v0.2 with audits, and the TQNM nonlinear dwelling task battery
+- [2026-10-28](2026/10/2026-10-28/) — Village pack: organisms interacting on a shared commons
 
 ## Layout
 

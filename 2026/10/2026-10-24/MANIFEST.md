@@ -24,3 +24,4 @@ Folder date = when the work was done (from source folder name / file mtime). Not
 | gospel-probes-p1-p5/results/tests.log | /workspace/gospel-package/probes_p1_p5_reconstruction/results/tests.log | 2026-10-24 09:50 CDT | `f6ff5a4bcc502200938d442cd1706d4c6f93db5bc1022c14c6eb1d96ae1f4b73` | verified |
 | gospel-probes-p1-p5/run.log | /workspace/gospel-package/probes_p1_p5_reconstruction/run.log | 2026-10-24 09:49 CDT | `a739137d5ab3c1c1c63d5949115cf0793bb6093631b705da1671c30612518057` | draft |
 | gospel-probes-p1-p5/test_probes.py | /workspace/gospel-package/probes_p1_p5_reconstruction/test_probes.py | 2026-10-24 09:50 CDT | `b87d0d7f20fec88d2f894fbc29c3cb146c0dcc9229aea97cefebf74ee04d4946` | draft |
+| README.md | day summary (added 2026-10-29) | 2026-10-29 | `6c7ee36f276c59b337a564ee0d6eb19b34ffcb8306c03bff42a5fe8de998a22f` | draft |

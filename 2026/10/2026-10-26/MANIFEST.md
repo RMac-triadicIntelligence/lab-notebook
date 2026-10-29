@@ -12,3 +12,4 @@ Folder date = when the work was done (from source folder name / file mtime). Not
 | agent-welcome-vs-apr/SHA256SUMS | /workspace/agent-welcome-vs-apr/SHA256SUMS | 2026-10-26 07:57 CDT | `88c376474cdd8d97d864bd9d3708b22df4771ca24452430347d034d25bb604ed` | verified |
 | agent-welcome-vs-apr/probes.py | /workspace/agent-welcome-vs-apr/probes.py | 2026-10-26 07:57 CDT | `b5ef3369918b4a8f194f53ecc65313735087a32197b28226cd3262d923bce892` | draft |
 | agent-welcome-vs-apr/probes_out.json | /workspace/agent-welcome-vs-apr/probes_out.json | 2026-10-26 07:57 CDT | `5c2405b422d4fab6e4d27c3384efb9a89f30d96ee8f2255efe5188bdae509879` | draft |
+| README.md | day summary (added 2026-10-29) | 2026-10-29 | `d5a09b3578b9ae698c5200acc83acd2b900ba437d13808b351ef416418b70204` | draft |

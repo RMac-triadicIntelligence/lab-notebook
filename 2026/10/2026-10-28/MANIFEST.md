@@ -151,3 +151,4 @@ Folder date = when the work was done (from source folder name / file mtime). Not
 | village-organisms-interact/FILES.txt | /workspace/outgoing/village-organisms-interact-2026-10-28/FILES.txt | 2026-10-28 07:52 CDT | `7a20bc09b71bf46ae986a93ed59bfa606066736e58f20e5416b413ea6b6c72fc` | draft |
 | village-organisms-interact/README.md | /workspace/outgoing/village-organisms-interact-2026-10-28/README.md | 2026-10-28 07:52 CDT | `2bd65e9f65db9b8d221ba4a2c0bb8beb301687634c445bab5528d32150920302` | draft |
 | village-organisms-interact/SHA256SUMS.txt | /workspace/outgoing/village-organisms-interact-2026-10-28/SHA256SUMS.txt | 2026-10-28 07:52 CDT | `c64cb282f1e9597115a201223ba2da5300d7bff068ad76ad6de44c21be7dfe44` | verified |
+| README.md | day summary (added 2026-10-29) | 2026-10-29 | `46c353d55254d7904eae42f3b9db0f0c7234d04f621a9c6100170cde2654b71e` | draft |

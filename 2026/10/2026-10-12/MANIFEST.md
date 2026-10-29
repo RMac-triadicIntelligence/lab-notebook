@@ -51,3 +51,4 @@ Folder date = when the work was done (from source folder name / file mtime). Not
 | grace-love-dwelling/grace-love-dwelling/tools/exploratory_long_horizon.py | /workspace/incoming-2026-10-12/grace-love-dwelling/tools/exploratory_long_horizon.py | 2026-10-23 08:03 CDT | `4e9361de8437c4fc146edd737b7d770e520c5e8c6dd00bdad2da264404786142` | draft |
 | grace-love-dwelling/grace-love-dwelling/tools/reproduce.py | /workspace/incoming-2026-10-12/grace-love-dwelling/tools/reproduce.py | 2026-10-23 08:03 CDT | `8302cde63753dc7c9fd0e9af51439d5801546b1c397bbe57fb57791143060337` | draft |
 | grace-love-dwelling/grace-love-dwelling/tools/verify_seal.py | /workspace/incoming-2026-10-12/grace-love-dwelling/tools/verify_seal.py | 2026-10-23 08:03 CDT | `69b978acfde88560a3cd01ee40be27d3b0605b23e675d3c2cd45713177cabf7f` | verified |
+| README.md | day summary (added 2026-10-29) | 2026-10-29 | `d8ae6218be690557d8a1621f852bcbf160875bdbdd738344a84a7300a1f1e51d` | draft |

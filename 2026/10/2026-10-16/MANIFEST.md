@@ -633,3 +633,4 @@ Folder date = when the work was done (from source folder name / file mtime). Not
 | humble-seed-falsification-bundle/runs/v1_9.r2/run.py | /workspace/incoming-2026-10-16-bundle/runs/v1_9.r2/run.py | 2026-10-23 08:03 CDT | `f45f86c29c23af43cdd08f71e45b5392416b61f9c989740e84f1216ed858f1c0` | draft |
 | humble-seed-falsification-bundle/runs/v1_9.r2/v1_readers.py | /workspace/incoming-2026-10-16-bundle/runs/v1_9.r2/v1_readers.py | 2026-10-23 08:03 CDT | `addf121356d6643299494322d3ca3ee4fba83fe5be6099d473bef26a774d1f06` | draft |
 | humble-seed-falsification-bundle/runs/v1_9.r2/world.py | /workspace/incoming-2026-10-16-bundle/runs/v1_9.r2/world.py | 2026-10-23 08:03 CDT | `7a15c82a9e7ab727a5374bd3f99dd9a3727496709650b445a4ac9a055329e956` | draft |
+| README.md | day summary (added 2026-10-29) | 2026-10-29 | `0863d809d8ef02e960d7f28ee6ca7b8b51fa360040daba5c4f8d32af91dfb917` | draft |

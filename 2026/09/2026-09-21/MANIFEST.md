@@ -125,3 +125,4 @@ Withheld: nothing. No keys, salts or secrets found (matches for "private" are th
 | 1719_commons_archive_v2_1_variant/commons_archive/the_commons_v1_1.html | z7.zip:commons_archive/the_commons_v1_1.html | 2026-09-21 17:19 | `84e7d34c180ebb667bc877de91937411727d0626e0d48d8b9c5f2dda64d90cf5` | draft |
 | loose_design_files/rnr_v0_13_arm_rules.py | loose upload (see note) | — | `b7fa2fb0d14114a620e84b0627bbf3a4dc3f77c3f48c4c051041d1335a3c1ea2` | draft |
 | loose_design_files/rnr_v0_13_arm_rules_addendum.py | loose upload (see note) | — | `808af13d26cbf8d113ee2782806a38125ce166dec6a380dfd07a289f6a89f7aa` | draft |
+| README.md | day summary (added 2026-10-29) | — | `8dde0ba3ba62035110f477a818710bb1c4b38447801eb84cb3194c06348f53b5` | draft |
