@@ -1,6 +1,0 @@
-PREF              by63=0.915 by120=0.995 by365=1.000
-COMMUTE           by63=0.030 by120=0.050 by365=0.215
-SPREADING         by63=0.015 by120=0.625 by365=1.000
-NULL              by63=0.000 by120=0.000 by365=0.000
-COMMUTE_SHUFFLED  by63=0.335 by120=0.595 by365=0.790
-THINNED separation = PREF by120 - COMMUTE by365 = 0.780  (lattice 0.755, raw counter 0.495)

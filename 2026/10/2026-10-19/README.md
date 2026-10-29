@@ -26,4 +26,4 @@
 
 ## Caveats
 - The receipt covers statuses only. The full results JSON differs between runs, as expected for run-dependent fields.
-- **Withheld:** 23 files (receipt and author-findings salts, and archives containing them). Only their hashes are in `MANIFEST.md`.
+- **Withheld:** 24 files (receipt and author-findings salts, and archives containing them; one copy of `CHATGPT_review_archive_v0_8_3.zip` was added in the 2026-10-29 secret sweep because it nested salt files). Only their hashes are in `MANIFEST.md`.

@@ -1,3 +1,5 @@
+0a6c7428b9aaf1fba8d672327fc02f4e05dde0b181b6602a38429cc8e5399c0a  MANIFEST.md
+d8ae6218be690557d8a1621f852bcbf160875bdbdd738344a84a7300a1f1e51d  README.md
 ca0c2a2a7b079ea9be5f1240e1bf33818934c0169dd9e11b44aeee582913ca62  grace-love-dwelling/grace-love-dwelling/.github/workflows/reproduce.yml
 862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793  grace-love-dwelling/grace-love-dwelling/.gitignore
 9f7d07dc7179cd8e675407be0c49aef3ec0535491559345931c5da7490e56472  grace-love-dwelling/grace-love-dwelling/ABOUT_SOULSHINE.md
@@ -7,7 +9,6 @@ ac12b4d585f868a7739431230ca2554bf54ac29ecf10cab3cb64ba30bc82eae7  grace-love-dwe
 19033a50b94bfac21a1c828c4bcde9773e50fc55bab97dbe74f01a7e94f4cba5  grace-love-dwelling/grace-love-dwelling/NOTICE
 a25ac19a414027a744041cb2550ecf3634636c08eb79383dc3ee9170fdd4b1d0  grace-love-dwelling/grace-love-dwelling/OPEN_ITEMS.md
 a51acb7c1343e076030c6fcb979aa432bbabcbd58587d318c2fbc75ea399938a  grace-love-dwelling/grace-love-dwelling/README.md
-b29dda57f7dd423b479da75666c8fd032b3bb7669901e41098ccac0ef029b87f  grace-love-dwelling/grace-love-dwelling/SHA256SUMS
 b3a62c4e084e5b25c8ba56d8d2fd897062649c2d3337593127921afd67d4238c  grace-love-dwelling/grace-love-dwelling/requirements.txt
 42a85ff894504f3db5113ac2b036270c1d71efb9498a3eec4744357ef535bce9  grace-love-dwelling/grace-love-dwelling/reviews/chatgpt/REPORT.md
 4c84856755798aa9ea73f9c06ed781593ecfe767650ba89e20c7e61da7d2e269  grace-love-dwelling/grace-love-dwelling/reviews/chatgpt/execution_environment.json
@@ -45,4 +46,3 @@ d5bf96e771999eb59d704a3e6940038ebcd1e4f764565ad5f37173826d04680a  grace-love-dwe
 4e9361de8437c4fc146edd737b7d770e520c5e8c6dd00bdad2da264404786142  grace-love-dwelling/grace-love-dwelling/tools/exploratory_long_horizon.py
 8302cde63753dc7c9fd0e9af51439d5801546b1c397bbe57fb57791143060337  grace-love-dwelling/grace-love-dwelling/tools/reproduce.py
 69b978acfde88560a3cd01ee40be27d3b0605b23e675d3c2cd45713177cabf7f  grace-love-dwelling/grace-love-dwelling/tools/verify_seal.py
-d8ae6218be690557d8a1621f852bcbf160875bdbdd738344a84a7300a1f1e51d  README.md

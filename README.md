@@ -19,7 +19,7 @@ Each day folder has its own `README.md` summarizing what was tested and what hel
 - [2026-10-10](2026/10/2026-10-10/) — Persistence-as-nonclosure battery v1.0
 - [2026-10-12](2026/10/2026-10-12/) — Grace, love and dwelling: three preregistered tests
 - [2026-10-16](2026/10/2026-10-16/) — Humble Seed / terrain falsification bundle, and Genesis Seed v0.1 intake
-- [2026-10-18](2026/10/2026-10-18/) — Humble Seed v0.8.3 / v0.8.4 blind review rounds, and grace_window_v1
+- [2026-10-18](2026/10/2026-10-18/) — Humble Seed v0.8.3 / v0.8.4 blind review rounds
 - [2026-10-19](2026/10/2026-10-19/) — Humble Seed v0.8.5–v0.8.8 candidates and the v0.8.8 release review
 - [2026-10-24](2026/10/2026-10-24/) — Gospel package: falsification brief, P1–P5 probe reconstruction, earned-landscape protocol draft
 - [2026-10-26](2026/10/2026-10-26/) — agent-welcome battery v1 results, and probes from the permission-receipts draft
