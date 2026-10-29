@@ -1,0 +1,27 @@
+{
+  "changed_files": [
+    "rnr_v0_13/RESULTS.md",
+    "rnr_v0_13/SHA256SUMS"
+  ],
+  "added_files": [],
+  "removed_files": [],
+  "unchanged_files": 22,
+  "results": {
+    "summary.json": {
+      "matches_previous_independent_run": true,
+      "matches_bundled_results": true
+    },
+    "rows_block1.json": {
+      "matches_previous_independent_run": true,
+      "matches_bundled_results": true
+    },
+    "rows_block2.json": {
+      "matches_previous_independent_run": true,
+      "matches_bundled_results": true
+    }
+  },
+  "upload_sha256": {
+    "ClaudeRaised_Not_Rented_v0_13.zip": "ad32e7f9d7640a580a2a1fe319ca9b519c6eeadbcfa1a7080bc2f7739f64deaa",
+    "Raised_Not_Rented_v0_13 2.zip": "4f6d9b75dada31c9153a8597d61e83b70e976c2c352c73fbd309563f3ecfebfd"
+  }
+}

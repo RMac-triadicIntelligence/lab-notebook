@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Commons II — What We Leave</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Karla:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E4E8E3; --panel:#EEF1EC; --ink:#22303A; --muted:#5E6E68; --line:#B9C6BF;
+  --west:#4A5A9C; --east:#B9822E; --grace:#F3E3A6; --warn:#A8452F; --blight:#6E3A55;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#1B2327;--panel:#232D31;--ink:#DCE3DF;--muted:#93A39C;--line:#3A4A45;
+  --west:#7E8FD6;--east:#DDA955;--grace:#F6E7B0;--warn:#E07A62;--blight:#C089A8;}}
+:root[data-theme="dark"]{--bg:#1B2327;--panel:#232D31;--ink:#DCE3DF;--muted:#93A39C;--line:#3A4A45;
+  --west:#7E8FD6;--east:#DDA955;--grace:#F6E7B0;--warn:#E07A62;--blight:#C089A8;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Karla,system-ui,sans-serif}
+main{max-width:1120px;margin:0 auto;padding:20px 16px 48px}
+h1{font:600 clamp(28px,5vw,44px)/1.1 Spectral,Georgia,serif;margin:0 0 4px;letter-spacing:-.01em}
+.act{font:italic 17px/1.5 Spectral,serif;color:var(--muted);margin:0 0 16px;max-width:64ch}
+.worlds{display:grid;gap:14px;grid-template-columns:repeat(3,minmax(0,1fr))}
+.worlds.single{grid-template-columns:minmax(0,1fr)}
+@media (max-width:860px){.worlds{grid-template-columns:minmax(0,1fr)}}
+figure{margin:0;border:1px solid var(--line);border-radius:6px;background:var(--panel);overflow:hidden}
+figcaption{padding:8px 10px;font-size:14px;border-bottom:1px solid var(--line)}
+figcaption b{font-weight:600}figcaption span{color:var(--muted)}
+canvas{display:block;width:100%;height:auto;touch-action:manipulation}
+.tally{display:grid;grid-template-columns:1fr auto;font-size:13px;padding:8px 10px;gap:1px 8px;border-top:1px solid var(--line)}
+.tally span:nth-child(even){text-align:right;font-variant-numeric:tabular-nums}
+.controls{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 8px}
+button{font:600 14px Karla,sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);
+  border-radius:999px;padding:9px 14px;cursor:pointer}
+button:hover:not(:disabled){border-color:var(--ink)}
+button:disabled{opacity:.45;cursor:not-allowed}
+button.grace{background:var(--grace);color:#3a3113;border-color:#d9c57c}
+button:focus-visible,input:focus-visible{outline:2px solid var(--west);outline-offset:2px}
+.wind{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);margin:6px 0 2px}
+.wind input{flex:1;accent-color:var(--ink)}
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+@media (max-width:860px){.panels{grid-template-columns:1fr}}
+section{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+section h2{font:600 19px Spectral,serif;margin:0 0 8px}
+.scroll{max-height:220px;overflow:auto;font-size:13px}
+.scroll li{margin:3px 0}
+.note{font:15px/1.6 Spectral,serif;max-width:70ch;margin-top:26px}
+.note p{margin:0 0 10px}
+.hint{color:var(--muted);font-size:14px}
+.toast{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);background:var(--ink);color:var(--bg);
+  font-size:14px;padding:8px 14px;border-radius:999px;opacity:0;transition:opacity .3s;pointer-events:none;
+  max-width:92vw;z-index:9}
+.toast.on{opacity:.93}
+@media (prefers-reduced-motion:reduce){.toast{transition:none}}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{text-align:left;padding:4px 6px;border-bottom:1px solid var(--line)}
+td:not(:first-child),th:not(:first-child){text-align:right;font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<main>
+  <h1>The Commons II</h1>
+  <p class="act" id="act">Act one. Four lineages arrive on untouched ground. Let them live: push the evidence, open the gate, call a reckoning, forgive. Where they cross, the pass wears down.</p>
+
+  <div class="worlds single" id="worlds"></div>
+
+  <div class="wind"><label for="wind">Evidence</label>
+    <input id="wind" type="range" min="-1" max="1" step="0.01" value="0.60">
+    <span id="windv">east 0.60</span></div>
+
+  <div class="controls">
+    <button class="grace" id="bGrace">Broadcast grace</button>
+    <button id="bReckon">Reckoning</button>
+    <button id="bForgive">Forgive</button>
+    <button id="bParable">Read a parable</button>
+    <button id="bHandoff">Retire the founders</button>
+    <button id="bShift" disabled>The pass silts up</button>
+    <button id="bPause">Pause</button>
+  </div>
+  <p class="hint" id="hint">The founders need a worn pass before they can leave one. Broadcast grace a few times.</p>
+
+  <div class="panels">
+    <section>
+      <h2>Reading, then choice</h2>
+      <p class="hint">One parable, every reading drawn from where the organism stands — and the action each reading proposes.</p>
+      <div id="parable"><span class="hint">No parable read yet.</span></div>
+    </section>
+    <section>
+      <h2>The founders' biographies</h2>
+      <p class="hint" id="bioHint">Preserved at the handoff. The newcomers cannot read them.</p>
+      <ol class="scroll" id="bios"><li class="hint">Still living.</li></ol>
+    </section>
+  </div>
+
+  <div class="note">
+    <p><b>What this asks.</b> The founders wear a pass into shared ground. Then they retire. Their biographies are kept here for you, and withheld from everyone who comes next. Three copies of the same arrival then run side by side: one on the ground the founders actually left, one on blank ground, one on ground carrying the same amount of wear moved somewhere else. Same newcomers, same evidence, same random draws. Only the ground differs.</p>
+    <p>Then the season turns. The worn pass silts up, and the east side beyond it goes bad. Inheritance that only makes movement easier will march the newcomers straight into it. Useful inheritance gets them to a gate sooner and still lets them stop, dwell, and find another way — and wear a better pass for whoever comes third.</p>
+    <p>Crossing still requires grace in every world. Terrain changes where an organism stands and how ready it is. It never opens the gate.</p>
+  </div>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(()=>{
+const XR=2.2,YR=1.4,GX=76,GY=48;
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const hex=s=>{s=s.replace('#','');return [0,2,4].map(i=>parseInt(s.substr(i,2),16));};
+const mix=(a,b,t)=>[a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t,a[2]+(b[2]-a[2])*t];
+const rng=s=>()=>{s|=0;s=s+0x6D2B79F5|0;let t=Math.imul(s^s>>>15,1|s);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};
+
+const LINEAGES=[
+ {name:'Ash',  color:'#2F7D6D', ev:1.3, ground:0.6, lesson:1.0, home:[-1.1,-0.8]},
+ {name:'Brook',color:'#8B4F9E', ev:0.7, ground:1.7, lesson:0.8, home:[-1.1, 0.8]},
+ {name:'Cedar',color:'#C0533F', ev:1.0, ground:1.1, lesson:1.8, home:[-0.8, 0.0]},
+ {name:'Dune', color:'#C99A12', ev:1.8, ground:0.4, lesson:0.5, home:[-1.4, 0.2]}];
+
+class World{
+  constructor(name,sub,seed){this.name=name;this.sub=sub;this.T=new Float32Array(GX*GY);
+    this.orgs=[];this.rand=rng(seed);this.dirty=true;this.bg=null;this.nextId=1;
+    this.blight=null;this.tally={crossed:0,viaOld:0,viaNew:0,blighted:0,firstCross:null,t:0};}
+  idx(x,y){const i=Math.round((x+XR)/(2*XR)*(GX-1)),j=Math.round((y+YR)/(2*YR)*(GY-1));
+    return(i<0||j<0||i>=GX||j>=GY)?-1:j*GX+i;}
+  terrain(x,y){const k=this.idx(x,y);return k<0?0:this.T[k];}
+  deposit(x,y,amt,rad){
+    const R=rad*3, i0=Math.max(0,Math.floor((x-R+XR)/(2*XR)*(GX-1))), i1=Math.min(GX-1,Math.ceil((x+R+XR)/(2*XR)*(GX-1)));
+    const j0=Math.max(0,Math.floor((y-R+YR)/(2*YR)*(GY-1))), j1=Math.min(GY-1,Math.ceil((y+R+YR)/(2*YR)*(GY-1)));
+    for(let j=j0;j<=j1;j++)for(let i=i0;i<=i1;i++){
+      const px=i/(GX-1)*2*XR-XR,py=j/(GY-1)*2*YR-YR,d2=(px-x)**2+(py-y)**2;
+      if(d2<R*R)this.T[j*GX+i]=Math.max(-0.95,this.T[j*GX+i]-amt*Math.exp(-d2/(2*rad*rad)));}
+    this.dirty=true;}
+  spawn(L,gen,jitter){const m=()=>1+(jitter()-.5)*0.25;
+    this.orgs.push({id:this.nextId++,L,gen,x:L.home[0]+(jitter()-.5)*.5,y:L.home[1]+(jitter()-.5)*.5,
+      ev:L.ev*m(),ground:L.ground*m(),lesson:L.lesson*m(),burden:0,lessons:[],
+      hist:[`born, generation ${gen}`],edge:0,flash:0,reading:null,choice:null,crossY:null});}
+}
+
+// ---- state
+let phase='founding', paused=false, graceT=0, graceR=0, parableT=0, truthEast=true, oldPassY=null, tGlobal=0;
+const founders=[];
+const worldsEl=document.getElementById('worlds');
+let worlds=[new World('Founding ground','the first generation',11)];
+LINEAGES.forEach(L=>{for(let k=0;k<4;k++)worlds[0].spawn(L,1,worlds[0].rand);});
+
+const windEl=document.getElementById('wind'),windV=document.getElementById('windv');
+const wind=()=>+windEl.value;
+windEl.oninput=()=>{const w=wind();windV.textContent=(w>=0?'east ':'west ')+Math.abs(w).toFixed(2);};windEl.oninput();
+
+function forceOn(w,o){
+  const h=0.02,x=o.x,y=o.y;
+  let fx=-2*x*(x*x-1),fy=-0.7*y;
+  fx+=-o.ground*(w.terrain(x+h,y)-w.terrain(x-h,y))/(2*h);
+  fy+=-o.ground*(w.terrain(x,y+h)-w.terrain(x,y-h))/(2*h);
+  fx+=o.ev*wind();
+  for(const p of o.lessons){const dx=x-p[0],dy=y-p[1],s=0.35,
+    g=o.lesson*0.9*Math.exp(-(dx*dx+dy*dy)/(2*s*s))/(s*s);fx+=g*dx;fy+=g*dy;}
+  if(w.blight){const dx=x-w.blight.x,dy=y-w.blight.y,d=Math.hypot(dx,dy); // visible bad ground pushes back
+    if(d<w.blight.r+0.35){const g=0.9*Math.exp(-(d*d)/(2*0.4*0.4));fx+=g*dx/(d+.01);fy+=g*dy/(d+.01);}}
+  return[fx,fy];}
+
+function stepWorld(w,dt){
+  const open=graceT>0; w.tally.t+=dt;
+  for(const o of w.orgs){
+    const[fx,fy]=forceOn(w,o),noise=0.18+0.55*o.burden;
+    let nx=o.x+dt*fx+Math.sqrt(dt)*noise*(w.rand()*2-1);
+    let ny=o.y+dt*fy+Math.sqrt(dt)*noise*(w.rand()*2-1);
+    nx=Math.max(-XR+.05,Math.min(XR-.05,nx));ny=Math.max(-YR+.05,Math.min(YR-.05,ny));
+    const crossing=(o.x<=0)!==(nx<=0);
+    if(crossing&&!open){nx=o.x<=0?-0.004:0.004;}
+    else if(crossing&&open){
+      o.hist.push(`crossed ${o.x<=0?'west → east':'east → west'} under grace`);
+      o.flash=1;o.crossY=ny;w.deposit(0,ny,0.055,0.17);
+      if(o.x<=0){w.tally.crossed++;if(w.tally.firstCross===null)w.tally.firstCross=+w.tally.t.toFixed(1);
+        if(oldPassY!==null)(Math.abs(ny-oldPassY)<0.28?w.tally.viaOld++:w.tally.viaNew++);}}
+    o.edge=Math.abs(nx)<0.02?o.edge+dt:0;o.x=nx;o.y=ny;o.flash=Math.max(0,o.flash-dt*1.5);
+    o.wear=(o.wear||0)+dt; if(o.wear>0.12){o.wear=0;w.deposit(nx,ny,0.010,0.28);}  // the route wears where it is walked
+    if(w.blight&&Math.hypot(o.x-w.blight.x,o.y-w.blight.y)<w.blight.r&&o.burden<3){
+      o.burden=Math.min(3,o.burden+dt*0.9);
+      if(!o.blightMark){o.blightMark=true;o.hist.push('walked into the spoiled ground');w.tally.blighted++;}}}
+}
+
+function renderGround(w,cv){
+  const cx=cv.getContext('2d'),W=cv.width,H=cv.height,rw=160,rh=100;
+  const img=cx.createImageData(rw,rh),d=img.data;
+  const west=hex(css('--west')),east=hex(css('--east')),base=hex(css('--panel')),line=hex(css('--line')),bl=hex(css('--blight'));
+  for(let j=0;j<rh;j++)for(let i=0;i<rw;i++){
+    const x=i/rw*2*XR-XR,y=j/rh*2*YR-YR,v=0.5*(x*x-1)**2+0.35*y*y+w.terrain(x,y)*0.9;
+    const frac=v*7-Math.floor(v*7);
+    let c=mix(base,x<0?west:east,Math.min(0.22,Math.abs(x)*0.12));
+    if(frac<0.1)c=mix(c,line,0.9);
+    if(w.blight&&Math.hypot(x-w.blight.x,y-w.blight.y)<w.blight.r)c=mix(c,bl,0.34+((i+j)%6<2?0.2:0));
+    const k=(j*rw+i)*4;d[k]=c[0];d[k+1]=c[1];d[k+2]=c[2];d[k+3]=255;}
+  const off=document.createElement('canvas');off.width=rw;off.height=rh;
+  off.getContext('2d').putImageData(img,0,0);w.bg=off;w.dirty=false;}
+
+function drawWorld(w,cv){
+  const cx=cv.getContext('2d'),W=cv.width,H=cv.height;
+  const toX=x=>(x+XR)/(2*XR)*W,toY=y=>(y+YR)/(2*YR)*H;
+  if(w.dirty||!w.bg)renderGround(w,cv);
+  cx.drawImage(w.bg,0,0,W,H);
+  cx.strokeStyle=css('--ink');cx.globalAlpha=graceT>0?.15:.5;cx.setLineDash([5,6]);cx.lineWidth=1.5;
+  cx.beginPath();cx.moveTo(toX(0),0);cx.lineTo(toX(0),H);cx.stroke();cx.setLineDash([]);cx.globalAlpha=1;
+  if(graceT>0){cx.strokeStyle=css('--grace');cx.lineWidth=14;cx.globalAlpha=Math.min(1,graceT)*.6;
+    cx.beginPath();cx.arc(W/2,H/2,graceR*W*.4,0,7);cx.stroke();cx.globalAlpha=1;}
+  const r=Math.max(4,W/150);
+  for(const o of w.orgs){
+    const px=toX(o.x),py=toY(o.y);
+    if(parableT>0&&o.reading){const a=Math.min(1,parableT)*.85;cx.strokeStyle=o.L.color;cx.globalAlpha=a;cx.lineWidth=1.5;
+      o.reading.arms.forEach((len,k)=>{const th=k*Math.PI/3+o.reading.rot;
+        cx.beginPath();cx.moveTo(px,py);cx.lineTo(px+Math.cos(th)*len*(W/960),py+Math.sin(th)*len*(W/960));cx.stroke();});
+      cx.globalAlpha=1;}
+    if(o.flash>0){cx.fillStyle=css('--grace');cx.globalAlpha=o.flash;cx.beginPath();cx.arc(px,py,r+8*o.flash,0,7);cx.fill();cx.globalAlpha=1;}
+    if(o.burden>0){cx.strokeStyle=css('--warn');cx.lineWidth=1.5;cx.beginPath();cx.arc(px,py,r+3+2*o.burden,0,7);cx.stroke();}
+    cx.fillStyle=o.L.color;cx.beginPath();cx.arc(px,py,r,0,7);cx.fill();
+    if(o.lessons.length){cx.fillStyle=css('--panel');cx.beginPath();cx.arc(px,py,r*.35,0,7);cx.fill();}}
+}
+
+function layout(){
+  worldsEl.className='worlds'+(worlds.length===1?' single':'');
+  worldsEl.innerHTML=worlds.map((w,i)=>`<figure><figcaption><b>${w.name}</b> <span>${w.sub}</span></figcaption>
+    <canvas id="cv${i}" width="${worlds.length===1?960:420}" height="${worlds.length===1?520:300}"></canvas>
+    <div class="tally" id="ty${i}"></div></figure>`).join('');}
+layout();
+
+function tallies(){
+  worlds.forEach((w,i)=>{
+    const el=document.getElementById('ty'+i);if(!el)return;
+    const parked=w.orgs.filter(o=>Math.abs(o.x)<0.02).length,east=w.orgs.filter(o=>o.x>0).length;
+    const worn=w.T.reduce((a,b)=>a+(b<-.01?1:0),0)/w.T.length;
+    el.innerHTML=`<span>East of the fence</span><span>${east}/${w.orgs.length}</span>
+      <span>Parked at the fence</span><span>${parked}</span>
+      <span>First crossing at</span><span>${w.tally.firstCross??'—'}s</span>
+      ${oldPassY!==null?`<span>Crossed at the old pass</span><span>${w.tally.viaOld}</span>
+      <span>Crossed elsewhere</span><span>${w.tally.viaNew}</span>
+      <span>Walked into the blight</span><span>${w.tally.blighted}</span>`:''}
+      <span>Worn ground</span><span>${Math.round(worn*100)}%</span>`;});}
+
+// ---- controls
+const toastEl=document.getElementById('toast');let tt;
+const toast=s=>{toastEl.textContent=s;toastEl.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toastEl.classList.remove('on'),3000);};
+const allOrgs=()=>worlds.flatMap(w=>w.orgs);
+document.getElementById('bGrace').onclick=()=>{graceT=1.5;graceR=0;
+  const near=allOrgs().filter(o=>Math.abs(o.x)<0.15).length;
+  allOrgs().forEach(o=>o.hist.push('grace was broadcast'));
+  toast(`Grace broadcast to every world. ${near} of ${allOrgs().length} stand near enough to use it.`);};
+document.getElementById('bReckon').onclick=()=>{let n=0;
+  for(const w of worlds)for(const o of w.orgs)if(truthEast?o.x<=0:o.x>0){
+    o.burden=Math.min(3,o.burden+1);o.lessons.push([o.x,o.y]);o.hist.push('reckoning: wrong side');n++;}
+  toast(n?`${n} now carry a burden.`:'No one stood on the wrong side.');};
+document.getElementById('bForgive').onclick=()=>{let n=0;
+  for(const o of allOrgs())if(o.burden>0){o.burden=0;o.hist.push('forgiven: burden released, lesson kept');n++;}
+  toast(n?`${n} forgiven. The lessons stay in their ground.`:'No one carries a burden.');};
+
+function readingFor(w,o){
+  const[fx]=forceOn(w,o),dist=Math.abs(o.x),side=o.x>0?1:-1;
+  const pull=-(w.terrain(o.x+0.02,o.y)-w.terrain(o.x-0.02,o.y))/0.04; // how hard the worn ground pulls
+  const seesBlight=w.blight?Math.max(0,1-Math.hypot(o.x-w.blight.x,o.y-w.blight.y)/(w.blight.r+0.9)):0;
+  const arms=[10+18*dist,10+40*Math.exp(-dist*2),10+14*Math.min(3,Math.abs(fx)),
+    10+12*o.burden+6*o.lessons.length,10+16*Math.min(2,Math.abs(pull))*o.ground,10+26*(o.edge>0?1:0)+8*o.ev];
+  // the choice the reading proposes
+  let choice;
+  if(seesBlight>0.45&&o.ground*Math.abs(pull)<2.2)choice='look for another way';
+  else if(dist<0.06)choice=seesBlight>0.45?'dwell at the fence':'take the pass';
+  else if(o.ground*Math.abs(pull)>1.2)choice='follow the worn path';
+  else choice='make my own approach';
+  return{rot:side*0.6+o.y,arms,choice,seesBlight};}
+
+function showParable(){
+  const rows=worlds.map(w=>{const c={};
+    for(const o of w.orgs){const r=readingFor(w,o);o.reading=r;o.choice=r.choice;
+      o.hist.push(`read the parable: ${r.choice}`);c[r.choice]=(c[r.choice]||0)+1;}
+    return{w,c};});
+  const kinds=[...new Set(rows.flatMap(r=>Object.keys(r.c)))];
+  document.getElementById('parable').innerHTML=`<table><tr><th>Reading proposes</th>${
+    rows.map(r=>`<th>${r.w.name}</th>`).join('')}</tr>${
+    kinds.map(k=>`<tr><td>${k}</td>${rows.map(r=>`<td>${r.c[k]||0}</td>`).join('')}</tr>`).join('')}</table>
+    <p class="hint">${oldPassY===null?'Before the season turned.':'After the season turned: the worn pass now leads into spoiled ground.'}</p>`;
+  parableT=4.5;}
+document.getElementById('bParable').onclick=showParable;
+
+document.getElementById('bHandoff').onclick=()=>{
+  const w0=worlds[0];
+  if(w0.tally.crossed<3&&phase==='founding'){toast('The founders have not worn a pass yet. Broadcast grace until several cross.');return;}
+  const ys=w0.orgs.filter(o=>o.crossY!==null).map(o=>o.crossY);
+  oldPassY=ys.length?ys.reduce((a,b)=>a+b,0)/ys.length:0;
+  w0.orgs.forEach(o=>founders.push(o));
+  document.getElementById('bios').innerHTML=founders.map(o=>
+    `<li><b style="color:${o.L.color}">${o.L.name} #${o.id}</b> — ${o.hist.length} events${o.crossY!==null?', crossed':''}: <span class="hint">${o.hist.slice(-3).join(' · ')}</span></li>`).join('');
+  document.getElementById('bioHint').textContent=`${founders.length} founders retired. Their ground remains; their histories are visible only here.`;
+  const lived=new World('Lived-in','the ground they left',77);
+  lived.T.set(w0.T);
+  const fresh=new World('Fresh','no inherited wear',77);
+  const rear=new World('Scattered','the same wear, structure destroyed',77);
+  const sh=rng(9),ord=[...w0.T.keys()];
+  for(let i=ord.length-1;i>0;i--){const j=Math.floor(sh()*(i+1));[ord[i],ord[j]]=[ord[j],ord[i]];}
+  ord.forEach((k,i)=>rear.T[i]=w0.T[k]); // identical total wear, no route left in it
+  worlds=[lived,fresh,rear];
+  worlds.forEach(w=>{const jit=rng(4242);LINEAGES.forEach(L=>{for(let k=0;k<3;k++)w.spawn(L,2,jit);});w.dirty=true;});
+  phase='newcomers';layout();
+  document.getElementById('bShift').disabled=false;
+  document.getElementById('bHandoff').disabled=true;
+  document.getElementById('act').textContent='Act two. The same twelve newcomers arrive in three worlds, with the same evidence and the same random draws. Only the ground differs. Watch where each one heads, and when it reaches a gate.';
+  document.getElementById('hint').textContent='Broadcast grace and compare. Then turn the season.';
+  toast(`Founders retired. The pass they wore sits at y ${oldPassY.toFixed(2)}.`);};
+
+document.getElementById('bShift').onclick=()=>{
+  worlds.forEach(w=>{w.blight={x:0.75,y:oldPassY,r:0.5};
+    for(let j=0;j<GY;j++)for(let i=0;i<GX;i++){ // the pass silts up: the groove fills in
+      const px=i/(GX-1)*2*XR-XR,py=j/(GY-1)*2*YR-YR;
+      if(Math.abs(px)<0.5&&Math.abs(py-oldPassY)<0.3)w.T[j*GX+i]*=0.25;}
+    w.dirty=true;w.tally.viaOld=0;w.tally.viaNew=0;w.tally.blighted=0;
+    w.orgs.forEach(o=>o.hist.push('the season turned: the old pass silted up'));});
+  document.getElementById('bShift').disabled=true;
+  document.getElementById('act').textContent='Act three. The old pass has silted up and the ground beyond it is spoiled. Inheritance that only makes movement easy marches them into it. Useful inheritance still lets them stop, dwell, and find another way — and wear a better pass for whoever comes third.';
+  toast('The season turned. The worn pass now leads into spoiled ground.');};
+
+document.getElementById('bPause').onclick=e=>{paused=!paused;e.target.textContent=paused?'Resume':'Pause';};
+matchMedia('(prefers-color-scheme:dark)').addEventListener('change',()=>worlds.forEach(w=>w.dirty=true));
+
+let last=performance.now(),acc=0,tc=0;
+function loop(t){const d=Math.min(.05,(t-last)/1000);last=t;
+  if(!paused){acc+=d;while(acc>.016){worlds.forEach(w=>stepWorld(w,.016*1.6));acc-=.016;tGlobal+=.016;}
+    if(graceT>0){graceT-=d;graceR+=d*2.2;} if(parableT>0)parableT-=d;}
+  worlds.forEach((w,i)=>{const cv=document.getElementById('cv'+i);if(cv)drawWorld(w,cv);});
+  if((tc+=d)>.3){tallies();tc=0;}
+  requestAnimationFrame(loop);}
+requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>

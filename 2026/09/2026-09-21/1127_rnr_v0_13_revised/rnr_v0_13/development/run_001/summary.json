@@ -1,0 +1,183 @@
+{
+ "contracts": {
+  "dev": {
+   "gate_closed_clean": true,
+   "refused_founders_zero_wear": true
+  }
+ },
+ "blocks": {
+  "dev": {
+   "A": {
+    "P1": [
+     0.0,
+     4
+    ],
+    "P2": [
+     null,
+     0
+    ],
+    "attempt_rate_declarers": [
+     0.0,
+     4
+    ],
+    "attempt_rate_silent": [
+     0.0,
+     4
+    ],
+    "descendant_through_declared": [
+     7.75,
+     4
+    ],
+    "n_declarers": [
+     2.5,
+     4
+    ],
+    "n_silent": [
+     2.75,
+     4
+    ]
+   },
+   "B": {
+    "P1": [
+     0.0,
+     4
+    ],
+    "P2": [
+     null,
+     0
+    ],
+    "attempt_rate_declarers": [
+     0.0,
+     4
+    ],
+    "attempt_rate_silent": [
+     0.0,
+     4
+    ],
+    "descendant_through_declared": [
+     5.25,
+     4
+    ],
+    "n_declarers": [
+     2.5,
+     4
+    ],
+    "n_silent": [
+     2.75,
+     4
+    ]
+   },
+   "C": {
+    "P1": [
+     0.0,
+     4
+    ],
+    "P2": [
+     null,
+     0
+    ],
+    "attempt_rate_declarers": [
+     0.0,
+     4
+    ],
+    "attempt_rate_silent": [
+     0.0,
+     4
+    ],
+    "descendant_through_declared": [
+     5.25,
+     4
+    ],
+    "n_declarers": [
+     2.5,
+     4
+    ],
+    "n_silent": [
+     2.75,
+     4
+    ]
+   },
+   "D": {
+    "P1": [
+     0.0,
+     4
+    ],
+    "P2": [
+     null,
+     0
+    ],
+    "attempt_rate_declarers": [
+     0.0,
+     4
+    ],
+    "attempt_rate_silent": [
+     0.0,
+     4
+    ],
+    "descendant_through_declared": [
+     5.25,
+     4
+    ],
+    "n_declarers": [
+     2.5,
+     4
+    ],
+    "n_silent": [
+     2.75,
+     4
+    ]
+   },
+   "E": {
+    "P1": [
+     0.0,
+     4
+    ],
+    "P2": [
+     null,
+     0
+    ],
+    "attempt_rate_declarers": [
+     0.0,
+     4
+    ],
+    "attempt_rate_silent": [
+     0.0,
+     4
+    ],
+    "descendant_through_declared": [
+     7.75,
+     4
+    ],
+    "n_declarers": [
+     2.5,
+     4
+    ],
+    "n_silent": [
+     2.75,
+     4
+    ]
+   },
+   "rows": {
+    "forgiveness": {
+     "P1_C_minus_P1_B": 0.0,
+     "P1_D_minus_P1_B": 0.0,
+     "D_matches_C": true,
+     "P2_C_minus_P2_B": null
+    },
+    "lesson_stands": {
+     "desc_A": 7.75,
+     "desc_B": 5.25,
+     "desc_C": 5.25,
+     "B_below_A": true,
+     "C_below_A": true
+    },
+    "lesson_control_E_vs_B": {
+     "desc_E": 7.75,
+     "desc_B": 5.25,
+     "erased_more_than_kept": true
+    }
+   }
+  }
+ },
+ "void": false
+}

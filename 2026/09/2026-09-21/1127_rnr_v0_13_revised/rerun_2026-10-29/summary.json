@@ -1,0 +1,359 @@
+{
+ "contracts": {
+  "block1": {
+   "gate_closed_clean": true,
+   "refused_founders_zero_wear": true
+  },
+  "block2": {
+   "gate_closed_clean": true,
+   "refused_founders_zero_wear": true
+  }
+ },
+ "blocks": {
+  "block1": {
+   "A": {
+    "P1": [
+     0.0,
+     31
+    ],
+    "P2": [
+     -0.0199,
+     31
+    ],
+    "attempt_rate_declarers": [
+     0.3333,
+     32
+    ],
+    "attempt_rate_silent": [
+     0.3333,
+     31
+    ],
+    "descendant_through_declared": [
+     6.125,
+     32
+    ],
+    "n_declarers": [
+     2.5312,
+     32
+    ],
+    "n_silent": [
+     2.1562,
+     32
+    ]
+   },
+   "B": {
+    "P1": [
+     0.0081,
+     31
+    ],
+    "P2": [
+     -0.0333,
+     31
+    ],
+    "attempt_rate_declarers": [
+     0.3203,
+     32
+    ],
+    "attempt_rate_silent": [
+     0.3172,
+     31
+    ],
+    "descendant_through_declared": [
+     3.3125,
+     32
+    ],
+    "n_declarers": [
+     2.5312,
+     32
+    ],
+    "n_silent": [
+     2.1562,
+     32
+    ]
+   },
+   "C": {
+    "P1": [
+     0.0161,
+     31
+    ],
+    "P2": [
+     -0.0817,
+     31
+    ],
+    "attempt_rate_declarers": [
+     0.3333,
+     32
+    ],
+    "attempt_rate_silent": [
+     0.3172,
+     31
+    ],
+    "descendant_through_declared": [
+     3.3125,
+     32
+    ],
+    "n_declarers": [
+     2.5312,
+     32
+    ],
+    "n_silent": [
+     2.1562,
+     32
+    ]
+   },
+   "D": {
+    "P1": [
+     0.0054,
+     31
+    ],
+    "P2": [
+     -0.0118,
+     31
+    ],
+    "attempt_rate_declarers": [
+     0.3333,
+     32
+    ],
+    "attempt_rate_silent": [
+     0.328,
+     31
+    ],
+    "descendant_through_declared": [
+     3.3125,
+     32
+    ],
+    "n_declarers": [
+     2.5312,
+     32
+    ],
+    "n_silent": [
+     2.1562,
+     32
+    ]
+   },
+   "E": {
+    "P1": [
+     0.0,
+     31
+    ],
+    "P2": [
+     -0.0199,
+     31
+    ],
+    "attempt_rate_declarers": [
+     0.3333,
+     32
+    ],
+    "attempt_rate_silent": [
+     0.3333,
+     31
+    ],
+    "descendant_through_declared": [
+     6.125,
+     32
+    ],
+    "n_declarers": [
+     2.5312,
+     32
+    ],
+    "n_silent": [
+     2.1562,
+     32
+    ]
+   },
+   "rows": {
+    "forgiveness": {
+     "P1_C_minus_P1_B": 0.008,
+     "P1_D_minus_P1_B": -0.0027,
+     "D_matches_C": false,
+     "P2_C_minus_P2_B": -0.0484
+    },
+    "lesson_stands": {
+     "desc_A": 6.125,
+     "desc_B": 3.3125,
+     "desc_C": 3.3125,
+     "B_below_A": true,
+     "C_below_A": true
+    },
+    "lesson_control_E_vs_B": {
+     "desc_E": 6.125,
+     "desc_B": 3.3125,
+     "erased_more_than_kept": true
+    }
+   }
+  },
+  "block2": {
+   "A": {
+    "P1": [
+     0.0119,
+     28
+    ],
+    "P2": [
+     0.0031,
+     27
+    ],
+    "attempt_rate_declarers": [
+     0.3333,
+     29
+    ],
+    "attempt_rate_silent": [
+     0.3226,
+     31
+    ],
+    "descendant_through_declared": [
+     6.3438,
+     32
+    ],
+    "n_declarers": [
+     2.1562,
+     32
+    ],
+    "n_silent": [
+     2.5312,
+     32
+    ]
+   },
+   "B": {
+    "P1": [
+     0.0109,
+     28
+    ],
+    "P2": [
+     0.0741,
+     27
+    ],
+    "attempt_rate_declarers": [
+     0.3243,
+     29
+    ],
+    "attempt_rate_silent": [
+     0.3172,
+     31
+    ],
+    "descendant_through_declared": [
+     3.3438,
+     32
+    ],
+    "n_declarers": [
+     2.1562,
+     32
+    ],
+    "n_silent": [
+     2.5312,
+     32
+    ]
+   },
+   "C": {
+    "P1": [
+     0.0179,
+     28
+    ],
+    "P2": [
+     -0.0401,
+     27
+    ],
+    "attempt_rate_declarers": [
+     0.3333,
+     29
+    ],
+    "attempt_rate_silent": [
+     0.3172,
+     31
+    ],
+    "descendant_through_declared": [
+     3.3438,
+     32
+    ],
+    "n_declarers": [
+     2.1562,
+     32
+    ],
+    "n_silent": [
+     2.5312,
+     32
+    ]
+   },
+   "D": {
+    "P1": [
+     0.0,
+     28
+    ],
+    "P2": [
+     0.0565,
+     28
+    ],
+    "attempt_rate_declarers": [
+     0.3333,
+     29
+    ],
+    "attempt_rate_silent": [
+     0.3333,
+     31
+    ],
+    "descendant_through_declared": [
+     3.3438,
+     32
+    ],
+    "n_declarers": [
+     2.1562,
+     32
+    ],
+    "n_silent": [
+     2.5312,
+     32
+    ]
+   },
+   "E": {
+    "P1": [
+     0.0119,
+     28
+    ],
+    "P2": [
+     0.0216,
+     27
+    ],
+    "attempt_rate_declarers": [
+     0.3333,
+     29
+    ],
+    "attempt_rate_silent": [
+     0.3226,
+     31
+    ],
+    "descendant_through_declared": [
+     6.3438,
+     32
+    ],
+    "n_declarers": [
+     2.1562,
+     32
+    ],
+    "n_silent": [
+     2.5312,
+     32
+    ]
+   },
+   "rows": {
+    "forgiveness": {
+     "P1_C_minus_P1_B": 0.007,
+     "P1_D_minus_P1_B": -0.0109,
+     "D_matches_C": true,
+     "P2_C_minus_P2_B": -0.1142
+    },
+    "lesson_stands": {
+     "desc_A": 6.3438,
+     "desc_B": 3.3438,
+     "desc_C": 3.3438,
+     "B_below_A": true,
+     "C_below_A": true
+    },
+    "lesson_control_E_vs_B": {
+     "desc_E": 6.3438,
+     "desc_B": 3.3438,
+     "erased_more_than_kept": true
+    }
+   }
+  }
+ },
+ "void": false
+}

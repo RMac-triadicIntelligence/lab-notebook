@@ -1,0 +1,31 @@
+{
+ "battery": "rnr/0.13",
+ "evidence_turn": {
+  "step": 600,
+  "value": -0.58
+ },
+ "started_utc": "2026-09-21T11:20:29Z",
+ "blocks": {
+  "dev": [
+   0,
+   3
+  ]
+ },
+ "window": [
+  600,
+  900
+ ],
+ "declare_at": 600,
+ "release_at": 650,
+ "lesson": 0.09,
+ "descendant_cut": "new 12-agent cohort, separate epoch after the subject epoch; inherits terrain and warn only",
+ "python": "3.12.3",
+ "numpy": "2.4.4",
+ "source_sha256": {
+  "v0_13.py": "baf6e05fddf2817ad9acadbacd9730b6d75fa174dd73346c07e07ca293eb3f97",
+  "commons_v0_9.py": "eed0d5bffe2fb4608e1a17689f5849366d3f6d14ef18ec1cf7a459dc51df63e8",
+  "PROTOCOL.md": "413d1b551c766c2947b2b41d16e6e08e64a9b42b72b761e23b107d7025496f9f",
+  "rnr_v0_13_arm_rules.py": "b7fa2fb0d14114a620e84b0627bbf3a4dc3f77c3f48c4c051041d1335a3c1ea2",
+  "rnr_v0_13_arm_rules_addendum.py": "808af13d26cbf8d113ee2782806a38125ce166dec6a380dfd07a289f6a89f7aa"
+ }
+}

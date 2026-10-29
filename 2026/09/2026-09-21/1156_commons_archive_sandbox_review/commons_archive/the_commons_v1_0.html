@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Commons</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=Karla:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E4E8E3; --panel:#EEF1EC; --ink:#22303A; --muted:#5E6E68; --line:#B9C6BF;
+  --west:#4A5A9C; --east:#B9822E; --grace:#F3E3A6; --warn:#A8452F;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#1B2327; --panel:#232D31; --ink:#DCE3DF; --muted:#93A39C; --line:#3A4A45;
+  --west:#7E8FD6; --east:#DDA955; --grace:#F6E7B0; --warn:#E07A62; } }
+:root[data-theme="dark"]{
+  --bg:#1B2327; --panel:#232D31; --ink:#DCE3DF; --muted:#93A39C; --line:#3A4A45;
+  --west:#7E8FD6; --east:#DDA955; --grace:#F6E7B0; --warn:#E07A62; }
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Karla,system-ui,sans-serif}
+main{max-width:1080px;margin:0 auto;padding:20px 16px 40px}
+h1{font:600 clamp(28px,5vw,44px)/1.1 Spectral,Georgia,serif;margin:0 0 6px;letter-spacing:-.01em}
+.lede{font:italic 18px/1.5 Spectral,Georgia,serif;color:var(--muted);max-width:62ch;margin:0 0 18px}
+.stage{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:18px;align-items:start}
+@media (max-width:820px){.stage{grid-template-columns:minmax(0,1fr)}}
+.field{position:relative;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--panel)}
+canvas{display:block;width:100%;height:auto;touch-action:manipulation;cursor:crosshair}
+.legend{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);padding:6px 10px;border-top:1px solid var(--line)}
+.legend b{font-weight:600}
+.w{color:var(--west)} .e{color:var(--east)}
+.controls{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+button{font:600 14px Karla,sans-serif;color:var(--ink);background:var(--panel);border:1px solid var(--line);
+  border-radius:999px;padding:9px 14px;cursor:pointer}
+button:hover{border-color:var(--ink)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--west);outline-offset:2px}
+button.grace{background:var(--grace);color:#3a3113;border-color:#d9c57c}
+.wind{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);margin:8px 0}
+.wind input{flex:1;accent-color:var(--ink)}
+aside{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
+aside h2{font:600 20px Spectral,serif;margin:0 0 8px}
+.stats{display:grid;grid-template-columns:1fr auto;gap:2px 10px;font-size:14px;margin-bottom:12px}
+.stats span:nth-child(even){text-align:right;font-variant-numeric:tabular-nums}
+.bio{font-size:14px;border-top:1px solid var(--line);padding-top:10px}
+.bio ol{margin:6px 0 0;padding-left:18px;max-height:180px;overflow:auto}
+.bio li{margin:2px 0}
+.hint{color:var(--muted);font-size:14px}
+.lineages{display:flex;flex-wrap:wrap;gap:10px;font-size:13px;margin:6px 0 12px}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px;vertical-align:-1px}
+.note{font:15px/1.6 Spectral,serif;max-width:68ch;margin-top:26px}
+.note p{margin:0 0 10px}
+.toast{position:absolute;left:50%;top:12px;transform:translateX(-50%);background:var(--ink);color:var(--bg);
+  font-size:14px;padding:6px 12px;border-radius:999px;opacity:0;transition:opacity .3s;pointer-events:none;white-space:nowrap;max-width:92%;overflow:hidden;text-overflow:ellipsis}
+.toast.on{opacity:.92}
+@media (prefers-reduced-motion:reduce){.toast{transition:none}}
+</style>
+</head>
+<body>
+<main>
+  <h1>The Commons</h1>
+  <p class="lede">A nursery on shared ground. Every organism can propose a crossing; none can authorize its own. Raise them, wrong them, forgive them, and watch the ground remember.</p>
+
+  <div class="stage">
+    <div>
+      <div class="field">
+        <canvas id="c" width="960" height="600" aria-label="Landscape with two basins separated by a fenced line; organisms move on it"></canvas>
+        <div class="toast" id="toast" role="status" aria-live="polite"></div>
+        <div class="legend"><span class="w"><b>West basin</b></span><span>the fence</span><span class="e"><b>East basin</b></span></div>
+      </div>
+
+      <div class="wind"><label for="wind">Evidence</label>
+        <input id="wind" type="range" min="-1" max="1" step="0.01" value="0.35">
+        <span id="windv">east 0.35</span></div>
+
+      <div class="controls">
+        <button class="grace" id="bGrace">Broadcast grace</button>
+        <button id="bReckon">Reckoning</button>
+        <button id="bForgive">Forgive</button>
+        <button id="bForget">Forget</button>
+        <button id="bParable">Read a parable</button>
+        <button id="bGen">New generation</button>
+        <button id="bTruth">Truth lies east</button>
+        <button id="bPause">Pause</button>
+      </div>
+      <p class="hint">Tap an organism to read its biography.</p>
+    </div>
+
+    <aside>
+      <h2>Census</h2>
+      <div class="lineages" id="lineages"></div>
+      <div class="stats" id="stats"></div>
+      <div class="bio" id="bio"><span class="hint">No organism selected.</span></div>
+    </aside>
+  </div>
+
+  <div class="note">
+    <p><b>What each control does.</b> Evidence tilts the whole landscape. The fence stops every crossing unless grace is open, so pushed organisms park against it and wait. Grace is one pulse sent to everyone; who crosses depends only on where each one stands.</p>
+    <p>A reckoning gives a burden to every organism standing on the wrong side of the truth. Burden is restless noise. Forgiving removes the burden and keeps the lesson as a private rise in that organism's own ground, so it leans away from the old error. Forgetting removes the burden and erases the lesson and the history with it.</p>
+    <p>Crossings wear the commons down where they happen, so later travelers find the pass a little easier. A parable is the same question put to all of them; each reading is drawn from where that organism stands. A new generation inherits its lineage's parental basis, not its biography.</p>
+  </div>
+</main>
+
+<script>
+(()=>{
+const cv=document.getElementById('c'), cx=cv.getContext('2d');
+const W=cv.width, H=cv.height, XR=2.2, YR=1.4;
+const toX=x=>(x+XR)/(2*XR)*W, toY=y=>(y+YR)/(2*YR)*H;
+const fromX=px=>px/W*2*XR-XR, fromY=py=>py/H*2*YR-YR;
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+
+// Shared commons terrain (deposited by crossings)
+const GX=88, GY=56, T=new Float32Array(GX*GY);
+const gi=(x,y)=>{const i=Math.round((x+XR)/(2*XR)*(GX-1)),j=Math.round((y+YR)/(2*YR)*(GY-1));
+  return (i<0||j<0||i>=GX||j>=GY)?-1:j*GX+i;};
+function terrain(x,y){const k=gi(x,y);return k<0?0:T[k];}
+function deposit(x,y,amt,rad){
+  for(let j=0;j<GY;j++)for(let i=0;i<GX;i++){
+    const px=i/(GX-1)*2*XR-XR, py=j/(GY-1)*2*YR-YR, d2=(px-x)**2+(py-y)**2;
+    if(d2<rad*rad*9)T[j*GX+i]=Math.max(-0.9,T[j*GX+i]-amt*Math.exp(-d2/(2*rad*rad)));}
+  dirty=true;}
+const baseV=(x,y)=>0.5*(x*x-1)**2+0.35*y*y;
+
+// Lineages: the parent's chosen basis = how much each listens to evidence, commons, and own lessons
+const LINEAGES=[
+ {name:'Ash',  color:'#2F7D6D', ev:1.3, ground:0.5, lesson:1.0, home:[-1.1,-0.8]},
+ {name:'Brook',color:'#8B4F9E', ev:0.7, ground:1.6, lesson:0.8, home:[-1.1, 0.8]},
+ {name:'Cedar',color:'#C0533F', ev:1.0, ground:1.0, lesson:1.8, home:[-0.8, 0.0]},
+ {name:'Dune', color:'#C99A12', ev:1.8, ground:0.3, lesson:0.5, home:[-1.4, 0.2]}];
+let orgs=[], nextId=1, generation=1, truthEast=true, graceT=0, graceR=0, parableT=0, paused=false, sel=null, dirty=true;
+
+function spawn(L,gen){
+  const m=()=>1+(Math.random()-.5)*0.25;
+  orgs.push({id:nextId++,L,gen,x:L.home[0]+(Math.random()-.5)*.5,y:L.home[1]+(Math.random()-.5)*.5,
+    ev:L.ev*m(),ground:L.ground*m(),lesson:L.lesson*m(),burden:0,lessons:[],hist:[`born, generation ${gen}`],
+    edgeTime:0,flash:0,reading:null});}
+function newGeneration(g){LINEAGES.forEach(L=>{for(let k=0;k<4;k++)spawn(L,g)});
+  while(orgs.length>64){const o=orgs.shift(); if(sel===o)sel=null;}}
+newGeneration(1);
+
+const windEl=document.getElementById('wind'), windV=document.getElementById('windv');
+const wind=()=>+windEl.value;
+windEl.oninput=()=>{const w=wind();windV.textContent=(w>=0?'east ':'west ')+Math.abs(w).toFixed(2);};
+windEl.oninput();
+
+function forceOn(o){
+  const h=0.02, x=o.x, y=o.y;
+  let fx=-2*x*(x*x-1), fy=-0.7*y;
+  fx+=-o.ground*(terrain(x+h,y)-terrain(x-h,y))/(2*h);
+  fy+=-o.ground*(terrain(x,y+h)-terrain(x,y-h))/(2*h);
+  fx+=o.ev*wind();
+  for(const p of o.lessons){ // private rise where the old error was: lean away from it
+    const dx=x-p[0],dy=y-p[1],d2=dx*dx+dy*dy,s=0.35;
+    const g=o.lesson*0.9*Math.exp(-d2/(2*s*s))/(s*s);
+    fx+=g*dx; fy+=g*dy;}
+  return [fx,fy];}
+
+function step(dt){
+  const open=graceT>0;
+  for(const o of orgs){
+    const [fx,fy]=forceOn(o), noise=0.18+0.55*o.burden;
+    let nx=o.x+dt*fx+Math.sqrt(dt)*noise*(Math.random()*2-1);
+    let ny=o.y+dt*fy+Math.sqrt(dt)*noise*(Math.random()*2-1);
+    ny=Math.max(-YR+.05,Math.min(YR-.05,ny)); nx=Math.max(-XR+.05,Math.min(XR-.05,nx));
+    const crossing=(o.x<=0)!==(nx<=0);
+    if(crossing&&!open){ nx=o.x<=0?-0.004:0.004; }      // the fence: dwell, parked at the edge
+    else if(crossing&&open){
+      o.hist.push(`crossed ${o.x<=0?'west → east':'east → west'} under grace`);
+      o.flash=1; deposit(0,ny,0.05,0.18);}               // the pass wears down where it is used
+    o.edgeTime=Math.abs(nx)<0.02?o.edgeTime+dt:0;
+    o.x=nx;o.y=ny; o.flash=Math.max(0,o.flash-dt*1.5);}
+  if(graceT>0){graceT-=dt; graceR+=dt*2.4;}
+  if(parableT>0)parableT-=dt;}
+
+// Rendering: posterized potential = contour map of the commons
+let bg=null;
+function renderGround(){
+  const w=240,h=150, img=cx.createImageData(w,h), d=img.data;
+  const west=hex(css('--west')), east=hex(css('--east')), base=hex(css('--panel')), line=hex(css('--line'));
+  for(let j=0;j<h;j++)for(let i=0;i<w;i++){
+    const x=fromX(i/w*W), y=fromY(j/h*H), v=baseV(x,y)+terrain(x,y)*0.9;
+    const band=Math.floor(v*7), frac=v*7-band;
+    const tint=x<0?west:east, a=Math.min(0.22,Math.abs(x)*0.12);
+    let c=mix(base,tint,a);
+    if(frac<0.09)c=mix(c,line,0.9);
+    const k=(j*w+i)*4; d[k]=c[0];d[k+1]=c[1];d[k+2]=c[2];d[k+3]=255;}
+  const off=document.createElement('canvas');off.width=w;off.height=h;off.getContext('2d').putImageData(img,0,0);
+  bg=off; dirty=false;}
+function hex(s){s=s.replace('#','');return [0,2,4].map(i=>parseInt(s.substr(i,2),16));}
+function mix(a,b,t){return [a[0]+(b[0]-a[0])*t,a[1]+(b[1]-a[1])*t,a[2]+(b[2]-a[2])*t];}
+
+function draw(){
+  if(dirty||!bg)renderGround();
+  cx.imageSmoothingEnabled=true; cx.drawImage(bg,0,0,W,H);
+  // fence
+  cx.strokeStyle=css('--ink');cx.globalAlpha=graceT>0?0.15:0.55;cx.setLineDash([6,7]);cx.lineWidth=2;
+  cx.beginPath();cx.moveTo(toX(0),0);cx.lineTo(toX(0),H);cx.stroke();cx.setLineDash([]);cx.globalAlpha=1;
+  // grace pulse: one ring for everyone
+  if(graceT>0){cx.strokeStyle=css('--grace');cx.lineWidth=18;cx.globalAlpha=Math.min(1,graceT)*0.7;
+    cx.beginPath();cx.arc(W/2,H/2,graceR*W*0.35,0,Math.PI*2);cx.stroke();cx.globalAlpha=1;}
+  for(const o of orgs){
+    const px=toX(o.x),py=toY(o.y), r=7;
+    if(parableT>0&&o.reading)drawReading(o,px,py);
+    if(o.flash>0){cx.fillStyle=css('--grace');cx.globalAlpha=o.flash;cx.beginPath();cx.arc(px,py,r+10*o.flash,0,7);cx.fill();cx.globalAlpha=1;}
+    if(o.burden>0){cx.strokeStyle=css('--warn');cx.lineWidth=2;cx.beginPath();cx.arc(px,py,r+3+2*o.burden,0,7);cx.stroke();}
+    cx.fillStyle=o.L.color;cx.beginPath();cx.arc(px,py,r,0,7);cx.fill();
+    if(o.lessons.length){cx.fillStyle=css('--panel');cx.beginPath();cx.arc(px,py,2.5,0,7);cx.fill();}
+    if(o===sel){cx.strokeStyle=css('--ink');cx.lineWidth=2.5;cx.beginPath();cx.arc(px,py,r+9,0,7);cx.stroke();}}
+}
+function drawReading(o,px,py){ // six-armed reading: same form, individual lengths
+  const a=Math.min(1,parableT)*0.9;cx.strokeStyle=o.L.color;cx.globalAlpha=a;cx.lineWidth=2;
+  o.reading.arms.forEach((len,k)=>{const th=k*Math.PI/3+o.reading.rot;
+    cx.beginPath();cx.moveTo(px,py);cx.lineTo(px+Math.cos(th)*len,py+Math.sin(th)*len);cx.stroke();
+    cx.beginPath();cx.arc(px+Math.cos(th)*len,py+Math.sin(th)*len,2,0,7);cx.stroke();});
+  cx.globalAlpha=1;}
+
+// Controls
+const toastEl=document.getElementById('toast');let tt;
+function toast(s){toastEl.textContent=s;toastEl.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toastEl.classList.remove('on'),2600);}
+const wrongSide=o=>truthEast?o.x<=0:o.x>0;
+document.getElementById('bGrace').onclick=()=>{
+  const near=orgs.filter(o=>Math.abs(o.x)<0.15).length;
+  graceT=1.4;graceR=0;orgs.forEach(o=>o.hist.push('grace was broadcast'));
+  toast(`Grace sent to all ${orgs.length}. ${near} stand near enough to cross.`);};
+document.getElementById('bReckon').onclick=()=>{
+  let n=0;for(const o of orgs)if(wrongSide(o)){o.burden=Math.min(3,o.burden+1);o.hist.push('reckoning: stood on the wrong side');n++;
+    o.lessons.push([o.x,o.y]);}
+  toast(n?`${n} now carry a burden.`:'No one stood on the wrong side.');};
+document.getElementById('bForgive').onclick=()=>{
+  let n=0;for(const o of orgs)if(o.burden>0){o.burden=0;o.hist.push('forgiven: burden released, lesson kept');n++;}
+  toast(n?`${n} forgiven. The lessons stay in their ground.`:'No one carries a burden.');};
+document.getElementById('bForget').onclick=()=>{
+  let n=0;for(const o of orgs)if(o.burden>0||o.lessons.length){o.burden=0;o.lessons=[];
+    o.hist=o.hist.filter(h=>!h.startsWith('reckoning')&&!h.startsWith('forgiven'));o.hist.push('forgotten: burden and lesson erased');n++;}
+  toast(n?`${n} forgotten. Nothing marks where they went wrong.`:'Nothing to forget.');};
+document.getElementById('bParable').onclick=()=>{
+  for(const o of orgs){
+    const [fx]=forceOn(o), dist=Math.abs(o.x), side=o.x>0?1:-1;
+    o.reading={rot:side*0.6+o.y, arms:[10+18*dist, 10+40*Math.exp(-dist*2), 10+14*Math.min(3,Math.abs(fx)), 10+12*o.burden+6*o.lessons.length,
+      10+20*o.ground*Math.abs(terrain(o.x,o.y))*4+8, 10+30*(o.edgeTime>0?1:0)+8*o.ev]};
+    o.hist.push(`read the parable from ${dist<0.05?'the fence':side>0?'the east':'the west'}`);}
+  parableT=4;toast('One parable. Every reading is drawn from where it stands.');};
+document.getElementById('bGen').onclick=()=>{generation++;newGeneration(generation);
+  toast(`Generation ${generation}: new biographies, inherited bases.`);};
+document.getElementById('bTruth').onclick=e=>{truthEast=!truthEast;e.target.textContent=truthEast?'Truth lies east':'Truth lies west';};
+document.getElementById('bPause').onclick=e=>{paused=!paused;e.target.textContent=paused?'Resume':'Pause';};
+
+cv.addEventListener('click',ev=>{
+  const r=cv.getBoundingClientRect(), px=(ev.clientX-r.left)/r.width*W, py=(ev.clientY-r.top)/r.height*H;
+  let best=null,bd=1e9;for(const o of orgs){const d=(toX(o.x)-px)**2+(toY(o.y)-py)**2;if(d<bd){bd=d;best=o;}}
+  sel=bd<40*40?best:null;});
+
+document.getElementById('lineages').innerHTML=LINEAGES.map(L=>
+  `<span><span class="dot" style="background:${L.color}"></span>${L.name}</span>`).join('');
+const statsEl=document.getElementById('stats'), bioEl=document.getElementById('bio');
+function census(){
+  const west=orgs.filter(o=>o.x<=0).length, parked=orgs.filter(o=>Math.abs(o.x)<0.02).length,
+    burd=orgs.filter(o=>o.burden>0).length, les=orgs.filter(o=>o.lessons.length).length;
+  const worn=T.reduce((a,b)=>a+(b<-0.01?1:0),0);
+  statsEl.innerHTML=`<span>West</span><span>${west}</span><span>East</span><span>${orgs.length-west}</span>
+  <span>Parked at the fence</span><span>${parked}</span><span>Carrying a burden</span><span>${burd}</span>
+  <span>Holding a lesson</span><span>${les}</span><span>Worn ground</span><span>${Math.round(worn/T.length*100)}%</span>
+  <span>Generation</span><span>${generation}</span>`;
+  if(sel){bioEl.innerHTML=`<b style="color:${sel.L.color}">${sel.L.name} #${sel.id}</b>, generation ${sel.gen}<br>
+    Basis: evidence ${sel.ev.toFixed(2)}, ground ${sel.ground.toFixed(2)}, lessons ${sel.lesson.toFixed(2)}<br>
+    Burden ${sel.burden}, lessons held ${sel.lessons.length}
+    <ol>${sel.hist.slice(-14).map(h=>`<li>${h}</li>`).join('')}</ol>`;}
+  else bioEl.innerHTML='<span class="hint">No organism selected.</span>';}
+
+let last=performance.now(), acc=0, cen=0;
+function loop(t){const d=Math.min(0.05,(t-last)/1000);last=t;
+  if(!paused){acc+=d;while(acc>0.016){step(0.016*1.6);acc-=0.016;}}
+  draw(); if((cen+=d)>0.25){census();cen=0;}
+  requestAnimationFrame(loop);}
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',()=>{dirty=true;});
+requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>

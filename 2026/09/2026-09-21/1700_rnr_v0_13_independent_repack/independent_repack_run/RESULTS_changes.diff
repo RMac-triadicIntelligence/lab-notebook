@@ -1,0 +1,39 @@
+--- original/RESULTS.md
++++ repacked/RESULTS.md
+@@ -15,8 +15,7 @@
+ declarers named. Erasing it returns descendants to the no-declaration baseline exactly.
+ Release (C) leaves descendants identical to B: forgiveness of the author does not
+ touch what the next generation inherits, which is what the split was meant to
+-guarantee. This is the v0.6 "keep the lesson" result reproduced in a different kernel
+-with the lesson in the commons rather than in the individual.
++guarantee. Both A=E and B<A follow largely from warn being a repulsion term; see below.
+ 
+ ## Forgiveness row — not accepted
+ 
+@@ -39,15 +38,20 @@
+ 
+ ## What this means
+ 
+-- **The lesson stands, and it is inheritable.** Clean, both blocks, with the erase
+-  control behaving exactly as a control should.
++- **The lesson-stands row is close to a contract check, not a finding.** `warn` is a
++  repulsion term, so agents cross less near it by construction, and erasing it restores
++  baseline by construction. It confirms the implementation does what the split says. It
++  is not a reproduction of v0.6, where the repeat-error effect came through inference,
++  not a direct force.
+ - **Release does not show a measurable effect on approach in this instrument.** Not
+   "forgiveness failed": the P1 metric saturates, and the only lever release has here is
+   readout, on agents whose way home is dominated by a strong westward turn.
+-- **The public-good structure from v0.11/v0.12 is dissolved by the split.** With the
+-  warning separated from the author's burden and applied to everyone, declarers are no
+-  longer behind the silent (P1 ≥ 0 in B, both blocks). The earlier self-penalty was the
+-  identity-flag conflation the reviewer caught.
++- **v0.13 does not speak to the v0.11/v0.12 self-penalty.** Those runs measured
++  eastward crossings through the declarer's own marked gate; v0.13 measures westward
++  approaches after an evidence turn. The identity-flag problem was in the *proposed*
++  v0.13 exemption arm and never existed in v0.11/v0.12. The public-good finding stands,
++  untested by this battery. (Corrected on reread; an earlier version of this file claimed
++  the opposite.)
+ 
+ ## Engineering history
+ 

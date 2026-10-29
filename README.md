@@ -9,6 +9,11 @@ Daily laboratory experiments and workbench batteries by Rusty Williams McMurray 
 - **Folder dates and the modification times in each `MANIFEST.md` are not proof of time.** Anyone can set a file's mtime. Many files on the working machine show a modification date of 2026-10-23 because of a copy on that day; those mtimes are recorded as found, not corrected. Only a commit pushed on the same day as the work is evidence of when it existed.
 - From the first push onward, each day's work is meant to be pushed the same day.
 
+## Days covered
+
+- 2026-09-21 — Raised Not Rented v0.13 (original, revised, independent repack + 2026-10-29 rerun reproduced exactly) and The Commons archive (three variants). Dated by timestamps inside the original zips; added in a later commit than the October days.
+- October 2026 workdays — see `2026/10/`.
+
 ## Layout
 
 Each day folder contains topic subfolders, a `MANIFEST.md` (original path, mtime, SHA-256, status label for every file) and a `SHA256SUMS` for the files actually included. Status labels: `draft`, `failed` (failed / falsified / attack or erratum material), `verified`, or `withheld (blind/secret)`. Labels are heuristic from file names; read each pack's own README for its real status.
@@ -23,3 +28,4 @@ Nothing here is invented: where code is missing from a pack, it is missing here 
 
     sha256sum -c SHA256SUMS
     (cd 2026/10/2026-10-27 && sha256sum -c SHA256SUMS)
+    (cd 2026/09/2026-09-21 && sha256sum -c SHA256SUMS)

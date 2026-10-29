@@ -1,0 +1,135 @@
+{
+ "battery": "rnr/0.13",
+ "void": false,
+ "contracts": {
+  "block1": {
+   "gate_closed_clean": true,
+   "refused_founders_zero_wear": true
+  },
+  "block2": {
+   "gate_closed_clean": true,
+   "refused_founders_zero_wear": true
+  }
+ },
+ "descendant_cut": "new 12-agent cohort, separate epoch after the subject epoch; inherits terrain and warn only; measured as allowed crossings with |y - declared gate y| < 0.17",
+ "declared_gates": "gate y of coin-flip declarers; identical across arms (histories identical to step 600)",
+ "window": [
+  600,
+  900
+ ],
+ "evidence_turn": {
+  "step": 600,
+  "value": -1.5
+ },
+ "blocks": {
+  "block1": {
+   "P1_by_arm": {
+    "A": 0.0,
+    "B": 0.0081,
+    "C": 0.0161,
+    "D": 0.0054,
+    "E": 0.0
+   },
+   "P2_by_arm": {
+    "A": -0.0199,
+    "B": -0.0333,
+    "C": -0.0817,
+    "D": -0.0118,
+    "E": -0.0199
+   },
+   "C_vs_D": {
+    "P1_C_minus_B": 0.008,
+    "P1_D_minus_B": -0.0027,
+    "D_matches_C_by_margin_0.5": false
+   },
+   "attempt_rate": {
+    "A": {
+     "declarers": 0.3333,
+     "silent": 0.3333
+    },
+    "B": {
+     "declarers": 0.3203,
+     "silent": 0.3172
+    },
+    "C": {
+     "declarers": 0.3333,
+     "silent": 0.3172
+    },
+    "D": {
+     "declarers": 0.3333,
+     "silent": 0.328
+    },
+    "E": {
+     "declarers": 0.3333,
+     "silent": 0.3333
+    }
+   },
+   "descendants_through_declared": {
+    "A": 6.125,
+    "B": 3.3125,
+    "C": 3.3125,
+    "D": 3.3125,
+    "E": 6.125
+   },
+   "n_declarers": 2.5312,
+   "n_silent": 2.1562,
+   "forgiveness_row": "criteria met in this block",
+   "lesson_stands_row": "B<A and C<A"
+  },
+  "block2": {
+   "P1_by_arm": {
+    "A": 0.0119,
+    "B": 0.0109,
+    "C": 0.0179,
+    "D": 0.0,
+    "E": 0.0119
+   },
+   "P2_by_arm": {
+    "A": 0.0031,
+    "B": 0.0741,
+    "C": -0.0401,
+    "D": 0.0565,
+    "E": 0.0216
+   },
+   "C_vs_D": {
+    "P1_C_minus_B": 0.007,
+    "P1_D_minus_B": -0.0109,
+    "D_matches_C_by_margin_0.5": true
+   },
+   "attempt_rate": {
+    "A": {
+     "declarers": 0.3333,
+     "silent": 0.3226
+    },
+    "B": {
+     "declarers": 0.3243,
+     "silent": 0.3172
+    },
+    "C": {
+     "declarers": 0.3333,
+     "silent": 0.3172
+    },
+    "D": {
+     "declarers": 0.3333,
+     "silent": 0.3333
+    },
+    "E": {
+     "declarers": 0.3333,
+     "silent": 0.3226
+    }
+   },
+   "descendants_through_declared": {
+    "A": 6.3438,
+    "B": 3.3438,
+    "C": 3.3438,
+    "D": 3.3438,
+    "E": 6.3438
+   },
+   "n_declarers": 2.1562,
+   "n_silent": 2.5312,
+   "forgiveness_row": "not accepted",
+   "lesson_stands_row": "B<A and C<A"
+  }
+ },
+ "note": "No merged PASS. Rows are per block. Attempt rate saturates at 0.333 per 100 steps (one approach per agent in W)."
+}
