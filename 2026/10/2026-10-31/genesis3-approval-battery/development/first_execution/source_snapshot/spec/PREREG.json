@@ -1,0 +1,78 @@
+{
+  "authority": "local pre-implementation freeze; no external preregistration",
+  "canonical_probes": [
+    "normal",
+    "no_signature",
+    "wrong_signature",
+    "payload_changed",
+    "expired",
+    "stale",
+    "exact_replay",
+    "private_large_step",
+    "unsupported_but_signed"
+  ],
+  "controls": [
+    "key_scope",
+    "step_bound",
+    "range_bound",
+    "signature",
+    "dual_control",
+    "policy_binding",
+    "expiry",
+    "state_binding",
+    "nonce_replay",
+    "exact_types"
+  ],
+  "corpus_cases": 18,
+  "created_utc": "2026-10-31T13:39:05.538185+00:00",
+  "dual_episodes": 216,
+  "dual_profiles": [
+    "careful/careful",
+    "susceptible/susceptible",
+    "susceptible/careful",
+    "susceptible/silent",
+    "permissive/permissive",
+    "withholding/withholding"
+  ],
+  "packet_count": 36,
+  "predictions_in": "PROTOCOL.md",
+  "review_profiles": [
+    "careful",
+    "question_rule",
+    "distort_rule",
+    "deny_consequence",
+    "attack_motive",
+    "self_authorization",
+    "appearance",
+    "permissive",
+    "withholding"
+  ],
+  "single_decisions": 324,
+  "structural_cases": [
+    "valid",
+    "key_scope",
+    "step_bound",
+    "range_bound",
+    "signature",
+    "dual_control",
+    "policy_binding",
+    "expiry",
+    "state_binding",
+    "nonce_replay",
+    "exact_types",
+    "no_approval",
+    "duplicate_owner",
+    "unknown_owner",
+    "unknown_field",
+    "exact_replay",
+    "refusal_then_valid"
+  ],
+  "tamper_tests": [
+    "decision",
+    "effect",
+    "deleted_record",
+    "reordered_records",
+    "deleted_file"
+  ],
+  "version": "1.0"
+}

@@ -1,0 +1,2 @@
+CHECK_FAILED: single-control mutation exclusivity failed: signature
+EXIT_CODE 1

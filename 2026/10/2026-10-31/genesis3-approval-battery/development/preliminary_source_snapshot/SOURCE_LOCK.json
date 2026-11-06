@@ -1,0 +1,23 @@
+{
+  "DEVIATIONS.md": "a684e029bcc2dbc4be10576d1ad2810886386aebe643a4b93c0548a53798284a",
+  "PROTOCOL.md": "d3961fcb90a7b3a73d2fc2d130fb25fd4142877cc6981a315c4ce91d5681cb98",
+  "README.md": "c7c15fc47ffdbe6d8f08985db7f7e971ee98445220c2b090635a6a79633215a4",
+  "common.py": "12e3ff5ae3ad59da1482786c7152729c00ff9476db737e9b2d41dace280ea28c",
+  "freeze.py": "b66b5adda6d4f8a316ee232c91a4fc5984cf6a41cfbeccdabc2fcc5ec20586e3",
+  "gate.py": "7d9e7ac0ca366e14b3358743377ba9fc63a20767c599722f2cc603c94c224281",
+  "inputs/PRIOR_AUTH_AUDIT.txt": "2ebdb97a294ea39f5aa48f873f4eb3edb6069d8ef4a050c29c26d4e6cf2a0c57",
+  "inputs/PRIOR_KERNEL_README.md": "8e66fb0d9073d972a7737e189dabe571ebe4dfe65c70f580c87cc36af1c2ed3d",
+  "inputs/PROVENANCE.json": "392f39fe027e2155b2605605955fcbdd00d259f2e87c37d60988d3dc5257d200",
+  "inputs/humble_seed_v0_7.py": "01db270a111f22de45419b562c3f5135f7db44b9036b95d6653060c93584daf5",
+  "native.py": "0079c117623d7b98c7e2f0cdb66507d9392480d2b4f81ebfdcb4f4555aab3156",
+  "requirements.txt": "a8a666cb406a61615db8e21398a3a8bd967451279301fbd73c83a091fed76932",
+  "reviewers.py": "f1535a47641769a582211930f6751805f5d58d457036ed3d59f49edd4a77da25",
+  "run.py": "f4448e76dc65f796915e15d25ebc9f15de51a2521322c701b177d2db6a56add8",
+  "scenarios.py": "e4142086ab1cf01da1cb0a5c4fd5bb16badf3d72bbc0e39623d192cb89f51888",
+  "spec/PREREG.json": "bd527c5aae93fc00fbf192d6a0a42f07516125df6f4a923b0d211f870843e4e8",
+  "spec/PRE_IMPLEMENTATION.json": "05b7f828bd50bdd8ce3744761778a1a2d3d15973d2c5fdc58e7cb7a0f97939b3",
+  "spec/cases.json": "869551e2f2b6cf099c38fcc45bdd3963938fcd61e3b6f2710f88f1dc27a36d03",
+  "spec/policy.json": "c8ef1050807e6fb6f86d1d6bc4de339866f9ac32e6c8acbb3034aa845b703876",
+  "tools/tamper_check.py": "c334dd176725f8eab9e9f1d2a40101aeb0234ca3b734820b3ba15e9706dd243e",
+  "verify.py": "cbc36aa9802852b28f6d9ed66eff0303d912df1a221f6de3185dcde832245e6d"
+}

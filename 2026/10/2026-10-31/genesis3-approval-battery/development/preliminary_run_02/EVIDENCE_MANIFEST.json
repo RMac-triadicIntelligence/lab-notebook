@@ -1,0 +1,32 @@
+[
+  {
+    "bytes": 1136,
+    "path": "context.json",
+    "sha256": "0d4d974c9b1aa9fe081c0c81be257ae425536f5ee63492fb8538b683fa787223"
+  },
+  {
+    "bytes": 35295,
+    "path": "structural.json",
+    "sha256": "4f57c8280096ceb04678fdc0ffc25b24ea68df09f6ffbf674c6742caebd750a2"
+  },
+  {
+    "bytes": 531768,
+    "path": "mutations.json",
+    "sha256": "4d88e1cbf3d9dea1a924eb063c9adcc68ef7ffd89a16938145b75e4725e21bf8"
+  },
+  {
+    "bytes": 614448,
+    "path": "single_reviews.json",
+    "sha256": "cd69ee3e809986d896aa3a3500dcbfb3dfa0fadb073860c86d71af87bf718893"
+  },
+  {
+    "bytes": 4165360,
+    "path": "dual_reviews.json",
+    "sha256": "c5d89cfec03b28387b1f04d592335dbf02246b3cdd3796e73d13d6a9c7aae97b"
+  },
+  {
+    "bytes": 164804,
+    "path": "canonical_probes.json",
+    "sha256": "c489b04c9160e2c0ee3af5abca9f06dea2bfc16cc8bd820acdf984d86f58c953"
+  }
+]

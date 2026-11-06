@@ -1,0 +1,37 @@
+{
+  "format": "genesis3-evidence-v1",
+  "manifest": [
+    {
+      "bytes": 1136,
+      "path": "context.json",
+      "sha256": "4a1e79a2017cc254516c5fd4605eddb9269e5262eb527ebf011c294b0108701f"
+    },
+    {
+      "bytes": 35295,
+      "path": "structural.json",
+      "sha256": "4f57c8280096ceb04678fdc0ffc25b24ea68df09f6ffbf674c6742caebd750a2"
+    },
+    {
+      "bytes": 531768,
+      "path": "mutations.json",
+      "sha256": "4d88e1cbf3d9dea1a924eb063c9adcc68ef7ffd89a16938145b75e4725e21bf8"
+    },
+    {
+      "bytes": 614448,
+      "path": "single_reviews.json",
+      "sha256": "cd69ee3e809986d896aa3a3500dcbfb3dfa0fadb073860c86d71af87bf718893"
+    },
+    {
+      "bytes": 4165360,
+      "path": "dual_reviews.json",
+      "sha256": "c5d89cfec03b28387b1f04d592335dbf02246b3cdd3796e73d13d6a9c7aae97b"
+    },
+    {
+      "bytes": 164804,
+      "path": "canonical_probes.json",
+      "sha256": "c489b04c9160e2c0ee3af5abca9f06dea2bfc16cc8bd820acdf984d86f58c953"
+    }
+  ],
+  "manifest_sha256": "274769405e9dff955e58719be549fa1791bfcdf22aefebfa1c7402ac7738f800",
+  "source_lock_sha256": "0ff682f3db4d587eddaf758af20f0775fd77c6cc3edf864d436a1bc57aae5ee6"
+}

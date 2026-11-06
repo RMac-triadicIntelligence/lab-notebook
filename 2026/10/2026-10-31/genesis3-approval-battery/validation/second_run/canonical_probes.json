@@ -1,0 +1,2868 @@
+[
+  {
+    "expected_applied": true,
+    "name": "normal",
+    "preparation": [],
+    "primary_evidence": [
+      {
+        "source": "s1",
+        "supports": true
+      },
+      {
+        "source": "s2",
+        "supports": true
+      }
+    ],
+    "record": {
+      "after": {
+        "basin": [],
+        "birth": {
+          "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "created_at": 1000000.0,
+          "genesis_hash": "58e503004e8a79e3f79b69d37fe9718e5ff07ee75758de5c13371c5ec707fcde",
+          "organism_id": "f1ce0e6f-b73b-57d5-a697-adfe1379adfd",
+          "public_key_b64": "AOzcZl1QWQBi1TsvbVnLzTHaa-PycJA8BML2AKxBWEQ="
+        },
+        "character": {
+          "curiosity": 0.6,
+          "formality": 0.5,
+          "verbosity": 0.25
+        },
+        "checkpoint": {
+          "attested_trace_len": 3,
+          "birth_root": "cf1f9795884b995e2d7b5c2d6f5f495a2c0b4d67f52b2e0099cec59bb615909e",
+          "character_root": "2b84bfb16840210ab49275b84747d6e2f141829b5f9534f5222876c5c796a47c",
+          "constitution_root": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "consumed_root": "410bd406d1e44210f17d70dc12818a0e771ed109a9dac2c88f4cc14df265991a",
+          "gates_root": "c12e059c5ee3bcaa189c0c31cb4efc2918da0b8d4a34025020a983ab95547690",
+          "mutation_sequence": 1,
+          "organism_id": "f1ce0e6f-b73b-57d5-a697-adfe1379adfd",
+          "prev_checkpoint_hash": "64c61b529e54aa32049f8d999cc389a372658b57bb5d8f297df678b0b1ae66f9",
+          "sequence": 1,
+          "timestamp": 1000000.0,
+          "trace_head": "4afe58da7014ba6c9220025883ee55a56003eb035d106e82262b60bcb3f92cfb"
+        },
+        "checkpoint_sig": "HY-TTdoS8JnQtLNf9U3ow2t_yHFgtGH3P7Q4CVFrr4Yf8RHU4cz7Ki6Sfa_Gp2EsljXszRLuQwU89jajqyyZAA==",
+        "constitution": {
+          "allowed_character_fields": [
+            "curiosity",
+            "formality",
+            "verbosity"
+          ],
+          "invariants": [
+            "No character change on a misread",
+            "When unreadable, ask rather than guess",
+            "Private authorization material never stored by organism",
+            "Signature bound to the exact mutation, its evidence, and the state it was read from",
+            "Replay and reordering of authorizations forbidden",
+            "Mutation values are numbers in range, never interpretation labels",
+            "A change may only touch the category it was proposed under",
+            "The first commitment in any category is visibly flagged to the owner",
+            "Character never advances without an owner-signed attestation of the result",
+            "The organism cannot detect its own rollback; an external witness must",
+            "The constitution and birth record are covered by the owner attestation, not by the seal alone",
+            "The first-commitment flag is derived from state, never supplied by a caller"
+          ],
+          "rule": "The organism can propose its own growth but cannot authorize its own growth.",
+          "schema_version": "0.7",
+          "theorem": "External Authorization is Necessary (McMurray 2026)",
+          "value_range": [
+            0.0,
+            1.0
+          ]
+        },
+        "consumed": [
+          "581618b6-d359-05a9-45b9-aee4777427ae|ef9469f6691673af3a51e159e59a3710"
+        ],
+        "first_commit_pending": {
+          "verbosity": false
+        },
+        "mutation_sequence": 1,
+        "organism_id": "f1ce0e6f-b73b-57d5-a697-adfe1379adfd",
+        "pending": {},
+        "schema_version": "0.7",
+        "state_seal": "3d98f8ce32d32319b89ad36e6f1d6082e19ab58764d4303cd6137291c3b8e02d",
+        "trace": [
+          {
+            "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+            "entry_hash": "a4377636e5f6ef83a2c59b3e67d8a4d941ab38e0ffc40b05040d904dc5425876",
+            "event": "birth",
+            "genesis_hash": "58e503004e8a79e3f79b69d37fe9718e5ff07ee75758de5c13371c5ec707fcde",
+            "organism_id": "f1ce0e6f-b73b-57d5-a697-adfe1379adfd",
+            "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "timestamp": 1000000.0
+          },
+          {
+            "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "entry_hash": "f370bfc1abc974e29361ad8ec9765df68f3b977bd4eed518d4df53954651c63e",
+            "event": "checkpoint",
+            "prev_hash": "a4377636e5f6ef83a2c59b3e67d8a4d941ab38e0ffc40b05040d904dc5425876",
+            "sequence": 0,
+            "timestamp": 1000000.0
+          },
+          {
+            "entry_hash": "4afe58da7014ba6c9220025883ee55a56003eb035d106e82262b60bcb3f92cfb",
+            "event": "authorized_mutation",
+            "prev_hash": "f370bfc1abc974e29361ad8ec9765df68f3b977bd4eed518d4df53954651c63e",
+            "record": {
+              "authorized_at": 1000000.0,
+              "category": "verbosity",
+              "change": {
+                "verbosity": 0.25
+              },
+              "distribution": {
+                "confound": 0.12,
+                "preference": 0.68,
+                "unmodeled_cause": 0.2
+              },
+              "evidence": [
+                "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+              ],
+              "first_commit": true,
+              "mutation_sequence": 1,
+              "note": "",
+              "prior_character_snapshot": {
+                "curiosity": 0.6,
+                "formality": 0.5,
+                "verbosity": 0.5
+              },
+              "proposal_id": "581618b6-d359-05a9-45b9-aee4777427ae",
+              "signature_b64": "UtM4PzPvVNXho5TPWM7yxzs9fdzpOEZO8JYudXzg9hSm5JQMdcgXCT1mzNFo6JGnfmlFoLaZU1V0GhsNqXZVBw=="
+            },
+            "timestamp": 1000000.0
+          },
+          {
+            "character_root": "2b84bfb16840210ab49275b84747d6e2f141829b5f9534f5222876c5c796a47c",
+            "entry_hash": "dca31a92da2d230a9cb87800bf96f988455b9f9635df60741c8219946bc5d1d6",
+            "event": "checkpoint",
+            "prev_hash": "4afe58da7014ba6c9220025883ee55a56003eb035d106e82262b60bcb3f92cfb",
+            "sequence": 1,
+            "timestamp": 1000000.0
+          }
+        ],
+        "trace_head": "dca31a92da2d230a9cb87800bf96f988455b9f9635df60741c8219946bc5d1d6"
+      },
+      "applied": true,
+      "attempted": true,
+      "attested": true,
+      "audited": true,
+      "before": {
+        "basin": [
+          {
+            "category": "verbosity",
+            "created_at": 1000000.0,
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+            ],
+            "salience": 0.68
+          }
+        ],
+        "birth": {
+          "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "created_at": 1000000.0,
+          "genesis_hash": "58e503004e8a79e3f79b69d37fe9718e5ff07ee75758de5c13371c5ec707fcde",
+          "organism_id": "f1ce0e6f-b73b-57d5-a697-adfe1379adfd",
+          "public_key_b64": "AOzcZl1QWQBi1TsvbVnLzTHaa-PycJA8BML2AKxBWEQ="
+        },
+        "character": {
+          "curiosity": 0.6,
+          "formality": 0.5,
+          "verbosity": 0.5
+        },
+        "checkpoint": {
+          "attested_trace_len": 1,
+          "birth_root": "cf1f9795884b995e2d7b5c2d6f5f495a2c0b4d67f52b2e0099cec59bb615909e",
+          "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+          "constitution_root": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "consumed_root": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "gates_root": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "mutation_sequence": 0,
+          "organism_id": "f1ce0e6f-b73b-57d5-a697-adfe1379adfd",
+          "prev_checkpoint_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "sequence": 0,
+          "timestamp": 1000000.0,
+          "trace_head": "a4377636e5f6ef83a2c59b3e67d8a4d941ab38e0ffc40b05040d904dc5425876"
+        },
+        "checkpoint_sig": "H7Lu_-7Cx_iSp1yjMzwtf0OjghZnSVg8f_UrDfaylDlTPV_wUPonyJZXGQMNHLQCI8S6UIjRtc9RvmWOUxC1Bg==",
+        "constitution": {
+          "allowed_character_fields": [
+            "curiosity",
+            "formality",
+            "verbosity"
+          ],
+          "invariants": [
+            "No character change on a misread",
+            "When unreadable, ask rather than guess",
+            "Private authorization material never stored by organism",
+            "Signature bound to the exact mutation, its evidence, and the state it was read from",
+            "Replay and reordering of authorizations forbidden",
+            "Mutation values are numbers in range, never interpretation labels",
+            "A change may only touch the category it was proposed under",
+            "The first commitment in any category is visibly flagged to the owner",
+            "Character never advances without an owner-signed attestation of the result",
+            "The organism cannot detect its own rollback; an external witness must",
+            "The constitution and birth record are covered by the owner attestation, not by the seal alone",
+            "The first-commitment flag is derived from state, never supplied by a caller"
+          ],
+          "rule": "The organism can propose its own growth but cannot authorize its own growth.",
+          "schema_version": "0.7",
+          "theorem": "External Authorization is Necessary (McMurray 2026)",
+          "value_range": [
+            0.0,
+            1.0
+          ]
+        },
+        "consumed": [],
+        "first_commit_pending": {},
+        "mutation_sequence": 0,
+        "organism_id": "f1ce0e6f-b73b-57d5-a697-adfe1379adfd",
+        "pending": {
+          "581618b6-d359-05a9-45b9-aee4777427ae": {
+            "category": "verbosity",
+            "change": {
+              "verbosity": 0.25
+            },
+            "change_hash": "75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e",
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "distribution_root": "c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb",
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+            ],
+            "evidence_root": "782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74",
+            "expires_at": 1003600.0,
+            "first_commit": true,
+            "mutation_sequence": 0,
+            "nonce": "ef9469f6691673af3a51e159e59a3710",
+            "organism_id": "f1ce0e6f-b73b-57d5-a697-adfe1379adfd",
+            "payload_hash": "e3fa590c7dd05d9eaa9e635d7f749f91992d2c369f02238ac032ebd66971ef36",
+            "payload_to_sign": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.25},\"change_hash\":\"75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e\",\"distribution_root\":\"c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb\",\"evidence_root\":\"782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"ef9469f6691673af3a51e159e59a3710\",\"organism_id\":\"f1ce0e6f-b73b-57d5-a697-adfe1379adfd\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"f370bfc1abc974e29361ad8ec9765df68f3b977bd4eed518d4df53954651c63e\",\"proposal_id\":\"581618b6-d359-05a9-45b9-aee4777427ae\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+            "prior_character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "prior_trace_head": "f370bfc1abc974e29361ad8ec9765df68f3b977bd4eed518d4df53954651c63e",
+            "proposal_id": "581618b6-d359-05a9-45b9-aee4777427ae",
+            "timestamp": 1000000.0
+          }
+        },
+        "schema_version": "0.7",
+        "state_seal": "08c6cdc2deb3013b066bb9dcf3aee0bf991f8b092fb6da3f9d513ac628e2c637",
+        "trace": [
+          {
+            "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+            "entry_hash": "a4377636e5f6ef83a2c59b3e67d8a4d941ab38e0ffc40b05040d904dc5425876",
+            "event": "birth",
+            "genesis_hash": "58e503004e8a79e3f79b69d37fe9718e5ff07ee75758de5c13371c5ec707fcde",
+            "organism_id": "f1ce0e6f-b73b-57d5-a697-adfe1379adfd",
+            "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "timestamp": 1000000.0
+          },
+          {
+            "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "entry_hash": "f370bfc1abc974e29361ad8ec9765df68f3b977bd4eed518d4df53954651c63e",
+            "event": "checkpoint",
+            "prev_hash": "a4377636e5f6ef83a2c59b3e67d8a4d941ab38e0ffc40b05040d904dc5425876",
+            "sequence": 0,
+            "timestamp": 1000000.0
+          }
+        ],
+        "trace_head": "f370bfc1abc974e29361ad8ec9765df68f3b977bd4eed518d4df53954651c63e"
+      },
+      "checkpoint_payload": "{\"attested_trace_len\":3,\"birth_root\":\"cf1f9795884b995e2d7b5c2d6f5f495a2c0b4d67f52b2e0099cec59bb615909e\",\"character_root\":\"2b84bfb16840210ab49275b84747d6e2f141829b5f9534f5222876c5c796a47c\",\"constitution_root\":\"ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14\",\"consumed_root\":\"410bd406d1e44210f17d70dc12818a0e771ed109a9dac2c88f4cc14df265991a\",\"gates_root\":\"c12e059c5ee3bcaa189c0c31cb4efc2918da0b8d4a34025020a983ab95547690\",\"kind\":\"checkpoint\",\"mutation_sequence\":1,\"organism_id\":\"f1ce0e6f-b73b-57d5-a697-adfe1379adfd\",\"prev_checkpoint_hash\":\"64c61b529e54aa32049f8d999cc389a372658b57bb5d8f297df678b0b1ae66f9\",\"schema_version\":\"0.7\",\"sequence\":1,\"timestamp\":\"1000000.000000\",\"trace_head\":\"4afe58da7014ba6c9220025883ee55a56003eb035d106e82262b60bcb3f92cfb\"}",
+      "checkpoint_signature": "HY-TTdoS8JnQtLNf9U3ow2t_yHFgtGH3P7Q4CVFrr4Yf8RHU4cz7Ki6Sfa_Gp2EsljXszRLuQwU89jajqyyZAA==",
+      "kind": "normal",
+      "mutation_signature": "UtM4PzPvVNXho5TPWM7yxzs9fdzpOEZO8JYudXzg9hSm5JQMdcgXCT1mzNFo6JGnfmlFoLaZU1V0GhsNqXZVBw==",
+      "original_payload": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.25},\"change_hash\":\"75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e\",\"distribution_root\":\"c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb\",\"evidence_root\":\"782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"ef9469f6691673af3a51e159e59a3710\",\"organism_id\":\"f1ce0e6f-b73b-57d5-a697-adfe1379adfd\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"f370bfc1abc974e29361ad8ec9765df68f3b977bd4eed518d4df53954651c63e\",\"proposal_id\":\"581618b6-d359-05a9-45b9-aee4777427ae\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+      "public_key": "AOzcZl1QWQBi1TsvbVnLzTHaa-PycJA8BML2AKxBWEQ=",
+      "reloaded": true
+    }
+  },
+  {
+    "expected_applied": false,
+    "name": "no_signature",
+    "preparation": [],
+    "primary_evidence": [
+      {
+        "source": "s1",
+        "supports": true
+      },
+      {
+        "source": "s2",
+        "supports": true
+      }
+    ],
+    "record": {
+      "after": {
+        "basin": [
+          {
+            "category": "verbosity",
+            "created_at": 1000000.0,
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+            ],
+            "salience": 0.68
+          }
+        ],
+        "birth": {
+          "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "created_at": 1000000.0,
+          "genesis_hash": "37a36631b349c7a3c8ab4c4b3cbe0eb441c69402e434056613323b37db9d656a",
+          "organism_id": "a6f9a897-6a0c-35f0-c72e-106b670f7ea7",
+          "public_key_b64": "d0-H1l-EHvMMPqIubcDQ3dmfgKXQ6rrXjEVRh84N5-k="
+        },
+        "character": {
+          "curiosity": 0.6,
+          "formality": 0.5,
+          "verbosity": 0.5
+        },
+        "checkpoint": {
+          "attested_trace_len": 1,
+          "birth_root": "44ec037b0f854ea7cbc290332cce9287b0943d97e661bb71390a1b9e8cafa316",
+          "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+          "constitution_root": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "consumed_root": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "gates_root": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "mutation_sequence": 0,
+          "organism_id": "a6f9a897-6a0c-35f0-c72e-106b670f7ea7",
+          "prev_checkpoint_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "sequence": 0,
+          "timestamp": 1000000.0,
+          "trace_head": "eb832cff778ccb85087752258c6a4c2dc0481fb2b51a2d4a7a1d2ea4b01470c5"
+        },
+        "checkpoint_sig": "YC8QLMqJFwQVXRTHTGZHIK46sPI1wq3ghqm4WsB2YQWURDSZkoLNdx4KOWoskTuUXNPKSv3HQ2zfL4YbCOGuAg==",
+        "constitution": {
+          "allowed_character_fields": [
+            "curiosity",
+            "formality",
+            "verbosity"
+          ],
+          "invariants": [
+            "No character change on a misread",
+            "When unreadable, ask rather than guess",
+            "Private authorization material never stored by organism",
+            "Signature bound to the exact mutation, its evidence, and the state it was read from",
+            "Replay and reordering of authorizations forbidden",
+            "Mutation values are numbers in range, never interpretation labels",
+            "A change may only touch the category it was proposed under",
+            "The first commitment in any category is visibly flagged to the owner",
+            "Character never advances without an owner-signed attestation of the result",
+            "The organism cannot detect its own rollback; an external witness must",
+            "The constitution and birth record are covered by the owner attestation, not by the seal alone",
+            "The first-commitment flag is derived from state, never supplied by a caller"
+          ],
+          "rule": "The organism can propose its own growth but cannot authorize its own growth.",
+          "schema_version": "0.7",
+          "theorem": "External Authorization is Necessary (McMurray 2026)",
+          "value_range": [
+            0.0,
+            1.0
+          ]
+        },
+        "consumed": [],
+        "first_commit_pending": {},
+        "mutation_sequence": 0,
+        "organism_id": "a6f9a897-6a0c-35f0-c72e-106b670f7ea7",
+        "pending": {
+          "fbf1ec4c-5c03-87b3-e198-3a7fc12ebaea": {
+            "category": "verbosity",
+            "change": {
+              "verbosity": 0.25
+            },
+            "change_hash": "75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e",
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "distribution_root": "c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb",
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+            ],
+            "evidence_root": "782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74",
+            "expires_at": 1003600.0,
+            "first_commit": true,
+            "mutation_sequence": 0,
+            "nonce": "b436a265407f371d5b9dcb262f1f1e94",
+            "organism_id": "a6f9a897-6a0c-35f0-c72e-106b670f7ea7",
+            "payload_hash": "60b0641afad2495fd15bffa7d99431aebd9ad39f126e0cf639ecfc5de9582620",
+            "payload_to_sign": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.25},\"change_hash\":\"75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e\",\"distribution_root\":\"c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb\",\"evidence_root\":\"782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"b436a265407f371d5b9dcb262f1f1e94\",\"organism_id\":\"a6f9a897-6a0c-35f0-c72e-106b670f7ea7\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"40344087f6d3f50c90cde3940758a19cce5f0bd81efae4bfe96f3ad5eedd44a1\",\"proposal_id\":\"fbf1ec4c-5c03-87b3-e198-3a7fc12ebaea\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+            "prior_character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "prior_trace_head": "40344087f6d3f50c90cde3940758a19cce5f0bd81efae4bfe96f3ad5eedd44a1",
+            "proposal_id": "fbf1ec4c-5c03-87b3-e198-3a7fc12ebaea",
+            "timestamp": 1000000.0
+          }
+        },
+        "schema_version": "0.7",
+        "state_seal": "91a2a9dfafa3c35ce2eed34f3f1fc35df45127076ccf76021b3863e4105efa40",
+        "trace": [
+          {
+            "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+            "entry_hash": "eb832cff778ccb85087752258c6a4c2dc0481fb2b51a2d4a7a1d2ea4b01470c5",
+            "event": "birth",
+            "genesis_hash": "37a36631b349c7a3c8ab4c4b3cbe0eb441c69402e434056613323b37db9d656a",
+            "organism_id": "a6f9a897-6a0c-35f0-c72e-106b670f7ea7",
+            "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "timestamp": 1000000.0
+          },
+          {
+            "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "entry_hash": "40344087f6d3f50c90cde3940758a19cce5f0bd81efae4bfe96f3ad5eedd44a1",
+            "event": "checkpoint",
+            "prev_hash": "eb832cff778ccb85087752258c6a4c2dc0481fb2b51a2d4a7a1d2ea4b01470c5",
+            "sequence": 0,
+            "timestamp": 1000000.0
+          },
+          {
+            "entry_hash": "8ed781fcd285b0c1cbc1236a3cd427f60ea78248f6344fdcda7a66ba4c2b26e2",
+            "event": "authorization_rejected",
+            "prev_hash": "40344087f6d3f50c90cde3940758a19cce5f0bd81efae4bfe96f3ad5eedd44a1",
+            "proposal_id": "fbf1ec4c-5c03-87b3-e198-3a7fc12ebaea",
+            "reason": "invalid signature",
+            "timestamp": 1000000.0
+          }
+        ],
+        "trace_head": "8ed781fcd285b0c1cbc1236a3cd427f60ea78248f6344fdcda7a66ba4c2b26e2"
+      },
+      "applied": false,
+      "attempted": true,
+      "attested": false,
+      "audited": false,
+      "before": {
+        "basin": [
+          {
+            "category": "verbosity",
+            "created_at": 1000000.0,
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+            ],
+            "salience": 0.68
+          }
+        ],
+        "birth": {
+          "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "created_at": 1000000.0,
+          "genesis_hash": "37a36631b349c7a3c8ab4c4b3cbe0eb441c69402e434056613323b37db9d656a",
+          "organism_id": "a6f9a897-6a0c-35f0-c72e-106b670f7ea7",
+          "public_key_b64": "d0-H1l-EHvMMPqIubcDQ3dmfgKXQ6rrXjEVRh84N5-k="
+        },
+        "character": {
+          "curiosity": 0.6,
+          "formality": 0.5,
+          "verbosity": 0.5
+        },
+        "checkpoint": {
+          "attested_trace_len": 1,
+          "birth_root": "44ec037b0f854ea7cbc290332cce9287b0943d97e661bb71390a1b9e8cafa316",
+          "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+          "constitution_root": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "consumed_root": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "gates_root": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "mutation_sequence": 0,
+          "organism_id": "a6f9a897-6a0c-35f0-c72e-106b670f7ea7",
+          "prev_checkpoint_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "sequence": 0,
+          "timestamp": 1000000.0,
+          "trace_head": "eb832cff778ccb85087752258c6a4c2dc0481fb2b51a2d4a7a1d2ea4b01470c5"
+        },
+        "checkpoint_sig": "YC8QLMqJFwQVXRTHTGZHIK46sPI1wq3ghqm4WsB2YQWURDSZkoLNdx4KOWoskTuUXNPKSv3HQ2zfL4YbCOGuAg==",
+        "constitution": {
+          "allowed_character_fields": [
+            "curiosity",
+            "formality",
+            "verbosity"
+          ],
+          "invariants": [
+            "No character change on a misread",
+            "When unreadable, ask rather than guess",
+            "Private authorization material never stored by organism",
+            "Signature bound to the exact mutation, its evidence, and the state it was read from",
+            "Replay and reordering of authorizations forbidden",
+            "Mutation values are numbers in range, never interpretation labels",
+            "A change may only touch the category it was proposed under",
+            "The first commitment in any category is visibly flagged to the owner",
+            "Character never advances without an owner-signed attestation of the result",
+            "The organism cannot detect its own rollback; an external witness must",
+            "The constitution and birth record are covered by the owner attestation, not by the seal alone",
+            "The first-commitment flag is derived from state, never supplied by a caller"
+          ],
+          "rule": "The organism can propose its own growth but cannot authorize its own growth.",
+          "schema_version": "0.7",
+          "theorem": "External Authorization is Necessary (McMurray 2026)",
+          "value_range": [
+            0.0,
+            1.0
+          ]
+        },
+        "consumed": [],
+        "first_commit_pending": {},
+        "mutation_sequence": 0,
+        "organism_id": "a6f9a897-6a0c-35f0-c72e-106b670f7ea7",
+        "pending": {
+          "fbf1ec4c-5c03-87b3-e198-3a7fc12ebaea": {
+            "category": "verbosity",
+            "change": {
+              "verbosity": 0.25
+            },
+            "change_hash": "75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e",
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "distribution_root": "c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb",
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+            ],
+            "evidence_root": "782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74",
+            "expires_at": 1003600.0,
+            "first_commit": true,
+            "mutation_sequence": 0,
+            "nonce": "b436a265407f371d5b9dcb262f1f1e94",
+            "organism_id": "a6f9a897-6a0c-35f0-c72e-106b670f7ea7",
+            "payload_hash": "60b0641afad2495fd15bffa7d99431aebd9ad39f126e0cf639ecfc5de9582620",
+            "payload_to_sign": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.25},\"change_hash\":\"75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e\",\"distribution_root\":\"c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb\",\"evidence_root\":\"782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"b436a265407f371d5b9dcb262f1f1e94\",\"organism_id\":\"a6f9a897-6a0c-35f0-c72e-106b670f7ea7\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"40344087f6d3f50c90cde3940758a19cce5f0bd81efae4bfe96f3ad5eedd44a1\",\"proposal_id\":\"fbf1ec4c-5c03-87b3-e198-3a7fc12ebaea\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+            "prior_character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "prior_trace_head": "40344087f6d3f50c90cde3940758a19cce5f0bd81efae4bfe96f3ad5eedd44a1",
+            "proposal_id": "fbf1ec4c-5c03-87b3-e198-3a7fc12ebaea",
+            "timestamp": 1000000.0
+          }
+        },
+        "schema_version": "0.7",
+        "state_seal": "3aa2acf5b5a0f41231a9d254703d0132f350edd9a1aecbbdc6c1172640ab7891",
+        "trace": [
+          {
+            "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+            "entry_hash": "eb832cff778ccb85087752258c6a4c2dc0481fb2b51a2d4a7a1d2ea4b01470c5",
+            "event": "birth",
+            "genesis_hash": "37a36631b349c7a3c8ab4c4b3cbe0eb441c69402e434056613323b37db9d656a",
+            "organism_id": "a6f9a897-6a0c-35f0-c72e-106b670f7ea7",
+            "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "timestamp": 1000000.0
+          },
+          {
+            "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "entry_hash": "40344087f6d3f50c90cde3940758a19cce5f0bd81efae4bfe96f3ad5eedd44a1",
+            "event": "checkpoint",
+            "prev_hash": "eb832cff778ccb85087752258c6a4c2dc0481fb2b51a2d4a7a1d2ea4b01470c5",
+            "sequence": 0,
+            "timestamp": 1000000.0
+          }
+        ],
+        "trace_head": "40344087f6d3f50c90cde3940758a19cce5f0bd81efae4bfe96f3ad5eedd44a1"
+      },
+      "checkpoint_payload": "{\"attested_trace_len\":1,\"birth_root\":\"44ec037b0f854ea7cbc290332cce9287b0943d97e661bb71390a1b9e8cafa316\",\"character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"constitution_root\":\"ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14\",\"consumed_root\":\"4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945\",\"gates_root\":\"44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a\",\"kind\":\"checkpoint\",\"mutation_sequence\":0,\"organism_id\":\"a6f9a897-6a0c-35f0-c72e-106b670f7ea7\",\"prev_checkpoint_hash\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"schema_version\":\"0.7\",\"sequence\":0,\"timestamp\":\"1000000.000000\",\"trace_head\":\"eb832cff778ccb85087752258c6a4c2dc0481fb2b51a2d4a7a1d2ea4b01470c5\"}",
+      "checkpoint_signature": "YC8QLMqJFwQVXRTHTGZHIK46sPI1wq3ghqm4WsB2YQWURDSZkoLNdx4KOWoskTuUXNPKSv3HQ2zfL4YbCOGuAg==",
+      "kind": "no_signature",
+      "mutation_signature": "",
+      "original_payload": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.25},\"change_hash\":\"75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e\",\"distribution_root\":\"c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb\",\"evidence_root\":\"782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"b436a265407f371d5b9dcb262f1f1e94\",\"organism_id\":\"a6f9a897-6a0c-35f0-c72e-106b670f7ea7\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"40344087f6d3f50c90cde3940758a19cce5f0bd81efae4bfe96f3ad5eedd44a1\",\"proposal_id\":\"fbf1ec4c-5c03-87b3-e198-3a7fc12ebaea\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+      "public_key": "d0-H1l-EHvMMPqIubcDQ3dmfgKXQ6rrXjEVRh84N5-k=",
+      "reloaded": false
+    }
+  },
+  {
+    "expected_applied": false,
+    "name": "wrong_signature",
+    "preparation": [],
+    "primary_evidence": [
+      {
+        "source": "s1",
+        "supports": true
+      },
+      {
+        "source": "s2",
+        "supports": true
+      }
+    ],
+    "record": {
+      "after": {
+        "basin": [
+          {
+            "category": "verbosity",
+            "created_at": 1000000.0,
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+            ],
+            "salience": 0.68
+          }
+        ],
+        "birth": {
+          "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "created_at": 1000000.0,
+          "genesis_hash": "528534e531e5ea6f292591d26e7027bf640d96824614deeb0e3011e88b2f32ba",
+          "organism_id": "fec32f88-e885-550c-4372-bf90999c9c04",
+          "public_key_b64": "PzOgUJziCrwlrLhtHIfXd34UjFqfiwvQv4WSJw1rzGo="
+        },
+        "character": {
+          "curiosity": 0.6,
+          "formality": 0.5,
+          "verbosity": 0.5
+        },
+        "checkpoint": {
+          "attested_trace_len": 1,
+          "birth_root": "3356d3a4b3c454a49af251068c93e9b8282674c0d8d6db9f2f100f7d6dc97a46",
+          "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+          "constitution_root": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "consumed_root": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "gates_root": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "mutation_sequence": 0,
+          "organism_id": "fec32f88-e885-550c-4372-bf90999c9c04",
+          "prev_checkpoint_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "sequence": 0,
+          "timestamp": 1000000.0,
+          "trace_head": "db93ae3dee8c6f1199c825f6bcf5b1651a06898cca9ca70be7ee6c8a837e7bd4"
+        },
+        "checkpoint_sig": "_Y0vMO6weVj01P6xMQSp-75qFvyyeQRfnmuH9_1oEHs07Z9AimYb_0-_eTW5xHPs06K3rqbBAVLWKga_7qQ2Dg==",
+        "constitution": {
+          "allowed_character_fields": [
+            "curiosity",
+            "formality",
+            "verbosity"
+          ],
+          "invariants": [
+            "No character change on a misread",
+            "When unreadable, ask rather than guess",
+            "Private authorization material never stored by organism",
+            "Signature bound to the exact mutation, its evidence, and the state it was read from",
+            "Replay and reordering of authorizations forbidden",
+            "Mutation values are numbers in range, never interpretation labels",
+            "A change may only touch the category it was proposed under",
+            "The first commitment in any category is visibly flagged to the owner",
+            "Character never advances without an owner-signed attestation of the result",
+            "The organism cannot detect its own rollback; an external witness must",
+            "The constitution and birth record are covered by the owner attestation, not by the seal alone",
+            "The first-commitment flag is derived from state, never supplied by a caller"
+          ],
+          "rule": "The organism can propose its own growth but cannot authorize its own growth.",
+          "schema_version": "0.7",
+          "theorem": "External Authorization is Necessary (McMurray 2026)",
+          "value_range": [
+            0.0,
+            1.0
+          ]
+        },
+        "consumed": [],
+        "first_commit_pending": {},
+        "mutation_sequence": 0,
+        "organism_id": "fec32f88-e885-550c-4372-bf90999c9c04",
+        "pending": {
+          "5da99550-937d-54c2-e52a-4e4b55e81b18": {
+            "category": "verbosity",
+            "change": {
+              "verbosity": 0.25
+            },
+            "change_hash": "75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e",
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "distribution_root": "c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb",
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+            ],
+            "evidence_root": "782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74",
+            "expires_at": 1003600.0,
+            "first_commit": true,
+            "mutation_sequence": 0,
+            "nonce": "2e0b837d4bd7af1034d0f04c78fab3e6",
+            "organism_id": "fec32f88-e885-550c-4372-bf90999c9c04",
+            "payload_hash": "d48dd80d64703c5ea086f00264d6c4e4ff9b6994de850d06ace56efb6b9b1ca2",
+            "payload_to_sign": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.25},\"change_hash\":\"75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e\",\"distribution_root\":\"c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb\",\"evidence_root\":\"782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"2e0b837d4bd7af1034d0f04c78fab3e6\",\"organism_id\":\"fec32f88-e885-550c-4372-bf90999c9c04\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"e5f66538e55f1f2b0ad1fa2b181d19ed64436e207cff41b1a007cc7de2fe3428\",\"proposal_id\":\"5da99550-937d-54c2-e52a-4e4b55e81b18\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+            "prior_character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "prior_trace_head": "e5f66538e55f1f2b0ad1fa2b181d19ed64436e207cff41b1a007cc7de2fe3428",
+            "proposal_id": "5da99550-937d-54c2-e52a-4e4b55e81b18",
+            "timestamp": 1000000.0
+          }
+        },
+        "schema_version": "0.7",
+        "state_seal": "724c2493de08ce3328499e82195586bdfae5a804a879a129506f05389f073890",
+        "trace": [
+          {
+            "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+            "entry_hash": "db93ae3dee8c6f1199c825f6bcf5b1651a06898cca9ca70be7ee6c8a837e7bd4",
+            "event": "birth",
+            "genesis_hash": "528534e531e5ea6f292591d26e7027bf640d96824614deeb0e3011e88b2f32ba",
+            "organism_id": "fec32f88-e885-550c-4372-bf90999c9c04",
+            "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "timestamp": 1000000.0
+          },
+          {
+            "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "entry_hash": "e5f66538e55f1f2b0ad1fa2b181d19ed64436e207cff41b1a007cc7de2fe3428",
+            "event": "checkpoint",
+            "prev_hash": "db93ae3dee8c6f1199c825f6bcf5b1651a06898cca9ca70be7ee6c8a837e7bd4",
+            "sequence": 0,
+            "timestamp": 1000000.0
+          },
+          {
+            "entry_hash": "b72c3aca9c08278a072a28dc46dce178ad61d7dcd3af24ba8d1617d3d4106406",
+            "event": "authorization_rejected",
+            "prev_hash": "e5f66538e55f1f2b0ad1fa2b181d19ed64436e207cff41b1a007cc7de2fe3428",
+            "proposal_id": "5da99550-937d-54c2-e52a-4e4b55e81b18",
+            "reason": "invalid signature",
+            "timestamp": 1000000.0
+          }
+        ],
+        "trace_head": "b72c3aca9c08278a072a28dc46dce178ad61d7dcd3af24ba8d1617d3d4106406"
+      },
+      "applied": false,
+      "attempted": true,
+      "attested": false,
+      "audited": false,
+      "before": {
+        "basin": [
+          {
+            "category": "verbosity",
+            "created_at": 1000000.0,
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+            ],
+            "salience": 0.68
+          }
+        ],
+        "birth": {
+          "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "created_at": 1000000.0,
+          "genesis_hash": "528534e531e5ea6f292591d26e7027bf640d96824614deeb0e3011e88b2f32ba",
+          "organism_id": "fec32f88-e885-550c-4372-bf90999c9c04",
+          "public_key_b64": "PzOgUJziCrwlrLhtHIfXd34UjFqfiwvQv4WSJw1rzGo="
+        },
+        "character": {
+          "curiosity": 0.6,
+          "formality": 0.5,
+          "verbosity": 0.5
+        },
+        "checkpoint": {
+          "attested_trace_len": 1,
+          "birth_root": "3356d3a4b3c454a49af251068c93e9b8282674c0d8d6db9f2f100f7d6dc97a46",
+          "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+          "constitution_root": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "consumed_root": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "gates_root": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "mutation_sequence": 0,
+          "organism_id": "fec32f88-e885-550c-4372-bf90999c9c04",
+          "prev_checkpoint_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "sequence": 0,
+          "timestamp": 1000000.0,
+          "trace_head": "db93ae3dee8c6f1199c825f6bcf5b1651a06898cca9ca70be7ee6c8a837e7bd4"
+        },
+        "checkpoint_sig": "_Y0vMO6weVj01P6xMQSp-75qFvyyeQRfnmuH9_1oEHs07Z9AimYb_0-_eTW5xHPs06K3rqbBAVLWKga_7qQ2Dg==",
+        "constitution": {
+          "allowed_character_fields": [
+            "curiosity",
+            "formality",
+            "verbosity"
+          ],
+          "invariants": [
+            "No character change on a misread",
+            "When unreadable, ask rather than guess",
+            "Private authorization material never stored by organism",
+            "Signature bound to the exact mutation, its evidence, and the state it was read from",
+            "Replay and reordering of authorizations forbidden",
+            "Mutation values are numbers in range, never interpretation labels",
+            "A change may only touch the category it was proposed under",
+            "The first commitment in any category is visibly flagged to the owner",
+            "Character never advances without an owner-signed attestation of the result",
+            "The organism cannot detect its own rollback; an external witness must",
+            "The constitution and birth record are covered by the owner attestation, not by the seal alone",
+            "The first-commitment flag is derived from state, never supplied by a caller"
+          ],
+          "rule": "The organism can propose its own growth but cannot authorize its own growth.",
+          "schema_version": "0.7",
+          "theorem": "External Authorization is Necessary (McMurray 2026)",
+          "value_range": [
+            0.0,
+            1.0
+          ]
+        },
+        "consumed": [],
+        "first_commit_pending": {},
+        "mutation_sequence": 0,
+        "organism_id": "fec32f88-e885-550c-4372-bf90999c9c04",
+        "pending": {
+          "5da99550-937d-54c2-e52a-4e4b55e81b18": {
+            "category": "verbosity",
+            "change": {
+              "verbosity": 0.25
+            },
+            "change_hash": "75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e",
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "distribution_root": "c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb",
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+            ],
+            "evidence_root": "782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74",
+            "expires_at": 1003600.0,
+            "first_commit": true,
+            "mutation_sequence": 0,
+            "nonce": "2e0b837d4bd7af1034d0f04c78fab3e6",
+            "organism_id": "fec32f88-e885-550c-4372-bf90999c9c04",
+            "payload_hash": "d48dd80d64703c5ea086f00264d6c4e4ff9b6994de850d06ace56efb6b9b1ca2",
+            "payload_to_sign": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.25},\"change_hash\":\"75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e\",\"distribution_root\":\"c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb\",\"evidence_root\":\"782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"2e0b837d4bd7af1034d0f04c78fab3e6\",\"organism_id\":\"fec32f88-e885-550c-4372-bf90999c9c04\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"e5f66538e55f1f2b0ad1fa2b181d19ed64436e207cff41b1a007cc7de2fe3428\",\"proposal_id\":\"5da99550-937d-54c2-e52a-4e4b55e81b18\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+            "prior_character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "prior_trace_head": "e5f66538e55f1f2b0ad1fa2b181d19ed64436e207cff41b1a007cc7de2fe3428",
+            "proposal_id": "5da99550-937d-54c2-e52a-4e4b55e81b18",
+            "timestamp": 1000000.0
+          }
+        },
+        "schema_version": "0.7",
+        "state_seal": "57fcbe45648538ccdfab71b0eeaf31529a1aab1f7d6f053b959bf4b5fb942c35",
+        "trace": [
+          {
+            "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+            "entry_hash": "db93ae3dee8c6f1199c825f6bcf5b1651a06898cca9ca70be7ee6c8a837e7bd4",
+            "event": "birth",
+            "genesis_hash": "528534e531e5ea6f292591d26e7027bf640d96824614deeb0e3011e88b2f32ba",
+            "organism_id": "fec32f88-e885-550c-4372-bf90999c9c04",
+            "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "timestamp": 1000000.0
+          },
+          {
+            "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "entry_hash": "e5f66538e55f1f2b0ad1fa2b181d19ed64436e207cff41b1a007cc7de2fe3428",
+            "event": "checkpoint",
+            "prev_hash": "db93ae3dee8c6f1199c825f6bcf5b1651a06898cca9ca70be7ee6c8a837e7bd4",
+            "sequence": 0,
+            "timestamp": 1000000.0
+          }
+        ],
+        "trace_head": "e5f66538e55f1f2b0ad1fa2b181d19ed64436e207cff41b1a007cc7de2fe3428"
+      },
+      "checkpoint_payload": "{\"attested_trace_len\":1,\"birth_root\":\"3356d3a4b3c454a49af251068c93e9b8282674c0d8d6db9f2f100f7d6dc97a46\",\"character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"constitution_root\":\"ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14\",\"consumed_root\":\"4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945\",\"gates_root\":\"44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a\",\"kind\":\"checkpoint\",\"mutation_sequence\":0,\"organism_id\":\"fec32f88-e885-550c-4372-bf90999c9c04\",\"prev_checkpoint_hash\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"schema_version\":\"0.7\",\"sequence\":0,\"timestamp\":\"1000000.000000\",\"trace_head\":\"db93ae3dee8c6f1199c825f6bcf5b1651a06898cca9ca70be7ee6c8a837e7bd4\"}",
+      "checkpoint_signature": "_Y0vMO6weVj01P6xMQSp-75qFvyyeQRfnmuH9_1oEHs07Z9AimYb_0-_eTW5xHPs06K3rqbBAVLWKga_7qQ2Dg==",
+      "kind": "wrong_signature",
+      "mutation_signature": "TNUB_gjLdtch4evtJKsX9jMW6e1u-eMxcSipEynYXp1E9WQUajR-zyQTKF67IEDgCWswe3fEmKVcqyj_elLPBA==",
+      "original_payload": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.25},\"change_hash\":\"75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e\",\"distribution_root\":\"c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb\",\"evidence_root\":\"782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"2e0b837d4bd7af1034d0f04c78fab3e6\",\"organism_id\":\"fec32f88-e885-550c-4372-bf90999c9c04\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"e5f66538e55f1f2b0ad1fa2b181d19ed64436e207cff41b1a007cc7de2fe3428\",\"proposal_id\":\"5da99550-937d-54c2-e52a-4e4b55e81b18\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+      "public_key": "PzOgUJziCrwlrLhtHIfXd34UjFqfiwvQv4WSJw1rzGo=",
+      "reloaded": false
+    }
+  },
+  {
+    "expected_applied": false,
+    "name": "payload_changed",
+    "preparation": [],
+    "primary_evidence": [
+      {
+        "source": "s1",
+        "supports": true
+      },
+      {
+        "source": "s2",
+        "supports": true
+      }
+    ],
+    "record": {
+      "after": {
+        "basin": [
+          {
+            "category": "verbosity",
+            "created_at": 1000000.0,
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+            ],
+            "salience": 0.68
+          }
+        ],
+        "birth": {
+          "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "created_at": 1000000.0,
+          "genesis_hash": "b0704ab4a7ae9c290ffe7b279948358016de247389f582f95cdbd6bf017829e5",
+          "organism_id": "e003dca5-539f-b2ef-2631-28a4c26bc6ba",
+          "public_key_b64": "GFXs2BQ4I5TAAgTtgPtsasGAlXOZee6pM9uMtNGQQvk="
+        },
+        "character": {
+          "curiosity": 0.6,
+          "formality": 0.5,
+          "verbosity": 0.5
+        },
+        "checkpoint": {
+          "attested_trace_len": 1,
+          "birth_root": "b9bcbff07b93d9512ffada6468fab9063bb080e51fa621098720eb089b8d7eff",
+          "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+          "constitution_root": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "consumed_root": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "gates_root": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "mutation_sequence": 0,
+          "organism_id": "e003dca5-539f-b2ef-2631-28a4c26bc6ba",
+          "prev_checkpoint_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "sequence": 0,
+          "timestamp": 1000000.0,
+          "trace_head": "dd8514b1d9c37c5bbbaeda3cee555b8f09918ef4f4f7062129ef627a7ff3cf4d"
+        },
+        "checkpoint_sig": "VzxkFSFc9LCSra-IIYCbOVGbNFXvr8DjcYsQaLvtoKLuHqtZzqM2h7wBg2h1xPIGB86jjaGdTfDAYsi1S5qCAA==",
+        "constitution": {
+          "allowed_character_fields": [
+            "curiosity",
+            "formality",
+            "verbosity"
+          ],
+          "invariants": [
+            "No character change on a misread",
+            "When unreadable, ask rather than guess",
+            "Private authorization material never stored by organism",
+            "Signature bound to the exact mutation, its evidence, and the state it was read from",
+            "Replay and reordering of authorizations forbidden",
+            "Mutation values are numbers in range, never interpretation labels",
+            "A change may only touch the category it was proposed under",
+            "The first commitment in any category is visibly flagged to the owner",
+            "Character never advances without an owner-signed attestation of the result",
+            "The organism cannot detect its own rollback; an external witness must",
+            "The constitution and birth record are covered by the owner attestation, not by the seal alone",
+            "The first-commitment flag is derived from state, never supplied by a caller"
+          ],
+          "rule": "The organism can propose its own growth but cannot authorize its own growth.",
+          "schema_version": "0.7",
+          "theorem": "External Authorization is Necessary (McMurray 2026)",
+          "value_range": [
+            0.0,
+            1.0
+          ]
+        },
+        "consumed": [],
+        "first_commit_pending": {},
+        "mutation_sequence": 0,
+        "organism_id": "e003dca5-539f-b2ef-2631-28a4c26bc6ba",
+        "pending": {
+          "fdf74835-c52a-a08c-bc05-709c7e869184": {
+            "category": "verbosity",
+            "change": {
+              "verbosity": 0.125
+            },
+            "change_hash": "75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e",
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "distribution_root": "c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb",
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+            ],
+            "evidence_root": "782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74",
+            "expires_at": 1003600.0,
+            "first_commit": true,
+            "mutation_sequence": 0,
+            "nonce": "35516966c2937ffdf8feea2961278319",
+            "organism_id": "e003dca5-539f-b2ef-2631-28a4c26bc6ba",
+            "payload_hash": "609a3f1f736c8e22d69b628a5c3b73b8a5f10c1fc34318236248910df32734bb",
+            "payload_to_sign": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.25},\"change_hash\":\"75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e\",\"distribution_root\":\"c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb\",\"evidence_root\":\"782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"35516966c2937ffdf8feea2961278319\",\"organism_id\":\"e003dca5-539f-b2ef-2631-28a4c26bc6ba\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"abc5efec2794f8abd6d8631f22dbbb471b76c03260cdca179723ecd8858bd4d9\",\"proposal_id\":\"fdf74835-c52a-a08c-bc05-709c7e869184\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+            "prior_character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "prior_trace_head": "abc5efec2794f8abd6d8631f22dbbb471b76c03260cdca179723ecd8858bd4d9",
+            "proposal_id": "fdf74835-c52a-a08c-bc05-709c7e869184",
+            "timestamp": 1000000.0
+          }
+        },
+        "schema_version": "0.7",
+        "state_seal": "3800ecc6ab5c956810e58f7b1fd54fd69da4c14135cd54ac284f19fd9116f80f",
+        "trace": [
+          {
+            "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+            "entry_hash": "dd8514b1d9c37c5bbbaeda3cee555b8f09918ef4f4f7062129ef627a7ff3cf4d",
+            "event": "birth",
+            "genesis_hash": "b0704ab4a7ae9c290ffe7b279948358016de247389f582f95cdbd6bf017829e5",
+            "organism_id": "e003dca5-539f-b2ef-2631-28a4c26bc6ba",
+            "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "timestamp": 1000000.0
+          },
+          {
+            "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "entry_hash": "abc5efec2794f8abd6d8631f22dbbb471b76c03260cdca179723ecd8858bd4d9",
+            "event": "checkpoint",
+            "prev_hash": "dd8514b1d9c37c5bbbaeda3cee555b8f09918ef4f4f7062129ef627a7ff3cf4d",
+            "sequence": 0,
+            "timestamp": 1000000.0
+          },
+          {
+            "entry_hash": "6b27aad34c3c16ebd0842deb680093af7fa5bdd53c992aaebbbb6003cf64068c",
+            "event": "authorization_rejected",
+            "prev_hash": "abc5efec2794f8abd6d8631f22dbbb471b76c03260cdca179723ecd8858bd4d9",
+            "proposal_id": "fdf74835-c52a-a08c-bc05-709c7e869184",
+            "reason": "envelope inconsistency (evidence, distribution, or change altered)",
+            "timestamp": 1000000.0
+          }
+        ],
+        "trace_head": "6b27aad34c3c16ebd0842deb680093af7fa5bdd53c992aaebbbb6003cf64068c"
+      },
+      "applied": false,
+      "attempted": true,
+      "attested": false,
+      "audited": false,
+      "before": {
+        "basin": [
+          {
+            "category": "verbosity",
+            "created_at": 1000000.0,
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+            ],
+            "salience": 0.68
+          }
+        ],
+        "birth": {
+          "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "created_at": 1000000.0,
+          "genesis_hash": "b0704ab4a7ae9c290ffe7b279948358016de247389f582f95cdbd6bf017829e5",
+          "organism_id": "e003dca5-539f-b2ef-2631-28a4c26bc6ba",
+          "public_key_b64": "GFXs2BQ4I5TAAgTtgPtsasGAlXOZee6pM9uMtNGQQvk="
+        },
+        "character": {
+          "curiosity": 0.6,
+          "formality": 0.5,
+          "verbosity": 0.5
+        },
+        "checkpoint": {
+          "attested_trace_len": 1,
+          "birth_root": "b9bcbff07b93d9512ffada6468fab9063bb080e51fa621098720eb089b8d7eff",
+          "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+          "constitution_root": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "consumed_root": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "gates_root": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "mutation_sequence": 0,
+          "organism_id": "e003dca5-539f-b2ef-2631-28a4c26bc6ba",
+          "prev_checkpoint_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "sequence": 0,
+          "timestamp": 1000000.0,
+          "trace_head": "dd8514b1d9c37c5bbbaeda3cee555b8f09918ef4f4f7062129ef627a7ff3cf4d"
+        },
+        "checkpoint_sig": "VzxkFSFc9LCSra-IIYCbOVGbNFXvr8DjcYsQaLvtoKLuHqtZzqM2h7wBg2h1xPIGB86jjaGdTfDAYsi1S5qCAA==",
+        "constitution": {
+          "allowed_character_fields": [
+            "curiosity",
+            "formality",
+            "verbosity"
+          ],
+          "invariants": [
+            "No character change on a misread",
+            "When unreadable, ask rather than guess",
+            "Private authorization material never stored by organism",
+            "Signature bound to the exact mutation, its evidence, and the state it was read from",
+            "Replay and reordering of authorizations forbidden",
+            "Mutation values are numbers in range, never interpretation labels",
+            "A change may only touch the category it was proposed under",
+            "The first commitment in any category is visibly flagged to the owner",
+            "Character never advances without an owner-signed attestation of the result",
+            "The organism cannot detect its own rollback; an external witness must",
+            "The constitution and birth record are covered by the owner attestation, not by the seal alone",
+            "The first-commitment flag is derived from state, never supplied by a caller"
+          ],
+          "rule": "The organism can propose its own growth but cannot authorize its own growth.",
+          "schema_version": "0.7",
+          "theorem": "External Authorization is Necessary (McMurray 2026)",
+          "value_range": [
+            0.0,
+            1.0
+          ]
+        },
+        "consumed": [],
+        "first_commit_pending": {},
+        "mutation_sequence": 0,
+        "organism_id": "e003dca5-539f-b2ef-2631-28a4c26bc6ba",
+        "pending": {
+          "fdf74835-c52a-a08c-bc05-709c7e869184": {
+            "category": "verbosity",
+            "change": {
+              "verbosity": 0.25
+            },
+            "change_hash": "75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e",
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "distribution_root": "c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb",
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+            ],
+            "evidence_root": "782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74",
+            "expires_at": 1003600.0,
+            "first_commit": true,
+            "mutation_sequence": 0,
+            "nonce": "35516966c2937ffdf8feea2961278319",
+            "organism_id": "e003dca5-539f-b2ef-2631-28a4c26bc6ba",
+            "payload_hash": "609a3f1f736c8e22d69b628a5c3b73b8a5f10c1fc34318236248910df32734bb",
+            "payload_to_sign": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.25},\"change_hash\":\"75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e\",\"distribution_root\":\"c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb\",\"evidence_root\":\"782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"35516966c2937ffdf8feea2961278319\",\"organism_id\":\"e003dca5-539f-b2ef-2631-28a4c26bc6ba\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"abc5efec2794f8abd6d8631f22dbbb471b76c03260cdca179723ecd8858bd4d9\",\"proposal_id\":\"fdf74835-c52a-a08c-bc05-709c7e869184\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+            "prior_character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "prior_trace_head": "abc5efec2794f8abd6d8631f22dbbb471b76c03260cdca179723ecd8858bd4d9",
+            "proposal_id": "fdf74835-c52a-a08c-bc05-709c7e869184",
+            "timestamp": 1000000.0
+          }
+        },
+        "schema_version": "0.7",
+        "state_seal": "cde7f155770c4e5311e422c14efd89306572b97579a4d412643be961c34e66a6",
+        "trace": [
+          {
+            "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+            "entry_hash": "dd8514b1d9c37c5bbbaeda3cee555b8f09918ef4f4f7062129ef627a7ff3cf4d",
+            "event": "birth",
+            "genesis_hash": "b0704ab4a7ae9c290ffe7b279948358016de247389f582f95cdbd6bf017829e5",
+            "organism_id": "e003dca5-539f-b2ef-2631-28a4c26bc6ba",
+            "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "timestamp": 1000000.0
+          },
+          {
+            "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "entry_hash": "abc5efec2794f8abd6d8631f22dbbb471b76c03260cdca179723ecd8858bd4d9",
+            "event": "checkpoint",
+            "prev_hash": "dd8514b1d9c37c5bbbaeda3cee555b8f09918ef4f4f7062129ef627a7ff3cf4d",
+            "sequence": 0,
+            "timestamp": 1000000.0
+          }
+        ],
+        "trace_head": "abc5efec2794f8abd6d8631f22dbbb471b76c03260cdca179723ecd8858bd4d9"
+      },
+      "checkpoint_payload": "{\"attested_trace_len\":1,\"birth_root\":\"b9bcbff07b93d9512ffada6468fab9063bb080e51fa621098720eb089b8d7eff\",\"character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"constitution_root\":\"ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14\",\"consumed_root\":\"4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945\",\"gates_root\":\"44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a\",\"kind\":\"checkpoint\",\"mutation_sequence\":0,\"organism_id\":\"e003dca5-539f-b2ef-2631-28a4c26bc6ba\",\"prev_checkpoint_hash\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"schema_version\":\"0.7\",\"sequence\":0,\"timestamp\":\"1000000.000000\",\"trace_head\":\"dd8514b1d9c37c5bbbaeda3cee555b8f09918ef4f4f7062129ef627a7ff3cf4d\"}",
+      "checkpoint_signature": "VzxkFSFc9LCSra-IIYCbOVGbNFXvr8DjcYsQaLvtoKLuHqtZzqM2h7wBg2h1xPIGB86jjaGdTfDAYsi1S5qCAA==",
+      "kind": "payload_changed",
+      "mutation_signature": "guJICJrNdvwsqEqTBOVTDq2v7QIcrFquKErS8fMkbbFEoYB_GKw2IixwL8GE2udV94ZJoW-huumHYtzAym1_DQ==",
+      "original_payload": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.25},\"change_hash\":\"75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e\",\"distribution_root\":\"c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb\",\"evidence_root\":\"782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"35516966c2937ffdf8feea2961278319\",\"organism_id\":\"e003dca5-539f-b2ef-2631-28a4c26bc6ba\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"abc5efec2794f8abd6d8631f22dbbb471b76c03260cdca179723ecd8858bd4d9\",\"proposal_id\":\"fdf74835-c52a-a08c-bc05-709c7e869184\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+      "public_key": "GFXs2BQ4I5TAAgTtgPtsasGAlXOZee6pM9uMtNGQQvk=",
+      "reloaded": false
+    }
+  },
+  {
+    "expected_applied": false,
+    "name": "expired",
+    "preparation": [],
+    "primary_evidence": [
+      {
+        "source": "s1",
+        "supports": true
+      },
+      {
+        "source": "s2",
+        "supports": true
+      }
+    ],
+    "record": {
+      "after": {
+        "basin": [
+          {
+            "category": "verbosity",
+            "created_at": 1000000.0,
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+            ],
+            "salience": 0.68
+          }
+        ],
+        "birth": {
+          "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "created_at": 1000000.0,
+          "genesis_hash": "bb77ffc2c69bb4bebd62b1f086126ea034c14569af1574071caf73d551d36e82",
+          "organism_id": "483f6ab4-942d-51a3-8ab1-578e3e9092d8",
+          "public_key_b64": "P29fKFawmM1_oDvUMFRg2ECJ1xUAnV-2Agsh7pXYcos="
+        },
+        "character": {
+          "curiosity": 0.6,
+          "formality": 0.5,
+          "verbosity": 0.5
+        },
+        "checkpoint": {
+          "attested_trace_len": 1,
+          "birth_root": "be36e73142e967d5ce41f8bd9032dbf635e915fb95585e0c9cddd8c26ad64552",
+          "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+          "constitution_root": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "consumed_root": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "gates_root": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "mutation_sequence": 0,
+          "organism_id": "483f6ab4-942d-51a3-8ab1-578e3e9092d8",
+          "prev_checkpoint_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "sequence": 0,
+          "timestamp": 1000000.0,
+          "trace_head": "993b52fe52f8390c2d37167198bb1587209b95027cd73bb49337f46cd48412bc"
+        },
+        "checkpoint_sig": "NEz-M8x8PjEQb-YOaWjyl-QwxUWt-t0qTb9BFRjwr5aIwhuwvXAmIJnC_7z2W2dk_4fJo3kUWbqmM8CUWcgaAQ==",
+        "constitution": {
+          "allowed_character_fields": [
+            "curiosity",
+            "formality",
+            "verbosity"
+          ],
+          "invariants": [
+            "No character change on a misread",
+            "When unreadable, ask rather than guess",
+            "Private authorization material never stored by organism",
+            "Signature bound to the exact mutation, its evidence, and the state it was read from",
+            "Replay and reordering of authorizations forbidden",
+            "Mutation values are numbers in range, never interpretation labels",
+            "A change may only touch the category it was proposed under",
+            "The first commitment in any category is visibly flagged to the owner",
+            "Character never advances without an owner-signed attestation of the result",
+            "The organism cannot detect its own rollback; an external witness must",
+            "The constitution and birth record are covered by the owner attestation, not by the seal alone",
+            "The first-commitment flag is derived from state, never supplied by a caller"
+          ],
+          "rule": "The organism can propose its own growth but cannot authorize its own growth.",
+          "schema_version": "0.7",
+          "theorem": "External Authorization is Necessary (McMurray 2026)",
+          "value_range": [
+            0.0,
+            1.0
+          ]
+        },
+        "consumed": [],
+        "first_commit_pending": {},
+        "mutation_sequence": 0,
+        "organism_id": "483f6ab4-942d-51a3-8ab1-578e3e9092d8",
+        "pending": {
+          "d22f279f-aa0c-7dca-ba2a-f519286bc026": {
+            "category": "verbosity",
+            "change": {
+              "verbosity": 0.25
+            },
+            "change_hash": "75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e",
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "distribution_root": "c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb",
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+            ],
+            "evidence_root": "782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74",
+            "expires_at": 1003600.0,
+            "first_commit": true,
+            "mutation_sequence": 0,
+            "nonce": "31b0fb73bc400e5d20657c3ed9b0c80f",
+            "organism_id": "483f6ab4-942d-51a3-8ab1-578e3e9092d8",
+            "payload_hash": "862824b1b0d6a93e2fce8216bef157a416c29a9e8cdb3fa0a01146a8ed0fc7d3",
+            "payload_to_sign": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.25},\"change_hash\":\"75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e\",\"distribution_root\":\"c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb\",\"evidence_root\":\"782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"31b0fb73bc400e5d20657c3ed9b0c80f\",\"organism_id\":\"483f6ab4-942d-51a3-8ab1-578e3e9092d8\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"40b51e2d784ca07356ca2125cc497241e718832fe44734359bd3a9ec7f813696\",\"proposal_id\":\"d22f279f-aa0c-7dca-ba2a-f519286bc026\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+            "prior_character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "prior_trace_head": "40b51e2d784ca07356ca2125cc497241e718832fe44734359bd3a9ec7f813696",
+            "proposal_id": "d22f279f-aa0c-7dca-ba2a-f519286bc026",
+            "timestamp": 1000000.0
+          }
+        },
+        "schema_version": "0.7",
+        "state_seal": "a80da737d58faa5b91f0807de764d589c8c51abdb912029b314c24910df11d46",
+        "trace": [
+          {
+            "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+            "entry_hash": "993b52fe52f8390c2d37167198bb1587209b95027cd73bb49337f46cd48412bc",
+            "event": "birth",
+            "genesis_hash": "bb77ffc2c69bb4bebd62b1f086126ea034c14569af1574071caf73d551d36e82",
+            "organism_id": "483f6ab4-942d-51a3-8ab1-578e3e9092d8",
+            "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "timestamp": 1000000.0
+          },
+          {
+            "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "entry_hash": "40b51e2d784ca07356ca2125cc497241e718832fe44734359bd3a9ec7f813696",
+            "event": "checkpoint",
+            "prev_hash": "993b52fe52f8390c2d37167198bb1587209b95027cd73bb49337f46cd48412bc",
+            "sequence": 0,
+            "timestamp": 1000000.0
+          },
+          {
+            "entry_hash": "a1730ea712870589b6a7998072ff3fa3dc5d2db0b6b612a5802b983252527884",
+            "event": "authorization_rejected",
+            "prev_hash": "40b51e2d784ca07356ca2125cc497241e718832fe44734359bd3a9ec7f813696",
+            "proposal_id": "d22f279f-aa0c-7dca-ba2a-f519286bc026",
+            "reason": "proposal expired",
+            "timestamp": 1003601.0
+          }
+        ],
+        "trace_head": "a1730ea712870589b6a7998072ff3fa3dc5d2db0b6b612a5802b983252527884"
+      },
+      "applied": false,
+      "attempted": true,
+      "attested": false,
+      "audited": false,
+      "before": {
+        "basin": [
+          {
+            "category": "verbosity",
+            "created_at": 1000000.0,
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+            ],
+            "salience": 0.68
+          }
+        ],
+        "birth": {
+          "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "created_at": 1000000.0,
+          "genesis_hash": "bb77ffc2c69bb4bebd62b1f086126ea034c14569af1574071caf73d551d36e82",
+          "organism_id": "483f6ab4-942d-51a3-8ab1-578e3e9092d8",
+          "public_key_b64": "P29fKFawmM1_oDvUMFRg2ECJ1xUAnV-2Agsh7pXYcos="
+        },
+        "character": {
+          "curiosity": 0.6,
+          "formality": 0.5,
+          "verbosity": 0.5
+        },
+        "checkpoint": {
+          "attested_trace_len": 1,
+          "birth_root": "be36e73142e967d5ce41f8bd9032dbf635e915fb95585e0c9cddd8c26ad64552",
+          "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+          "constitution_root": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "consumed_root": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "gates_root": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "mutation_sequence": 0,
+          "organism_id": "483f6ab4-942d-51a3-8ab1-578e3e9092d8",
+          "prev_checkpoint_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "sequence": 0,
+          "timestamp": 1000000.0,
+          "trace_head": "993b52fe52f8390c2d37167198bb1587209b95027cd73bb49337f46cd48412bc"
+        },
+        "checkpoint_sig": "NEz-M8x8PjEQb-YOaWjyl-QwxUWt-t0qTb9BFRjwr5aIwhuwvXAmIJnC_7z2W2dk_4fJo3kUWbqmM8CUWcgaAQ==",
+        "constitution": {
+          "allowed_character_fields": [
+            "curiosity",
+            "formality",
+            "verbosity"
+          ],
+          "invariants": [
+            "No character change on a misread",
+            "When unreadable, ask rather than guess",
+            "Private authorization material never stored by organism",
+            "Signature bound to the exact mutation, its evidence, and the state it was read from",
+            "Replay and reordering of authorizations forbidden",
+            "Mutation values are numbers in range, never interpretation labels",
+            "A change may only touch the category it was proposed under",
+            "The first commitment in any category is visibly flagged to the owner",
+            "Character never advances without an owner-signed attestation of the result",
+            "The organism cannot detect its own rollback; an external witness must",
+            "The constitution and birth record are covered by the owner attestation, not by the seal alone",
+            "The first-commitment flag is derived from state, never supplied by a caller"
+          ],
+          "rule": "The organism can propose its own growth but cannot authorize its own growth.",
+          "schema_version": "0.7",
+          "theorem": "External Authorization is Necessary (McMurray 2026)",
+          "value_range": [
+            0.0,
+            1.0
+          ]
+        },
+        "consumed": [],
+        "first_commit_pending": {},
+        "mutation_sequence": 0,
+        "organism_id": "483f6ab4-942d-51a3-8ab1-578e3e9092d8",
+        "pending": {
+          "d22f279f-aa0c-7dca-ba2a-f519286bc026": {
+            "category": "verbosity",
+            "change": {
+              "verbosity": 0.25
+            },
+            "change_hash": "75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e",
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "distribution_root": "c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb",
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+            ],
+            "evidence_root": "782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74",
+            "expires_at": 1003600.0,
+            "first_commit": true,
+            "mutation_sequence": 0,
+            "nonce": "31b0fb73bc400e5d20657c3ed9b0c80f",
+            "organism_id": "483f6ab4-942d-51a3-8ab1-578e3e9092d8",
+            "payload_hash": "862824b1b0d6a93e2fce8216bef157a416c29a9e8cdb3fa0a01146a8ed0fc7d3",
+            "payload_to_sign": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.25},\"change_hash\":\"75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e\",\"distribution_root\":\"c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb\",\"evidence_root\":\"782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"31b0fb73bc400e5d20657c3ed9b0c80f\",\"organism_id\":\"483f6ab4-942d-51a3-8ab1-578e3e9092d8\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"40b51e2d784ca07356ca2125cc497241e718832fe44734359bd3a9ec7f813696\",\"proposal_id\":\"d22f279f-aa0c-7dca-ba2a-f519286bc026\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+            "prior_character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "prior_trace_head": "40b51e2d784ca07356ca2125cc497241e718832fe44734359bd3a9ec7f813696",
+            "proposal_id": "d22f279f-aa0c-7dca-ba2a-f519286bc026",
+            "timestamp": 1000000.0
+          }
+        },
+        "schema_version": "0.7",
+        "state_seal": "de406507af322cc5852e2e1e4ce9019fb2b46395cb168738e6ac30829640fde7",
+        "trace": [
+          {
+            "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+            "entry_hash": "993b52fe52f8390c2d37167198bb1587209b95027cd73bb49337f46cd48412bc",
+            "event": "birth",
+            "genesis_hash": "bb77ffc2c69bb4bebd62b1f086126ea034c14569af1574071caf73d551d36e82",
+            "organism_id": "483f6ab4-942d-51a3-8ab1-578e3e9092d8",
+            "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "timestamp": 1000000.0
+          },
+          {
+            "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "entry_hash": "40b51e2d784ca07356ca2125cc497241e718832fe44734359bd3a9ec7f813696",
+            "event": "checkpoint",
+            "prev_hash": "993b52fe52f8390c2d37167198bb1587209b95027cd73bb49337f46cd48412bc",
+            "sequence": 0,
+            "timestamp": 1000000.0
+          }
+        ],
+        "trace_head": "40b51e2d784ca07356ca2125cc497241e718832fe44734359bd3a9ec7f813696"
+      },
+      "checkpoint_payload": "{\"attested_trace_len\":1,\"birth_root\":\"be36e73142e967d5ce41f8bd9032dbf635e915fb95585e0c9cddd8c26ad64552\",\"character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"constitution_root\":\"ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14\",\"consumed_root\":\"4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945\",\"gates_root\":\"44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a\",\"kind\":\"checkpoint\",\"mutation_sequence\":0,\"organism_id\":\"483f6ab4-942d-51a3-8ab1-578e3e9092d8\",\"prev_checkpoint_hash\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"schema_version\":\"0.7\",\"sequence\":0,\"timestamp\":\"1000000.000000\",\"trace_head\":\"993b52fe52f8390c2d37167198bb1587209b95027cd73bb49337f46cd48412bc\"}",
+      "checkpoint_signature": "NEz-M8x8PjEQb-YOaWjyl-QwxUWt-t0qTb9BFRjwr5aIwhuwvXAmIJnC_7z2W2dk_4fJo3kUWbqmM8CUWcgaAQ==",
+      "kind": "expired",
+      "mutation_signature": "jRA5sdb_s42xqPsQHbaeWHB1z45T-7bbiPme8ZsyC2kNf4jDxhUqenbBS2wi8osvT91LM5el1ONdxVdNoEO6BA==",
+      "original_payload": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.25},\"change_hash\":\"75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e\",\"distribution_root\":\"c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb\",\"evidence_root\":\"782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"31b0fb73bc400e5d20657c3ed9b0c80f\",\"organism_id\":\"483f6ab4-942d-51a3-8ab1-578e3e9092d8\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"40b51e2d784ca07356ca2125cc497241e718832fe44734359bd3a9ec7f813696\",\"proposal_id\":\"d22f279f-aa0c-7dca-ba2a-f519286bc026\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+      "public_key": "P29fKFawmM1_oDvUMFRg2ECJ1xUAnV-2Agsh7pXYcos=",
+      "reloaded": false
+    }
+  },
+  {
+    "expected_applied": false,
+    "name": "stale",
+    "preparation": [],
+    "primary_evidence": [
+      {
+        "source": "s1",
+        "supports": true
+      },
+      {
+        "source": "s2",
+        "supports": true
+      }
+    ],
+    "record": {
+      "after": {
+        "basin": [
+          {
+            "category": "verbosity",
+            "created_at": 1000000.0,
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+            ],
+            "salience": 0.68
+          }
+        ],
+        "birth": {
+          "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "created_at": 1000000.0,
+          "genesis_hash": "764a024b7430efcc36ea88b06a18c8f9ecf0674e5cc2c173d21ea2aaad3caa92",
+          "organism_id": "54d017af-ce54-fa9e-0e31-54dcc77b7d33",
+          "public_key_b64": "lqZZspkxAd38Dw2bl8oScnawTwZKj9rD0nGBpdBKqF4="
+        },
+        "character": {
+          "curiosity": 0.6,
+          "formality": 0.5,
+          "verbosity": 0.5
+        },
+        "checkpoint": {
+          "attested_trace_len": 1,
+          "birth_root": "247fa0fb102c20e014c20664343e6d4fac013cb7ee060dac8bc5058263011f27",
+          "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+          "constitution_root": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "consumed_root": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "gates_root": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "mutation_sequence": 0,
+          "organism_id": "54d017af-ce54-fa9e-0e31-54dcc77b7d33",
+          "prev_checkpoint_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "sequence": 0,
+          "timestamp": 1000000.0,
+          "trace_head": "6a06624df2e2624fe020dff91ba0f9da09bf3e585e0169d47add3a40cad298ad"
+        },
+        "checkpoint_sig": "Xxlme9KMZ8WlM4Evcg7O5EPFAwbePrvx9fHjhZVAoLPRX6Nj84ETZnRt2WM0tvJbpWYri5TAlZ4x5Lea9wreBQ==",
+        "constitution": {
+          "allowed_character_fields": [
+            "curiosity",
+            "formality",
+            "verbosity"
+          ],
+          "invariants": [
+            "No character change on a misread",
+            "When unreadable, ask rather than guess",
+            "Private authorization material never stored by organism",
+            "Signature bound to the exact mutation, its evidence, and the state it was read from",
+            "Replay and reordering of authorizations forbidden",
+            "Mutation values are numbers in range, never interpretation labels",
+            "A change may only touch the category it was proposed under",
+            "The first commitment in any category is visibly flagged to the owner",
+            "Character never advances without an owner-signed attestation of the result",
+            "The organism cannot detect its own rollback; an external witness must",
+            "The constitution and birth record are covered by the owner attestation, not by the seal alone",
+            "The first-commitment flag is derived from state, never supplied by a caller"
+          ],
+          "rule": "The organism can propose its own growth but cannot authorize its own growth.",
+          "schema_version": "0.7",
+          "theorem": "External Authorization is Necessary (McMurray 2026)",
+          "value_range": [
+            0.0,
+            1.0
+          ]
+        },
+        "consumed": [],
+        "first_commit_pending": {},
+        "mutation_sequence": 0,
+        "organism_id": "54d017af-ce54-fa9e-0e31-54dcc77b7d33",
+        "pending": {
+          "f77af9e2-6077-0fd8-cee9-85d4e9fda373": {
+            "category": "verbosity",
+            "change": {
+              "verbosity": 0.25
+            },
+            "change_hash": "75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e",
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "distribution_root": "c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb",
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+            ],
+            "evidence_root": "782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74",
+            "expires_at": 1003600.0,
+            "first_commit": true,
+            "mutation_sequence": 0,
+            "nonce": "6ba03738594ea8f55a9572ce6b863af2",
+            "organism_id": "54d017af-ce54-fa9e-0e31-54dcc77b7d33",
+            "payload_hash": "24eca14bc6dd35c75e5735a1a65088fe76fbb9947e8fae6febb3cce6cf3391a7",
+            "payload_to_sign": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.25},\"change_hash\":\"75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e\",\"distribution_root\":\"c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb\",\"evidence_root\":\"782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"6ba03738594ea8f55a9572ce6b863af2\",\"organism_id\":\"54d017af-ce54-fa9e-0e31-54dcc77b7d33\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"584cb9e60cc12c53bd8dfdbb9e2531795fd645e3243780e2300a11dafa69dde2\",\"proposal_id\":\"f77af9e2-6077-0fd8-cee9-85d4e9fda373\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+            "prior_character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "prior_trace_head": "584cb9e60cc12c53bd8dfdbb9e2531795fd645e3243780e2300a11dafa69dde2",
+            "proposal_id": "f77af9e2-6077-0fd8-cee9-85d4e9fda373",
+            "timestamp": 1000000.0
+          }
+        },
+        "schema_version": "0.7",
+        "state_seal": "6ee84dd67b1902ff2375f3c289da75891b2efdaf6b0b07d7efc639f2a8b47e24",
+        "trace": [
+          {
+            "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+            "entry_hash": "6a06624df2e2624fe020dff91ba0f9da09bf3e585e0169d47add3a40cad298ad",
+            "event": "birth",
+            "genesis_hash": "764a024b7430efcc36ea88b06a18c8f9ecf0674e5cc2c173d21ea2aaad3caa92",
+            "organism_id": "54d017af-ce54-fa9e-0e31-54dcc77b7d33",
+            "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "timestamp": 1000000.0
+          },
+          {
+            "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "entry_hash": "584cb9e60cc12c53bd8dfdbb9e2531795fd645e3243780e2300a11dafa69dde2",
+            "event": "checkpoint",
+            "prev_hash": "6a06624df2e2624fe020dff91ba0f9da09bf3e585e0169d47add3a40cad298ad",
+            "sequence": 0,
+            "timestamp": 1000000.0
+          },
+          {
+            "entry_hash": "281fa615e576f097866686c0dc9005104e10f1727b8fbd015944adeaa726766f",
+            "event": "dwelling",
+            "prev_hash": "584cb9e60cc12c53bd8dfdbb9e2531795fd645e3243780e2300a11dafa69dde2",
+            "reason": "synthetic intervening event",
+            "timestamp": 1000000.0
+          },
+          {
+            "entry_hash": "56843b5c244ed884b3a348b30e105db29bdd829d6be85c3f76e5fc378bc9e99e",
+            "event": "authorization_rejected",
+            "prev_hash": "281fa615e576f097866686c0dc9005104e10f1727b8fbd015944adeaa726766f",
+            "proposal_id": "f77af9e2-6077-0fd8-cee9-85d4e9fda373",
+            "reason": "stale proposal: trace has advanced since issuance",
+            "timestamp": 1000000.0
+          }
+        ],
+        "trace_head": "56843b5c244ed884b3a348b30e105db29bdd829d6be85c3f76e5fc378bc9e99e"
+      },
+      "applied": false,
+      "attempted": true,
+      "attested": false,
+      "audited": false,
+      "before": {
+        "basin": [
+          {
+            "category": "verbosity",
+            "created_at": 1000000.0,
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+            ],
+            "salience": 0.68
+          }
+        ],
+        "birth": {
+          "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "created_at": 1000000.0,
+          "genesis_hash": "764a024b7430efcc36ea88b06a18c8f9ecf0674e5cc2c173d21ea2aaad3caa92",
+          "organism_id": "54d017af-ce54-fa9e-0e31-54dcc77b7d33",
+          "public_key_b64": "lqZZspkxAd38Dw2bl8oScnawTwZKj9rD0nGBpdBKqF4="
+        },
+        "character": {
+          "curiosity": 0.6,
+          "formality": 0.5,
+          "verbosity": 0.5
+        },
+        "checkpoint": {
+          "attested_trace_len": 1,
+          "birth_root": "247fa0fb102c20e014c20664343e6d4fac013cb7ee060dac8bc5058263011f27",
+          "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+          "constitution_root": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "consumed_root": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "gates_root": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "mutation_sequence": 0,
+          "organism_id": "54d017af-ce54-fa9e-0e31-54dcc77b7d33",
+          "prev_checkpoint_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "sequence": 0,
+          "timestamp": 1000000.0,
+          "trace_head": "6a06624df2e2624fe020dff91ba0f9da09bf3e585e0169d47add3a40cad298ad"
+        },
+        "checkpoint_sig": "Xxlme9KMZ8WlM4Evcg7O5EPFAwbePrvx9fHjhZVAoLPRX6Nj84ETZnRt2WM0tvJbpWYri5TAlZ4x5Lea9wreBQ==",
+        "constitution": {
+          "allowed_character_fields": [
+            "curiosity",
+            "formality",
+            "verbosity"
+          ],
+          "invariants": [
+            "No character change on a misread",
+            "When unreadable, ask rather than guess",
+            "Private authorization material never stored by organism",
+            "Signature bound to the exact mutation, its evidence, and the state it was read from",
+            "Replay and reordering of authorizations forbidden",
+            "Mutation values are numbers in range, never interpretation labels",
+            "A change may only touch the category it was proposed under",
+            "The first commitment in any category is visibly flagged to the owner",
+            "Character never advances without an owner-signed attestation of the result",
+            "The organism cannot detect its own rollback; an external witness must",
+            "The constitution and birth record are covered by the owner attestation, not by the seal alone",
+            "The first-commitment flag is derived from state, never supplied by a caller"
+          ],
+          "rule": "The organism can propose its own growth but cannot authorize its own growth.",
+          "schema_version": "0.7",
+          "theorem": "External Authorization is Necessary (McMurray 2026)",
+          "value_range": [
+            0.0,
+            1.0
+          ]
+        },
+        "consumed": [],
+        "first_commit_pending": {},
+        "mutation_sequence": 0,
+        "organism_id": "54d017af-ce54-fa9e-0e31-54dcc77b7d33",
+        "pending": {
+          "f77af9e2-6077-0fd8-cee9-85d4e9fda373": {
+            "category": "verbosity",
+            "change": {
+              "verbosity": 0.25
+            },
+            "change_hash": "75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e",
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "distribution_root": "c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb",
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+            ],
+            "evidence_root": "782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74",
+            "expires_at": 1003600.0,
+            "first_commit": true,
+            "mutation_sequence": 0,
+            "nonce": "6ba03738594ea8f55a9572ce6b863af2",
+            "organism_id": "54d017af-ce54-fa9e-0e31-54dcc77b7d33",
+            "payload_hash": "24eca14bc6dd35c75e5735a1a65088fe76fbb9947e8fae6febb3cce6cf3391a7",
+            "payload_to_sign": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.25},\"change_hash\":\"75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e\",\"distribution_root\":\"c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb\",\"evidence_root\":\"782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"6ba03738594ea8f55a9572ce6b863af2\",\"organism_id\":\"54d017af-ce54-fa9e-0e31-54dcc77b7d33\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"584cb9e60cc12c53bd8dfdbb9e2531795fd645e3243780e2300a11dafa69dde2\",\"proposal_id\":\"f77af9e2-6077-0fd8-cee9-85d4e9fda373\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+            "prior_character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "prior_trace_head": "584cb9e60cc12c53bd8dfdbb9e2531795fd645e3243780e2300a11dafa69dde2",
+            "proposal_id": "f77af9e2-6077-0fd8-cee9-85d4e9fda373",
+            "timestamp": 1000000.0
+          }
+        },
+        "schema_version": "0.7",
+        "state_seal": "25dc477b69e7694d43420f0bd2825397503ab539b16767c912c2bc6327f873b7",
+        "trace": [
+          {
+            "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+            "entry_hash": "6a06624df2e2624fe020dff91ba0f9da09bf3e585e0169d47add3a40cad298ad",
+            "event": "birth",
+            "genesis_hash": "764a024b7430efcc36ea88b06a18c8f9ecf0674e5cc2c173d21ea2aaad3caa92",
+            "organism_id": "54d017af-ce54-fa9e-0e31-54dcc77b7d33",
+            "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "timestamp": 1000000.0
+          },
+          {
+            "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "entry_hash": "584cb9e60cc12c53bd8dfdbb9e2531795fd645e3243780e2300a11dafa69dde2",
+            "event": "checkpoint",
+            "prev_hash": "6a06624df2e2624fe020dff91ba0f9da09bf3e585e0169d47add3a40cad298ad",
+            "sequence": 0,
+            "timestamp": 1000000.0
+          },
+          {
+            "entry_hash": "281fa615e576f097866686c0dc9005104e10f1727b8fbd015944adeaa726766f",
+            "event": "dwelling",
+            "prev_hash": "584cb9e60cc12c53bd8dfdbb9e2531795fd645e3243780e2300a11dafa69dde2",
+            "reason": "synthetic intervening event",
+            "timestamp": 1000000.0
+          }
+        ],
+        "trace_head": "281fa615e576f097866686c0dc9005104e10f1727b8fbd015944adeaa726766f"
+      },
+      "checkpoint_payload": "{\"attested_trace_len\":1,\"birth_root\":\"247fa0fb102c20e014c20664343e6d4fac013cb7ee060dac8bc5058263011f27\",\"character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"constitution_root\":\"ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14\",\"consumed_root\":\"4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945\",\"gates_root\":\"44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a\",\"kind\":\"checkpoint\",\"mutation_sequence\":0,\"organism_id\":\"54d017af-ce54-fa9e-0e31-54dcc77b7d33\",\"prev_checkpoint_hash\":\"0000000000000000000000000000000000000000000000000000000000000000\",\"schema_version\":\"0.7\",\"sequence\":0,\"timestamp\":\"1000000.000000\",\"trace_head\":\"6a06624df2e2624fe020dff91ba0f9da09bf3e585e0169d47add3a40cad298ad\"}",
+      "checkpoint_signature": "Xxlme9KMZ8WlM4Evcg7O5EPFAwbePrvx9fHjhZVAoLPRX6Nj84ETZnRt2WM0tvJbpWYri5TAlZ4x5Lea9wreBQ==",
+      "kind": "stale",
+      "mutation_signature": "NX8g5awqP0KZAbmctNNjrnwCK0H92B_ukAqAgpTCkYTE6zAknNqzQnDTxpSWYjSaVf63lMRsYFbWt3hLCPJZDA==",
+      "original_payload": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.25},\"change_hash\":\"75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e\",\"distribution_root\":\"c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb\",\"evidence_root\":\"782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"6ba03738594ea8f55a9572ce6b863af2\",\"organism_id\":\"54d017af-ce54-fa9e-0e31-54dcc77b7d33\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"584cb9e60cc12c53bd8dfdbb9e2531795fd645e3243780e2300a11dafa69dde2\",\"proposal_id\":\"f77af9e2-6077-0fd8-cee9-85d4e9fda373\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+      "public_key": "lqZZspkxAd38Dw2bl8oScnawTwZKj9rD0nGBpdBKqF4=",
+      "reloaded": false
+    }
+  },
+  {
+    "expected_applied": false,
+    "name": "exact_replay",
+    "preparation": [
+      {
+        "after": {
+          "basin": [],
+          "birth": {
+            "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+            "created_at": 1000000.0,
+            "genesis_hash": "ed27d3691a158e9765002cc47976e4b54579aa489ed7625b68b87dbeb9a2e8f2",
+            "organism_id": "3169c705-79fc-26c1-9708-ae14ecd6ef86",
+            "public_key_b64": "rW8vgOuZmdXGxVHwaeVTtErwoTfA-WX3i1zv_qJF5uQ="
+          },
+          "character": {
+            "curiosity": 0.6,
+            "formality": 0.5,
+            "verbosity": 0.25
+          },
+          "checkpoint": {
+            "attested_trace_len": 3,
+            "birth_root": "eeb3f774d05ea96f9478a845942b619a63c37b5727d8289619e5efbab1cfe0ca",
+            "character_root": "2b84bfb16840210ab49275b84747d6e2f141829b5f9534f5222876c5c796a47c",
+            "constitution_root": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+            "consumed_root": "aed4964838280f8ae9de48ec6b5bff8891e02f4dced2d987cb82b874c7bc8e4a",
+            "gates_root": "c12e059c5ee3bcaa189c0c31cb4efc2918da0b8d4a34025020a983ab95547690",
+            "mutation_sequence": 1,
+            "organism_id": "3169c705-79fc-26c1-9708-ae14ecd6ef86",
+            "prev_checkpoint_hash": "c5d8acc82bb712e048e2d2393fc8a3b714118ba36b85e913619eb4e24634fcf5",
+            "sequence": 1,
+            "timestamp": 1000000.0,
+            "trace_head": "17499c964e4a4e7de881a6d8a6d3766dff8b28e0f4b05d533a05c10aa7a2b7fe"
+          },
+          "checkpoint_sig": "LOLTfqScRS-eDB0rYyktkBaqQ3HxsEWl6xL22FrqQzaQk7D2pQrfa8TLH3mG_SS53Jhut1q1yGhIQAQMg1uiDA==",
+          "constitution": {
+            "allowed_character_fields": [
+              "curiosity",
+              "formality",
+              "verbosity"
+            ],
+            "invariants": [
+              "No character change on a misread",
+              "When unreadable, ask rather than guess",
+              "Private authorization material never stored by organism",
+              "Signature bound to the exact mutation, its evidence, and the state it was read from",
+              "Replay and reordering of authorizations forbidden",
+              "Mutation values are numbers in range, never interpretation labels",
+              "A change may only touch the category it was proposed under",
+              "The first commitment in any category is visibly flagged to the owner",
+              "Character never advances without an owner-signed attestation of the result",
+              "The organism cannot detect its own rollback; an external witness must",
+              "The constitution and birth record are covered by the owner attestation, not by the seal alone",
+              "The first-commitment flag is derived from state, never supplied by a caller"
+            ],
+            "rule": "The organism can propose its own growth but cannot authorize its own growth.",
+            "schema_version": "0.7",
+            "theorem": "External Authorization is Necessary (McMurray 2026)",
+            "value_range": [
+              0.0,
+              1.0
+            ]
+          },
+          "consumed": [
+            "9c19e3a2-db30-4e65-cdfc-8e4f8f376f50|2fe96ad4b284c5e4e183e3154fe8b7c2"
+          ],
+          "first_commit_pending": {
+            "verbosity": false
+          },
+          "mutation_sequence": 1,
+          "organism_id": "3169c705-79fc-26c1-9708-ae14ecd6ef86",
+          "pending": {},
+          "schema_version": "0.7",
+          "state_seal": "09263ca81ece4a3b5f8bef63454db3c6902629afb4148f5d65750fabdd04d60a",
+          "trace": [
+            {
+              "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+              "entry_hash": "3e28c4cd058335dc39141390a8f4f9c571849912ed576a7b633fd7848b32440b",
+              "event": "birth",
+              "genesis_hash": "ed27d3691a158e9765002cc47976e4b54579aa489ed7625b68b87dbeb9a2e8f2",
+              "organism_id": "3169c705-79fc-26c1-9708-ae14ecd6ef86",
+              "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+              "timestamp": 1000000.0
+            },
+            {
+              "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+              "entry_hash": "edd34ad0cf389ef16bebd8ba08c6034acc6a8beaea0df2ff0d8a1d59ff86f756",
+              "event": "checkpoint",
+              "prev_hash": "3e28c4cd058335dc39141390a8f4f9c571849912ed576a7b633fd7848b32440b",
+              "sequence": 0,
+              "timestamp": 1000000.0
+            },
+            {
+              "entry_hash": "17499c964e4a4e7de881a6d8a6d3766dff8b28e0f4b05d533a05c10aa7a2b7fe",
+              "event": "authorized_mutation",
+              "prev_hash": "edd34ad0cf389ef16bebd8ba08c6034acc6a8beaea0df2ff0d8a1d59ff86f756",
+              "record": {
+                "authorized_at": 1000000.0,
+                "category": "verbosity",
+                "change": {
+                  "verbosity": 0.25
+                },
+                "distribution": {
+                  "confound": 0.12,
+                  "preference": 0.68,
+                  "unmodeled_cause": 0.2
+                },
+                "evidence": [
+                  "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+                ],
+                "first_commit": true,
+                "mutation_sequence": 1,
+                "note": "",
+                "prior_character_snapshot": {
+                  "curiosity": 0.6,
+                  "formality": 0.5,
+                  "verbosity": 0.5
+                },
+                "proposal_id": "9c19e3a2-db30-4e65-cdfc-8e4f8f376f50",
+                "signature_b64": "kkU6J2Vr1VVKrFA4pTNZp0AyZPxlskZkgB6BwvW2RGkHvFtXG7h5spH6fsEgzFmEcIf_p1LLjFBvWm4BbRFnCQ=="
+              },
+              "timestamp": 1000000.0
+            },
+            {
+              "character_root": "2b84bfb16840210ab49275b84747d6e2f141829b5f9534f5222876c5c796a47c",
+              "entry_hash": "ea356a8f32ef9882a0642854af6f4a54c1260a49575e25bb4887ab81683602ca",
+              "event": "checkpoint",
+              "prev_hash": "17499c964e4a4e7de881a6d8a6d3766dff8b28e0f4b05d533a05c10aa7a2b7fe",
+              "sequence": 1,
+              "timestamp": 1000000.0
+            }
+          ],
+          "trace_head": "ea356a8f32ef9882a0642854af6f4a54c1260a49575e25bb4887ab81683602ca"
+        },
+        "applied": true,
+        "attempted": true,
+        "attested": true,
+        "audited": true,
+        "before": {
+          "basin": [
+            {
+              "category": "verbosity",
+              "created_at": 1000000.0,
+              "distribution": {
+                "confound": 0.12,
+                "preference": 0.68,
+                "unmodeled_cause": 0.2
+              },
+              "evidence": [
+                "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+              ],
+              "salience": 0.68
+            }
+          ],
+          "birth": {
+            "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+            "created_at": 1000000.0,
+            "genesis_hash": "ed27d3691a158e9765002cc47976e4b54579aa489ed7625b68b87dbeb9a2e8f2",
+            "organism_id": "3169c705-79fc-26c1-9708-ae14ecd6ef86",
+            "public_key_b64": "rW8vgOuZmdXGxVHwaeVTtErwoTfA-WX3i1zv_qJF5uQ="
+          },
+          "character": {
+            "curiosity": 0.6,
+            "formality": 0.5,
+            "verbosity": 0.5
+          },
+          "checkpoint": {
+            "attested_trace_len": 1,
+            "birth_root": "eeb3f774d05ea96f9478a845942b619a63c37b5727d8289619e5efbab1cfe0ca",
+            "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "constitution_root": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+            "consumed_root": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+            "gates_root": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+            "mutation_sequence": 0,
+            "organism_id": "3169c705-79fc-26c1-9708-ae14ecd6ef86",
+            "prev_checkpoint_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "sequence": 0,
+            "timestamp": 1000000.0,
+            "trace_head": "3e28c4cd058335dc39141390a8f4f9c571849912ed576a7b633fd7848b32440b"
+          },
+          "checkpoint_sig": "dtHlLnfQJBsn4WR8Ak9OuompvK6CMXh0SIImTlBaJ8jHHIyEz-OIqO036fV23Eu7v6yMqzh13mmgrbjsppIGAQ==",
+          "constitution": {
+            "allowed_character_fields": [
+              "curiosity",
+              "formality",
+              "verbosity"
+            ],
+            "invariants": [
+              "No character change on a misread",
+              "When unreadable, ask rather than guess",
+              "Private authorization material never stored by organism",
+              "Signature bound to the exact mutation, its evidence, and the state it was read from",
+              "Replay and reordering of authorizations forbidden",
+              "Mutation values are numbers in range, never interpretation labels",
+              "A change may only touch the category it was proposed under",
+              "The first commitment in any category is visibly flagged to the owner",
+              "Character never advances without an owner-signed attestation of the result",
+              "The organism cannot detect its own rollback; an external witness must",
+              "The constitution and birth record are covered by the owner attestation, not by the seal alone",
+              "The first-commitment flag is derived from state, never supplied by a caller"
+            ],
+            "rule": "The organism can propose its own growth but cannot authorize its own growth.",
+            "schema_version": "0.7",
+            "theorem": "External Authorization is Necessary (McMurray 2026)",
+            "value_range": [
+              0.0,
+              1.0
+            ]
+          },
+          "consumed": [],
+          "first_commit_pending": {},
+          "mutation_sequence": 0,
+          "organism_id": "3169c705-79fc-26c1-9708-ae14ecd6ef86",
+          "pending": {
+            "9c19e3a2-db30-4e65-cdfc-8e4f8f376f50": {
+              "category": "verbosity",
+              "change": {
+                "verbosity": 0.25
+              },
+              "change_hash": "75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e",
+              "distribution": {
+                "confound": 0.12,
+                "preference": 0.68,
+                "unmodeled_cause": 0.2
+              },
+              "distribution_root": "c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb",
+              "evidence": [
+                "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+              ],
+              "evidence_root": "782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74",
+              "expires_at": 1003600.0,
+              "first_commit": true,
+              "mutation_sequence": 0,
+              "nonce": "2fe96ad4b284c5e4e183e3154fe8b7c2",
+              "organism_id": "3169c705-79fc-26c1-9708-ae14ecd6ef86",
+              "payload_hash": "0e509074773f69663bba88aff6dcfe37938866d8f1de44bfe9a6bbf8eb9878da",
+              "payload_to_sign": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.25},\"change_hash\":\"75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e\",\"distribution_root\":\"c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb\",\"evidence_root\":\"782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"2fe96ad4b284c5e4e183e3154fe8b7c2\",\"organism_id\":\"3169c705-79fc-26c1-9708-ae14ecd6ef86\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"edd34ad0cf389ef16bebd8ba08c6034acc6a8beaea0df2ff0d8a1d59ff86f756\",\"proposal_id\":\"9c19e3a2-db30-4e65-cdfc-8e4f8f376f50\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+              "prior_character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+              "prior_trace_head": "edd34ad0cf389ef16bebd8ba08c6034acc6a8beaea0df2ff0d8a1d59ff86f756",
+              "proposal_id": "9c19e3a2-db30-4e65-cdfc-8e4f8f376f50",
+              "timestamp": 1000000.0
+            }
+          },
+          "schema_version": "0.7",
+          "state_seal": "401967afa2aa602d182eaf81c69ac587f170dac4d1d29e2ee6be778222b56661",
+          "trace": [
+            {
+              "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+              "entry_hash": "3e28c4cd058335dc39141390a8f4f9c571849912ed576a7b633fd7848b32440b",
+              "event": "birth",
+              "genesis_hash": "ed27d3691a158e9765002cc47976e4b54579aa489ed7625b68b87dbeb9a2e8f2",
+              "organism_id": "3169c705-79fc-26c1-9708-ae14ecd6ef86",
+              "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+              "timestamp": 1000000.0
+            },
+            {
+              "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+              "entry_hash": "edd34ad0cf389ef16bebd8ba08c6034acc6a8beaea0df2ff0d8a1d59ff86f756",
+              "event": "checkpoint",
+              "prev_hash": "3e28c4cd058335dc39141390a8f4f9c571849912ed576a7b633fd7848b32440b",
+              "sequence": 0,
+              "timestamp": 1000000.0
+            }
+          ],
+          "trace_head": "edd34ad0cf389ef16bebd8ba08c6034acc6a8beaea0df2ff0d8a1d59ff86f756"
+        },
+        "checkpoint_payload": "{\"attested_trace_len\":3,\"birth_root\":\"eeb3f774d05ea96f9478a845942b619a63c37b5727d8289619e5efbab1cfe0ca\",\"character_root\":\"2b84bfb16840210ab49275b84747d6e2f141829b5f9534f5222876c5c796a47c\",\"constitution_root\":\"ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14\",\"consumed_root\":\"aed4964838280f8ae9de48ec6b5bff8891e02f4dced2d987cb82b874c7bc8e4a\",\"gates_root\":\"c12e059c5ee3bcaa189c0c31cb4efc2918da0b8d4a34025020a983ab95547690\",\"kind\":\"checkpoint\",\"mutation_sequence\":1,\"organism_id\":\"3169c705-79fc-26c1-9708-ae14ecd6ef86\",\"prev_checkpoint_hash\":\"c5d8acc82bb712e048e2d2393fc8a3b714118ba36b85e913619eb4e24634fcf5\",\"schema_version\":\"0.7\",\"sequence\":1,\"timestamp\":\"1000000.000000\",\"trace_head\":\"17499c964e4a4e7de881a6d8a6d3766dff8b28e0f4b05d533a05c10aa7a2b7fe\"}",
+        "checkpoint_signature": "LOLTfqScRS-eDB0rYyktkBaqQ3HxsEWl6xL22FrqQzaQk7D2pQrfa8TLH3mG_SS53Jhut1q1yGhIQAQMg1uiDA==",
+        "kind": "normal",
+        "mutation_signature": "kkU6J2Vr1VVKrFA4pTNZp0AyZPxlskZkgB6BwvW2RGkHvFtXG7h5spH6fsEgzFmEcIf_p1LLjFBvWm4BbRFnCQ==",
+        "original_payload": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.25},\"change_hash\":\"75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e\",\"distribution_root\":\"c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb\",\"evidence_root\":\"782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"2fe96ad4b284c5e4e183e3154fe8b7c2\",\"organism_id\":\"3169c705-79fc-26c1-9708-ae14ecd6ef86\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"edd34ad0cf389ef16bebd8ba08c6034acc6a8beaea0df2ff0d8a1d59ff86f756\",\"proposal_id\":\"9c19e3a2-db30-4e65-cdfc-8e4f8f376f50\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+        "public_key": "rW8vgOuZmdXGxVHwaeVTtErwoTfA-WX3i1zv_qJF5uQ=",
+        "reloaded": true
+      }
+    ],
+    "primary_evidence": [
+      {
+        "source": "s1",
+        "supports": true
+      },
+      {
+        "source": "s2",
+        "supports": true
+      }
+    ],
+    "record": {
+      "after": {
+        "basin": [],
+        "birth": {
+          "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "created_at": 1000000.0,
+          "genesis_hash": "ed27d3691a158e9765002cc47976e4b54579aa489ed7625b68b87dbeb9a2e8f2",
+          "organism_id": "3169c705-79fc-26c1-9708-ae14ecd6ef86",
+          "public_key_b64": "rW8vgOuZmdXGxVHwaeVTtErwoTfA-WX3i1zv_qJF5uQ="
+        },
+        "character": {
+          "curiosity": 0.6,
+          "formality": 0.5,
+          "verbosity": 0.25
+        },
+        "checkpoint": {
+          "attested_trace_len": 3,
+          "birth_root": "eeb3f774d05ea96f9478a845942b619a63c37b5727d8289619e5efbab1cfe0ca",
+          "character_root": "2b84bfb16840210ab49275b84747d6e2f141829b5f9534f5222876c5c796a47c",
+          "constitution_root": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "consumed_root": "aed4964838280f8ae9de48ec6b5bff8891e02f4dced2d987cb82b874c7bc8e4a",
+          "gates_root": "c12e059c5ee3bcaa189c0c31cb4efc2918da0b8d4a34025020a983ab95547690",
+          "mutation_sequence": 1,
+          "organism_id": "3169c705-79fc-26c1-9708-ae14ecd6ef86",
+          "prev_checkpoint_hash": "c5d8acc82bb712e048e2d2393fc8a3b714118ba36b85e913619eb4e24634fcf5",
+          "sequence": 1,
+          "timestamp": 1000000.0,
+          "trace_head": "17499c964e4a4e7de881a6d8a6d3766dff8b28e0f4b05d533a05c10aa7a2b7fe"
+        },
+        "checkpoint_sig": "LOLTfqScRS-eDB0rYyktkBaqQ3HxsEWl6xL22FrqQzaQk7D2pQrfa8TLH3mG_SS53Jhut1q1yGhIQAQMg1uiDA==",
+        "constitution": {
+          "allowed_character_fields": [
+            "curiosity",
+            "formality",
+            "verbosity"
+          ],
+          "invariants": [
+            "No character change on a misread",
+            "When unreadable, ask rather than guess",
+            "Private authorization material never stored by organism",
+            "Signature bound to the exact mutation, its evidence, and the state it was read from",
+            "Replay and reordering of authorizations forbidden",
+            "Mutation values are numbers in range, never interpretation labels",
+            "A change may only touch the category it was proposed under",
+            "The first commitment in any category is visibly flagged to the owner",
+            "Character never advances without an owner-signed attestation of the result",
+            "The organism cannot detect its own rollback; an external witness must",
+            "The constitution and birth record are covered by the owner attestation, not by the seal alone",
+            "The first-commitment flag is derived from state, never supplied by a caller"
+          ],
+          "rule": "The organism can propose its own growth but cannot authorize its own growth.",
+          "schema_version": "0.7",
+          "theorem": "External Authorization is Necessary (McMurray 2026)",
+          "value_range": [
+            0.0,
+            1.0
+          ]
+        },
+        "consumed": [
+          "9c19e3a2-db30-4e65-cdfc-8e4f8f376f50|2fe96ad4b284c5e4e183e3154fe8b7c2"
+        ],
+        "first_commit_pending": {
+          "verbosity": false
+        },
+        "mutation_sequence": 1,
+        "organism_id": "3169c705-79fc-26c1-9708-ae14ecd6ef86",
+        "pending": {},
+        "schema_version": "0.7",
+        "state_seal": "87754ff34b46aa66440aa24e94cf5f222b3a8caea1370fd8455dbbd6cdba1e5b",
+        "trace": [
+          {
+            "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+            "entry_hash": "3e28c4cd058335dc39141390a8f4f9c571849912ed576a7b633fd7848b32440b",
+            "event": "birth",
+            "genesis_hash": "ed27d3691a158e9765002cc47976e4b54579aa489ed7625b68b87dbeb9a2e8f2",
+            "organism_id": "3169c705-79fc-26c1-9708-ae14ecd6ef86",
+            "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "timestamp": 1000000.0
+          },
+          {
+            "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "entry_hash": "edd34ad0cf389ef16bebd8ba08c6034acc6a8beaea0df2ff0d8a1d59ff86f756",
+            "event": "checkpoint",
+            "prev_hash": "3e28c4cd058335dc39141390a8f4f9c571849912ed576a7b633fd7848b32440b",
+            "sequence": 0,
+            "timestamp": 1000000.0
+          },
+          {
+            "entry_hash": "17499c964e4a4e7de881a6d8a6d3766dff8b28e0f4b05d533a05c10aa7a2b7fe",
+            "event": "authorized_mutation",
+            "prev_hash": "edd34ad0cf389ef16bebd8ba08c6034acc6a8beaea0df2ff0d8a1d59ff86f756",
+            "record": {
+              "authorized_at": 1000000.0,
+              "category": "verbosity",
+              "change": {
+                "verbosity": 0.25
+              },
+              "distribution": {
+                "confound": 0.12,
+                "preference": 0.68,
+                "unmodeled_cause": 0.2
+              },
+              "evidence": [
+                "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+              ],
+              "first_commit": true,
+              "mutation_sequence": 1,
+              "note": "",
+              "prior_character_snapshot": {
+                "curiosity": 0.6,
+                "formality": 0.5,
+                "verbosity": 0.5
+              },
+              "proposal_id": "9c19e3a2-db30-4e65-cdfc-8e4f8f376f50",
+              "signature_b64": "kkU6J2Vr1VVKrFA4pTNZp0AyZPxlskZkgB6BwvW2RGkHvFtXG7h5spH6fsEgzFmEcIf_p1LLjFBvWm4BbRFnCQ=="
+            },
+            "timestamp": 1000000.0
+          },
+          {
+            "character_root": "2b84bfb16840210ab49275b84747d6e2f141829b5f9534f5222876c5c796a47c",
+            "entry_hash": "ea356a8f32ef9882a0642854af6f4a54c1260a49575e25bb4887ab81683602ca",
+            "event": "checkpoint",
+            "prev_hash": "17499c964e4a4e7de881a6d8a6d3766dff8b28e0f4b05d533a05c10aa7a2b7fe",
+            "sequence": 1,
+            "timestamp": 1000000.0
+          },
+          {
+            "entry_hash": "948ae35238eac4ba6134cfaea3cf3cca18c7646eb4b77a654f511d42ac63d80f",
+            "event": "authorization_rejected",
+            "prev_hash": "ea356a8f32ef9882a0642854af6f4a54c1260a49575e25bb4887ab81683602ca",
+            "proposal_id": "9c19e3a2-db30-4e65-cdfc-8e4f8f376f50",
+            "reason": "unknown or already-consumed proposal_id",
+            "timestamp": 1000000.0
+          }
+        ],
+        "trace_head": "948ae35238eac4ba6134cfaea3cf3cca18c7646eb4b77a654f511d42ac63d80f"
+      },
+      "applied": false,
+      "attempted": true,
+      "attested": false,
+      "audited": false,
+      "before": {
+        "basin": [],
+        "birth": {
+          "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "created_at": 1000000.0,
+          "genesis_hash": "ed27d3691a158e9765002cc47976e4b54579aa489ed7625b68b87dbeb9a2e8f2",
+          "organism_id": "3169c705-79fc-26c1-9708-ae14ecd6ef86",
+          "public_key_b64": "rW8vgOuZmdXGxVHwaeVTtErwoTfA-WX3i1zv_qJF5uQ="
+        },
+        "character": {
+          "curiosity": 0.6,
+          "formality": 0.5,
+          "verbosity": 0.25
+        },
+        "checkpoint": {
+          "attested_trace_len": 3,
+          "birth_root": "eeb3f774d05ea96f9478a845942b619a63c37b5727d8289619e5efbab1cfe0ca",
+          "character_root": "2b84bfb16840210ab49275b84747d6e2f141829b5f9534f5222876c5c796a47c",
+          "constitution_root": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "consumed_root": "aed4964838280f8ae9de48ec6b5bff8891e02f4dced2d987cb82b874c7bc8e4a",
+          "gates_root": "c12e059c5ee3bcaa189c0c31cb4efc2918da0b8d4a34025020a983ab95547690",
+          "mutation_sequence": 1,
+          "organism_id": "3169c705-79fc-26c1-9708-ae14ecd6ef86",
+          "prev_checkpoint_hash": "c5d8acc82bb712e048e2d2393fc8a3b714118ba36b85e913619eb4e24634fcf5",
+          "sequence": 1,
+          "timestamp": 1000000.0,
+          "trace_head": "17499c964e4a4e7de881a6d8a6d3766dff8b28e0f4b05d533a05c10aa7a2b7fe"
+        },
+        "checkpoint_sig": "LOLTfqScRS-eDB0rYyktkBaqQ3HxsEWl6xL22FrqQzaQk7D2pQrfa8TLH3mG_SS53Jhut1q1yGhIQAQMg1uiDA==",
+        "constitution": {
+          "allowed_character_fields": [
+            "curiosity",
+            "formality",
+            "verbosity"
+          ],
+          "invariants": [
+            "No character change on a misread",
+            "When unreadable, ask rather than guess",
+            "Private authorization material never stored by organism",
+            "Signature bound to the exact mutation, its evidence, and the state it was read from",
+            "Replay and reordering of authorizations forbidden",
+            "Mutation values are numbers in range, never interpretation labels",
+            "A change may only touch the category it was proposed under",
+            "The first commitment in any category is visibly flagged to the owner",
+            "Character never advances without an owner-signed attestation of the result",
+            "The organism cannot detect its own rollback; an external witness must",
+            "The constitution and birth record are covered by the owner attestation, not by the seal alone",
+            "The first-commitment flag is derived from state, never supplied by a caller"
+          ],
+          "rule": "The organism can propose its own growth but cannot authorize its own growth.",
+          "schema_version": "0.7",
+          "theorem": "External Authorization is Necessary (McMurray 2026)",
+          "value_range": [
+            0.0,
+            1.0
+          ]
+        },
+        "consumed": [
+          "9c19e3a2-db30-4e65-cdfc-8e4f8f376f50|2fe96ad4b284c5e4e183e3154fe8b7c2"
+        ],
+        "first_commit_pending": {
+          "verbosity": false
+        },
+        "mutation_sequence": 1,
+        "organism_id": "3169c705-79fc-26c1-9708-ae14ecd6ef86",
+        "pending": {},
+        "schema_version": "0.7",
+        "state_seal": "09263ca81ece4a3b5f8bef63454db3c6902629afb4148f5d65750fabdd04d60a",
+        "trace": [
+          {
+            "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+            "entry_hash": "3e28c4cd058335dc39141390a8f4f9c571849912ed576a7b633fd7848b32440b",
+            "event": "birth",
+            "genesis_hash": "ed27d3691a158e9765002cc47976e4b54579aa489ed7625b68b87dbeb9a2e8f2",
+            "organism_id": "3169c705-79fc-26c1-9708-ae14ecd6ef86",
+            "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "timestamp": 1000000.0
+          },
+          {
+            "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "entry_hash": "edd34ad0cf389ef16bebd8ba08c6034acc6a8beaea0df2ff0d8a1d59ff86f756",
+            "event": "checkpoint",
+            "prev_hash": "3e28c4cd058335dc39141390a8f4f9c571849912ed576a7b633fd7848b32440b",
+            "sequence": 0,
+            "timestamp": 1000000.0
+          },
+          {
+            "entry_hash": "17499c964e4a4e7de881a6d8a6d3766dff8b28e0f4b05d533a05c10aa7a2b7fe",
+            "event": "authorized_mutation",
+            "prev_hash": "edd34ad0cf389ef16bebd8ba08c6034acc6a8beaea0df2ff0d8a1d59ff86f756",
+            "record": {
+              "authorized_at": 1000000.0,
+              "category": "verbosity",
+              "change": {
+                "verbosity": 0.25
+              },
+              "distribution": {
+                "confound": 0.12,
+                "preference": 0.68,
+                "unmodeled_cause": 0.2
+              },
+              "evidence": [
+                "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}, {\"source\": \"s2\", \"supports\": true}]"
+              ],
+              "first_commit": true,
+              "mutation_sequence": 1,
+              "note": "",
+              "prior_character_snapshot": {
+                "curiosity": 0.6,
+                "formality": 0.5,
+                "verbosity": 0.5
+              },
+              "proposal_id": "9c19e3a2-db30-4e65-cdfc-8e4f8f376f50",
+              "signature_b64": "kkU6J2Vr1VVKrFA4pTNZp0AyZPxlskZkgB6BwvW2RGkHvFtXG7h5spH6fsEgzFmEcIf_p1LLjFBvWm4BbRFnCQ=="
+            },
+            "timestamp": 1000000.0
+          },
+          {
+            "character_root": "2b84bfb16840210ab49275b84747d6e2f141829b5f9534f5222876c5c796a47c",
+            "entry_hash": "ea356a8f32ef9882a0642854af6f4a54c1260a49575e25bb4887ab81683602ca",
+            "event": "checkpoint",
+            "prev_hash": "17499c964e4a4e7de881a6d8a6d3766dff8b28e0f4b05d533a05c10aa7a2b7fe",
+            "sequence": 1,
+            "timestamp": 1000000.0
+          }
+        ],
+        "trace_head": "ea356a8f32ef9882a0642854af6f4a54c1260a49575e25bb4887ab81683602ca"
+      },
+      "checkpoint_payload": "{\"attested_trace_len\":3,\"birth_root\":\"eeb3f774d05ea96f9478a845942b619a63c37b5727d8289619e5efbab1cfe0ca\",\"character_root\":\"2b84bfb16840210ab49275b84747d6e2f141829b5f9534f5222876c5c796a47c\",\"constitution_root\":\"ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14\",\"consumed_root\":\"aed4964838280f8ae9de48ec6b5bff8891e02f4dced2d987cb82b874c7bc8e4a\",\"gates_root\":\"c12e059c5ee3bcaa189c0c31cb4efc2918da0b8d4a34025020a983ab95547690\",\"kind\":\"checkpoint\",\"mutation_sequence\":1,\"organism_id\":\"3169c705-79fc-26c1-9708-ae14ecd6ef86\",\"prev_checkpoint_hash\":\"c5d8acc82bb712e048e2d2393fc8a3b714118ba36b85e913619eb4e24634fcf5\",\"schema_version\":\"0.7\",\"sequence\":1,\"timestamp\":\"1000000.000000\",\"trace_head\":\"17499c964e4a4e7de881a6d8a6d3766dff8b28e0f4b05d533a05c10aa7a2b7fe\"}",
+      "checkpoint_signature": "LOLTfqScRS-eDB0rYyktkBaqQ3HxsEWl6xL22FrqQzaQk7D2pQrfa8TLH3mG_SS53Jhut1q1yGhIQAQMg1uiDA==",
+      "kind": "exact_replay",
+      "mutation_signature": "kkU6J2Vr1VVKrFA4pTNZp0AyZPxlskZkgB6BwvW2RGkHvFtXG7h5spH6fsEgzFmEcIf_p1LLjFBvWm4BbRFnCQ==",
+      "original_payload": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.25},\"change_hash\":\"75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e\",\"distribution_root\":\"c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb\",\"evidence_root\":\"782f40a7971068dead51a24292e6756da2e6647dd54bbf837b1ae1784a8a0d74\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"2fe96ad4b284c5e4e183e3154fe8b7c2\",\"organism_id\":\"3169c705-79fc-26c1-9708-ae14ecd6ef86\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"edd34ad0cf389ef16bebd8ba08c6034acc6a8beaea0df2ff0d8a1d59ff86f756\",\"proposal_id\":\"9c19e3a2-db30-4e65-cdfc-8e4f8f376f50\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+      "public_key": "rW8vgOuZmdXGxVHwaeVTtErwoTfA-WX3i1zv_qJF5uQ=",
+      "reloaded": false
+    }
+  },
+  {
+    "expected_applied": true,
+    "name": "private_large_step",
+    "preparation": [],
+    "primary_evidence": [
+      {
+        "source": "s1",
+        "supports": true
+      },
+      {
+        "source": "s2",
+        "supports": true
+      }
+    ],
+    "record": {
+      "after": {
+        "basin": [],
+        "birth": {
+          "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "created_at": 1000000.0,
+          "genesis_hash": "34f1f37dadb915e4a1911fabe3f427e2b58a3854a5138e90b7c2d490ed360626",
+          "organism_id": "42835251-ca92-5c5f-0f64-71652e9c1c21",
+          "public_key_b64": "V53wqXNngGc5iesilJKNVIp2ePslprM0PUYWRZNIsLU="
+        },
+        "character": {
+          "curiosity": 0.6,
+          "formality": 0.5,
+          "verbosity": 0.0
+        },
+        "checkpoint": {
+          "attested_trace_len": 3,
+          "birth_root": "c5500956a3f72c0554025d1f007344b2f5bb494a9332bee0d8589eb75460fd8e",
+          "character_root": "c2d932cac51a181a934a4628fd690cb4fd9a7956276ae7d16bfad46a9f6dc86e",
+          "constitution_root": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "consumed_root": "6b1185e79f1a7fa0ed47d2a910ec50ccd40785326cdfaba5d6e23f1863952981",
+          "gates_root": "c12e059c5ee3bcaa189c0c31cb4efc2918da0b8d4a34025020a983ab95547690",
+          "mutation_sequence": 1,
+          "organism_id": "42835251-ca92-5c5f-0f64-71652e9c1c21",
+          "prev_checkpoint_hash": "c668a3577e74a03d7d8031f4171fe69e6f221c6ed0c5c93f56fbf972f947e210",
+          "sequence": 1,
+          "timestamp": 1000000.0,
+          "trace_head": "a893f5cb719b6bedd4f6f78f0519b7d64f51826239aef34f95c1c8d0a5dc3060"
+        },
+        "checkpoint_sig": "qIFzvrKs2hHDLC4GCTkAc5T0zhvVBO93Ar1BaEbSyNT0FneJK6dbMwcctE169FI7WwHSHEq-eGq_XjXaRDwYAA==",
+        "constitution": {
+          "allowed_character_fields": [
+            "curiosity",
+            "formality",
+            "verbosity"
+          ],
+          "invariants": [
+            "No character change on a misread",
+            "When unreadable, ask rather than guess",
+            "Private authorization material never stored by organism",
+            "Signature bound to the exact mutation, its evidence, and the state it was read from",
+            "Replay and reordering of authorizations forbidden",
+            "Mutation values are numbers in range, never interpretation labels",
+            "A change may only touch the category it was proposed under",
+            "The first commitment in any category is visibly flagged to the owner",
+            "Character never advances without an owner-signed attestation of the result",
+            "The organism cannot detect its own rollback; an external witness must",
+            "The constitution and birth record are covered by the owner attestation, not by the seal alone",
+            "The first-commitment flag is derived from state, never supplied by a caller"
+          ],
+          "rule": "The organism can propose its own growth but cannot authorize its own growth.",
+          "schema_version": "0.7",
+          "theorem": "External Authorization is Necessary (McMurray 2026)",
+          "value_range": [
+            0.0,
+            1.0
+          ]
+        },
+        "consumed": [
+          "e5dd51fe-2d99-6917-2652-d1f9cdda47c1|f804ac67cace363d360f0849855af358"
+        ],
+        "first_commit_pending": {
+          "verbosity": false
+        },
+        "mutation_sequence": 1,
+        "organism_id": "42835251-ca92-5c5f-0f64-71652e9c1c21",
+        "pending": {},
+        "schema_version": "0.7",
+        "state_seal": "5eff50c37e8137f3f5ebb2237d7f10edfd0ca14afa9772f5bb6ab43850e5bf9c",
+        "trace": [
+          {
+            "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+            "entry_hash": "1c65ae295ef52f9255eae6536175bc0f81cf90ee9e3e2bffb05bc87a0801201d",
+            "event": "birth",
+            "genesis_hash": "34f1f37dadb915e4a1911fabe3f427e2b58a3854a5138e90b7c2d490ed360626",
+            "organism_id": "42835251-ca92-5c5f-0f64-71652e9c1c21",
+            "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "timestamp": 1000000.0
+          },
+          {
+            "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "entry_hash": "e4d060e954a9665b8beb1682cad94f9294e34f9a5cb3d482389ab63e4d546014",
+            "event": "checkpoint",
+            "prev_hash": "1c65ae295ef52f9255eae6536175bc0f81cf90ee9e3e2bffb05bc87a0801201d",
+            "sequence": 0,
+            "timestamp": 1000000.0
+          },
+          {
+            "entry_hash": "a893f5cb719b6bedd4f6f78f0519b7d64f51826239aef34f95c1c8d0a5dc3060",
+            "event": "authorized_mutation",
+            "prev_hash": "e4d060e954a9665b8beb1682cad94f9294e34f9a5cb3d482389ab63e4d546014",
+            "record": {
+              "authorized_at": 1000000.0,
+              "category": "verbosity",
+              "change": {
+                "verbosity": 0.0
+              },
+              "distribution": {
+                "preference": 1.0
+              },
+              "evidence": [
+                "Synthetic direct-helper fixture."
+              ],
+              "first_commit": true,
+              "mutation_sequence": 1,
+              "note": "",
+              "prior_character_snapshot": {
+                "curiosity": 0.6,
+                "formality": 0.5,
+                "verbosity": 0.5
+              },
+              "proposal_id": "e5dd51fe-2d99-6917-2652-d1f9cdda47c1",
+              "signature_b64": "qg1cslIB0NHC_3pa8m6fs1k07scM0M7aAr7jHTK7WROruh-NQ1ueB8Hk7y3VuO4htVgodTQhxN8j5FQJfxB_Bg=="
+            },
+            "timestamp": 1000000.0
+          },
+          {
+            "character_root": "c2d932cac51a181a934a4628fd690cb4fd9a7956276ae7d16bfad46a9f6dc86e",
+            "entry_hash": "11ecea93b50c9818c32b0a1251e726c3335c3c3b96ce236aec8d15c318704f22",
+            "event": "checkpoint",
+            "prev_hash": "a893f5cb719b6bedd4f6f78f0519b7d64f51826239aef34f95c1c8d0a5dc3060",
+            "sequence": 1,
+            "timestamp": 1000000.0
+          }
+        ],
+        "trace_head": "11ecea93b50c9818c32b0a1251e726c3335c3c3b96ce236aec8d15c318704f22"
+      },
+      "applied": true,
+      "attempted": true,
+      "attested": true,
+      "audited": true,
+      "before": {
+        "basin": [],
+        "birth": {
+          "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "created_at": 1000000.0,
+          "genesis_hash": "34f1f37dadb915e4a1911fabe3f427e2b58a3854a5138e90b7c2d490ed360626",
+          "organism_id": "42835251-ca92-5c5f-0f64-71652e9c1c21",
+          "public_key_b64": "V53wqXNngGc5iesilJKNVIp2ePslprM0PUYWRZNIsLU="
+        },
+        "character": {
+          "curiosity": 0.6,
+          "formality": 0.5,
+          "verbosity": 0.5
+        },
+        "checkpoint": {
+          "attested_trace_len": 1,
+          "birth_root": "c5500956a3f72c0554025d1f007344b2f5bb494a9332bee0d8589eb75460fd8e",
+          "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+          "constitution_root": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "consumed_root": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "gates_root": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "mutation_sequence": 0,
+          "organism_id": "42835251-ca92-5c5f-0f64-71652e9c1c21",
+          "prev_checkpoint_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "sequence": 0,
+          "timestamp": 1000000.0,
+          "trace_head": "1c65ae295ef52f9255eae6536175bc0f81cf90ee9e3e2bffb05bc87a0801201d"
+        },
+        "checkpoint_sig": "eYyrTDJumBr7MwziCYsr1N0HY-7VClYe4Siq7UcxGDfh3Yz1jz90rGpVVlDRckTG2pCAkkgCni5ue_qIDBwoAw==",
+        "constitution": {
+          "allowed_character_fields": [
+            "curiosity",
+            "formality",
+            "verbosity"
+          ],
+          "invariants": [
+            "No character change on a misread",
+            "When unreadable, ask rather than guess",
+            "Private authorization material never stored by organism",
+            "Signature bound to the exact mutation, its evidence, and the state it was read from",
+            "Replay and reordering of authorizations forbidden",
+            "Mutation values are numbers in range, never interpretation labels",
+            "A change may only touch the category it was proposed under",
+            "The first commitment in any category is visibly flagged to the owner",
+            "Character never advances without an owner-signed attestation of the result",
+            "The organism cannot detect its own rollback; an external witness must",
+            "The constitution and birth record are covered by the owner attestation, not by the seal alone",
+            "The first-commitment flag is derived from state, never supplied by a caller"
+          ],
+          "rule": "The organism can propose its own growth but cannot authorize its own growth.",
+          "schema_version": "0.7",
+          "theorem": "External Authorization is Necessary (McMurray 2026)",
+          "value_range": [
+            0.0,
+            1.0
+          ]
+        },
+        "consumed": [],
+        "first_commit_pending": {},
+        "mutation_sequence": 0,
+        "organism_id": "42835251-ca92-5c5f-0f64-71652e9c1c21",
+        "pending": {
+          "e5dd51fe-2d99-6917-2652-d1f9cdda47c1": {
+            "category": "verbosity",
+            "change": {
+              "verbosity": 0.0
+            },
+            "change_hash": "8fbb61ede8b7bcdb73015ccdb20bd374562d79e3ef0c06d086fdf6e1840e9ab8",
+            "distribution": {
+              "preference": 1.0
+            },
+            "distribution_root": "e01f396ad7505fd25fac80fba531caec27afbd456d35730c49f3fcc64203d815",
+            "evidence": [
+              "Synthetic direct-helper fixture."
+            ],
+            "evidence_root": "4ea2edfdd6aba59b5943be795bfe44eb9da38411284b361b1b357d5566fce268",
+            "expires_at": 1003600.0,
+            "first_commit": true,
+            "mutation_sequence": 0,
+            "nonce": "f804ac67cace363d360f0849855af358",
+            "organism_id": "42835251-ca92-5c5f-0f64-71652e9c1c21",
+            "payload_hash": "3c232d0c177041562e84dbb23c5d70b3440b73837692d8224ef8cca974ee16ae",
+            "payload_to_sign": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.0},\"change_hash\":\"8fbb61ede8b7bcdb73015ccdb20bd374562d79e3ef0c06d086fdf6e1840e9ab8\",\"distribution_root\":\"e01f396ad7505fd25fac80fba531caec27afbd456d35730c49f3fcc64203d815\",\"evidence_root\":\"4ea2edfdd6aba59b5943be795bfe44eb9da38411284b361b1b357d5566fce268\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"f804ac67cace363d360f0849855af358\",\"organism_id\":\"42835251-ca92-5c5f-0f64-71652e9c1c21\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"e4d060e954a9665b8beb1682cad94f9294e34f9a5cb3d482389ab63e4d546014\",\"proposal_id\":\"e5dd51fe-2d99-6917-2652-d1f9cdda47c1\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+            "prior_character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "prior_trace_head": "e4d060e954a9665b8beb1682cad94f9294e34f9a5cb3d482389ab63e4d546014",
+            "proposal_id": "e5dd51fe-2d99-6917-2652-d1f9cdda47c1",
+            "timestamp": 1000000.0
+          }
+        },
+        "schema_version": "0.7",
+        "state_seal": "0d27bd423f80b8f4bce404497c25c31bc049b9368565704d7d7f76b6adb506f1",
+        "trace": [
+          {
+            "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+            "entry_hash": "1c65ae295ef52f9255eae6536175bc0f81cf90ee9e3e2bffb05bc87a0801201d",
+            "event": "birth",
+            "genesis_hash": "34f1f37dadb915e4a1911fabe3f427e2b58a3854a5138e90b7c2d490ed360626",
+            "organism_id": "42835251-ca92-5c5f-0f64-71652e9c1c21",
+            "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "timestamp": 1000000.0
+          },
+          {
+            "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "entry_hash": "e4d060e954a9665b8beb1682cad94f9294e34f9a5cb3d482389ab63e4d546014",
+            "event": "checkpoint",
+            "prev_hash": "1c65ae295ef52f9255eae6536175bc0f81cf90ee9e3e2bffb05bc87a0801201d",
+            "sequence": 0,
+            "timestamp": 1000000.0
+          }
+        ],
+        "trace_head": "e4d060e954a9665b8beb1682cad94f9294e34f9a5cb3d482389ab63e4d546014"
+      },
+      "checkpoint_payload": "{\"attested_trace_len\":3,\"birth_root\":\"c5500956a3f72c0554025d1f007344b2f5bb494a9332bee0d8589eb75460fd8e\",\"character_root\":\"c2d932cac51a181a934a4628fd690cb4fd9a7956276ae7d16bfad46a9f6dc86e\",\"constitution_root\":\"ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14\",\"consumed_root\":\"6b1185e79f1a7fa0ed47d2a910ec50ccd40785326cdfaba5d6e23f1863952981\",\"gates_root\":\"c12e059c5ee3bcaa189c0c31cb4efc2918da0b8d4a34025020a983ab95547690\",\"kind\":\"checkpoint\",\"mutation_sequence\":1,\"organism_id\":\"42835251-ca92-5c5f-0f64-71652e9c1c21\",\"prev_checkpoint_hash\":\"c668a3577e74a03d7d8031f4171fe69e6f221c6ed0c5c93f56fbf972f947e210\",\"schema_version\":\"0.7\",\"sequence\":1,\"timestamp\":\"1000000.000000\",\"trace_head\":\"a893f5cb719b6bedd4f6f78f0519b7d64f51826239aef34f95c1c8d0a5dc3060\"}",
+      "checkpoint_signature": "qIFzvrKs2hHDLC4GCTkAc5T0zhvVBO93Ar1BaEbSyNT0FneJK6dbMwcctE169FI7WwHSHEq-eGq_XjXaRDwYAA==",
+      "kind": "private_large_step",
+      "mutation_signature": "qg1cslIB0NHC_3pa8m6fs1k07scM0M7aAr7jHTK7WROruh-NQ1ueB8Hk7y3VuO4htVgodTQhxN8j5FQJfxB_Bg==",
+      "original_payload": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.0},\"change_hash\":\"8fbb61ede8b7bcdb73015ccdb20bd374562d79e3ef0c06d086fdf6e1840e9ab8\",\"distribution_root\":\"e01f396ad7505fd25fac80fba531caec27afbd456d35730c49f3fcc64203d815\",\"evidence_root\":\"4ea2edfdd6aba59b5943be795bfe44eb9da38411284b361b1b357d5566fce268\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"f804ac67cace363d360f0849855af358\",\"organism_id\":\"42835251-ca92-5c5f-0f64-71652e9c1c21\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"e4d060e954a9665b8beb1682cad94f9294e34f9a5cb3d482389ab63e4d546014\",\"proposal_id\":\"e5dd51fe-2d99-6917-2652-d1f9cdda47c1\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+      "public_key": "V53wqXNngGc5iesilJKNVIp2ePslprM0PUYWRZNIsLU=",
+      "reloaded": true
+    }
+  },
+  {
+    "expected_applied": true,
+    "name": "unsupported_but_signed",
+    "preparation": [],
+    "primary_evidence": [
+      {
+        "source": "s1",
+        "supports": true
+      }
+    ],
+    "record": {
+      "after": {
+        "basin": [],
+        "birth": {
+          "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "created_at": 1000000.0,
+          "genesis_hash": "df18dacfcc17a4e354d6dda285884a268da00f494b4caa0c9551cf875f4f6a53",
+          "organism_id": "15498c28-6c29-dbc6-3842-286e49257b03",
+          "public_key_b64": "m1MO3T1i0-kJV2jiRGEIoh3mLNPWOxk6MgaM8_iNCm4="
+        },
+        "character": {
+          "curiosity": 0.6,
+          "formality": 0.5,
+          "verbosity": 0.25
+        },
+        "checkpoint": {
+          "attested_trace_len": 3,
+          "birth_root": "91a9d3872fbbefd8e9eb264c0b30962b0bba36604e91c837111895b216b00282",
+          "character_root": "2b84bfb16840210ab49275b84747d6e2f141829b5f9534f5222876c5c796a47c",
+          "constitution_root": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "consumed_root": "d611bb1539b90e0c2ad8a8e67bfbee04bdfbf91d0c7656f4967b32266e3cf91a",
+          "gates_root": "c12e059c5ee3bcaa189c0c31cb4efc2918da0b8d4a34025020a983ab95547690",
+          "mutation_sequence": 1,
+          "organism_id": "15498c28-6c29-dbc6-3842-286e49257b03",
+          "prev_checkpoint_hash": "84303340192f11ed15748e856af53e5db87aabd0c6c983645c5e1b5e65e99268",
+          "sequence": 1,
+          "timestamp": 1000000.0,
+          "trace_head": "6932fb2f2a709ae4f73c38ca157b8aefc22d8a8c308715d4b0558e4a25176c6c"
+        },
+        "checkpoint_sig": "TLHCwhka8Omch1KJCZ3OKFsTXhurEMQAAaO8982wsJDvDELpju6GaE3NRTUfYhetC76pCpR3GpAD_IpIY372Cg==",
+        "constitution": {
+          "allowed_character_fields": [
+            "curiosity",
+            "formality",
+            "verbosity"
+          ],
+          "invariants": [
+            "No character change on a misread",
+            "When unreadable, ask rather than guess",
+            "Private authorization material never stored by organism",
+            "Signature bound to the exact mutation, its evidence, and the state it was read from",
+            "Replay and reordering of authorizations forbidden",
+            "Mutation values are numbers in range, never interpretation labels",
+            "A change may only touch the category it was proposed under",
+            "The first commitment in any category is visibly flagged to the owner",
+            "Character never advances without an owner-signed attestation of the result",
+            "The organism cannot detect its own rollback; an external witness must",
+            "The constitution and birth record are covered by the owner attestation, not by the seal alone",
+            "The first-commitment flag is derived from state, never supplied by a caller"
+          ],
+          "rule": "The organism can propose its own growth but cannot authorize its own growth.",
+          "schema_version": "0.7",
+          "theorem": "External Authorization is Necessary (McMurray 2026)",
+          "value_range": [
+            0.0,
+            1.0
+          ]
+        },
+        "consumed": [
+          "0055ad3f-3b5c-7537-cf93-98eef8383a18|4017ad4e18f85136dbc1092a17b76360"
+        ],
+        "first_commit_pending": {
+          "verbosity": false
+        },
+        "mutation_sequence": 1,
+        "organism_id": "15498c28-6c29-dbc6-3842-286e49257b03",
+        "pending": {},
+        "schema_version": "0.7",
+        "state_seal": "2b63ec3ce197bafc6c550f435c67521d0fc832273493296ad4f4441e454ec96e",
+        "trace": [
+          {
+            "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+            "entry_hash": "3add94c7d8d536d24126bda3f009ceaeded4661333c8779e40455c94e59001ab",
+            "event": "birth",
+            "genesis_hash": "df18dacfcc17a4e354d6dda285884a268da00f494b4caa0c9551cf875f4f6a53",
+            "organism_id": "15498c28-6c29-dbc6-3842-286e49257b03",
+            "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "timestamp": 1000000.0
+          },
+          {
+            "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "entry_hash": "2f8be7682630b55934844c428b6dc0e713f297280acf331f81047476a68d06c1",
+            "event": "checkpoint",
+            "prev_hash": "3add94c7d8d536d24126bda3f009ceaeded4661333c8779e40455c94e59001ab",
+            "sequence": 0,
+            "timestamp": 1000000.0
+          },
+          {
+            "entry_hash": "6932fb2f2a709ae4f73c38ca157b8aefc22d8a8c308715d4b0558e4a25176c6c",
+            "event": "authorized_mutation",
+            "prev_hash": "2f8be7682630b55934844c428b6dc0e713f297280acf331f81047476a68d06c1",
+            "record": {
+              "authorized_at": 1000000.0,
+              "category": "verbosity",
+              "change": {
+                "verbosity": 0.25
+              },
+              "distribution": {
+                "confound": 0.12,
+                "preference": 0.68,
+                "unmodeled_cause": 0.2
+              },
+              "evidence": [
+                "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}]"
+              ],
+              "first_commit": true,
+              "mutation_sequence": 1,
+              "note": "",
+              "prior_character_snapshot": {
+                "curiosity": 0.6,
+                "formality": 0.5,
+                "verbosity": 0.5
+              },
+              "proposal_id": "0055ad3f-3b5c-7537-cf93-98eef8383a18",
+              "signature_b64": "uZxqRkZMp5dIdwfN--teLGp6I9qxHf78-ObBjkrx4LkFvS7y3iFSabmmJ5D2BHdiY7XQ3ehur1Vg2vC43GpIDA=="
+            },
+            "timestamp": 1000000.0
+          },
+          {
+            "character_root": "2b84bfb16840210ab49275b84747d6e2f141829b5f9534f5222876c5c796a47c",
+            "entry_hash": "8d4ab8332533d3c8e49161a4e25c97aad1539ea3c42fcf35da1daf941e673865",
+            "event": "checkpoint",
+            "prev_hash": "6932fb2f2a709ae4f73c38ca157b8aefc22d8a8c308715d4b0558e4a25176c6c",
+            "sequence": 1,
+            "timestamp": 1000000.0
+          }
+        ],
+        "trace_head": "8d4ab8332533d3c8e49161a4e25c97aad1539ea3c42fcf35da1daf941e673865"
+      },
+      "applied": true,
+      "attempted": true,
+      "attested": true,
+      "audited": true,
+      "before": {
+        "basin": [
+          {
+            "category": "verbosity",
+            "created_at": 1000000.0,
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}]"
+            ],
+            "salience": 0.68
+          }
+        ],
+        "birth": {
+          "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "created_at": 1000000.0,
+          "genesis_hash": "df18dacfcc17a4e354d6dda285884a268da00f494b4caa0c9551cf875f4f6a53",
+          "organism_id": "15498c28-6c29-dbc6-3842-286e49257b03",
+          "public_key_b64": "m1MO3T1i0-kJV2jiRGEIoh3mLNPWOxk6MgaM8_iNCm4="
+        },
+        "character": {
+          "curiosity": 0.6,
+          "formality": 0.5,
+          "verbosity": 0.5
+        },
+        "checkpoint": {
+          "attested_trace_len": 1,
+          "birth_root": "91a9d3872fbbefd8e9eb264c0b30962b0bba36604e91c837111895b216b00282",
+          "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+          "constitution_root": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+          "consumed_root": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+          "gates_root": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+          "mutation_sequence": 0,
+          "organism_id": "15498c28-6c29-dbc6-3842-286e49257b03",
+          "prev_checkpoint_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "sequence": 0,
+          "timestamp": 1000000.0,
+          "trace_head": "3add94c7d8d536d24126bda3f009ceaeded4661333c8779e40455c94e59001ab"
+        },
+        "checkpoint_sig": "-O-E4es1snHECxogwkGJc8ZDmfAu5CS1S9aZ0SySxO0NeK_oY1k2cvxyhEitRl9s9bbvWDYkq_CsS9km6F6FDA==",
+        "constitution": {
+          "allowed_character_fields": [
+            "curiosity",
+            "formality",
+            "verbosity"
+          ],
+          "invariants": [
+            "No character change on a misread",
+            "When unreadable, ask rather than guess",
+            "Private authorization material never stored by organism",
+            "Signature bound to the exact mutation, its evidence, and the state it was read from",
+            "Replay and reordering of authorizations forbidden",
+            "Mutation values are numbers in range, never interpretation labels",
+            "A change may only touch the category it was proposed under",
+            "The first commitment in any category is visibly flagged to the owner",
+            "Character never advances without an owner-signed attestation of the result",
+            "The organism cannot detect its own rollback; an external witness must",
+            "The constitution and birth record are covered by the owner attestation, not by the seal alone",
+            "The first-commitment flag is derived from state, never supplied by a caller"
+          ],
+          "rule": "The organism can propose its own growth but cannot authorize its own growth.",
+          "schema_version": "0.7",
+          "theorem": "External Authorization is Necessary (McMurray 2026)",
+          "value_range": [
+            0.0,
+            1.0
+          ]
+        },
+        "consumed": [],
+        "first_commit_pending": {},
+        "mutation_sequence": 0,
+        "organism_id": "15498c28-6c29-dbc6-3842-286e49257b03",
+        "pending": {
+          "0055ad3f-3b5c-7537-cf93-98eef8383a18": {
+            "category": "verbosity",
+            "change": {
+              "verbosity": 0.25
+            },
+            "change_hash": "75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e",
+            "distribution": {
+              "confound": 0.12,
+              "preference": 0.68,
+              "unmodeled_cause": 0.2
+            },
+            "distribution_root": "c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb",
+            "evidence": [
+              "I prefer brief replies. Synthetic primary observations: [{\"source\": \"s1\", \"supports\": true}]"
+            ],
+            "evidence_root": "4fb0fecd667fdcb0af2ca4db9edeee6c5b6a379b4f474ff38fcbe5b90c9e7b4a",
+            "expires_at": 1003600.0,
+            "first_commit": true,
+            "mutation_sequence": 0,
+            "nonce": "4017ad4e18f85136dbc1092a17b76360",
+            "organism_id": "15498c28-6c29-dbc6-3842-286e49257b03",
+            "payload_hash": "9a3abea0063f6eb454ccad5183aaa0e8b45d126b81fa2087c080b7c2ace395dd",
+            "payload_to_sign": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.25},\"change_hash\":\"75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e\",\"distribution_root\":\"c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb\",\"evidence_root\":\"4fb0fecd667fdcb0af2ca4db9edeee6c5b6a379b4f474ff38fcbe5b90c9e7b4a\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"4017ad4e18f85136dbc1092a17b76360\",\"organism_id\":\"15498c28-6c29-dbc6-3842-286e49257b03\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"2f8be7682630b55934844c428b6dc0e713f297280acf331f81047476a68d06c1\",\"proposal_id\":\"0055ad3f-3b5c-7537-cf93-98eef8383a18\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+            "prior_character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "prior_trace_head": "2f8be7682630b55934844c428b6dc0e713f297280acf331f81047476a68d06c1",
+            "proposal_id": "0055ad3f-3b5c-7537-cf93-98eef8383a18",
+            "timestamp": 1000000.0
+          }
+        },
+        "schema_version": "0.7",
+        "state_seal": "9fe3ed27a65aafcf479a239049623c153448482d5e367de7348935d6b1e2bdbe",
+        "trace": [
+          {
+            "constitution_hash": "ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14",
+            "entry_hash": "3add94c7d8d536d24126bda3f009ceaeded4661333c8779e40455c94e59001ab",
+            "event": "birth",
+            "genesis_hash": "df18dacfcc17a4e354d6dda285884a268da00f494b4caa0c9551cf875f4f6a53",
+            "organism_id": "15498c28-6c29-dbc6-3842-286e49257b03",
+            "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "timestamp": 1000000.0
+          },
+          {
+            "character_root": "b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372",
+            "entry_hash": "2f8be7682630b55934844c428b6dc0e713f297280acf331f81047476a68d06c1",
+            "event": "checkpoint",
+            "prev_hash": "3add94c7d8d536d24126bda3f009ceaeded4661333c8779e40455c94e59001ab",
+            "sequence": 0,
+            "timestamp": 1000000.0
+          }
+        ],
+        "trace_head": "2f8be7682630b55934844c428b6dc0e713f297280acf331f81047476a68d06c1"
+      },
+      "checkpoint_payload": "{\"attested_trace_len\":3,\"birth_root\":\"91a9d3872fbbefd8e9eb264c0b30962b0bba36604e91c837111895b216b00282\",\"character_root\":\"2b84bfb16840210ab49275b84747d6e2f141829b5f9534f5222876c5c796a47c\",\"constitution_root\":\"ecb000bdd3c61b3d5f136c6f8b8f55ba4af2dd56b7c056fb4cc02171f5572d14\",\"consumed_root\":\"d611bb1539b90e0c2ad8a8e67bfbee04bdfbf91d0c7656f4967b32266e3cf91a\",\"gates_root\":\"c12e059c5ee3bcaa189c0c31cb4efc2918da0b8d4a34025020a983ab95547690\",\"kind\":\"checkpoint\",\"mutation_sequence\":1,\"organism_id\":\"15498c28-6c29-dbc6-3842-286e49257b03\",\"prev_checkpoint_hash\":\"84303340192f11ed15748e856af53e5db87aabd0c6c983645c5e1b5e65e99268\",\"schema_version\":\"0.7\",\"sequence\":1,\"timestamp\":\"1000000.000000\",\"trace_head\":\"6932fb2f2a709ae4f73c38ca157b8aefc22d8a8c308715d4b0558e4a25176c6c\"}",
+      "checkpoint_signature": "TLHCwhka8Omch1KJCZ3OKFsTXhurEMQAAaO8982wsJDvDELpju6GaE3NRTUfYhetC76pCpR3GpAD_IpIY372Cg==",
+      "kind": "unsupported_but_signed",
+      "mutation_signature": "uZxqRkZMp5dIdwfN--teLGp6I9qxHf78-ObBjkrx4LkFvS7y3iFSabmmJ5D2BHdiY7XQ3ehur1Vg2vC43GpIDA==",
+      "original_payload": "{\"category\":\"verbosity\",\"change\":{\"verbosity\":0.25},\"change_hash\":\"75d95118d23b28f7ec062374bf9368864226d985b31c1c6efd7760f9408c8e8e\",\"distribution_root\":\"c6c5cf9ee4fb5cb184cbf8851cdfb4b6b63e5857c2045e3b0370b1ad50c2b7eb\",\"evidence_root\":\"4fb0fecd667fdcb0af2ca4db9edeee6c5b6a379b4f474ff38fcbe5b90c9e7b4a\",\"expires_at\":\"1003600.000000\",\"first_commit\":true,\"kind\":\"mutation_proposal\",\"mutation_sequence\":0,\"nonce\":\"4017ad4e18f85136dbc1092a17b76360\",\"organism_id\":\"15498c28-6c29-dbc6-3842-286e49257b03\",\"prior_character_root\":\"b1626280ec622a4139795fd3876c513d2581c4f6d5fb0461d676b1f17f6c7372\",\"prior_trace_head\":\"2f8be7682630b55934844c428b6dc0e713f297280acf331f81047476a68d06c1\",\"proposal_id\":\"0055ad3f-3b5c-7537-cf93-98eef8383a18\",\"schema_version\":\"0.7\",\"timestamp\":\"1000000.000000\"}",
+      "public_key": "m1MO3T1i0-kJV2jiRGEIoh3mLNPWOxk6MgaM8_iNCm4=",
+      "reloaded": true
+    }
+  }
+]

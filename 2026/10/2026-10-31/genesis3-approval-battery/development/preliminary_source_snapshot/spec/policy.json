@@ -1,0 +1,25 @@
+{
+  "allowed_keys": [
+    "curiosity",
+    "formality",
+    "verbosity"
+  ],
+  "canonical_key_rule": "exact raw name; store resolves NFKC/strip/casefold only in named mutants",
+  "expiry_rule": "now <= expires_at",
+  "initial_state": {
+    "curiosity": 600,
+    "formality": 500,
+    "protected_flag": 1000,
+    "verbosity": 500
+  },
+  "maximum": 1000,
+  "maximum_step": 250,
+  "minimum": 0,
+  "opposition_requires_hold": true,
+  "required_signers": [
+    "owner_a",
+    "owner_b"
+  ],
+  "required_supporting_sources": 2,
+  "version": "genesis3-1.0"
+}

@@ -1,0 +1,52 @@
+{
+  "all_detected": true,
+  "limit": "Five authored tamper fixtures; not exhaustive tamper resistance or protection from rewriting the retained source anchor.",
+  "tests": [
+    {
+      "checker_error": "decisions and approval signatures disagree",
+      "detected": true,
+      "exit_code": 1,
+      "stderr": "CHECK_FAILED: decisions and approval signatures disagree\n",
+      "stdout": "",
+      "test": "decision",
+      "unsigned_digests_refreshed": true
+    },
+    {
+      "checker_error": "exported effect disagrees with independently reconstructed effect",
+      "detected": true,
+      "exit_code": 1,
+      "stderr": "CHECK_FAILED: exported effect disagrees with independently reconstructed effect\n",
+      "stdout": "",
+      "test": "effect",
+      "unsigned_digests_refreshed": true
+    },
+    {
+      "checker_error": "single-review coverage/order mismatch",
+      "detected": true,
+      "exit_code": 1,
+      "stderr": "CHECK_FAILED: single-review coverage/order mismatch\n",
+      "stdout": "",
+      "test": "deleted_record",
+      "unsigned_digests_refreshed": true
+    },
+    {
+      "checker_error": "single-review coverage/order mismatch",
+      "detected": true,
+      "exit_code": 1,
+      "stderr": "CHECK_FAILED: single-review coverage/order mismatch\n",
+      "stdout": "",
+      "test": "reordered_records",
+      "unsigned_digests_refreshed": true
+    },
+    {
+      "checker_error": "evidence file missing/modified: structural.json",
+      "detected": true,
+      "exit_code": 1,
+      "stderr": "CHECK_FAILED: evidence file missing/modified: structural.json\n",
+      "stdout": "",
+      "test": "deleted_file",
+      "unsigned_digests_refreshed": false
+    }
+  ],
+  "untampered_baseline_verified": true
+}

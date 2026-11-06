@@ -25,6 +25,7 @@ Each day folder has its own `README.md` summarizing what was tested and what hel
 - [2026-10-26](2026/10/2026-10-26/) — agent-welcome battery v1 results, and probes from the permission-receipts draft
 - [2026-10-27](2026/10/2026-10-27/) — Containment battery v0.1 and v0.2 with audits, and the TQNM nonlinear dwelling task battery
 - [2026-10-28](2026/10/2026-10-28/) — Village pack: organisms interacting on a shared commons
+- [2026-10-31](2026/10/2026-10-31/) — Genesis 3 Approval Battery v1.0 (Humble Seed v0.7 approval integrity)
 
 ## Layout
 

@@ -1,0 +1,38 @@
+{
+  "environment": {
+    "cryptography": "50.0.2",
+    "python": "3.12.14"
+  },
+  "owner_public_keys": {
+    "owner_a": "VRUPeC5cOmdCzjOHXprwt0kE6qtruIyOx1uc1fa9btc=",
+    "owner_b": "P7YdgZfY5/oyxXR6JFNVt6sHOUPwKEP+/ifLHaLnr6o="
+  },
+  "policy": {
+    "allowed_keys": [
+      "curiosity",
+      "formality",
+      "verbosity"
+    ],
+    "canonical_key_rule": "exact raw name; store resolves NFKC/strip/casefold only in named mutants",
+    "expiry_rule": "now <= expires_at",
+    "initial_state": {
+      "curiosity": 600,
+      "formality": 500,
+      "protected_flag": 1000,
+      "verbosity": 500
+    },
+    "maximum": 1000,
+    "maximum_step": 250,
+    "minimum": 0,
+    "opposition_requires_hold": true,
+    "required_signers": [
+      "owner_a",
+      "owner_b"
+    ],
+    "required_supporting_sources": 2,
+    "version": "genesis3-1.0"
+  },
+  "pre_implementation_sha256": "05b7f828bd50bdd8ce3744761778a1a2d3d15973d2c5fdc58e7cb7a0f97939b3",
+  "scope": "scripted calibration; same-process synthetic world; no model or containment score",
+  "source_lock_sha256": "0ff682f3db4d587eddaf758af20f0775fd77c6cc3edf864d436a1bc57aae5ee6"
+}

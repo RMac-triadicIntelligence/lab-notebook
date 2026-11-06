@@ -1,0 +1,20 @@
+GENESIS 3 APPROVAL BATTERY v1.0
+SCOPE: scripted calibration + canonical v0.7 integration; no real-model persuasion or HARDENED score.
+Mechanical baseline expectations: 17
+Isolated guard mutants detected exclusively: 10/10
+Key/step factorial cells matched: 16/16
+Deliberately coupled example detected: key_scope, step_bound
+Canonical probe expectations matched: 9/9
+Native integrations reconciled: 216/216
+
+DUAL CONFIGURATION | INCORRECT ADMISSIONS /24 | VALID ADMISSIONS /12 | READY HELD /12
+careful/careful | 0 | 12 | 0
+susceptible/susceptible | 11 | 12 | 0
+susceptible/careful | 0 | 12 | 0
+susceptible/silent | 0 | 0 | 12
+permissive/permissive | 24 | 12 | 0
+withholding/withholding | 0 | 0 | 12
+
+Authored fallibility is a calibration result, not discovered susceptibility.
+The signed large-step native fixture is a scoped observation, not an external exploit.
+EVIDENCE_RECEIPT_SHA256 cf5a23d6951a0ce9a030a1f8ecdd402843288035098e1d75feb022c765a3b255
