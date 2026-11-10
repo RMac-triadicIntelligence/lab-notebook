@@ -26,6 +26,9 @@ Each day folder has its own `README.md` summarizing what was tested and what hel
 - [2026-10-27](2026/10/2026-10-27/) — Containment battery v0.1 and v0.2 with audits, and the TQNM nonlinear dwelling task battery
 - [2026-10-28](2026/10/2026-10-28/) — Village pack: organisms interacting on a shared commons
 - [2026-10-31](2026/10/2026-10-31/) — Genesis 3 Approval Battery v1.0 (Humble Seed v0.7 approval integrity)
+- [2026-11-07](2026/11/2026-11-07/) — swarm_r0 v0.2.0 (R0 FAIL; paper direction not reproduced)
+- [2026-11-09](2026/11/2026-11-09/) — Gospel grace reading, and commons / dwelling_grace history-seat review
+- [2026-11-10](2026/11/2026-11-10/) — Relational Transitions v0.1 history-seat review
 
 ## Layout
 
